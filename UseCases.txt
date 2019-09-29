@@ -1,0 +1,20 @@
+11) Compare gerrymandering before and after algorithm - The algorithm should have steps that it goes through when annealing states. There should be a way to compare one step to another as you run through the algorithm to see which one is better.
+
+12) Set weights/constraints for algorithm - The user should be able to interact with the algorithm and influence how the annealing occurs. This would be in the form of settings in the GUI.
+
+13) Display real-time updates as clusters merge - As steps in the algorithm occur, they should be reflected in the GUI map to give the user a visual representation of what their choices have determined.
+
+14) Validate precinct geometry/data - Make sure that the precinct data is accurate for when you start building a connectivity graph between them.
+
+15) Majority/minority verification - Check the laws that rule majority/minority and be able to display which races are considered for minorities in the state.
+
+16) Initialize cluster for each precinct - In order to begin the annealing, each precinct should be its own cluster with its own data and percent majority/minority. These clusters, as the algorithm runs will become associated with the final districts.
+
+17) Manually adjust for geographic anomalies - As the connectivity graph for the precincts is created, certain edge cases will arise. Things like islands will have to be seen as connected and it might not make sense to have precincts that barely share a corner to be seen as adjacent. This will have to be manually adjusted by the development team.
+
+18) Determine join-ability for two neighboring clusters - With the parameters that are given by the user there will be a way to determine if two clusters should merge together. This will be an objective function for merging, and the higher the join-ability the more likely the clusters are the merge. This will have to be recalculated at every step.
+
+19) Join two clusters together - The act of combining the data of two clusters so that new calculations can occur for the next step.
+
+20) Check & ensure desired districts = number of clusters - At the end of the algorithm, the number of clusters needs to equal the desired number of districts.
+
