@@ -1,0 +1,32 @@
+<mat-tab-group>
+    <mat-tab>
+        <ng-template mat-tab-label>
+          First
+        </ng-template>
+        <app-slider-data></app-slider-data>
+    </mat-tab>
+    <mat-tab>
+        <ng-template mat-tab-label>
+          Second
+        </ng-template>
+        <mat-card>
+            Minorities
+            <br>
+            <mat-form-field>
+              <mat-select multiple>
+                <mat-option>Asian</mat-option>
+                <mat-option>Hispanic</mat-option>
+                <mat-option>Afriacn American</mat-option>
+                <mat-option>Pacific Islander</mat-option>
+                <mat-option>Native American</mat-option>
+              </mat-select>
+            </mat-form-field>
+        </mat-card>
+    </mat-tab>
+    <mat-tab>
+        <ng-template mat-tab-label>
+          Third
+        </ng-template>
+        Content 3
+    </mat-tab>
+</mat-tab-group>
