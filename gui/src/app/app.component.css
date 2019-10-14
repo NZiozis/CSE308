@@ -1,0 +1,14 @@
+.map-size {
+   height: 300px;
+   width: 60%;
+}
+.setting-bar{
+   width: 10%;
+   vertical-align: top;
+}
+.information-bar{
+   vertical-align: top;
+}
+.inline-block{
+   display: inline-block;
+}

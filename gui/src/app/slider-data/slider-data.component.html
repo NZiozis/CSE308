@@ -1,0 +1,20 @@
+<mat-card>
+    <mat-card-content>
+        Slider
+        <br>
+        <mat-slider
+            [disabled]="disabled"
+            [invert]="invert"
+            [step]="step"
+            [thumbLabel]="thumbLabel"
+            [max]="max"
+            [min]="min"
+            [vertical]="vertical"
+            [(ngModel)]="value"
+            >
+        </mat-slider>
+        <mat-form-field>
+            <input matInput type="number" [(ngModel)]="value" [min]="min" [max]="max">
+        </mat-form-field>
+    </mat-card-content>
+</mat-card>
