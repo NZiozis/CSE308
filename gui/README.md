@@ -12,7 +12,11 @@
 7. Desired number of minority populations to consider, and the maximum and minimum population percentages for each ethnic group. The user will also be able to specify that multiple minority groups can be combined.
 8. (required) Display population distribution table. (see use case 42)
 9. Display the calculated majority minority districts in a table. Table should also show a comparison with the majority-minority results for the current districting
-10.
+10. Have a nob or button to indicate whether the algorithm should run with incremental updates or in one fell swoop (31)
+11. Sliders for Measure Weights, threshold for majority minority (38)
+12. I would use a toggle button to switch from the new to the old, but I am not quite sure what is the best way to do this (39)
+13. Display all of these scores by using a mouse over functionality that when we mouse over any specific district will show all relevant stats in a side box (40)
+14.
 
 <!-- This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.5.
 
