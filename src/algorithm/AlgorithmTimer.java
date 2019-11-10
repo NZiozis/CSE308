@@ -1,11 +1,11 @@
-package algorthim;
+package algorithm;
 /**
- * A simple Timer to measure the real-time efficiency of an algorthim which can be paused and resumed.
+ * A simple Timer to measure the real-time efficiency of an algorithm which can be paused and resumed.
  * Measures in nanoseconds.
  * 
  * @author Patrick Wamsley
  */
-public class AlgorthimTimer {
+public class AlgorithmTimer {
 	
 	private long startTime;
 	private long runtime = 0;
@@ -14,7 +14,7 @@ public class AlgorthimTimer {
 	/**
 	 * Intalizes a timer, but does not start the clock.
 	 */
-	public AlgorthimTimer() {
+	public AlgorithmTimer() {
 		isPaused = true;
 	}
 	
