@@ -1,6 +1,7 @@
 # GUI
 
 ## Potential GUI Components
+0. See image for use other use cases
 1. Pause, Play, Step controls for runtime
 2. Legal Guidelines (in the information-bar)
 3. (optional) Color theme choices for the map
@@ -16,7 +17,10 @@
 11. Sliders for Measure Weights, threshold for majority minority (38)
 12. I would use a toggle button to switch from the new to the old, but I am not quite sure what is the best way to do this (39)
 13. Display all of these scores by using a mouse over functionality that when we mouse over any specific district will show all relevant stats in a side box (40)
-14.
+14. User input controls for bloc population % threshold and bloc voting percentage threshold (presumably sliders and respective labels)
+15. “phase 0” button (name comes from use case document) which prompts the system to analyze the population of each precinct.
+16. A table to display voting demographic bloc analysis
+17. State map updates with demographic analysis data
 
 <!-- This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.5.
 
