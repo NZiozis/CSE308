@@ -1,8 +1,9 @@
 package algorithm;
 
 /**
- * Interface for building an Algorithm using AlgorithmSteps to increase modularity and to cleanly handle interupts (pauses). 
+ * Interface for building an {@code Algorithm} using AlgorithmSteps to increase modularity and to cleanly handle interupts (pauses). 
  * 
+ * @see Algorithm.java
  * @author Patrick Wamsley
  */
 public interface AlgorithmStep {
@@ -10,7 +11,7 @@ public interface AlgorithmStep {
 	/**
 	 * Runs this step in the Algorithm. 
 	 * 
-	 * @return True on completion, False if still running
+	 * @return True on completion of this step of the algorithm, false otherwise
 	 */
 	public boolean run();
 

@@ -21,6 +21,11 @@ public class Algorithm implements AlgorithmStep {
 		this.currentStep = this.steps.get(0);
 	}
 
+	/**
+	 * Runs one iteration of the current algorithm step's run(). 
+	 * 
+	 * @return true on completetion of the aglorithm, false otherwise
+	 */
 	@Override
 	public boolean run() {
 		if (currentStep != null && !isPaused && currentStep.run()) {

@@ -16,10 +16,7 @@ public class AlgorithmStepStatus {
 	 * A String status update which represents the current status of the AlgorithmStep. 
 	 */
 	private String message;
-	
-	/**
-	 * The name of the AlgorithmStep
-	 */
+
 	private String algorithmStepName;  
 	
 	public AlgorithmStepStatus(String algorithmStepName) {
