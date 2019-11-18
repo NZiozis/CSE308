@@ -3,8 +3,8 @@ package mm_districting;
 /**
  * Represents an edge between two clusters, used to store how joinable these two clusters are.
  * 
- * @see Cluster.java
- * @see Joinability.java
+ * @see Cluster
+ * @see Joinability
  * 
  * @author Patrick Wamsley
  * @author Brett Weinger

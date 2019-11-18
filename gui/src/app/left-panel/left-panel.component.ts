@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-left-panel',
@@ -7,7 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LeftPanelComponent implements OnInit {
 
-  constructor() { }
+  private REST_API_SERVER = 'http://localhost:8080';
+
+  constructor(private httpClient: HttpClient) { }
+
+  test(){
+    const temp = this.httpClient.get(this.REST_API_SERVER);
+  }
 
   ngOnInit() {
   }

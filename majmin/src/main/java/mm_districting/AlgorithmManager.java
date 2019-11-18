@@ -3,8 +3,11 @@ package mm_districting;
 import algorithm.Algorithm;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.*;
 import util.Operation;
 import util.Result;
+import util.Voting;
 
 /**
  * Acts as the link between the algorithm and user/database.
@@ -13,6 +16,7 @@ import util.Result;
  * @author Niko Ziozis
  */
 @SpringBootApplication
+@RestController
 public class AlgorithmManager{
 
     private Algorithm currentAlgorithm;
@@ -21,11 +25,20 @@ public class AlgorithmManager{
         SpringApplication.run(AlgorithmManager.class, args);
     }
 
+    @RequestMapping(method = RequestMethod.GET,
+                    value = "/temp",
+                    produces = MediaType.APPLICATION_JSON_VALUE)
+    public @ResponseBody
+    Voting index() {
+        Voting temp = new Voting(1);
+        return temp;
+    }
+
     public Result runOperation(String inputData, Operation operation){
         return null;
     }
 
-    private Operation parseOperation(String input){
+	private Operation parseOperation(String input){
         return null;
     }
 
