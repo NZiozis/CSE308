@@ -3,6 +3,9 @@ package algorithm;
  * A simple Timer to measure the real-time efficiency of an algorithm which can be paused and resumed.
  * Measures in nanoseconds.
  * 
+ * @see Algorithm.java
+ * @see AlgorithmStep.java
+ * 
  * @author Patrick Wamsley
  */
 public class AlgorithmTimer {
@@ -31,17 +34,11 @@ public class AlgorithmTimer {
 		isPaused = false;
 	}
 	
-	/**
-	 * Pauses the timer.
-	 */
 	public void pause() {
 		updateRuntime();
 		isPaused = true;
 	}
 	
-	/**
-	 * @return The timer's runtime. 
-	 */
 	public long getRuntime() {
 		
 		if (!isPaused) {

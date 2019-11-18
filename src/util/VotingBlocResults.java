@@ -1,5 +1,5 @@
 package util;
 
-public class VotingBlocResults {
+public class VotingBlocResults extends Result {
 
 }
