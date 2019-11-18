@@ -1,32 +1,32 @@
 <mat-tab-group>
     <mat-tab>
         <ng-template mat-tab-label>
-          First
-        </ng-template>
-        <app-slider-data></app-slider-data>
-        <button (click)="test()">Test</button>
-    </mat-tab>
-    <mat-tab>
-        <ng-template mat-tab-label>
-          Second
+            Phase 0
         </ng-template>
         <mat-card>
-            Minorities
+            Required Percentage for Majority:
+            <br>
+            <mat-slider min="50" max="100" step="1" [(ngModel)]="majorityPercentage"></mat-slider>
+            <button (click)="phase0()">Phase 0</button>
+        </mat-card>
+        <mat-card>
+            Specify Minorities:
             <br>
             <mat-form-field>
-              <mat-select multiple>
-                <mat-option>Asian</mat-option>
-                <mat-option>Hispanic</mat-option>
-                <mat-option>Afriacn American</mat-option>
-                <mat-option>Pacific Islander</mat-option>
-                <mat-option>Native American</mat-option>
-              </mat-select>
+                <mat-select [(ngModel)]="selectedRaces" multiple>
+                    <mat-option *ngFor="let race of possibleRaces" [value]="race">{{race}}</mat-option>
+                </mat-select>
             </mat-form-field>
         </mat-card>
     </mat-tab>
     <mat-tab>
         <ng-template mat-tab-label>
-          Third
+            Second
+        </ng-template>
+    </mat-tab>
+    <mat-tab>
+        <ng-template mat-tab-label>
+            Third
         </ng-template>
         Content 3
     </mat-tab>

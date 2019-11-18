@@ -3,11 +3,9 @@ package mm_districting;
 import algorithm.Algorithm;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import util.Operation;
 import util.Result;
-import util.Voting;
 
 /**
  * Acts as the link between the algorithm and user/database.
@@ -26,20 +24,16 @@ public class AlgorithmManager{
         SpringApplication.run(AlgorithmManager.class, args);
     }
 
-    @RequestMapping(method = RequestMethod.GET,
-                    value = "/temp",
-                    produces = MediaType.APPLICATION_JSON_VALUE)
-    public @ResponseBody
-    Voting index() {
-        Voting temp = new Voting(2);
-        return temp;
+    @RequestMapping(value = "/phase0", method = RequestMethod.POST)
+    public void setDemographicMajority(@RequestBody String postPayload){
+        System.out.print(postPayload);
     }
 
     public Result runOperation(String inputData, Operation operation){
         return null;
     }
 
-	private Operation parseOperation(String input){
+    private Operation parseOperation(String input){
         return null;
     }
 
