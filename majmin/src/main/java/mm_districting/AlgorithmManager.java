@@ -17,6 +17,7 @@ import util.Voting;
  */
 @SpringBootApplication
 @RestController
+@CrossOrigin
 public class AlgorithmManager{
 
     private Algorithm currentAlgorithm;
@@ -25,7 +26,6 @@ public class AlgorithmManager{
         SpringApplication.run(AlgorithmManager.class, args);
     }
 
-    @CrossOrigin
     @RequestMapping(method = RequestMethod.GET,
                     value = "/temp",
                     produces = MediaType.APPLICATION_JSON_VALUE)

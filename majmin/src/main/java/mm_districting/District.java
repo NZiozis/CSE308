@@ -1,79 +1,93 @@
 package mm_districting;
 
-import java.util.HashSet;
-import java.util.Set;
-
 import util.Geography;
 import util.Voting;
 
+import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * Represents a district object, containing geographic data as well as voting and demographic data.
+ *
  * @author Patrick Wamsley
  * @author Brett Weinger
  * @author Felix Rieg-Baumhauer
+ * @author Niko Ziozis
  */
-public class District {
-	
-	private Set<Precinct> precincts;
-	
-	private DemographicContext demographics;
-	private Voting votingData;
-	
-	private Geography geography;
+@Entity
+@Table(name = "DISTRICT")
+public class District{
 
-	public District() {
-		precincts = new HashSet<>();
-	}
-	
-	/**
-	 *
-	 * @return The given Cluster converted to a District object.
-	 */
-	public static District fromCluster(Cluster cluster) {
-		District d = new District();
-		d.precincts = cluster.getPrecincts();
-		return d;
-	}
-	
-	public boolean addPrecinct(Precinct p) {
-		return precincts.add(p);
-	}
-	
-	public boolean removePrecinct(Precinct p) {
-		return precincts.remove(p);
-	}
+    private Set<Precinct> precincts;
 
-	public Set<Precinct> getPrecincts() {
-		return precincts;
-	}
+    private DemographicContext demographics;
+    private Voting             votingData;
 
-	public DemographicContext getDemographics() {
-		return demographics;
-	}
+    private Geography geography;
+    private int       districtId;
 
-	public Voting getVotingData() {
-		return votingData;
-	}
+    public District(){
+        precincts = new HashSet<>();
+    }
 
-	public Geography getGeography() {
-		return geography;
-	}
+    /**
+     * @return The given Cluster converted to a District object.
+     */
+    public static District fromCluster(Cluster cluster){
+        District d = new District();
+        d.precincts = cluster.getPrecincts();
+        return d;
+    }
 
-	public void setPrecincts(Set<Precinct> precincts) {
-		this.precincts = precincts;
-	}
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @Column(name = "DISTRICT_ID")
+    public long getDistrictId(){
+        return this.districtId;
+    }
 
-	public void setVotingData(Voting votingData) {
-		this.votingData = votingData;
-	}
+    public boolean addPrecinct(Precinct p){
+        return precincts.add(p);
+    }
 
-	public void setDemographics(DemographicContext demographics) {
-		this.demographics = demographics;
-	}
+    public boolean removePrecinct(Precinct p){
+        return precincts.remove(p);
+    }
 
-	public void setGeography(Geography geography) {
-		this.geography = geography;
-	}
-	
-	
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "PRECINCT_ID")
+    public Set<Precinct> getPrecincts(){
+        return precincts;
+    }
+
+    public void setPrecincts(Set<Precinct> precincts){
+        this.precincts = precincts;
+    }
+
+    public DemographicContext getDemographics(){
+        return demographics;
+    }
+
+    public void setDemographics(DemographicContext demographics){
+        this.demographics = demographics;
+    }
+
+    public Voting getVotingData(){
+        return votingData;
+    }
+
+    public void setVotingData(Voting votingData){
+        this.votingData = votingData;
+    }
+
+    public Geography getGeography(){
+        return geography;
+    }
+
+    public void setGeography(Geography geography){
+        this.geography = geography;
+    }
+
+
 }
