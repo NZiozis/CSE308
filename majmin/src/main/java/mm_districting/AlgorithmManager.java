@@ -25,12 +25,13 @@ public class AlgorithmManager{
         SpringApplication.run(AlgorithmManager.class, args);
     }
 
+    @CrossOrigin
     @RequestMapping(method = RequestMethod.GET,
                     value = "/temp",
                     produces = MediaType.APPLICATION_JSON_VALUE)
     public @ResponseBody
     Voting index() {
-        Voting temp = new Voting(1);
+        Voting temp = new Voting(2);
         return temp;
     }
 

@@ -10,13 +10,18 @@ export class LeftPanelComponent implements OnInit {
 
   private REST_API_SERVER = 'http://localhost:8080';
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-  test(){
-    const temp = this.httpClient.get(this.REST_API_SERVER);
+  test() {
+    this.http.get(this.REST_API_SERVER + '/temp').subscribe((data: Config) => {
+      console.log(data.test);
+    });
   }
 
   ngOnInit() {
   }
 
+}
+export interface Config {
+  test: string;
 }
