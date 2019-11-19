@@ -17,10 +17,11 @@ import java.util.Set;
  */
 @Entity
 @Table(name = "STATE")
-public class State{
+public class State {
 
     //---state data---//
     private String             name;
+    private int                stateId;
     private String             legalGuidelines;
     private DemographicContext demographicData;
     private Voting             votingData;
@@ -33,116 +34,122 @@ public class State{
     private Map<Cluster,Edge>  bestPairings;
     private Set<Cluster>       doNotPairClusters;
 
-    public State(String name){
+    public State(String name) {
         this.name = name;
+    }
+
+    @Id
+    @Column(name = "STATE_ID")
+    public int getStateId(){
+        return this.stateId;
     }
 
     /**
      * @return The previously set highest joinability found for this cluster.
      */
-    public float getMaxJoinability(Cluster cluster){
+    public float getMaxJoinability(Cluster cluster) {
         return bestPairings.get(cluster).getJoinability();
     }
 
     /**
      * @return The Cluster's most joinable edge, or null if it currently has no pairing.
      */
-    public Edge getMostJoinableEdge(Cluster cluster){
+    public Edge getMostJoinableEdge(Cluster cluster) {
         return bestPairings.get(cluster);
     }
 
     /**
      * Sets the given cluster's most joinabile edge.
      */
-    public void updateMostJoinable(Cluster cluster, Edge newEdge){
+    public void updateMostJoinable(Cluster cluster, Edge newEdge) {
         bestPairings.put(cluster, newEdge);
     }
 
     /**
      * Updates the Set of Clusters in this state by replacing the two clusters given by the edge with their combined cluster.
      */
-    public void combineClusters(Edge edge){
+    public void combineClusters(Edge edge) {
 
     }
 
     //TODO
 
-    public boolean isClusterAlreadyPaired(Cluster cluster){
+    public boolean isClusterAlreadyPaired(Cluster cluster) {
         return doNotPairClusters.contains(cluster);
     }
 
     //TODO add pk for state
 
     @Column(name = "STATE_NAME", nullable = false)
-    public String getName(){
+    public String getName() {
         return name;
     }
 
     //TODO column add as string
-    public String getLegalGuidelines(){
+    public String getLegalGuidelines() {
         return legalGuidelines;
     }
 
-    public void setLegalGuidelines(String legalGuidelines){
+    public void setLegalGuidelines(String legalGuidelines) {
         this.legalGuidelines = legalGuidelines;
     }
 
-    public DemographicContext getDemographicData(){
+    public DemographicContext getDemographicData() {
         return demographicData;
     }
 
-    public void setDemographicData(DemographicContext demographicData){
+    public void setDemographicData(DemographicContext demographicData) {
         this.demographicData = demographicData;
     }
 
-    public Voting getVotingData(){
+    public Voting getVotingData() {
         return votingData;
     }
 
-    public void setVotingData(Voting votingData){
+    public void setVotingData(Voting votingData) {
         this.votingData = votingData;
     }
 
-    public Set<Precinct> getPrecincts(){
+    public Set<Precinct> getPrecincts() {
         return precincts;
     }
 
-    public void setPrecincts(Set<Precinct> precincts){
+    public void setPrecincts(Set<Precinct> precincts) {
         this.precincts = precincts;
     }
 
-    public Set<District> getInitialDistricts(){
+    public Set<District> getInitialDistricts() {
         return initialDistricts;
     }
 
-    public void setInitialDistricts(Set<District> initialDistricts){
+    public void setInitialDistricts(Set<District> initialDistricts) {
         this.initialDistricts = initialDistricts;
     }
 
     //TODO Placeholder until district name is decided on
     @OneToMany(cascade = CascadeType.ALL)
-	@JoinColumn(name = "DISTRICT_ID")
-    public Set<District> getGeneratedDistricts(){
+    @JoinColumn(name = "DISTRICT_ID")
+    public Set<District> getGeneratedDistricts() {
         return generatedDistricts;
     }
 
-    public void setGeneratedDistricts(Set<District> generatedDistricts){
+    public void setGeneratedDistricts(Set<District> generatedDistricts) {
         this.generatedDistricts = generatedDistricts;
     }
 
-    public Set<Cluster> getClusters(){
+    public Set<Cluster> getClusters() {
         return clusters;
     }
 
-    public void setClusters(Set<Cluster> clusters){
+    public void setClusters(Set<Cluster> clusters) {
         this.clusters = clusters;
     }
 
-    public Set<Cluster> getDoNotPairClusters(){
+    public Set<Cluster> getDoNotPairClusters() {
         return doNotPairClusters;
     }
 
-    public void setDoNotPairClusters(Set<Cluster> doNotPairClusters){
+    public void setDoNotPairClusters(Set<Cluster> doNotPairClusters) {
         this.doNotPairClusters = doNotPairClusters;
     }
 
@@ -153,7 +160,7 @@ public class State{
      * @see AlgorithmManager
      * @see Operation
      */
-    public enum StateID{WEST_VIRGINIA, UTAH, FLORIDA}
+    public enum StateID {WEST_VIRGINIA, UTAH, FLORIDA}
 
 
 }

@@ -1,5 +1,6 @@
 package mm_districting;
 
+import util.DemographicContextConverter;
 import util.Geography;
 import util.Voting;
 
@@ -17,7 +18,7 @@ import java.util.Set;
  */
 @Entity
 @Table(name = "DISTRICT")
-public class District{
+public class District {
 
     private Set<Precinct> precincts;
 
@@ -28,14 +29,14 @@ public class District{
     private long      geoId;
     private int       districtNumber;
 
-    public District(){
+    public District() {
         precincts = new HashSet<>();
     }
 
     /**
      * @return The given Cluster converted to a District object.
      */
-    public static District fromCluster(Cluster cluster){
+    public static District fromCluster(Cluster cluster) {
         District d = new District();
         d.precincts = cluster.getPrecincts();
         return d;
@@ -43,49 +44,50 @@ public class District{
 
     @Id
     @Column(name = "GEO_ID")
-    public long getGeoId(){
+    public long getGeoId() {
         return this.geoId;
     }
 
-    public boolean addPrecinct(Precinct p){
+    public boolean addPrecinct(Precinct p) {
         return precincts.add(p);
     }
 
-    public boolean removePrecinct(Precinct p){
+    public boolean removePrecinct(Precinct p) {
         return precincts.remove(p);
     }
 
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "PRECINCT_ID")
-    public Set<Precinct> getPrecincts(){
+    public Set<Precinct> getPrecincts() {
         return precincts;
     }
 
-    public void setPrecincts(Set<Precinct> precincts){
+    public void setPrecincts(Set<Precinct> precincts) {
         this.precincts = precincts;
     }
 
-    public DemographicContext getDemographics(){
+    @Convert(converter = DemographicContextConverter.class)
+    public DemographicContext getDemographics() {
         return demographics;
     }
 
-    public void setDemographics(DemographicContext demographics){
+    public void setDemographics(DemographicContext demographics) {
         this.demographics = demographics;
     }
 
-    public Voting getVotingData(){
+    public Voting getVotingData() {
         return votingData;
     }
 
-    public void setVotingData(Voting votingData){
+    public void setVotingData(Voting votingData) {
         this.votingData = votingData;
     }
 
-    public Geography getGeography(){
+    public Geography getGeography() {
         return geography;
     }
 
-    public void setGeography(Geography geography){
+    public void setGeography(Geography geography) {
         this.geography = geography;
     }
 

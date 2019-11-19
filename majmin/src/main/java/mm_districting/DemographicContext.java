@@ -26,11 +26,24 @@ public class DemographicContext {
 	 * Array containing the breakdown of the population by race.
 	 */
 	private int[] demographicPopulations;
-	
+
+	/* This is required for jackson */
+	public DemographicContext(){}
+
 	public DemographicContext(int totalPopulation) {
 		this.totalPopulation = totalPopulation;
 		demographicPopulations = new int[Race.values().length];
 		
+		for (int i = 0; i < demographicPopulations.length; i++) {
+			demographicPopulations[i] = NO_DEMOGRAPHIC_DATA;
+		}
+	}
+
+	public DemographicContext(Race raceOfBloc, int totalPopulation){
+		this.totalPopulation = totalPopulation;
+		this.raceOfBloc = raceOfBloc;
+		demographicPopulations = new int[Race.values().length];
+
 		for (int i = 0; i < demographicPopulations.length; i++) {
 			demographicPopulations[i] = NO_DEMOGRAPHIC_DATA;
 		}
@@ -55,7 +68,5 @@ public class DemographicContext {
 	public void setRaceOfBloc(Race raceOfBloc) {
 		this.raceOfBloc = raceOfBloc;
 	}
-	
-	
 
 }

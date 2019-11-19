@@ -6,9 +6,9 @@ import java.util.Set;
 /**
  * A cluster in the graph partioning algorithm, representative of a State district. 
  * 
- * @see Edge.java
- * @see Joinability.java
- * @see District.java
+ * @see Edge
+ * @see Joinability
+ * @see District
  * 
  * @author Patrick Wamsley
  * @author Brett Weinger

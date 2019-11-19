@@ -5,7 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1b917782-4cb8-457f-9f9b-dfb5f1451613" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_8_0_18.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/util/DemographicContextConverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/majmin/ConvertersTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/majmin.iml" beforeDir="false" afterPath="$PROJECT_DIR$/majmin.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mm_districting/Cluster.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mm_districting/Cluster.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mm_districting/DemographicContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mm_districting/DemographicContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mm_districting/District.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mm_districting/District.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mm_districting/State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mm_districting/State.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/util/HibernateUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/HibernateUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/majmin/MajminApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/majmin/MajminApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mm_districting/AlgorithmProperties.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mm_districting/AlgorithmProperties.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mm_districting/DemographicContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mm_districting/DemographicContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mm_districting/District.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mm_districting/District.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mm_districting/Precinct.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mm_districting/Precinct.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mm_districting/State$StateID.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mm_districting/State$StateID.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mm_districting/State.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mm_districting/State.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/majmin/MajminApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/majmin/MajminApplicationTests.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,8 +58,10 @@
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../CSE219/Homework/hw6" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="run.code.analysis.last.selected.profile" value="aDefault" />
@@ -57,7 +79,38 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.ConvertersTests">
+    <configuration name="ConvertersTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="majmin" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.majmin.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.majmin" />
+      <option name="MAIN_CLASS_NAME" value="com.majmin.ConvertersTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MajminApplicationTests.convertingDemographicContext" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="majmin" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.majmin.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.majmin" />
+      <option name="MAIN_CLASS_NAME" value="com.majmin.MajminApplicationTests" />
+      <option name="METHOD_NAME" value="convertingDemographicContext" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MajminApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="majmin" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="mm_districting.AlgorithmManager" />
@@ -66,6 +119,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.ConvertersTests" />
+        <item itemvalue="JUnit.MajminApplicationTests.convertingDemographicContext" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -78,7 +137,8 @@
       <option name="presentableId" value="Default" />
       <updated>1574048020028</updated>
       <workItem from="1574048023204" duration="7489000" />
-      <workItem from="1574117711235" duration="8513000" />
+      <workItem from="1574117711235" duration="9481000" />
+      <workItem from="1574192646057" duration="5514000" />
     </task>
     <servers />
   </component>
@@ -97,16 +157,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/mm_districting/AlgorithmManager.java</url>
-          <line>24</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
