@@ -5,27 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1b917782-4cb8-457f-9f9b-dfb5f1451613" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_8_0_18.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/util/DemographicContextConverter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/majmin/ConvertersTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/majmin.iml" beforeDir="false" afterPath="$PROJECT_DIR$/majmin.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mm_districting/Cluster.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mm_districting/Cluster.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mm_districting/DemographicContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mm_districting/DemographicContext.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/mm_districting/District.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mm_districting/District.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mm_districting/State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mm_districting/State.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/util/HibernateUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/HibernateUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/majmin/MajminApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/majmin/MajminApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mm_districting/AlgorithmProperties.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mm_districting/AlgorithmProperties.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mm_districting/DemographicContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mm_districting/DemographicContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/util/Geography.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/util/Voting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/Voting.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/mm_districting/District.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mm_districting/District.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mm_districting/Precinct.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mm_districting/Precinct.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mm_districting/State$StateID.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mm_districting/State$StateID.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mm_districting/State.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mm_districting/State.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/majmin/MajminApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/majmin/MajminApplicationTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/util/Geography.class" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -67,6 +52,12 @@
     <property name="run.code.analysis.last.selected.profile" value="aDefault" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Java" />
   </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="MajminApplicationTests.convertingDemographicContext" />
+      <command value="ConvertersTests" />
+    </option>
+  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -79,7 +70,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.ConvertersTests">
+  <component name="RunManager" selected="Spring Boot.MajminApplication">
     <configuration name="ConvertersTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="majmin" />
       <extension name="coverage">
@@ -138,7 +129,7 @@
       <updated>1574048020028</updated>
       <workItem from="1574048023204" duration="7489000" />
       <workItem from="1574117711235" duration="9481000" />
-      <workItem from="1574192646057" duration="5514000" />
+      <workItem from="1574192646057" duration="5981000" />
     </task>
     <servers />
   </component>

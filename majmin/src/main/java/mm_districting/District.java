@@ -1,7 +1,6 @@
 package mm_districting;
 
 import util.DemographicContextConverter;
-import util.Geography;
 import util.Voting;
 
 import javax.persistence.*;
@@ -25,7 +24,8 @@ public class District {
     private DemographicContext demographics;
     private Voting             votingData;
 
-    private Geography geography;
+    // String of the GeoJSON data
+    private String geography;
     private long      geoId;
     private int       districtNumber;
 
@@ -83,11 +83,11 @@ public class District {
         this.votingData = votingData;
     }
 
-    public Geography getGeography() {
+    public String getGeography() {
         return geography;
     }
 
-    public void setGeography(Geography geography) {
+    public void setGeography(String geography) {
         this.geography = geography;
     }
 
