@@ -71,11 +71,14 @@ public class State{
         return doNotPairClusters.contains(cluster);
     }
 
+    //TODO add pk for state
+
     @Column(name = "STATE_NAME", nullable = false)
     public String getName(){
         return name;
     }
 
+    //TODO column add as string
     public String getLegalGuidelines(){
         return legalGuidelines;
     }

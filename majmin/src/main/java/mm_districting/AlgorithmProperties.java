@@ -1,107 +1,105 @@
 package mm_districting;
 
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 
 /**
- * Manages the properties algorithm, such as the active State, threshold values, and user selected values. 
- * 
+ * Manages the properties algorithm, such as the active State, threshold values, and user selected values.
+ *
  * @author Patrick Wamsley
  * @author Brett Weinger
  * @author Felix Rieg-Baumhauer
  * @author Niko Ziozis
  */
 public class AlgorithmProperties {
-	
-	private static AlgorithmProperties instance;
-	private static boolean initalized; 
-	
-	private State state;
-	
-	private Set<DemographicContext> selectedDemographics;
-	private int numDistricts;
-	private int numMajorityMinorityDistricts;
-	
-	private boolean showEachStep;
-	
-	//TODO: clean up and confiq arrays as needed
-	private int[] blocThresholds;
-	private int minorityVotingThreshold;
-	private int majorityVotingThreshold;
-	private int[][] demographicThresholds;
-	private int[] selectedWeights;
-	
-	//hide constructor to force singleton access
-	private AlgorithmProperties() {}
 
-	public static AlgorithmProperties getProperties() {
-		if (!initalized) {
-			instance = new AlgorithmProperties();
-			instance.selectedDemographics = new HashSet<>();
-			//TODO: init arrays needed if decided upon
-			
-			initalized = true;
-		}
-		
-		return instance;
-	}
+    private static AlgorithmProperties instance;
+    private static boolean             initialized;
 
-	public State getState() {
-		return state;
-	}
+    private State state;
 
-	public Set<DemographicContext> getSelectedDemographics() {
-		return selectedDemographics;
-	}
+    private Set<DemographicContext> selectedDemographics;
+    private int                     numDistricts;
+    private int                     numMajorityMinorityDistricts;
 
-	public int getNumDistricts() {
-		return numDistricts;
-	}
+    private boolean showEachStep;
 
-	public int getNumMajorityMinorityDistricts() {
-		return numMajorityMinorityDistricts;
-	}
+    //TODO: clean up and confiq arrays as needed
+    private int[]   blocThresholds;
+    private int     minorityVotingThreshold;
+    private int     majorityVotingThreshold;
+    private int[][] demographicThresholds;
+    private int[]   selectedWeights;
 
-	public boolean isShowingEachStep() {
-		return showEachStep;
-	}
+    //hide constructor to force singleton access
+    private AlgorithmProperties() {}
 
+    public static AlgorithmProperties getProperties() {
+        if (!initialized) {
+            instance = new AlgorithmProperties();
+            instance.selectedDemographics = new HashSet<>();
+            //TODO: init arrays needed if decided upon
 
-	public int getMinorityVotingThreshold() {
-		return minorityVotingThreshold;
-	}
+            initialized = true;
+        }
 
-	public int getMajorityVotingThreshold() {
-		return majorityVotingThreshold;
-	}
+        return instance;
+    }
 
-	public void setState(State state) {
-		this.state = state;
-	}
+    public State getState() {
+        return state;
+    }
 
-	public void setSelectedDemographics(Set<DemographicContext> selectedDemographics) {
-		this.selectedDemographics = selectedDemographics;
-	}
+    public void setState(State state) {
+        this.state = state;
+    }
 
-	public void setNumDistricts(int numDistricts) {
-		this.numDistricts = numDistricts;
-	}
+    public Set<DemographicContext> getSelectedDemographics() {
+        return selectedDemographics;
+    }
 
-	public void setNumMajorityMinorityDistricts(int numMajorityMinorityDistricts) {
-		this.numMajorityMinorityDistricts = numMajorityMinorityDistricts;
-	}
+    public void setSelectedDemographics(Set<DemographicContext> selectedDemographics) {
+        this.selectedDemographics = selectedDemographics;
+    }
 
-	public void setShowEachStep(boolean showEachStep) {
-		this.showEachStep = showEachStep;
-	}
+    public int getNumDistricts() {
+        return numDistricts;
+    }
 
-	public void setMinorityVotingThreshold(int minorityVotingThreshold) {
-		this.minorityVotingThreshold = minorityVotingThreshold;
-	}
+    public void setNumDistricts(int numDistricts) {
+        this.numDistricts = numDistricts;
+    }
 
-	public void setMajorityVotingThreshold(int majorityVotingThreshold) {
-		this.majorityVotingThreshold = majorityVotingThreshold;
-	}
-	
+    public int getNumMajorityMinorityDistricts() {
+        return numMajorityMinorityDistricts;
+    }
+
+    public void setNumMajorityMinorityDistricts(int numMajorityMinorityDistricts) {
+        this.numMajorityMinorityDistricts = numMajorityMinorityDistricts;
+    }
+
+    public boolean isShowingEachStep() {
+        return showEachStep;
+    }
+
+    public int getMinorityVotingThreshold() {
+        return minorityVotingThreshold;
+    }
+
+    public void setMinorityVotingThreshold(int minorityVotingThreshold) {
+        this.minorityVotingThreshold = minorityVotingThreshold;
+    }
+
+    public int getMajorityVotingThreshold() {
+        return majorityVotingThreshold;
+    }
+
+    public void setMajorityVotingThreshold(int majorityVotingThreshold) {
+        this.majorityVotingThreshold = majorityVotingThreshold;
+    }
+
+    public void setShowEachStep(boolean showEachStep) {
+        this.showEachStep = showEachStep;
+    }
+
 }

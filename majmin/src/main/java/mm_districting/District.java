@@ -25,7 +25,8 @@ public class District{
     private Voting             votingData;
 
     private Geography geography;
-    private int       districtId;
+    private long      geoId;
+    private int       districtNumber;
 
     public District(){
         precincts = new HashSet<>();
@@ -41,10 +42,9 @@ public class District{
     }
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @Column(name = "DISTRICT_ID")
-    public long getDistrictId(){
-        return this.districtId;
+    @Column(name = "GEO_ID")
+    public long getGeoId(){
+        return this.geoId;
     }
 
     public boolean addPrecinct(Precinct p){

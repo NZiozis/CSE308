@@ -4,7 +4,10 @@ import util.Party;
 import util.Race;
 import util.Voting;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.util.Set;
 
 /**
@@ -19,11 +22,10 @@ import java.util.Set;
  */
 @Entity
 @Table(name = "PRECINCT")
-public class Precinct{
+public class Precinct {
 
     private String county;
-    private int    legal_id;
-    private int    table_id;
+    private String geoId;
 
     private DemographicContext demographics;
     private Voting[]           votingList;
@@ -33,78 +35,74 @@ public class Precinct{
     private Set<Precinct> neighbors;
 
 
-    public Precinct(String county, int legal_id){
+    public Precinct(String county, String geoId) {
         this.county = county;
-        this.legal_id = legal_id;
+        this.geoId = geoId;
     }
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @Column(name = "PRECINCT_ID")
-    public int getTable_id(){
-        return table_id;
-    }
+    //TODO Figure out how to map to states and districts.
 
-    //TODO
-    public double getDemographicPercent(Race race){
+    public double getDemographicPercent(Race race) {
         return 0;
     }
 
-    public String getCounty(){
+    @Column(name = "COUNTY", nullable = false)
+    public String getCounty() {
         return county;
     }
 
-    public void setCounty(String county){
+    public void setCounty(String county) {
         this.county = county;
     }
 
-    @Column(name = "LEGAL_ID")
-    public int getLegal_id(){
-        return legal_id;
+    @Id
+    @Column(name = "GEO_ID")
+    public String getGeoId() {
+        return geoId;
     }
 
-    public void setLegal_id(int legal_id){
-        this.legal_id = legal_id;
+    public void setGeoId(String geoId) {
+        this.geoId = geoId;
     }
 
-    public DemographicContext getDemographics(){
+    public DemographicContext getDemographics() {
         return demographics;
     }
 
-    public void setDemographics(DemographicContext demographics){
+    public void setDemographics(DemographicContext demographics) {
         this.demographics = demographics;
     }
 
-    public Voting[] getVotingList(){
+    public Voting[] getVotingList() {
         return votingList;
     }
 
-    public void setVotingList(Voting[] votingList){
+    public void setVotingList(Voting[] votingList) {
         this.votingList = votingList;
     }
 
-    public Race getDemographicBloc(){
+    public Race getDemographicBloc() {
         return demographicBloc;
     }
 
-    public void setDemographicBloc(Race demographicBloc){
+    public void setDemographicBloc(Race demographicBloc) {
         this.demographicBloc = demographicBloc;
     }
 
-    public Party getPartyBloc(){
+    public Party getPartyBloc() {
         return partyBloc;
     }
 
-    public void setPartyBloc(Party partyBloc){
+    public void setPartyBloc(Party partyBloc) {
         this.partyBloc = partyBloc;
     }
 
-	//TODO Determine how the annotations should work here
-    public Set<Precinct> getNeighbors(){
+    //TODO Determine how the annotations should work here
+    public Set<Precinct> getNeighbors() {
         return neighbors;
     }
 
-    public void setNeighbors(Set<Precinct> neighbors){
+    public void setNeighbors(Set<Precinct> neighbors) {
         this.neighbors = neighbors;
     }
 
