@@ -25,7 +25,6 @@ public class State {
     private DemographicContext demographicData;
     private Voting             votingData;
     //---Encompassed geographical objects---//
-    private Set<Precinct>      precincts;
     private Set<District>      initialDistricts;
     //---Algorithm oriented objects---//
     private Set<District>      generatedDistricts;
@@ -43,9 +42,14 @@ public class State {
         return this.stateId;
     }
 
+    public void setStateId(int stateId) {
+        this.stateId = stateId;
+    }
+
     /**
      * @return The previously set highest joinability found for this cluster.
      */
+    @Transient
     public float getMaxJoinability(Cluster cluster) {
         return bestPairings.get(cluster).getJoinability();
     }
@@ -53,6 +57,7 @@ public class State {
     /**
      * @return The Cluster's most joinable edge, or null if it currently has no pairing.
      */
+    @Transient
     public Edge getMostJoinableEdge(Cluster cluster) {
         return bestPairings.get(cluster);
     }
@@ -84,6 +89,10 @@ public class State {
         return name;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
     //TODO column add as string
     public String getLegalGuidelines() {
         return legalGuidelines;
@@ -93,6 +102,7 @@ public class State {
         this.legalGuidelines = legalGuidelines;
     }
 
+    @Transient
     public DemographicContext getDemographicData() {
         return demographicData;
     }
@@ -101,6 +111,7 @@ public class State {
         this.demographicData = demographicData;
     }
 
+    @Transient
     public Voting getVotingData() {
         return votingData;
     }
@@ -109,14 +120,8 @@ public class State {
         this.votingData = votingData;
     }
 
-    public Set<Precinct> getPrecincts() {
-        return precincts;
-    }
-
-    public void setPrecincts(Set<Precinct> precincts) {
-        this.precincts = precincts;
-    }
-
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "DISTRICT_ID")
     public Set<District> getInitialDistricts() {
         return initialDistricts;
     }
@@ -126,8 +131,7 @@ public class State {
     }
 
     //TODO Placeholder until district name is decided on
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "DISTRICT_ID")
+    @Transient
     public Set<District> getGeneratedDistricts() {
         return generatedDistricts;
     }
@@ -136,6 +140,7 @@ public class State {
         this.generatedDistricts = generatedDistricts;
     }
 
+    @Transient
     public Set<Cluster> getClusters() {
         return clusters;
     }
@@ -144,6 +149,7 @@ public class State {
         this.clusters = clusters;
     }
 
+    @Transient
     public Set<Cluster> getDoNotPairClusters() {
         return doNotPairClusters;
     }

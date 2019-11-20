@@ -23,9 +23,17 @@ public class Voting {
         return dataId;
     }
 
+    public void setDataId(int dataId) {
+        this.dataId = dataId;
+    }
+
     @Column(name = "ELECTION")
     public Election getElection() {
         return election;
+    }
+
+    public void setElection(Election election) {
+        this.election = election;
     }
 
     @Column(name = "VOTES")
@@ -33,9 +41,17 @@ public class Voting {
         return votes;
     }
 
+    public void setVotes(int votes) {
+        this.votes = votes;
+    }
+
     @Column(name = "PARTY")
     public Party getParty() {
         return party;
+    }
+
+    public void setParty(Party party) {
+        this.party = party;
     }
 }
 

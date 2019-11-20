@@ -98,6 +98,8 @@ public class Precinct {
     }
 
     //TODO Determine how the annotations should work here
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "PRECINCT_ID")
     public Set<Precinct> getNeighbors() {
         return neighbors;
     }

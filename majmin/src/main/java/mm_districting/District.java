@@ -46,6 +46,10 @@ public class District {
         return this.geoId;
     }
 
+    public void setGeoId(long geoId) {
+        this.geoId = geoId;
+    }
+
     public boolean addPrecinct(Precinct p) {
         return precincts.add(p);
     }
