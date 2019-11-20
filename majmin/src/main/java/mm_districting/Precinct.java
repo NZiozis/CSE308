@@ -1,10 +1,10 @@
 package mm_districting;
 
-import util.DemographicContextConverter;
 import util.Party;
 import util.Race;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Set;
 
 /**
@@ -28,6 +28,7 @@ public class Precinct {
     private Set<Voting>        votingSet;
     private Race               demographicBloc;
     private Party              partyBloc;
+    private String             geography;
 
     private Set<Precinct> neighbors;
 
@@ -37,6 +38,14 @@ public class Precinct {
         this.geoId = geoId;
     }
 
+    public Precinct(String county, String geoId, DemographicContext demographics, String geography) {
+        this.county = county;
+        this.geoId = geoId;
+        this.demographics = demographics;
+        this.votingSet = new HashSet<>();
+        this.neighbors = new HashSet<>();
+        this.geography = geography;
+    }
     //TODO Figure out how to map to states and districts.
 
     public double getDemographicPercent(Race race) {
@@ -62,7 +71,8 @@ public class Precinct {
         this.geoId = geoId;
     }
 
-    @Convert(converter = DemographicContextConverter.class)
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "CONTEXT_ID")
     public DemographicContext getDemographics() {
         return demographics;
     }
@@ -72,7 +82,8 @@ public class Precinct {
     }
 
     @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "DATA_ID")
+    @JoinTable(name = "PRECINCT_TO_VOTING")
+    @JoinColumn(name = "VOTING_DATA_ID")
     public Set<Voting> getVotingSet() {
         return votingSet;
     }
@@ -81,6 +92,7 @@ public class Precinct {
         this.votingSet = votingSet;
     }
 
+    @Transient
     public Race getDemographicBloc() {
         return demographicBloc;
     }
@@ -89,6 +101,7 @@ public class Precinct {
         this.demographicBloc = demographicBloc;
     }
 
+    @Transient
     public Party getPartyBloc() {
         return partyBloc;
     }
@@ -99,6 +112,7 @@ public class Precinct {
 
     //TODO Determine how the annotations should work here
     @OneToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "PRECINCT_NEIGHBORS")
     @JoinColumn(name = "PRECINCT_ID")
     public Set<Precinct> getNeighbors() {
         return neighbors;
@@ -108,5 +122,12 @@ public class Precinct {
         this.neighbors = neighbors;
     }
 
+    public boolean addNeighbor(Precinct precinct) {
+        return this.neighbors.add(precinct);
+    }
+
+    public boolean addVotingData(Voting voting){
+        return this.votingSet.add(voting);
+    }
 
 }

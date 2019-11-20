@@ -16,6 +16,12 @@ public class Voting {
 
     public Voting() {}
 
+    public Voting(int votes, Party party, Election election) {
+        this.votes = votes;
+        this.party = party;
+        this.election = election;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "DATA_ID")

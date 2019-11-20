@@ -3,6 +3,7 @@ package mm_districting;
 import util.Operation;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
@@ -19,30 +20,40 @@ import java.util.Set;
 public class State {
 
     //---state data---//
-    private String             name;
-    private int                stateId;
-    private String             legalGuidelines;
-    private DemographicContext demographicData;
-    private Voting             votingData;
+    private String            name;
+    private long               stateId;
+    private String            legalGuidelines;
+    private Voting            votingData;
     //---Encompassed geographical objects---//
-    private Set<District>      initialDistricts;
+    private Set<District>     initialDistricts;
     //---Algorithm oriented objects---//
-    private Set<District>      generatedDistricts;
-    private Set<Cluster>       clusters;
-    private Map<Cluster,Edge>  bestPairings;
-    private Set<Cluster>       doNotPairClusters;
+    private Set<District>     generatedDistricts;
+    private Set<Cluster>      clusters;
+    private Map<Cluster,Edge> bestPairings;
+    private Set<Cluster>      doNotPairClusters;
+    private String            geography;
+
+    public State(){}
 
     public State(String name) {
         this.name = name;
     }
 
+    public State(String name, int stateId, String legalGuidelines, String geography) {
+        this.name = name;
+        this.stateId = stateId;
+        this.legalGuidelines = legalGuidelines;
+        this.geography = geography;
+        this.initialDistricts = new HashSet<>();
+    }
+
     @Id
     @Column(name = "STATE_ID")
-    public int getStateId() {
+    public long getStateId() {
         return this.stateId;
     }
 
-    public void setStateId(int stateId) {
+    public void setStateId(long stateId) {
         this.stateId = stateId;
     }
 
@@ -76,7 +87,15 @@ public class State {
 
     }
 
-    //TODO
+    @Column(name = "GEOGRAPHY")
+    public String getGeography() {
+        return geography;
+    }
+
+    public void setGeography(String geography) {
+        this.geography = geography;
+    }
+//TODO
 
     public boolean isClusterAlreadyPaired(Cluster cluster) {
         return doNotPairClusters.contains(cluster);
@@ -103,15 +122,6 @@ public class State {
     }
 
     @Transient
-    public DemographicContext getDemographicData() {
-        return demographicData;
-    }
-
-    public void setDemographicData(DemographicContext demographicData) {
-        this.demographicData = demographicData;
-    }
-
-    @Transient
     public Voting getVotingData() {
         return votingData;
     }
@@ -121,6 +131,7 @@ public class State {
     }
 
     @OneToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "STATE_TO_DISTRICT")
     @JoinColumn(name = "DISTRICT_ID")
     public Set<District> getInitialDistricts() {
         return initialDistricts;
@@ -128,6 +139,10 @@ public class State {
 
     public void setInitialDistricts(Set<District> initialDistricts) {
         this.initialDistricts = initialDistricts;
+    }
+
+    public boolean addDistrict(District d) {
+        return initialDistricts.add(d);
     }
 
     //TODO Placeholder until district name is decided on

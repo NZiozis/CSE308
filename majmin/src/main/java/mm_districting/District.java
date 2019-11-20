@@ -28,7 +28,15 @@ public class District {
     private int    districtNumber;
 
     public District() {
+
         precincts = new HashSet<>();
+    }
+
+    public District(String geography, long geoId, int districtNumber) {
+        this.geography = geography;
+        this.districtNumber = districtNumber;
+        this.geoId = geoId;
+        this.precincts = new HashSet<>();
     }
 
     /**
@@ -59,6 +67,7 @@ public class District {
     }
 
     @OneToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "DISTRICT_TO_PRECINCT")
     @JoinColumn(name = "PRECINCT_ID")
     public Set<Precinct> getPrecincts() {
         return precincts;
@@ -68,7 +77,7 @@ public class District {
         this.precincts = precincts;
     }
 
-    @Convert(converter = DemographicContextConverter.class)
+    @Transient
     public DemographicContext getDemographics() {
         return demographics;
     }
@@ -77,6 +86,7 @@ public class District {
         this.demographics = demographics;
     }
 
+    @Column(name = "GEOGRAPHY", nullable = false)
     public String getGeography() {
         return geography;
     }
@@ -85,5 +95,12 @@ public class District {
         this.geography = geography;
     }
 
+    @Column(name = "DISTRICT_NUMBER")
+    public int getDistrictNumber() {
+        return districtNumber;
+    }
 
+    public void setDistrictNumber(int districtNumber) {
+        this.districtNumber = districtNumber;
+    }
 }

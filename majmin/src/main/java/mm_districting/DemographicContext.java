@@ -1,72 +1,109 @@
 package mm_districting;
 
-import util.Race;
+import javax.persistence.*;
 
 /**
  * Holds demographic data in a given geographic boundry such as a state, district, or precinct.
- * 
+ *
  * @author Patrick Wamsley
  * @author Brett Weinger
+ * @author nikoziozis
  */
+@Entity
+@Table(name = "DEMOGRAPHIC_CONTEXT")
 public class DemographicContext {
-	
-	private static final int NO_DEMOGRAPHIC_DATA = -1;
-	
-	/**
-	 * The Race which votes as a bloc in this context, which can be null if no such bloc exists.
-	 */
-	private Race raceOfBloc;
-	
-	/**
-	 * The total population in this context
-	 */
-	private int totalPopulation;
-	
-	/**
-	 * Array containing the breakdown of the population by race.
-	 */
-	private int[] demographicPopulations;
 
-	/* This is required for jackson */
-	public DemographicContext(){}
+    private int contextId;
+    private int total;
+    private int white;
+    private int africanAmerican;
+    private int americanIndian;
+    private int asian;
+    private int pacificIslander;
+    private int other;
 
-	public DemographicContext(int totalPopulation) {
-		this.totalPopulation = totalPopulation;
-		demographicPopulations = new int[Race.values().length];
-		
-		for (int i = 0; i < demographicPopulations.length; i++) {
-			demographicPopulations[i] = NO_DEMOGRAPHIC_DATA;
-		}
-	}
+    public DemographicContext(int total, int white, int africanAmerican, int americanIndian, int asian,
+                              int pacificIslander, int other) {
+        this.total = total;
+        this.white = white;
+        this.africanAmerican = africanAmerican;
+        this.americanIndian = americanIndian;
+        this.asian = asian;
+        this.pacificIslander = pacificIslander;
+        this.other = other;
+    }
 
-	public DemographicContext(Race raceOfBloc, int totalPopulation){
-		this.totalPopulation = totalPopulation;
-		this.raceOfBloc = raceOfBloc;
-		demographicPopulations = new int[Race.values().length];
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @Column(name = "CONTEXT_ID")
+    public int getContextId() {
+        return contextId;
+    }
 
-		for (int i = 0; i < demographicPopulations.length; i++) {
-			demographicPopulations[i] = NO_DEMOGRAPHIC_DATA;
-		}
-	}
-	
-	public void setDemographicPopulation(Race demographic, int population) {
-		demographicPopulations[demographic.ordinal()] = population;
-	}
-	
-	public int getPopulationOfDemographic(Race demographic) {
-		return demographicPopulations[demographic.ordinal()];
-	}
+    public void setContextId(int contextId) {
+        this.contextId = contextId;
+    }
 
-	public Race getRaceOfBloc() {
-		return raceOfBloc;
-	}
+    @Column(name = "TOTAL")
+    public int getTotal() {
+        return total;
+    }
 
-	public int getTotalPopulation() {
-		return totalPopulation;
-	}
+    public void setTotal(int total) {
+        this.total = total;
+    }
 
-	public void setRaceOfBloc(Race raceOfBloc) {
-		this.raceOfBloc = raceOfBloc;
-	}
+    @Column(name = "WHITE")
+    public int getWhite() {
+        return white;
+    }
 
+    public void setWhite(int white) {
+        this.white = white;
+    }
+
+    @Column(name = "AFRICAN_AMERICAN")
+    public int getAfricanAmerican() {
+        return africanAmerican;
+    }
+
+    public void setAfricanAmerican(int africanAmerican) {
+        this.africanAmerican = africanAmerican;
+    }
+
+    @Column(name = "AMERICAN_INDIAN")
+    public int getAmericanIndian() {
+        return americanIndian;
+    }
+
+    public void setAmericanIndian(int americanIndian) {
+        this.americanIndian = americanIndian;
+    }
+
+    @Column(name = "ASIAN")
+    public int getAsian() {
+        return asian;
+    }
+
+    public void setAsian(int asian) {
+        this.asian = asian;
+    }
+
+    @Column(name = "PACIFIC_ISLANDER")
+    public int getPacificIslander() {
+        return pacificIslander;
+    }
+
+    public void setPacificIslander(int pacificIslander) {
+        this.pacificIslander = pacificIslander;
+    }
+
+    @Column(name = "OTHER")
+    public int getOther() {
+        return other;
+    }
+
+    public void setOther(int other) {
+        this.other = other;
+    }
 }
