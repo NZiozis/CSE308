@@ -30,8 +30,10 @@ public class Precinct {
     private Party              partyBloc;
     private String             geography;
 
-    private Set<Precinct> neighbors;
+//    private Precinct      precinct;
+    private Set<Precinct> neighbor;
 
+    public Precinct(){}
 
     public Precinct(String county, String geoId) {
         this.county = county;
@@ -43,7 +45,7 @@ public class Precinct {
         this.geoId = geoId;
         this.demographics = demographics;
         this.votingSet = new HashSet<>();
-        this.neighbors = new HashSet<>();
+        this.neighbor = new HashSet<>();
         this.geography = geography;
     }
     //TODO Figure out how to map to states and districts.
@@ -62,7 +64,7 @@ public class Precinct {
     }
 
     @Id
-    @Column(name = "GEO_ID")
+    @Column(name = "ID", length = 30)
     public String getGeoId() {
         return geoId;
     }
@@ -72,6 +74,7 @@ public class Precinct {
     }
 
     @OneToOne(cascade = CascadeType.ALL)
+    @JoinTable(name = "PRECINCT_TO_DEMOGRAPHIC")
     @JoinColumn(name = "CONTEXT_ID")
     public DemographicContext getDemographics() {
         return demographics;
@@ -110,23 +113,47 @@ public class Precinct {
         this.partyBloc = partyBloc;
     }
 
-    //TODO Determine how the annotations should work here
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinTable(name = "PRECINCT_NEIGHBORS")
-    @JoinColumn(name = "PRECINCT_ID")
-    public Set<Precinct> getNeighbors() {
-        return neighbors;
+    @Column(name = "GEOGRAPHY")
+    public String getGeography() {
+        return geography;
     }
 
-    public void setNeighbors(Set<Precinct> neighbors) {
-        this.neighbors = neighbors;
+    public void setGeography(String geography) {
+        this.geography = geography;
     }
+
+    //TODO Determine how the annotations should work here
+    @OneToMany(targetEntity = Precinct.class)
+    @JoinTable(name = "PRECINCT_NEIGHBORS")
+    @JoinColumns({
+            @JoinColumn(name = "PRECINCT_ID", referencedColumnName = "ID"),
+            @JoinColumn(name = "NEIGHBOR_ID", referencedColumnName = "ID")
+                 })
+    public Set<Precinct> getNeighbor() {
+        return neighbor;
+    }
+
+    public void setNeighbor(Set<Precinct> neighbor) {
+        this.neighbor = neighbor;
+    }
+
+//    @ManyToOne
+//    @JoinColumn(name = "NEIGHBOR_ID", referencedColumnName = "GEO_ID")
+//    @JoinTable(name = "PRECINCT_NEIGHBOR")
+//    public Precinct getPrecinct() {
+//        return precinct;
+//    }
+//
+//    public void setPrecinct(Precinct precinct) {
+//        this.precinct = precinct;
+//    }
+
 
     public boolean addNeighbor(Precinct precinct) {
-        return this.neighbors.add(precinct);
+        return this.neighbor.add(precinct);
     }
 
-    public boolean addVotingData(Voting voting){
+    public boolean addVotingData(Voting voting) {
         return this.votingSet.add(voting);
     }
 

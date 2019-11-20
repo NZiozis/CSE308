@@ -10,9 +10,6 @@ import util.AddData;
 import util.Operation;
 import util.Result;
 
-import java.util.HashSet;
-import java.util.Set;
-
 interface StateRepository extends CrudRepository<State,Long> {
 
 }
@@ -57,8 +54,12 @@ public class AlgorithmManager {
         Long id = new Long(0);
         State state = repository.findById(id).get();
         District[] temp = new District[10];
+        Precinct[] tempP = new Precinct[10];
+        Precinct[] n = new Precinct[10];
         District d = state.getInitialDistricts().toArray(temp)[0];
-        return temp.toString();
+        Precinct p = d.getPrecincts().toArray(tempP)[0];
+        Precinct neighbor = p.getNeighbor().toArray(n)[0];
+        return "Originial:" + p.getGeoId() + "Neighbor:" + neighbor.getGeoId();
 
     }
 

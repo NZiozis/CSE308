@@ -22,6 +22,8 @@ public class DemographicContext {
     private int pacificIslander;
     private int other;
 
+    public DemographicContext(){}
+
     public DemographicContext(int total, int white, int africanAmerican, int americanIndian, int asian,
                               int pacificIslander, int other) {
         this.total = total;
