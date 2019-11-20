@@ -1,13 +1,10 @@
 package mm_districting;
 
+import util.DemographicContextConverter;
 import util.Party;
 import util.Race;
-import util.Voting;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Set;
 
 /**
@@ -28,7 +25,7 @@ public class Precinct {
     private String geoId;
 
     private DemographicContext demographics;
-    private Voting[]           votingList;
+    private Set<Voting>        votingSet;
     private Race               demographicBloc;
     private Party              partyBloc;
 
@@ -65,6 +62,7 @@ public class Precinct {
         this.geoId = geoId;
     }
 
+    @Convert(converter = DemographicContextConverter.class)
     public DemographicContext getDemographics() {
         return demographics;
     }
@@ -73,12 +71,14 @@ public class Precinct {
         this.demographics = demographics;
     }
 
-    public Voting[] getVotingList() {
-        return votingList;
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "DATA_ID")
+    public Set<Voting> getVotingSet() {
+        return votingSet;
     }
 
-    public void setVotingList(Voting[] votingList) {
-        this.votingList = votingList;
+    public void setVotingSet(Set<Voting> votingSet) {
+        this.votingSet = votingSet;
     }
 
     public Race getDemographicBloc() {

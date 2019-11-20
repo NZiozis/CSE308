@@ -1,7 +1,6 @@
 package mm_districting;
 
 import util.Operation;
-import util.Voting;
 
 import javax.persistence.*;
 import java.util.Map;
@@ -40,7 +39,7 @@ public class State {
 
     @Id
     @Column(name = "STATE_ID")
-    public int getStateId(){
+    public int getStateId() {
         return this.stateId;
     }
 
