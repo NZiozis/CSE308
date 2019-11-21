@@ -9,7 +9,6 @@ import {HttpClient} from '@angular/common/http';
 })
 export class HomeMapComponent implements OnInit {
     // Sets the base location to the United States
-    Florida = {}
     options = {
         layers: [
             tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {maxZoom: 18, attribution: '...'}),
@@ -19,7 +18,6 @@ export class HomeMapComponent implements OnInit {
     };
 
     constructor(private http: HttpClient) {
-        this.Florida = {}
     }
 
     ngOnInit() {

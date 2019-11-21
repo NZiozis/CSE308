@@ -30,10 +30,10 @@ public class Precinct {
     private Party              partyBloc;
     private String             geography;
 
-//    private Precinct      precinct;
+    //    private Precinct      precinct;
     private Set<Precinct> neighbor;
 
-    public Precinct(){}
+    public Precinct() {}
 
     public Precinct(String county, String geoId) {
         this.county = county;
@@ -112,7 +112,7 @@ public class Precinct {
         this.partyBloc = partyBloc;
     }
 
-    @Column(name = "GEOGRAPHY", length = 16777215, columnDefinition = "mediumtext", nullable = false)
+    @Column(name = "GEOGRAPHY", columnDefinition = "mediumtext", nullable = false)
     public String getGeography() {
         return geography;
     }
@@ -123,10 +123,8 @@ public class Precinct {
 
     @OneToMany(targetEntity = Precinct.class)
     @JoinTable(name = "PRECINCT_NEIGHBORS")
-    @JoinColumns({
-            @JoinColumn(name = "PRECINCT_ID", referencedColumnName = "ID"),
-            @JoinColumn(name = "NEIGHBOR_ID", referencedColumnName = "ID")
-                 })
+    @JoinColumns( { @JoinColumn(name = "PRECINCT_ID", referencedColumnName = "ID"),
+                    @JoinColumn(name = "NEIGHBOR_ID", referencedColumnName = "ID") })
     public Set<Precinct> getNeighbor() {
         return neighbor;
     }

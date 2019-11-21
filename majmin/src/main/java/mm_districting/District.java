@@ -1,7 +1,5 @@
 package mm_districting;
 
-import util.DemographicContextConverter;
-
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
@@ -86,7 +84,7 @@ public class District {
         this.demographics = demographics;
     }
 
-    @Column(name = "GEOGRAPHY", length = 16777215, columnDefinition = "mediumtext", nullable = false)
+    @Column(name = "GEOGRAPHY", columnDefinition = "longtext", nullable = false)
     public String getGeography() {
         return geography;
     }
