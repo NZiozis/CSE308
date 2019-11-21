@@ -86,7 +86,7 @@ public class District {
         this.demographics = demographics;
     }
 
-    @Column(name = "GEOGRAPHY", nullable = false)
+    @Column(name = "GEOGRAPHY", length = 16777215, columnDefinition = "mediumtext", nullable = false)
     public String getGeography() {
         return geography;
     }
@@ -95,7 +95,7 @@ public class District {
         this.geography = geography;
     }
 
-    @Column(name = "DISTRICT_NUMBER")
+    @Column(name = "DISTRICT_NUMBER", nullable = false)
     public int getDistrictNumber() {
         return districtNumber;
     }

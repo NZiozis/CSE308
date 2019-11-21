@@ -21,7 +21,7 @@ public class State {
 
     //---state data---//
     private String            name;
-    private long               stateId;
+    private long              stateId;
     private String            legalGuidelines;
     private Voting            votingData;
     //---Encompassed geographical objects---//
@@ -33,7 +33,7 @@ public class State {
     private Set<Cluster>      doNotPairClusters;
     private String            geography;
 
-    public State(){}
+    public State() {}
 
     public State(String name) {
         this.name = name;
@@ -87,7 +87,7 @@ public class State {
 
     }
 
-    @Column(name = "GEOGRAPHY")
+    @Column(name = "GEOGRAPHY", length = 16777215, columnDefinition = "mediumtext", nullable = false)
     public String getGeography() {
         return geography;
     }
@@ -101,8 +101,6 @@ public class State {
         return doNotPairClusters.contains(cluster);
     }
 
-    //TODO add pk for state
-
     @Column(name = "STATE_NAME", nullable = false)
     public String getName() {
         return name;
@@ -112,7 +110,6 @@ public class State {
         this.name = name;
     }
 
-    //TODO column add as string
     public String getLegalGuidelines() {
         return legalGuidelines;
     }

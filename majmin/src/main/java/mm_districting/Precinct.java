@@ -48,7 +48,6 @@ public class Precinct {
         this.neighbor = new HashSet<>();
         this.geography = geography;
     }
-    //TODO Figure out how to map to states and districts.
 
     public double getDemographicPercent(Race race) {
         return 0;
@@ -113,7 +112,7 @@ public class Precinct {
         this.partyBloc = partyBloc;
     }
 
-    @Column(name = "GEOGRAPHY")
+    @Column(name = "GEOGRAPHY", length = 16777215, columnDefinition = "mediumtext", nullable = false)
     public String getGeography() {
         return geography;
     }
@@ -122,7 +121,6 @@ public class Precinct {
         this.geography = geography;
     }
 
-    //TODO Determine how the annotations should work here
     @OneToMany(targetEntity = Precinct.class)
     @JoinTable(name = "PRECINCT_NEIGHBORS")
     @JoinColumns({
@@ -136,18 +134,6 @@ public class Precinct {
     public void setNeighbor(Set<Precinct> neighbor) {
         this.neighbor = neighbor;
     }
-
-//    @ManyToOne
-//    @JoinColumn(name = "NEIGHBOR_ID", referencedColumnName = "GEO_ID")
-//    @JoinTable(name = "PRECINCT_NEIGHBOR")
-//    public Precinct getPrecinct() {
-//        return precinct;
-//    }
-//
-//    public void setPrecinct(Precinct precinct) {
-//        this.precinct = precinct;
-//    }
-
 
     public boolean addNeighbor(Precinct precinct) {
         return this.neighbor.add(precinct);

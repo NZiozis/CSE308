@@ -6,7 +6,6 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.web.bind.annotation.*;
-import util.AddData;
 import util.Operation;
 import util.Result;
 
@@ -28,8 +27,6 @@ public class AlgorithmManager {
     private Algorithm currentAlgorithm;
     @Autowired
     private StateRepository repository;
-    private AddData adder;
-
 
     public static void main(String[] args) {
         SpringApplication.run(AlgorithmManager.class, args);
@@ -43,25 +40,9 @@ public class AlgorithmManager {
 
     @RequestMapping(value = "/test", method = RequestMethod.GET)
     public String test(){
-        this.adder = new AddData();
-        State state = adder.loadData();
-        repository.save(state);
         return "Data loaded";
     }
 
-    @RequestMapping(value = "/state", method = RequestMethod.GET)
-    public String getState(){
-        Long id = new Long(0);
-        State state = repository.findById(id).get();
-        District[] temp = new District[10];
-        Precinct[] tempP = new Precinct[10];
-        Precinct[] n = new Precinct[10];
-        District d = state.getInitialDistricts().toArray(temp)[0];
-        Precinct p = d.getPrecincts().toArray(tempP)[0];
-        Precinct neighbor = p.getNeighbor().toArray(n)[0];
-        return "Originial:" + p.getGeoId() + "Neighbor:" + neighbor.getGeoId();
-
-    }
 
     public Result runOperation(String inputData, Operation operation) {
         return null;
