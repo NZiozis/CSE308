@@ -29,6 +29,7 @@ public class Algorithm implements AlgorithmStep {
 	@Override
 	public boolean run() {
 		if (currentStep != null && !isPaused && currentStep.run()) {
+			currentStep.onCompletition();
 			if (currentStepIndex - 1 == steps.size()) {
 				return true;
 			}

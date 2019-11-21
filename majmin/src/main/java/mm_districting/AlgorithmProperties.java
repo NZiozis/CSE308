@@ -54,6 +54,8 @@ public class AlgorithmProperties {
         this.state = state;
     }
 
+    public int[] getBlocThresholds() { return blocThresholds; }
+
     public Set<DemographicContext> getSelectedDemographics() {
         return selectedDemographics;
     }
