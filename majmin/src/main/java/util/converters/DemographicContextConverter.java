@@ -1,5 +1,3 @@
-package util;
-
 import com.fasterxml.jackson.core.JsonProcessingException;
 import mm_districting.DemographicContext;
 import org.codehaus.jackson.map.ObjectMapper;

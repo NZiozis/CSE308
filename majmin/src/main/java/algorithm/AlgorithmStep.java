@@ -24,4 +24,11 @@ public interface AlgorithmStep {
 	 * Called when the execution of this AlgorithmStep is paused. 
 	 */
 	public void pause();
+
+	/**
+	 * Called once when this algorithm step finishes
+	 */
+	public void onCompletition() {
+
+	}
 }

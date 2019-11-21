@@ -35,6 +35,21 @@ public class DemographicContext {
         this.other = other;
     }
 
+    public int getByRace(Race race) {
+        switch (race) {
+            case WHITE:
+                return getWhite();
+            case BLACK:
+                return getAfricanAmerican();
+            case ASIAN:
+                return getAsian();
+            case PACIFIC_ISLANDER:
+                return getPacificIslander();
+            case NATIVE_AMERICAN:
+                return getAmericanIndian();
+        }
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "CONTEXT_ID")
