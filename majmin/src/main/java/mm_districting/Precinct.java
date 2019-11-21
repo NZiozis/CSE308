@@ -124,7 +124,7 @@ public class Precinct {
     @OneToMany(targetEntity = Precinct.class)
     @JoinTable(name = "PRECINCT_NEIGHBORS")
     @JoinColumns( { @JoinColumn(name = "PRECINCT_ID", referencedColumnName = "ID"),
-                    @JoinColumn(name = "NEIGHBOR_ID", referencedColumnName = "ID") })
+                    @JoinColumn(name = "NEIGHBOR_ID", referencedColumnName = "ID", unique = false) })
     public Set<Precinct> getNeighbor() {
         return neighbor;
     }

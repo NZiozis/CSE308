@@ -1,6 +1,8 @@
 package mm_districting;
 
 import algorithm.Algorithm;
+import algorithm_steps.DetermineDemBlocs;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -8,9 +10,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.web.bind.annotation.*;
 import util.Operation;
+import util.Race;
 import util.Result;
 
-import java.util.Optional;
+import java.util.*;
 
 interface StateRepository extends CrudRepository<State,Long> {
 
@@ -83,8 +86,38 @@ public class AlgorithmManager {
     }
 
     @RequestMapping(value = "/phase0", method = RequestMethod.POST)
-    private Algorithm initPhase0(@RequestBody String postPayload) {
-        return new Algorithm();
+    private String initPhase0(@RequestBody String postPayload) {
+        Map<String,Object> map = null;
+        try {
+            map = mapper.readValue(postPayload, Map.class);
+        }
+        catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
+        ArrayList<String> selectedDemographicsArr = (ArrayList<String>) map.get("selectedRaces");
+        Set<Race> selectedDemographics = new HashSet<>();
+        for (String demographic : selectedDemographicsArr) {
+            selectedDemographics.add(Race.valueOf(demographic));
+        }
+
+        AlgorithmProperties.getProperties().setPopulationMajorityThreshold((Integer) map.get("majorityPercentage"));
+        AlgorithmProperties.getProperties().setVotingMajorityThreshold((Integer) map.get("votingPercentage"));
+        AlgorithmProperties.getProperties().setSelectedDemographics(selectedDemographics);
+
+        currentAlgorithm = new Algorithm(new DetermineDemBlocs());
+        currentAlgorithm.run();
+
+        ArrayList<Result> results = currentAlgorithm.getResultsToSend();
+
+        String guiResult = "";
+        try {
+            guiResult = mapper.writeValueAsString(results);
+        }
+        catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
+
+        return guiResult;
     }
 
     private Algorithm initPhase1() {

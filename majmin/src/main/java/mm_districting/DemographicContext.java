@@ -1,5 +1,7 @@
 package mm_districting;
 
+import util.Race;
+
 import javax.persistence.*;
 
 /**
@@ -48,6 +50,7 @@ public class DemographicContext {
             case NATIVE_AMERICAN:
                 return getAmericanIndian();
         }
+        return -1;
     }
 
     @Id

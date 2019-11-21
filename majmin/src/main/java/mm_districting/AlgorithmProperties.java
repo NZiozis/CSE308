@@ -1,5 +1,7 @@
 package mm_districting;
 
+import util.Race;
+
 import java.util.HashSet;
 import java.util.Set;
 
@@ -18,14 +20,15 @@ public class AlgorithmProperties {
 
     private State state;
 
-    private Set<DemographicContext> selectedDemographics;
-    private int                     numDistricts;
-    private int                     numMajorityMinorityDistricts;
+    private Set<Race> selectedDemographics;
+    private int       numDistricts;
+    private int       numMajorityMinorityDistricts;
 
     private boolean showEachStep;
 
     //TODO: clean up and confiq arrays as needed
-    private int[]   blocThresholds;
+    private int     populationMajorityThreshold;
+    private int     votingMajorityThreshold;
     private int     minorityVotingThreshold;
     private int     majorityVotingThreshold;
     private int[][] demographicThresholds;
@@ -54,13 +57,25 @@ public class AlgorithmProperties {
         this.state = state;
     }
 
-    public int[] getBlocThresholds() { return blocThresholds; }
+    public int getVotingMajorityThreshold() {
+        return votingMajorityThreshold;
+    }
 
-    public Set<DemographicContext> getSelectedDemographics() {
+    public void setVotingMajorityThreshold(int votingMajorityThreshold) {
+        this.votingMajorityThreshold = votingMajorityThreshold;
+    }
+
+    public int getBlocThreshold() { return populationMajorityThreshold; }
+
+    public void setPopulationMajorityThreshold(int populationMajorityThreshold) {
+        this.populationMajorityThreshold = populationMajorityThreshold;
+    }
+
+    public Set<Race> getSelectedDemographics() {
         return selectedDemographics;
     }
 
-    public void setSelectedDemographics(Set<DemographicContext> selectedDemographics) {
+    public void setSelectedDemographics(Set<Race> selectedDemographics) {
         this.selectedDemographics = selectedDemographics;
     }
 

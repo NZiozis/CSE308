@@ -1,3 +1,18 @@
+package algorithm_steps;
+
+import algorithm.AlgorithmStep;
+import algorithm.AlgorithmStepStatus;
+import mm_districting.AlgorithmProperties;
+import mm_districting.DemographicContext;
+import mm_districting.Precinct;
+import mm_districting.State;
+import util.Phase0DemographicResult;
+import util.Race;
+import util.Result;
+
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * Phase0, step 1: Determine Demographics Blocs (Use case #23)
  *
@@ -24,11 +39,10 @@ public class DetermineDemBlocs implements AlgorithmStep {
         for (Precinct precinct : precincts) {
             DemographicContext demographicData = precinct.getDemographics();
             for (Race dem : selectedDems) {
-                if (algProps.getBlocThresholds()[dem.ordinal()] <= demographicData.getByRace(dem) / demographicData.getTotal()) {
-                    precinct.setDemographicBloc(dem);
+                int demographicPercent = (int)((demographicData.getByRace(dem) * 1.0 / demographicData.getTotal()) * 100);
 
-                    //it's only possible to have one demographic bloc per precinct since the threshold must be over 51%
-                    return true;
+                if (algProps.getBlocThreshold() <= demographicPercent) {
+                    precinct.setDemographicBloc(dem);
                 }
             }
         }
@@ -52,8 +66,26 @@ public class DetermineDemBlocs implements AlgorithmStep {
     @Override
     public void pause() {}
 
+    /**
+     * Constructs a {@code Phase0DemographicResult} object containing the set of precincts which contain a demographic bloc.
+     */
     @Override
-    public void onCompletition() {
+    public Result onCompletion() {
+
+        AlgorithmProperties algProps = AlgorithmProperties.getProperties();
+        Set<Precinct> precinctsWithDemBloc = new HashSet<>();
+
+        for (Precinct precinct : algProps.getState().getPrecincts()) {
+            if (precinct.getDemographicBloc() != null) {
+                Precinct clone = new Precinct();
+                clone.setCounty(precinct.getCounty());
+                clone.setGeoId(precinct.getGeoId());
+                clone.setDemographicBloc(precinct.getDemographicBloc());
+                precinctsWithDemBloc.add(clone);
+            }
+        }
+
+        return new Phase0DemographicResult(precinctsWithDemBloc);
 
     }
 

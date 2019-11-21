@@ -4,6 +4,7 @@ import util.Operation;
 
 import javax.persistence.*;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 
@@ -95,10 +96,25 @@ public class State {
     public void setGeography(String geography) {
         this.geography = geography;
     }
-//TODO
 
     public boolean isClusterAlreadyPaired(Cluster cluster) {
         return doNotPairClusters.contains(cluster);
+    }
+
+    @Transient
+    public Set<Precinct> getPrecincts() {
+        HashSet<Precinct> output = new HashSet<>();
+
+//        initialDistricts.iterator(District district -> output.addAll(district.getPrecincts() ));
+//        Iterator<District> iterator = initialDistricts.iterator();
+//        while (iterator.hasNext()) {
+//            District d = iterator.next();
+//            output.addAll();
+//        }
+        for (District district : initialDistricts) {
+            output.addAll(district.getPrecincts());
+        }
+        return output;
     }
 
     @Column(name = "STATE_NAME", nullable = false)

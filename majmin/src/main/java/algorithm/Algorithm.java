@@ -1,6 +1,10 @@
 package algorithm;
+import util.Result;
+
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Modularly implements an Algorithm composed of {@code AlgorithmStep}s, which allows for pausing and status updates.
@@ -15,10 +19,17 @@ public class Algorithm implements AlgorithmStep {
 	private AlgorithmStep currentStep;
 	
 	private boolean isPaused = true;
+
+	private ArrayList<Result> resultsToSend;
 	
 	public Algorithm(AlgorithmStep... steps) {
 		this.steps.addAll(Arrays.asList(steps));
 		this.currentStep = this.steps.get(0);
+		resultsToSend = new ArrayList<>();
+	}
+
+	public ArrayList<Result> getResultsToSend() {
+		return resultsToSend;
 	}
 
 	/**
@@ -28,8 +39,8 @@ public class Algorithm implements AlgorithmStep {
 	 */
 	@Override
 	public boolean run() {
-		if (currentStep != null && !isPaused && currentStep.run()) {
-			currentStep.onCompletition();
+		if (currentStep != null && currentStep.run()) {
+			resultsToSend.add(currentStep.onCompletion());
 			if (currentStepIndex - 1 == steps.size()) {
 				return true;
 			}
@@ -52,7 +63,12 @@ public class Algorithm implements AlgorithmStep {
 		isPaused = true;
 		currentStep.pause();
 	}
-	
+
+	@Override
+	public Result onCompletion() {
+		return null;
+	}
+
 	public void resume() {
 		isPaused = false;
 	}

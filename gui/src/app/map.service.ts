@@ -15,8 +15,10 @@ export class MapService {
     private map;
     private layerToNameMapper = new Map<string, string>();
     private selectedState: string;
+    public stateIsSelected: boolean;
 
     constructor(private http: HttpClient) {
+        this.stateIsSelected = false;
     }
 
     getOptions() {
@@ -32,6 +34,7 @@ export class MapService {
 
     setSelectedState(selectedState: string): void {
         this.selectedState = selectedState;
+        this.stateIsSelected = true;
         this.http.post<Config>(this.REST_API_SERVER_URL + '/setState', selectedState).subscribe();
     }
 
