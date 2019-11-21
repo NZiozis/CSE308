@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {FormControl} from '@angular/forms';
 
 @Component({
     selector: 'app-left-panel',
@@ -9,10 +8,11 @@ import {FormControl} from '@angular/forms';
 })
 export class LeftPanelComponent implements OnInit {
 
-    private REST_API_SERVER = 'http://localhost:8080';
+    private REST_API_SERVER_URL = 'http://localhost:8080';
     private majorityPercentage;
+    private votingPercentage;
     private selectedRaces;
-    private possibleRaces = ["Asian", "Hispanic", "Afriacn American","Pacific Islander","Native American"];
+    private possibleRaces = ['Asian', 'Hispanic', 'Afriacn American', 'Pacific Islander', 'Native American'];
 
     constructor(private http: HttpClient) {
         this.majorityPercentage = 50;
@@ -20,18 +20,20 @@ export class LeftPanelComponent implements OnInit {
     }
 
     phase0() {
-        const phase0JSON = this.createPhase0JSON(this.majorityPercentage, this.selectedRaces);
+        const phase0JSON = this.createPhase0JSON();
         console.log(phase0JSON);
-        this.http.post<Config>(this.REST_API_SERVER + '/phase0', JSON.stringify(phase0JSON)).subscribe();
+        this.http.post<Config>(this.REST_API_SERVER_URL + '/phase0', JSON.stringify(phase0JSON)).subscribe();
         // this.http.get(this.REST_API_SERVER + '/temp').subscribe((data: Config) => {
         //     console.log(data.test);
         // });
     }
 
-    createPhase0JSON(majPercentage : String, races : Array<String>){
-        let output = {};
-        output["majorityPercentage"] = majPercentage;
-        output["races"] = races;
+    createPhase0JSON() {
+        const output = new Config();
+        output.majorityPercentage = this.majorityPercentage;
+        output.votingPercentage = this.votingPercentage;
+        output.selectedRaces = this.selectedRaces;
+
         return output;
     }
 
@@ -40,6 +42,8 @@ export class LeftPanelComponent implements OnInit {
 
 }
 
-export interface Config {
-    test: string;
+export class Config {
+    votingPercentage: string;
+    majorityPercentage: string;
+    selectedRaces: Array<string>;
 }

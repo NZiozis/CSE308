@@ -5,9 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1b917782-4cb8-457f-9f9b-dfb5f1451613" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/mm_districting/District.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mm_districting/District.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mm_districting/Precinct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mm_districting/Precinct.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gui/src/app/classes/State" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gui/src/app/map.service.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gui/src/app/map.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/src/app/home-map/home-map.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/src/app/home-map/home-map.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/src/app/home-map/home-map.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/src/app/home-map/home-map.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/src/app/left-panel/left-panel.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/src/app/left-panel/left-panel.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/src/app/left-panel/left-panel.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/src/app/left-panel/left-panel.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/src/assets/utah.json" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/src/assets/utah.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/src/assets/westVirginia.json" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/src/assets/westVirginia.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mm_districting/AlgorithmManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mm_districting/AlgorithmManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mm_districting/AlgorithmManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mm_districting/AlgorithmManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mm_districting/District.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mm_districting/District.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mm_districting/Precinct.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mm_districting/Precinct.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -127,7 +139,8 @@
       <updated>1574048020028</updated>
       <workItem from="1574048023204" duration="7489000" />
       <workItem from="1574117711235" duration="9481000" />
-      <workItem from="1574192646057" duration="37303000" />
+      <workItem from="1574192646057" duration="38721000" />
+      <workItem from="1574306316582" duration="14162000" />
     </task>
     <servers />
   </component>
@@ -146,5 +159,16 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/mm_districting/AlgorithmManager.java</url>
+          <line>86</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

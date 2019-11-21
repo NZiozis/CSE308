@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {geoJSON, latLng, Map, tileLayer} from 'leaflet';
-import {HttpClient} from '@angular/common/http';
+import {geoJSON, LatLng, Map, TileLayer} from 'leaflet';
+import {MapService} from '../map.service';
 
 @Component({
     selector: 'app-home-map',
@@ -9,49 +9,47 @@ import {HttpClient} from '@angular/common/http';
 })
 export class HomeMapComponent implements OnInit {
     // Sets the base location to the United States
-    options = {
-        layers: [
-            tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {maxZoom: 18, attribution: '...'}),
-        ],
-        zoom: 4,
-        center: latLng(37.6, -95.665)
-    };
+    private options: { center: LatLng; layers: TileLayer[]; zoom: number };
 
-    constructor(private http: HttpClient) {
+    constructor(private mapService: MapService) {
     }
 
     ngOnInit() {
+        this.options = this.mapService.getOptions();
     }
 
+    // tslint:disable-next-line:no-shadowed-variable
     onMapReady(map: Map) {
         // On click zooms in on
+        const self = this;
+
         function onEachFeature(feature, layer) {
-            layer.on('click', e => {
-                map.fitBounds(e.layer.getBounds());
+            layer.on('click', event => {
+                map.fitBounds(event.layer.getBounds());
+                const stateName = self.mapService.getNameOfLayer(self.mapService.getLayerId(event.layer));
+                self.mapService.setSelectedState(stateName);
             });
         }
 
         // Loads in Florida
-        this.http.get('assets/florida.json').subscribe((json: any) => {
-            geoJSON(
-                json,
-                {onEachFeature}
-            ).addTo(map);
+        this.mapService.getFlorida().subscribe((json: any) => {
+            const floridaGJson = geoJSON(json, {onEachFeature});
+            floridaGJson.addTo(map);
+            this.mapService.addNameAndLayer(this.mapService.getGeoJsonId(floridaGJson), 'FLORIDA');
         });
         // Loads in Utah
-        this.http.get('assets/utah.json').subscribe((json: any) => {
-            geoJSON(
-                json,
-                {onEachFeature}
-            ).addTo(map);
+        this.mapService.getUtah().subscribe((json: any) => {
+            const utahGJson = geoJSON(json, {onEachFeature});
+            utahGJson.addTo(map);
+            this.mapService.addNameAndLayer(this.mapService.getGeoJsonId(utahGJson), 'UTAH');
         });
         // Loads in West Virginia
-        this.http.get('assets/westVirginia.json').subscribe((json: any) => {
-            geoJSON(
-                json,
-                {onEachFeature}
-            ).addTo(map);
+        this.mapService.getWestVirginiaGeoJson().subscribe((json: any) => {
+            const westVirginiaGJson = geoJSON(json, {onEachFeature});
+            westVirginiaGJson.addTo(map);
+            this.mapService.addNameAndLayer(this.mapService.getGeoJsonId(westVirginiaGJson), 'WEST_VIRGINIA');
         });
+        this.mapService.setMap(map);
     }
 
 }

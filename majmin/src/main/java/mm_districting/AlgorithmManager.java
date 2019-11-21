@@ -1,6 +1,7 @@
 package mm_districting;
 
 import algorithm.Algorithm;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -8,6 +9,8 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.web.bind.annotation.*;
 import util.Operation;
 import util.Result;
+
+import java.util.Optional;
 
 interface StateRepository extends CrudRepository<State,Long> {
 
@@ -24,25 +27,18 @@ interface StateRepository extends CrudRepository<State,Long> {
 @CrossOrigin
 public class AlgorithmManager {
 
-    private Algorithm currentAlgorithm;
-    @Autowired
-    private StateRepository repository;
+    ObjectMapper mapper = new ObjectMapper();
+    private            Algorithm       currentAlgorithm;
+    @Autowired private StateRepository repository;
 
     public static void main(String[] args) {
         SpringApplication.run(AlgorithmManager.class, args);
     }
 
-
-    @RequestMapping(value = "/phase0", method = RequestMethod.POST)
-    public void setDemographicMajority(@RequestBody String postPayload) {
-        System.out.print(postPayload);
-    }
-
     @RequestMapping(value = "/test", method = RequestMethod.GET)
-    public String test(){
+    public String test() {
         return "Data loaded";
     }
-
 
     public Result runOperation(String inputData, Operation operation) {
         return null;
@@ -57,18 +53,37 @@ public class AlgorithmManager {
      *
      * @return The State object set.
      */
-    public State updateStateInProperties(State.StateID stateID) {
-        State state = null; //TODO: get state
+    @RequestMapping(value = "/setState", method = RequestMethod.POST)
+    public void updateStateInProperties(@RequestBody String stateName) {
+        State.StateID stateId = State.StateID.valueOf(stateName);
+        Optional<State> stateOptional = repository.findById((long) stateId.ordinal());
+        State state = null;
+        if (stateOptional.isPresent()) {
+            state = stateOptional.get();
+        }
 
         AlgorithmProperties.getProperties().setState(state);
-        return state;
     }
 
     public void updateGUI() {
 
     }
 
-    private Algorithm initPhase0() {
+    @RequestMapping(value = "/westVirginia", method = RequestMethod.GET)
+    public String getWestVirginiaGeography() {
+        Long westVirginiaId = (long) State.StateID.WEST_VIRGINIA.ordinal();
+        Optional<State> westVirginiaOptional = repository.findById(westVirginiaId);
+        State westVirginia = null;
+        if (westVirginiaOptional.isPresent()) {
+            westVirginia = westVirginiaOptional.get();
+        }
+
+        return westVirginia.getGeography();
+
+    }
+
+    @RequestMapping(value = "/phase0", method = RequestMethod.POST)
+    private Algorithm initPhase0(@RequestBody String postPayload) {
         return new Algorithm();
     }
 

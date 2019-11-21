@@ -4,10 +4,14 @@
             Phase 0
         </ng-template>
         <mat-card>
-            Required Percentage for Majority:
+            Required Percentage for Population Majority:
             <br>
-            <mat-slider min="50" max="100" step="1" [(ngModel)]="majorityPercentage"></mat-slider>
-            <button (click)="phase0()">Phase 0</button>
+            <mat-slider min="50" max="100" step="1" [(ngModel)]="majorityPercentage"></mat-slider> {{majorityPercentage}}
+        </mat-card>
+        <mat-card>
+            Required Percentage for Voting Majority:
+            <br>
+            <mat-slider min="50" max="100" step="1" [(ngModel)]="votingPercentage"></mat-slider> {{votingPercentage}}
         </mat-card>
         <mat-card>
             Specify Minorities:
@@ -18,15 +22,20 @@
                 </mat-select>
             </mat-form-field>
         </mat-card>
+        <mat-card>
+            <button (click)="phase0()">Phase 0</button>
+        </mat-card>
     </mat-tab>
     <mat-tab>
         <ng-template mat-tab-label>
-            Second
+            Phase 1
         </ng-template>
+        Minority
+        Thresholds
     </mat-tab>
     <mat-tab>
         <ng-template mat-tab-label>
-            Third
+            Phase 2
         </ng-template>
         Content 3
     </mat-tab>
