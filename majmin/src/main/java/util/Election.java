@@ -9,3 +9,4 @@ package util;
 public enum Election {
 	PRESIDENTIAL_2016, CONGRESSIONAL_2016, CONGRESSIONAL_2018
 }
+

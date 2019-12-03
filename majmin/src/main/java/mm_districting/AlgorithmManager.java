@@ -2,6 +2,7 @@ package mm_districting;
 
 import algorithm.Algorithm;
 import algorithm_steps.DetermineDemBlocs;
+import algorithm_steps.DetermineVotingBlocs;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,9 +10,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.web.bind.annotation.*;
+import util.Election;
 import util.Operation;
 import util.Race;
-import util.Result;
+import results.Result;
 
 import java.util.*;
 
@@ -104,8 +106,12 @@ public class AlgorithmManager {
         AlgorithmProperties.getProperties().setVotingMajorityThreshold((Integer) map.get("votingPercentage"));
         AlgorithmProperties.getProperties().setSelectedDemographics(selectedDemographics);
 
-        currentAlgorithm = new Algorithm(new DetermineDemBlocs());
-        currentAlgorithm.run();
+        //TODO: actually implement
+        AlgorithmProperties.getProperties().setSelectedElection(Election.PRESIDENTIAL_2016);
+
+        currentAlgorithm = new Algorithm(new DetermineDemBlocs(), new DetermineVotingBlocs());
+
+        while (!(currentAlgorithm.run())) {}
 
         ArrayList<Result> results = currentAlgorithm.getResultsToSend();
 

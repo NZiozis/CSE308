@@ -6,9 +6,9 @@ import mm_districting.AlgorithmProperties;
 import mm_districting.DemographicContext;
 import mm_districting.Precinct;
 import mm_districting.State;
-import util.Phase0DemographicResult;
+import results.Phase0DemographicResult;
 import util.Race;
-import util.Result;
+import results.Result;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -20,12 +20,13 @@ import java.util.Set;
  * the demographics and thresholds selected by the user.
  *
  * @see mm_districting/AlgorithmProperties
+ * @see results/Phase0DemographicResult
  * @author Patrick Wamsley
  */
 public class DetermineDemBlocs implements AlgorithmStep {
 
     /**
-     * Iterates through the current state's precincts and indentifies which contain demographic blocs
+     * Iterates through the current state's precincts and identifies which contain demographic blocs
      * @return true when completed
      */
     @Override
@@ -43,6 +44,7 @@ public class DetermineDemBlocs implements AlgorithmStep {
 
                 if (algProps.getBlocThreshold() <= demographicPercent) {
                     precinct.setDemographicBloc(dem);
+                    algProps.getPrecinctsWithDemBlocs().add(precinct);
                 }
             }
         }

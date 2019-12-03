@@ -1,5 +1,6 @@
 package mm_districting;
 
+import util.Election;
 import util.Race;
 
 import java.util.HashSet;
@@ -21,6 +22,9 @@ public class AlgorithmProperties {
     private State state;
 
     private Set<Race> selectedDemographics;
+    private Set<Precinct> precinctsWithDemBlocs;
+
+    private Election selectedElection;
     private int       numDistricts;
     private int       numMajorityMinorityDistricts;
 
@@ -41,6 +45,7 @@ public class AlgorithmProperties {
         if (!initialized) {
             instance = new AlgorithmProperties();
             instance.selectedDemographics = new HashSet<>();
+            instance.precinctsWithDemBlocs = new HashSet<>();
             //TODO: init arrays needed if decided upon
 
             initialized = true;
@@ -55,6 +60,22 @@ public class AlgorithmProperties {
 
     public void setState(State state) {
         this.state = state;
+    }
+
+    public Election getSelectedElection() {
+        return selectedElection;
+    }
+
+    public void setSelectedElection(Election selectedElection) {
+        this.selectedElection = selectedElection;
+    }
+
+    public void setPrecinctsWithDemBlocs(Set<Precinct> precincts) {
+        this.precinctsWithDemBlocs = precincts;
+    }
+
+    public Set<Precinct> getPrecinctsWithDemBlocs() {
+        return precinctsWithDemBlocs;
     }
 
     public int getVotingMajorityThreshold() {

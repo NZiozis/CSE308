@@ -1,5 +1,7 @@
 package mm_districting;
 
+import util.Election;
+import util.NoSuchElectionException;
 import util.Party;
 import util.Race;
 
@@ -27,6 +29,10 @@ public class Precinct {
     private DemographicContext demographics;
     private Set<Voting>        votingSet;
     private Race               demographicBloc;
+
+    @Transient
+    private Party              votingBloc;
+
     private Party              partyBloc;
     private String             geography;
 
@@ -51,6 +57,24 @@ public class Precinct {
 
     public double getDemographicPercent(Race race) {
         return 0;
+    }
+
+    /**
+     * @return The set of {@code Voting} objects for the given election
+     */
+    public Set<Voting> getElectionResult(Election election) {
+        Set<Voting> results = new HashSet<>();
+        for (Voting voting : votingSet) {
+            if (voting.getElection() == election) {
+                results.add(voting);
+            }
+        }
+
+        if (results.isEmpty()) {
+            throw new NoSuchElectionException();
+        }
+
+        return results;
     }
 
     @Column(name = "COUNTY", nullable = false)
@@ -141,4 +165,12 @@ public class Precinct {
         return this.votingSet.add(voting);
     }
 
+    @Transient
+    public Party getVotingBloc() {
+        return votingBloc;
+    }
+
+    public void setVotingBloc(Party votingBloc) {
+        this.votingBloc = votingBloc;
+    }
 }

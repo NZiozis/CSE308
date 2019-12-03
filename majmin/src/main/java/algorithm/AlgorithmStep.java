@@ -1,6 +1,6 @@
 package algorithm;
 
-import util.Result;
+import results.Result;
 
 /**
  * Interface for building an {@code Algorithm} using AlgorithmSteps to increase modularity and to cleanly handle interupts (pauses).

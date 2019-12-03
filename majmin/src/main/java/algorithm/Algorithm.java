@@ -1,10 +1,8 @@
 package algorithm;
-import util.Result;
+import results.Result;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * Modularly implements an Algorithm composed of {@code AlgorithmStep}s, which allows for pausing and status updates.
@@ -35,7 +33,7 @@ public class Algorithm implements AlgorithmStep {
 	/**
 	 * Runs one iteration of the current algorithm step's run(). 
 	 * 
-	 * @return true on completetion of the aglorithm, false otherwise
+	 * @return true on completion of the algorithm, false otherwise
 	 */
 	@Override
 	public boolean run() {
@@ -44,7 +42,7 @@ public class Algorithm implements AlgorithmStep {
 			if (currentStepIndex - 1 == steps.size()) {
 				return true;
 			}
-			currentStep = steps.get(currentStepIndex++);
+			currentStep = steps.get(++currentStepIndex);
 		}
 		
 		return false;
