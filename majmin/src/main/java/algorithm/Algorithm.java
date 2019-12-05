@@ -39,7 +39,7 @@ public class Algorithm implements AlgorithmStep {
 	public boolean run() {
 		if (currentStep != null && currentStep.run()) {
 			resultsToSend.add(currentStep.onCompletion());
-			if (currentStepIndex - 1 == steps.size()) {
+			if (currentStepIndex + 1 == steps.size()) {
 				return true;
 			}
 			currentStep = steps.get(++currentStepIndex);
