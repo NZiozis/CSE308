@@ -107,7 +107,7 @@ public class AlgorithmManager {
         AlgorithmProperties.getProperties().setSelectedDemographics(selectedDemographics);
 
         //TODO: actually implement
-        AlgorithmProperties.getProperties().setSelectedElection(Election.PRESIDENTIAL_2016);
+        AlgorithmProperties.getProperties().setSelectedElection(Election.valueOf((String) map.get("selectedElection")));
 
         currentAlgorithm = new Algorithm(new DetermineDemBlocs(), new DetermineVotingBlocs());
 

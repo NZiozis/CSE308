@@ -3,6 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {ImageOverlay, LatLng, latLng, Layer, TileLayer, tileLayer} from 'leaflet';
 import {Observable} from 'rxjs';
 import {Backend} from './backend.model';
+import {Config} from './left-panel/left-panel.component';
 
 @Injectable({
     providedIn: 'root'
@@ -61,8 +62,7 @@ export class MapService {
         this.stateIsSelected = true;
         console.log(selectedState);
         this.map.fitBounds(this.nameToLayerMapper.get(selectedState).getBounds());
-        // TODO make sure the uncomment this when you start interacting with the server again
-        // this.http.post<Config>(this.REST_API_SERVER_URL + '/setState', selectedState).subscribe();
+        this.http.post<Config>(this.REST_API_SERVER_URL + '/setState', selectedState).subscribe();
     }
 
     setMap(map) {
