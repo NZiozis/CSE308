@@ -44,6 +44,7 @@ export class LeftPanelComponent implements OnInit {
         output.majorityPercentage = this.majorityPercentage;
         output.votingPercentage = this.votingPercentage;
         output.selectedRaces = this.selectedRaces;
+        output.selectedElection = this.selectedElection;
 
         return output;
     }
@@ -56,6 +57,7 @@ export class LeftPanelComponent implements OnInit {
 export class Config {
     votingPercentage: string;
     majorityPercentage: string;
+    selectedElection: string;
     selectedRaces: Array<string>;
 }
 
