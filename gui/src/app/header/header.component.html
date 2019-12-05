@@ -1,11 +1,10 @@
-<mat-toolbar color = "primary">
-    <span class="state">
-        <button mat-flat-button (click)="zoomState($event)">Florida</button>
-    </span>
-    <span class="state">
-        <button mat-flat-button (click)="zoomState($event)">West Virginia</button>
-    </span>
-    <span class="state">
-        <button mat-flat-button (click)="zoomState($event)">Utah</button>
-    </span>
+<mat-toolbar color="primary">
+    <h3 class="state">Selected State:</h3>
+    <mat-form-field>
+        <mat-select [(ngModel)]="mapService.selectedState">
+            <mat-option *ngFor="let state of this.mapService.states" [value]="state.backendName" (onSelectionChange)="onDropDownChange($event)">
+                {{state.name}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
 </mat-toolbar>

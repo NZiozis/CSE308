@@ -14,7 +14,7 @@ export class LeftPanelComponent implements OnInit {
     private majorityPercentage;
     private votingPercentage;
     private selectedRaces;
-    private possibleRaces = ['WHITE', 'BLACK', 'LATINO', 'ASIAN', 'PACIFIC_ISLANDER', 'NATIVE_AMERICAN'];
+    private selectedElection;
     private selectedRacePrecincts: Array<Precinct>;
     private precinctsObtained: boolean;
     displayedColumns: string[] = ['county', 'demographic'];

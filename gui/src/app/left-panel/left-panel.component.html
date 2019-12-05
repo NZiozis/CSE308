@@ -20,7 +20,16 @@
             <br>
             <mat-form-field>
                 <mat-select [(ngModel)]="selectedRaces" multiple>
-                    <mat-option *ngFor="let race of possibleRaces" [value]="race">{{race}}</mat-option>
+                    <mat-option *ngFor="let race of this.mapService.possibleRaces" [value]="race.backendName">{{race.name}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </mat-card>
+        <mat-card>
+            Specify Election:
+            <br>
+            <mat-form-field>
+                <mat-select [(ngModel)]="selectedElection">
+                    <mat-option *ngFor="let election of this.mapService.elections" [value]="election.backendName">{{election.name}}</mat-option>
                 </mat-select>
             </mat-form-field>
         </mat-card>
