@@ -10,10 +10,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.web.bind.annotation.*;
+import results.Result;
 import util.Election;
 import util.Operation;
 import util.Race;
-import results.Result;
 
 import java.util.*;
 
@@ -40,9 +40,42 @@ public class AlgorithmManager {
         SpringApplication.run(AlgorithmManager.class, args);
     }
 
-    @RequestMapping(value = "/test", method = RequestMethod.GET)
-    public String test() {
-        return "Data loaded";
+    /**
+     * Gets the districts for the selected state
+     *
+     * @return A stringified json version of the districts. This is sent to the requester.
+     */
+    @RequestMapping(value = "/getDistricts", method = RequestMethod.GET)
+    public String getDistricts() {
+        Set<District> districts = AlgorithmProperties.getProperties().getState().getInitialDistricts();
+        String guiResult = "";
+        try {
+            guiResult = mapper.writeValueAsString(districts);
+        }
+        catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
+
+        return guiResult;
+    }
+
+    /**
+     * Gets the precincts for the selected state
+     *
+     * @return A stringified json version of the precincts. This is sent to the requester.
+     */
+    @RequestMapping(value = "/getPrecincts", method = RequestMethod.GET)
+    public String getPrecincts() {
+        Set<Precinct> precincts = AlgorithmProperties.getProperties().getState().getPrecincts();
+        String guiResult = "";
+        try {
+            guiResult = mapper.writeValueAsString(precincts);
+        }
+        catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
+
+        return guiResult;
     }
 
     public Result runOperation(String inputData, Operation operation) {
@@ -87,6 +120,26 @@ public class AlgorithmManager {
 
     }
 
+    @RequestMapping(value = "/getState", method = RequestMethod.GET)
+    public String getStateTest() {
+        Long id = (long) 0;
+        Optional<State> stateOptional = repository.findById(id);
+        State state = null;
+        if (stateOptional.isPresent()) {
+            state = stateOptional.get();
+        }
+
+        String guiResult = "";
+        try {
+            guiResult = mapper.writeValueAsString(state);
+        }
+        catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
+
+        return guiResult;
+    }
+
     @RequestMapping(value = "/phase0", method = RequestMethod.POST)
     private String initPhase0(@RequestBody String postPayload) {
         Map<String,Object> map = null;
@@ -111,7 +164,7 @@ public class AlgorithmManager {
 
         currentAlgorithm = new Algorithm(new DetermineDemBlocs(), new DetermineVotingBlocs());
 
-        while (!(currentAlgorithm.run())) {}
+        while (!( currentAlgorithm.run() )) {}
 
         ArrayList<Result> results = currentAlgorithm.getResultsToSend();
 

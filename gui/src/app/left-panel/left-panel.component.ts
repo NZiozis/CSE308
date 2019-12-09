@@ -1,6 +1,5 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {MatPaginator} from '@angular/material';
 import {MapService} from '../map.service';
 
 @Component({
@@ -24,6 +23,15 @@ export class LeftPanelComponent implements OnInit {
         this.majorityPercentage = 50;
         this.votingPercentage = 50;
         this.selectedRaces = [];
+    }
+
+    test() {
+        const start = Date.now();
+        this.http.get(this.REST_API_SERVER_URL + '/getState').subscribe((data) => {
+                console.log(data);
+                console.log(Date.now() - start);
+            }
+        );
     }
 
     phase0() {

@@ -27,6 +27,7 @@
         <mat-card>
             Specify Election:
             <br>
+            <button on-click="test()">Test</button>
             <mat-form-field>
                 <mat-select [(ngModel)]="selectedElection">
                     <mat-option *ngFor="let election of this.mapService.elections" [value]="election.backendName">{{election.name}}</mat-option>

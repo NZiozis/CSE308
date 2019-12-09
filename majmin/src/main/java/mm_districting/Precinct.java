@@ -1,9 +1,8 @@
 package mm_districting;
 
-import util.Election;
-import util.NoSuchElectionException;
-import util.Party;
-import util.Race;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import util.*;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -30,11 +29,10 @@ public class Precinct {
     private Set<Voting>        votingSet;
     private Race               demographicBloc;
 
-    @Transient
-    private Party              votingBloc;
+    @Transient private Party votingBloc;
 
-    private Party              partyBloc;
-    private String             geography;
+    private Party  partyBloc;
+    private String geography;
 
     //    private Precinct      precinct;
     private Set<Precinct> neighbor;
@@ -149,6 +147,7 @@ public class Precinct {
     @JoinTable(name = "PRECINCT_NEIGHBORS")
     @JoinColumns( { @JoinColumn(name = "PRECINCT_ID", referencedColumnName = "ID"),
                     @JoinColumn(name = "NEIGHBOR_ID", referencedColumnName = "ID", unique = false) })
+    @JsonSerialize(using = NeighborSetSerializer.class)
     public Set<Precinct> getNeighbor() {
         return neighbor;
     }

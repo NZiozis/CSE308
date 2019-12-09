@@ -5,12 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1b917782-4cb8-457f-9f9b-dfb5f1451613" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../gui/src/app/map.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/src/app/map.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/util/NeighborSetSerializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/cdk/platform/typings/features/passive-listeners.d 3.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/node_modules/@angular/cdk/platform/typings/features/passive-listeners.d 3.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/common/locales/extra/fr-CA 3.js" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/node_modules/@angular/common/locales/extra/fr-CA 3.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/compiler-cli/src/ngtsc/metadata/src/inheritance 3.js" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/node_modules/@angular/compiler-cli/src/ngtsc/metadata/src/inheritance 3.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/forms/esm5/src/directives/abstract_control_directive 3.js" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/node_modules/@angular/forms/esm5/src/directives/abstract_control_directive 3.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@babel/core/node_modules/source-map/dist/source-map.debug 2.js" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/node_modules/@babel/core/node_modules/source-map/dist/source-map.debug 2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@babel/types/lib/comments/addComments 2.js" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/node_modules/@babel/types/lib/comments/addComments 2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/http-cache-semantics/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/node_modules/http-cache-semantics/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/uglify-js/node_modules/source-map/package 2.json" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/node_modules/uglify-js/node_modules/source-map/package 2.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/src/app/left-panel/left-panel.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/src/app/left-panel/left-panel.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/src/app/left-panel/left-panel.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/src/app/left-panel/left-panel.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/majmin.iml" beforeDir="false" afterPath="$PROJECT_DIR$/majmin.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/mm_districting/AlgorithmManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mm_districting/AlgorithmManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mm_districting/District.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mm_districting/District.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mm_districting/Precinct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mm_districting/Precinct.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/algorithm/Algorithm.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/algorithm/Algorithm.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/mm_districting/AlgorithmManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mm_districting/AlgorithmManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mm_districting/Precinct.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mm_districting/Precinct.class" afterDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -156,6 +170,8 @@
       <workItem from="1575392785067" duration="3087000" />
       <workItem from="1575401285236" duration="84000" />
       <workItem from="1575401432197" duration="1648000" />
+      <workItem from="1575580972290" duration="20000" />
+      <workItem from="1575581244099" duration="8087000" />
     </task>
     <servers />
   </component>
@@ -241,16 +257,6 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/mm_districting/AlgorithmManager.java</url>
-          <line>91</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/mm_districting/AlgorithmManager.java</url>
-          <line>62</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/mm_districting/AlgorithmProperties.java</url>
           <line>69</line>
           <option name="timeStamp" value="5" />
@@ -260,6 +266,7 @@
     <watches-manager>
       <configuration name="SpringBootApplicationConfigurationType">
         <watch expression="((Voting)votingSet.toArray()[0]).party" custom="mm_districting.Voting" />
+        <watch expression="((District)stateOptional.value.initialDistricts.toArray()[1]).precincts" custom="mm_districting.District" />
       </configuration>
     </watches-manager>
   </component>
