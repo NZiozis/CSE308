@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {ImageOverlay, LatLng, latLng, Layer, TileLayer, tileLayer} from 'leaflet';
 import {Observable} from 'rxjs';
-import {Backend} from './backend.model';
+import {Backend} from './model/backend.model';
 import {Config} from './left-panel/left-panel.component';
 
 @Injectable({
@@ -122,7 +122,10 @@ export class MapService {
     }
 
     getWestVirginiaGeoJson(): Observable<any> {
-        // return this.http.get('assets/westVirginia.json');
         return this.http.get(this.REST_API_SERVER_URL + '/westVirginia');
+    }
+
+    getDistricts(): Observable<any> {
+        return this.http.get(this.REST_API_SERVER_URL + '/getDistricts');
     }
 }

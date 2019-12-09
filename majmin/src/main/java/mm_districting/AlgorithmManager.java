@@ -117,7 +117,6 @@ public class AlgorithmManager {
         }
 
         return westVirginia.getGeography();
-
     }
 
     @RequestMapping(value = "/getState", method = RequestMethod.GET)
@@ -138,6 +137,25 @@ public class AlgorithmManager {
         }
 
         return guiResult;
+    }
+
+    @RequestMapping(value = "/setInsomnia", method = RequestMethod.POST)
+    private void setInsomniaState(@RequestBody String postPayload) {
+        Map<String,String> map = null;
+        try {
+            map = mapper.readValue(postPayload, Map.class);
+        }
+        catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
+        State.StateID stateId = State.StateID.valueOf(map.get("name"));
+        Optional<State> stateOptional = repository.findById((long) stateId.ordinal());
+        State state = null;
+        if (stateOptional.isPresent()) {
+            state = stateOptional.get();
+        }
+
+        AlgorithmProperties.getProperties().setState(state);
     }
 
     @RequestMapping(value = "/phase0", method = RequestMethod.POST)
