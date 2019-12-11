@@ -24,7 +24,7 @@ public class DemographicContext {
     private int pacificIslander;
     private int other;
 
-    public DemographicContext(){}
+    public DemographicContext() {}
 
     public DemographicContext(int total, int white, int africanAmerican, int americanIndian, int asian,
                               int pacificIslander, int other) {
@@ -73,6 +73,10 @@ public class DemographicContext {
         this.total = total;
     }
 
+    public void addTotal(int value) {
+        this.total += value;
+    }
+
     @Column(name = "WHITE")
     public int getWhite() {
         return white;
@@ -80,6 +84,10 @@ public class DemographicContext {
 
     public void setWhite(int white) {
         this.white = white;
+    }
+
+    public void addWhite(int value) {
+        this.white += value;
     }
 
     @Column(name = "AFRICAN_AMERICAN")
@@ -91,6 +99,10 @@ public class DemographicContext {
         this.africanAmerican = africanAmerican;
     }
 
+    public void addAfricanAmerican(int value) {
+        this.africanAmerican += value;
+    }
+
     @Column(name = "AMERICAN_INDIAN")
     public int getAmericanIndian() {
         return americanIndian;
@@ -98,6 +110,10 @@ public class DemographicContext {
 
     public void setAmericanIndian(int americanIndian) {
         this.americanIndian = americanIndian;
+    }
+
+    public void addAmericanIndian(int value) {
+        this.americanIndian += value;
     }
 
     @Column(name = "ASIAN")
@@ -109,6 +125,10 @@ public class DemographicContext {
         this.asian = asian;
     }
 
+    public void addAsian(int value) {
+        this.asian += value;
+    }
+
     @Column(name = "PACIFIC_ISLANDER")
     public int getPacificIslander() {
         return pacificIslander;
@@ -116,6 +136,10 @@ public class DemographicContext {
 
     public void setPacificIslander(int pacificIslander) {
         this.pacificIslander = pacificIslander;
+    }
+
+    public void addPacificIslander(int value) {
+        this.pacificIslander += value;
     }
 
     @Column(name = "OTHER")
@@ -126,4 +150,9 @@ public class DemographicContext {
     public void setOther(int other) {
         this.other = other;
     }
+
+    public void addOther(int value) {
+        this.other += value;
+    }
+
 }

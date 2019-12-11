@@ -13,7 +13,8 @@ import { SliderDataComponent } from './slider-data/slider-data.component';
 import { LeftPanelComponent } from './left-panel/left-panel.component';
 import { MiddlePanelComponent } from './middle-panel/middle-panel.component';
 import { RightPanelComponent } from './right-panel/right-panel.component';
-import { HeaderComponent } from './header/header.component'
+import { HeaderComponent } from './header/header.component';
+import { Phase0Component } from './phase0/phase0.component'
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { HeaderComponent } from './header/header.component'
     LeftPanelComponent,
     MiddlePanelComponent,
     RightPanelComponent,
-    HeaderComponent
+    HeaderComponent,
+    Phase0Component
   ],
   imports: [
     HttpClientModule,

@@ -48,6 +48,7 @@ public class AlgorithmManager {
     @RequestMapping(value = "/getDistricts", method = RequestMethod.GET)
     public String getDistricts() {
         Set<District> districts = AlgorithmProperties.getProperties().getState().getInitialDistricts();
+
         String guiResult = "";
         try {
             guiResult = mapper.writeValueAsString(districts);
@@ -93,14 +94,18 @@ public class AlgorithmManager {
      */
     @RequestMapping(value = "/setState", method = RequestMethod.POST)
     public void updateStateInProperties(@RequestBody String stateName) {
-        State.StateID stateId = State.StateID.valueOf(stateName);
-        Optional<State> stateOptional = repository.findById((long) stateId.ordinal());
-        State state = null;
-        if (stateOptional.isPresent()) {
-            state = stateOptional.get();
-        }
+        State.StateID selectedStateId = State.StateID.valueOf(stateName);
+        State currentState = AlgorithmProperties.getProperties().getState();
+        // Prevents unnecessary update of state and getting of information
+        if (currentState == null || currentState.getStateId() != selectedStateId.ordinal()) {
+            Optional<State> stateOptional = repository.findById((long) selectedStateId.ordinal());
+            State state = null;
+            if (stateOptional.isPresent()) {
+                state = stateOptional.get();
+            }
 
-        AlgorithmProperties.getProperties().setState(state);
+            AlgorithmProperties.getProperties().setState(state);
+        }
     }
 
     public void updateGUI() {
@@ -118,6 +123,19 @@ public class AlgorithmManager {
 
         return westVirginia.getGeography();
     }
+
+    @RequestMapping(value = "/florida", method = RequestMethod.GET)
+    public String getFloridaGeography() {
+        Long floridaId = (long) State.StateID.FLORIDA.ordinal();
+        Optional<State> floridaOptional = repository.findById(floridaId);
+        State florida = null;
+        if (floridaOptional.isPresent()) {
+            florida = floridaOptional.get();
+        }
+
+        return florida.getGeography();
+    }
+
 
     @RequestMapping(value = "/getState", method = RequestMethod.GET)
     public String getStateTest() {
@@ -148,14 +166,18 @@ public class AlgorithmManager {
         catch (JsonProcessingException e) {
             e.printStackTrace();
         }
-        State.StateID stateId = State.StateID.valueOf(map.get("name"));
-        Optional<State> stateOptional = repository.findById((long) stateId.ordinal());
-        State state = null;
-        if (stateOptional.isPresent()) {
-            state = stateOptional.get();
-        }
+        State.StateID selectedStateId = State.StateID.valueOf(map.get("name"));
+        State currentState = AlgorithmProperties.getProperties().getState();
+        // Prevents unnecessary update of state and getting of information
+        if (currentState == null || currentState.getStateId() != selectedStateId.ordinal()) {
+            Optional<State> stateOptional = repository.findById((long) selectedStateId.ordinal());
+            State state = null;
+            if (stateOptional.isPresent()) {
+                state = stateOptional.get();
+            }
 
-        AlgorithmProperties.getProperties().setState(state);
+            AlgorithmProperties.getProperties().setState(state);
+        }
     }
 
     @RequestMapping(value = "/phase0", method = RequestMethod.POST)

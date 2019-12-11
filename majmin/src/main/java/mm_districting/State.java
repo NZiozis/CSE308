@@ -4,7 +4,6 @@ import util.Operation;
 
 import javax.persistence.*;
 import java.util.HashSet;
-import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 
@@ -21,18 +20,19 @@ import java.util.Set;
 public class State {
 
     //---state data---//
-    private String            name;
-    private long              stateId;
-    private String            legalGuidelines;
-    private Voting            votingData;
+    private String             name;
+    private long               stateId;
+    private String             legalGuidelines;
+    private Voting             votingSet;
+    private DemographicContext demographicContext;
     //---Encompassed geographical objects---//
-    private Set<District>     initialDistricts;
+    private Set<District>      initialDistricts;
     //---Algorithm oriented objects---//
-    private Set<District>     generatedDistricts;
-    private Set<Cluster>      clusters;
-    private Map<Cluster,Edge> bestPairings;
-    private Set<Cluster>      doNotPairClusters;
-    private String            geography;
+    private Set<District>      generatedDistricts;
+    private Set<Cluster>       clusters;
+    private Map<Cluster,Edge>  bestPairings;
+    private Set<Cluster>       doNotPairClusters;
+    private String             geography;
 
     public State() {}
 
@@ -134,13 +134,26 @@ public class State {
         this.legalGuidelines = legalGuidelines;
     }
 
-    @Transient
-    public Voting getVotingData() {
-        return votingData;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinTable(name = "STATE_TO_VOTING")
+    @JoinColumn(name = "VOTING_DATA_ID")
+    public Voting getVotingSet() {
+        return votingSet;
     }
 
-    public void setVotingData(Voting votingData) {
-        this.votingData = votingData;
+    public void setVotingSet(Voting votingSet) {
+        this.votingSet = votingSet;
+    }
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinTable(name = "STATE_TO_DEMOGRAPHIC")
+    @JoinColumn(name = "CONTEXT_ID")
+    public DemographicContext getDemographicContext() {
+        return demographicContext;
+    }
+
+    public void setDemographicContext(DemographicContext demographicContext) {
+        this.demographicContext = demographicContext;
     }
 
     @OneToMany(cascade = CascadeType.ALL)
@@ -188,12 +201,13 @@ public class State {
 
     /**
      * Used to identify which state the user has selected to be analyzed.
+     * This matches up with the DB
      *
      * @see AlgorithmProperties
      * @see AlgorithmManager
      * @see Operation
      */
-    public enum StateID {WEST_VIRGINIA, UTAH, FLORIDA}
+    public enum StateID {WEST_VIRGINIA, FLORIDA, UTAH}
 
 
 }

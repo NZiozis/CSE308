@@ -1,6 +1,7 @@
 .map-size {
    height: 300px;
    width: 60%;
+   vertical-align: top;
 }
 .setting-bar{
    width: 10%;

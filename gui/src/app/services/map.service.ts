@@ -1,27 +1,15 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {ImageOverlay, LatLng, latLng, Layer, TileLayer, tileLayer} from 'leaflet';
+import {geoJSON, ImageOverlay, LatLng, latLng, Layer, TileLayer, tileLayer} from 'leaflet';
 import {Observable} from 'rxjs';
-import {Backend} from './model/backend.model';
-import {Config} from './left-panel/left-panel.component';
+import {Backend} from '../model/backend.model';
+import {Config} from '../phase0/phase0.component';
+import {District} from '../model/district.model';
 
 @Injectable({
     providedIn: 'root'
 })
 export class MapService {
-
-    public map;
-    public stateIsSelected: boolean;
-    public states: Backend[];
-    public possibleRaces: Backend[];
-    public elections: Backend[];
-    public nameToLayerMapper = new Map<string, ImageOverlay>();
-    public selectedState: string;
-
-    private mapUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
-    private REST_API_SERVER_URL = 'http://localhost:8080';
-    private options: { center: LatLng; layers: TileLayer[]; zoom: number };
-    private layerIdToNameMapper = new Map<string, string>();
 
     constructor(private http: HttpClient) {
         this.stateIsSelected = false;
@@ -46,12 +34,26 @@ export class MapService {
 
     }
 
+    public map;
+    public stateIsSelected: boolean;
+    public states: Backend[];
+    public possibleRaces: Backend[];
+    public elections: Backend[];
+    public nameToLayerMapper = new Map<string, ImageOverlay>();
+    public selectedState: string;
+    public REST_API_SERVER_URL = 'http://localhost:8080';
+
+    private mapUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+    private options: { center: LatLng; layers: TileLayer[]; zoom: number };
+    private layerIdToNameMapper = new Map<string, string>();
+    private currentInfo;
+
     getOptions() {
         this.options = {
             layers: [
                 tileLayer(this.mapUrl, {maxZoom: 18, attribution: '...'}),
             ],
-            zoom: 4,
+            zoom: 5,
             center: latLng(37.6, -95.665)
         };
         return this.options;
@@ -62,7 +64,48 @@ export class MapService {
         this.stateIsSelected = true;
         console.log(selectedState);
         this.map.fitBounds(this.nameToLayerMapper.get(selectedState).getBounds());
-        this.http.post<Config>(this.REST_API_SERVER_URL + '/setState', selectedState).subscribe();
+        const setState = this.http.post<Config>(this.REST_API_SERVER_URL + '/setState', selectedState);
+        const self = this;
+        setState.subscribe(() => {
+            this.getDistricts().subscribe((districts: District[]) => {
+                for (const district of districts) {
+                    // console.log(district);
+                    const geoJson = geoJSON(JSON.parse(district.geography), {
+                        onEachFeature(feature, layer) {
+                            layer.on('mouseover', function() {
+                                this.setStyle({
+                                    fillColor: '#0000ff'
+                                });
+                                self.currentInfo = new District({position: 'bottomleft'}, district);
+                                self.currentInfo.addTo(self.map);
+                            });
+                            layer.on('mouseout', function() {
+                                this.setStyle({
+                                    fillColor: '#ff0000'
+                                });
+                                self.map.removeControl(self.currentInfo);
+                            });
+                            layer.on('click', () => {
+                                // Let's say you've got a property called url in your geojsonfeature:
+                                window.location = feature.properties.url;
+                            });
+                        }
+                    });
+                    geoJson.setStyle({fillColor: '#ff0000'});
+                    geoJson.addTo(this.map);
+                }
+                console.log('Districts completed');
+            });
+            // this.getPrecincts().subscribe((precincts: Precinct[]) => {
+            //     console.log(precincts);
+            //     for (const precinct of precincts) {
+            //         const geoJson = geoJSON(JSON.parse(precinct.geography));
+            //         geoJson.setStyle({fillColor: '#ff0000'});
+            //         geoJson.addTo(this.map);
+            //     }
+            //     console.log('Precincts completed');
+            // });
+        });
     }
 
     setMap(map) {
@@ -114,7 +157,7 @@ export class MapService {
     }
 
     getFlorida(): Observable<any> {
-        return this.http.get('assets/florida.json');
+        return this.http.get(this.REST_API_SERVER_URL + '/florida');
     }
 
     getUtah(): Observable<any> {
@@ -127,5 +170,9 @@ export class MapService {
 
     getDistricts(): Observable<any> {
         return this.http.get(this.REST_API_SERVER_URL + '/getDistricts');
+    }
+
+    getPrecincts(): Observable<any> {
+        return this.http.get(this.REST_API_SERVER_URL + '/getPrecincts');
     }
 }

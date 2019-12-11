@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {geoJSON, LatLng, Map, TileLayer} from 'leaflet';
-import {MapService} from '../map.service';
+import {MapService} from '../services/map.service';
 
 @Component({
     selector: 'app-home-map',
@@ -46,6 +46,7 @@ export class HomeMapComponent implements OnInit {
         });
         // Loads in West Virginia
         this.mapService.getWestVirginiaGeoJson().subscribe((json: any) => {
+            // console.log(json);
             const westVirginiaGJson = geoJSON(json, {onEachFeature});
             westVirginiaGJson.addTo(map);
             this.mapService.addLayerIdAndName(this.mapService.getGeoJsonId(westVirginiaGJson), 'WEST_VIRGINIA');
