@@ -4,7 +4,7 @@ import {geoJSON, ImageOverlay, LatLng, latLng, Layer, TileLayer, tileLayer} from
 import {Observable} from 'rxjs';
 import {Backend} from '../model/backend.model';
 import {Config} from '../phase0/phase0.component';
-import {District} from '../model/district.model';
+import {Precinct} from '../model/precinct.model';
 
 @Injectable({
     providedIn: 'root'
@@ -67,44 +67,57 @@ export class MapService {
         const setState = this.http.post<Config>(this.REST_API_SERVER_URL + '/setState', selectedState);
         const self = this;
         setState.subscribe(() => {
-            this.getDistricts().subscribe((districts: District[]) => {
-                for (const district of districts) {
-                    // console.log(district);
-                    const geoJson = geoJSON(JSON.parse(district.geography), {
-                        onEachFeature(feature, layer) {
-                            layer.on('mouseover', function() {
-                                this.setStyle({
-                                    fillColor: '#0000ff'
-                                });
-                                self.currentInfo = new District({position: 'bottomleft'}, district);
-                                self.currentInfo.addTo(self.map);
-                            });
-                            layer.on('mouseout', function() {
-                                this.setStyle({
-                                    fillColor: '#ff0000'
-                                });
-                                self.map.removeControl(self.currentInfo);
-                            });
-                            layer.on('click', () => {
-                                // Let's say you've got a property called url in your geojsonfeature:
-                                window.location = feature.properties.url;
-                            });
-                        }
-                    });
-                    geoJson.setStyle({fillColor: '#ff0000'});
-                    geoJson.addTo(this.map);
-                }
-                console.log('Districts completed');
-            });
-            // this.getPrecincts().subscribe((precincts: Precinct[]) => {
-            //     console.log(precincts);
-            //     for (const precinct of precincts) {
-            //         const geoJson = geoJSON(JSON.parse(precinct.geography));
+            // this.getDistricts().subscribe((districts: District[]) => {
+            //     for (const district of districts) {
+            //         // console.log(district);
+            //         const geoJson = geoJSON(JSON.parse(district.geography), {
+            //             onEachFeature(feature, layer) {
+            //                 layer.on('mouseover', function() {
+            //                     this.setStyle({
+            //                         fillColor: '#0000ff'
+            //                     });
+            //                     self.currentInfo = new District({position: 'bottomleft'}, district);
+            //                     self.currentInfo.addTo(self.map);
+            //                 });
+            //                 layer.on('mouseout', function() {
+            //                     this.setStyle({
+            //                         fillColor: '#ff0000'
+            //                     });
+            //                     self.map.removeControl(self.currentInfo);
+            //                 });
+            //                 layer.on('click', () => {
+            //                     // Let's say you've got a property called url in your geojsonfeature:
+            //                     window.location = feature.properties.url;
+            //                 });
+            //             }
+            //         });
             //         geoJson.setStyle({fillColor: '#ff0000'});
             //         geoJson.addTo(this.map);
             //     }
-            //     console.log('Precincts completed');
+            //     console.log('Districts completed');
             // });
+            this.getPrecincts().subscribe((precincts: Precinct[]) => {
+                console.log(precincts);
+                for (const precinct of precincts) {
+                    const geoJson = geoJSON(JSON.parse(precinct.geography));
+                    const temp = precinct.votingSet.filter((voting: any) => {
+                        return voting.election === 'PRESIDENTIAL_2016';
+                    });
+                    const repub = temp.filter((voting) => {
+                        return voting.party === 'REPUBLICAN';
+                    })[0].votes;
+                    const dem = temp.filter((voting) => {
+                        return voting.party === 'DEMOCRAT';
+                    })[0].votes;
+                    if (repub > dem) {
+                        geoJson.setStyle({fillColor: '#0000ff', opacity: .01});
+                    } else {
+                        geoJson.setStyle({fillColor: '#ff0000', opacity: .01, color: '#ff0000'});
+                    }
+                    geoJson.addTo(this.map);
+                }
+                console.log('Precincts completed');
+            });
         });
     }
 
