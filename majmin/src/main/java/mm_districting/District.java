@@ -1,5 +1,7 @@
 package mm_districting;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
@@ -14,11 +16,13 @@ import java.util.Set;
  */
 @Entity
 @Table(name = "DISTRICT")
+@JsonIgnoreProperties(value = { "precincts" })
 public class District {
 
     private Set<Precinct> precincts;
 
     private DemographicContext demographics;
+    private Set<Voting>             votingSet;
 
     // String of the GeoJSON data
     private String geography;
@@ -35,6 +39,7 @@ public class District {
         this.districtNumber = districtNumber;
         this.geoId = geoId;
         this.precincts = new HashSet<>();
+        this.demographics = new DemographicContext(0, 0, 0, 0, 0, 0, 0);
     }
 
     /**
@@ -75,13 +80,26 @@ public class District {
         this.precincts = precincts;
     }
 
-    @Transient
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinTable(name = "DISTRICT_TO_DEMOGRAPHIC")
+    @JoinColumn(name = "CONTEXT_ID")
     public DemographicContext getDemographics() {
         return demographics;
     }
 
     public void setDemographics(DemographicContext demographics) {
         this.demographics = demographics;
+    }
+
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "DISTRICT_TO_VOTING")
+    @JoinColumn(name = "VOTING_DATA_ID")
+    public Set<Voting> getVotingSet() {
+        return votingSet;
+    }
+
+    public void setVotingSet(Set<Voting> votingData) {
+        this.votingSet = votingData;
     }
 
     @Column(name = "GEOGRAPHY", columnDefinition = "longtext", nullable = false)

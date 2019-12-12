@@ -1,0 +1,6 @@
+<mat-card>
+    <mat-checkbox labelPosition="before" [(ngModel)]="this.toggleLayer"
+                  (click)="mapService.toggleDistrictPrecinctLayers(this.toggleLayer)">Toggle
+        Precincts
+    </mat-checkbox>
+</mat-card>

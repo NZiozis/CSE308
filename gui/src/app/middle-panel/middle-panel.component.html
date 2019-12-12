@@ -1,5 +1,23 @@
-<mat-card>
-    <mat-card-content>
-        <app-home-map></app-home-map>
-    </mat-card-content>
-</mat-card>
+<mat-tab-group>
+    <mat-tab>
+        <ng-template mat-tab-label>
+            Map
+        </ng-template>
+        <mat-card>
+            <mat-card-content>
+                <app-home-map></app-home-map>
+            </mat-card-content>
+        </mat-card>
+    </mat-tab>
+    <mat-tab>
+        <ng-template mat-tab-label>
+            State Info
+        </ng-template>
+    </mat-tab>
+    <mat-tab>
+        <ng-template mat-tab-label>
+            Phase 0 Table
+        </ng-template>
+    </mat-tab>
+
+</mat-tab-group>

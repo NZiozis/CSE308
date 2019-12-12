@@ -1,14 +1,22 @@
 .map-size {
-   height: 300px;
-   width: 60%;
+    height: 350px;
+    width: 80%;
+    vertical-align: top;
 }
-.setting-bar{
-   width: 10%;
-   vertical-align: top;
+
+.setting-bar {
+    width: 20%;
+    vertical-align: top;
 }
-.information-bar{
-   vertical-align: top;
+
+.information-bar {
+    vertical-align: top;
 }
-.inline-block{
-   display: inline-block;
+
+.inline-block {
+    display: inline-block;
+}
+
+.tester {
+    background-color: black !important;
 }

@@ -48,7 +48,6 @@ public class Algorithm implements AlgorithmStep {
 			}
 			currentStep = steps.get(++currentStepIndex);
 		}
-		
 		return false;
 	}
 

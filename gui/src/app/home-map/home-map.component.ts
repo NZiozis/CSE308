@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {geoJSON, LatLng, Map, TileLayer} from 'leaflet';
-import {MapService} from '../map.service';
+import {MapService} from '../services/map.service';
 
 @Component({
     selector: 'app-home-map',
@@ -25,7 +25,6 @@ export class HomeMapComponent implements OnInit {
 
         function onEachFeature(feature, layer) {
             layer.on('click', event => {
-                map.fitBounds(event.layer.getBounds());
                 const stateName = self.mapService.getNameOfLayer(self.mapService.getLayerId(event.layer));
                 self.mapService.setSelectedState(stateName);
             });
@@ -35,19 +34,23 @@ export class HomeMapComponent implements OnInit {
         this.mapService.getFlorida().subscribe((json: any) => {
             const floridaGJson = geoJSON(json, {onEachFeature});
             floridaGJson.addTo(map);
-            this.mapService.addNameAndLayer(this.mapService.getGeoJsonId(floridaGJson), 'FLORIDA');
+            this.mapService.addLayerIdAndName(this.mapService.getGeoJsonId(floridaGJson), 'FLORIDA');
+            this.mapService.addNameAndLayer('FLORIDA', this.mapService.getGeoJsonLayer(floridaGJson));
         });
         // Loads in Utah
         this.mapService.getUtah().subscribe((json: any) => {
             const utahGJson = geoJSON(json, {onEachFeature});
             utahGJson.addTo(map);
-            this.mapService.addNameAndLayer(this.mapService.getGeoJsonId(utahGJson), 'UTAH');
+            this.mapService.addLayerIdAndName(this.mapService.getGeoJsonId(utahGJson), 'UTAH');
+            this.mapService.addNameAndLayer('UTAH', this.mapService.getGeoJsonLayer(utahGJson));
         });
         // Loads in West Virginia
         this.mapService.getWestVirginiaGeoJson().subscribe((json: any) => {
+            // console.log(json);
             const westVirginiaGJson = geoJSON(json, {onEachFeature});
             westVirginiaGJson.addTo(map);
-            this.mapService.addNameAndLayer(this.mapService.getGeoJsonId(westVirginiaGJson), 'WEST_VIRGINIA');
+            this.mapService.addLayerIdAndName(this.mapService.getGeoJsonId(westVirginiaGJson), 'WEST_VIRGINIA');
+            this.mapService.addNameAndLayer('WEST_VIRGINIA', this.mapService.getGeoJsonLayer(westVirginiaGJson));
         });
         this.mapService.setMap(map);
     }

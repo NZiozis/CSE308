@@ -1,9 +1,14 @@
 package mm_districting;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import util.Operation;
 
 import javax.persistence.*;
-import java.util.*;
+
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * Represents a State, including encompassed precincts, districts, demographics, voting data, and algorithm-oriented objects such as clusters and edges.
@@ -15,15 +20,17 @@ import java.util.*;
  */
 @Entity
 @Table(name = "STATE")
+@JsonIgnoreProperties(value = { "initialDistricts", "generatedDistricts", "clusters", "bestPairings", "geography" })
 public class State {
 
     //---state data---//
-    private String            name;
-    private long              stateId;
-    private String            legalGuidelines;
-    private Voting            votingData;
+    private String             name;
+    private long               stateId;
+    private String             legalGuidelines;
+    private Set<Voting>        votingSet;
+    private DemographicContext demographicContext;
     //---Encompassed geographical objects---//
-    private Set<District>     initialDistricts;
+    private Set<District>      initialDistricts;
     //---Algorithm oriented objects---//
     private Set<District>     generatedDistricts;
     private Set<Cluster>      clusters;
@@ -32,6 +39,7 @@ public class State {
     private Map<Cluster,Edge> bestPairings;
     private Set<Cluster>      doNotPairClusters;
     private String            geography;
+
 
     @Transient
     private Map<Precinct, Cluster> initialClustersMap;
@@ -154,13 +162,26 @@ public class State {
         this.legalGuidelines = legalGuidelines;
     }
 
-    @Transient
-    public Voting getVotingData() {
-        return votingData;
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "STATE_TO_VOTING")
+    @JoinColumn(name = "VOTING_DATA_ID")
+    public Set<Voting> getVotingSet() {
+        return votingSet;
     }
 
-    public void setVotingData(Voting votingData) {
-        this.votingData = votingData;
+    public void setVotingSet(Set<Voting> votingSet) {
+        this.votingSet = votingSet;
+    }
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinTable(name = "STATE_TO_DEMOGRAPHIC")
+    @JoinColumn(name = "CONTEXT_ID")
+    public DemographicContext getDemographicContext() {
+        return demographicContext;
+    }
+
+    public void setDemographicContext(DemographicContext demographicContext) {
+        this.demographicContext = demographicContext;
     }
 
     @OneToMany(cascade = CascadeType.ALL)
@@ -227,10 +248,13 @@ public class State {
 
     /**
      * Used to identify which state the user has selected to be analyzed.
+     * This matches up with the DB
      *
      * @see AlgorithmProperties
      * @see AlgorithmManager
      * @see Operation
      */
-    public enum StateID {WEST_VIRGINIA, UTAH, FLORIDA}
+
+    public enum StateID {WEST_VIRGINIA, FLORIDA, UTAH}
+
 }

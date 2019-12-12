@@ -10,10 +10,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.web.bind.annotation.*;
+import results.Result;
 import util.Election;
 import util.Operation;
 import util.Race;
-import results.Result;
 
 import java.util.*;
 
@@ -40,9 +40,43 @@ public class AlgorithmManager {
         SpringApplication.run(AlgorithmManager.class, args);
     }
 
-    @RequestMapping(value = "/test", method = RequestMethod.GET)
-    public String test() {
-        return "Data loaded";
+    /**
+     * Gets the districts for the selected state
+     *
+     * @return A stringified json version of the districts. This is sent to the requester.
+     */
+    @RequestMapping(value = "/getDistricts", method = RequestMethod.GET)
+    public String getDistricts() {
+        Set<District> districts = AlgorithmProperties.getProperties().getState().getInitialDistricts();
+
+        String guiResult = "";
+        try {
+            guiResult = mapper.writeValueAsString(districts);
+        }
+        catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
+
+        return guiResult;
+    }
+
+    /**
+     * Gets the precincts for the selected state
+     *
+     * @return A stringified json version of the precincts. This is sent to the requester.
+     */
+    @RequestMapping(value = "/getPrecincts", method = RequestMethod.GET)
+    public String getPrecincts() {
+        Set<Precinct> precincts = AlgorithmProperties.getProperties().getState().getPrecincts();
+        String guiResult = "";
+        try {
+            guiResult = mapper.writeValueAsString(precincts);
+        }
+        catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
+
+        return guiResult;
     }
 
     public Result runOperation(String inputData, Operation operation) {
@@ -60,14 +94,21 @@ public class AlgorithmManager {
      */
     @RequestMapping(value = "/setState", method = RequestMethod.POST)
     public void updateStateInProperties(@RequestBody String stateName) {
-        State.StateID stateId = State.StateID.valueOf(stateName);
-        Optional<State> stateOptional = repository.findById((long) stateId.ordinal());
-        State state = null;
-        if (stateOptional.isPresent()) {
-            state = stateOptional.get();
+        State.StateID selectedStateId = State.StateID.valueOf(stateName);
+        State currentState = AlgorithmProperties.getProperties().getState();
+        String guiString = "";
+        // Prevents unnecessary update of state and getting of information
+        if (currentState == null || currentState.getStateId() != selectedStateId.ordinal()) {
+            Optional<State> stateOptional = repository.findById((long) selectedStateId.ordinal());
+            State state = null;
+            if (stateOptional.isPresent()) {
+                state = stateOptional.get();
+            }
+
+            AlgorithmProperties.getProperties().setState(state);
+
         }
 
-        AlgorithmProperties.getProperties().setState(state);
     }
 
     public void updateGUI() {
@@ -84,7 +125,42 @@ public class AlgorithmManager {
         }
 
         return westVirginia.getGeography();
+    }
 
+    @RequestMapping(value = "/florida", method = RequestMethod.GET)
+    public String getFlorida() {
+        Long floridaId = (long) State.StateID.FLORIDA.ordinal();
+        Optional<State> floridaOptional = repository.findById(floridaId);
+        State florida = null;
+        if (floridaOptional.isPresent()) {
+            florida = floridaOptional.get();
+        }
+
+        return florida.getGeography();
+    }
+
+    @RequestMapping(value = "/setInsomnia", method = RequestMethod.POST)
+    private void setInsomniaState(@RequestBody String postPayload) {
+        Map<String,String> map = null;
+        try {
+            map = mapper.readValue(postPayload, Map.class);
+        }
+        catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
+        State.StateID selectedStateId = State.StateID.valueOf(map.get("name"));
+        State currentState = AlgorithmProperties.getProperties().getState();
+        // Prevents unnecessary update of state and getting of information
+        if (currentState == null || currentState.getStateId() != selectedStateId.ordinal()) {
+            Optional<State> stateOptional = repository.findById((long) selectedStateId.ordinal());
+            State state = null;
+            if (stateOptional.isPresent()) {
+                state = stateOptional.get();
+            }
+
+            AlgorithmProperties.getProperties().setState(state);
+
+        }
     }
 
     @RequestMapping(value = "/phase0", method = RequestMethod.POST)
@@ -107,11 +183,11 @@ public class AlgorithmManager {
         AlgorithmProperties.getProperties().setSelectedDemographics(selectedDemographics);
 
         //TODO: actually implement
-        AlgorithmProperties.getProperties().setSelectedElection(Election.PRESIDENTIAL_2016);
+        AlgorithmProperties.getProperties().setSelectedElection(Election.valueOf((String) map.get("selectedElection")));
 
         currentAlgorithm = new Algorithm(new DetermineDemBlocs(), new DetermineVotingBlocs());
 
-        while (!(currentAlgorithm.run())) {}
+        while (!( currentAlgorithm.run() )) {}
 
         ArrayList<Result> results = currentAlgorithm.getResultsToSend();
 
