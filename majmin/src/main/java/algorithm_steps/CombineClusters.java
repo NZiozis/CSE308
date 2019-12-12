@@ -56,7 +56,6 @@ public class CombineClusters implements AlgorithmStep {
         }
 
         state.combineClusters(edge);
-
         return (!iterator.hasNext()) || iterations >= maxRunIterations;
     }
 
