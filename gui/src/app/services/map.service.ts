@@ -37,7 +37,6 @@ export class MapService {
 
     public map;
     public stateIsSelected: boolean;
-    public isDisplayingPrecincts: boolean;
     public states: Backend[];
     public possibleRaces: Backend[];
     public elections: Backend[];

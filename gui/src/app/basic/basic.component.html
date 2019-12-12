@@ -3,4 +3,13 @@
                   (click)="mapService.toggleDistrictPrecinctLayers(this.toggleLayer)">Toggle
         Precincts
     </mat-checkbox>
+    <br>
+    <br>
+    Specify Election:
+    <mat-form-field>
+        <mat-select [(ngModel)]="selectedElection">
+            <mat-option *ngFor="let election of this.mapService.elections"
+                        [value]="election.backendName">{{election.name}}</mat-option>
+        </mat-select>
+    </mat-form-field>
 </mat-card>

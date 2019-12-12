@@ -21,9 +21,14 @@ export class District extends Control {
     onAdd(map) {
         const table = DomUtil.create('table') as HTMLTableElement;
         table.bgColor = '#303030';
-        const row0 = table.insertRow(0);
-        const cell0 = row0.insertCell(0);
-        cell0.innerText = this.demographics.total;
+        let temp = 0;
+        console.log(this.demographics);
+        for (const dem of Object.keys(this.demographics)) {
+            const row0 = table.insertRow(temp);
+            const cell0 = row0.insertCell(0);
+            cell0.innerText = dem;
+            temp++;
+        }
         //
         // element.innerText = 'Total Pop: ' + this.demographics.total + '   White Population: ' + this.demographics.white;
         // element.innerText += '  % White: ' + ((this.demographics.white / this.demographics.total) * 100).toFixed(2);
