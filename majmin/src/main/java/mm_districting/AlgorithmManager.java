@@ -1,8 +1,7 @@
 package mm_districting;
 
 import algorithm.Algorithm;
-import algorithm_steps.DetermineDemBlocs;
-import algorithm_steps.DetermineVotingBlocs;
+import algorithm_steps.*;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -181,8 +180,6 @@ public class AlgorithmManager {
         AlgorithmProperties.getProperties().setPopulationMajorityThreshold((Integer) map.get("majorityPercentage"));
         AlgorithmProperties.getProperties().setVotingMajorityThreshold((Integer) map.get("votingPercentage"));
         AlgorithmProperties.getProperties().setSelectedDemographics(selectedDemographics);
-
-        //TODO: actually implement
         AlgorithmProperties.getProperties().setSelectedElection(Election.valueOf((String) map.get("selectedElection")));
 
         currentAlgorithm = new Algorithm(new DetermineDemBlocs(), new DetermineVotingBlocs());
@@ -202,8 +199,13 @@ public class AlgorithmManager {
         return guiResult;
     }
 
-    private Algorithm initPhase1() {
-        return new Algorithm();
+    private String initPhase1() {
+
+        currentAlgorithm = new Algorithm(new GenerateInitialClusters(), new GenerateInitialEdges(), new Phase1Iteration(true));
+
+        while (!(currentAlgorithm.run())) {}
+
+        return "";
     }
 
     private Algorithm initPhase2() {
