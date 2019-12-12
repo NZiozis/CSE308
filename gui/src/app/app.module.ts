@@ -14,7 +14,8 @@ import { LeftPanelComponent } from './left-panel/left-panel.component';
 import { MiddlePanelComponent } from './middle-panel/middle-panel.component';
 import { RightPanelComponent } from './right-panel/right-panel.component';
 import { HeaderComponent } from './header/header.component';
-import { Phase0Component } from './phase0/phase0.component'
+import { Phase0Component } from './phase0/phase0.component';
+import { Phase1Component } from './phase1/phase1.component'
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { Phase0Component } from './phase0/phase0.component'
     MiddlePanelComponent,
     RightPanelComponent,
     HeaderComponent,
-    Phase0Component
+    Phase0Component,
+    Phase1Component
   ],
   imports: [
     HttpClientModule,

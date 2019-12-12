@@ -3,14 +3,12 @@
     <br>
     <mat-slider min="50" max="100" step="1" [(ngModel)]="this.majorityPercentage"></mat-slider>
     {{this.majorityPercentage}}
-</mat-card>
-<mat-card>
+    <br>
     Required Percentage for Voting Majority:
     <br>
     <mat-slider min="50" max="100" step="1" [(ngModel)]="this.votingPercentage"></mat-slider>
     {{this.votingPercentage}}
-</mat-card>
-<mat-card>
+    <br>
     Specify Minorities:
     <br>
     <mat-form-field>
@@ -19,8 +17,7 @@
                         [value]="race.backendName">{{race.name}}</mat-option>
         </mat-select>
     </mat-form-field>
-</mat-card>
-<mat-card>
+    <br>
     Specify Election:
     <br>
     <mat-form-field>
@@ -29,7 +26,6 @@
                         [value]="election.backendName">{{election.name}}</mat-option>
         </mat-select>
     </mat-form-field>
-</mat-card>
-<mat-card>
+    <br>
     <button (click)="this.phase0Service.run(createPhase0JSON())">Phase 0</button>
 </mat-card>

@@ -1,0 +1,31 @@
+<mat-card>
+    Requested # Districts:
+    <br>
+    <mat-slider max="50" step="1" [(ngModel)]="this.numberOfDistricts"></mat-slider>
+    {{this.numberOfDistricts}}
+    <br>
+
+    Minority Threshold:
+    <br>
+    <mat-slider min="50" max="100" step="1" [(ngModel)]="this.minorityThreshold"></mat-slider>
+    {{this.minorityThreshold}}
+    <br>
+
+    Majority Threshold:
+    <br>
+    <mat-slider min="50" max="100" step="1" [(ngModel)]="this.majorityThreshold"></mat-slider>
+    {{this.majorityThreshold}}
+    <br>
+
+    Specify Minorities:
+    <br>
+    <mat-form-field>
+        <mat-select [(ngModel)]="this.selectedRaces" multiple>
+            <mat-option *ngFor="let race of this.mapService.possibleRaces"
+                        [value]="race.backendName">{{race.name}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <br>
+
+    <button (click)="test()">Phase 1</button>
+</mat-card>
