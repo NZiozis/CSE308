@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {MapService} from '../services/map.service';
+import {Phase1Service} from '../services/phase1.service';
 
 @Component({
     selector: 'app-phase1',
@@ -14,11 +15,7 @@ export class Phase1Component implements OnInit {
     private selectedRaces;
     private fullRun;
 
-    constructor(private mapService: MapService) {
-    }
-
-    test() {
-        console.log(this);
+    constructor(private mapService: MapService, private phase1Service: Phase1Service) {
     }
 
     ngOnInit() {
@@ -29,4 +26,21 @@ export class Phase1Component implements OnInit {
         this.fullRun = false;
     }
 
+    createPhase1JSON() {
+        const output = new Phase1Config();
+        output.numberOfDistricts = this.numberOfDistricts;
+        output.minorityThreshold = this.minorityThreshold;
+        output.selectedRaces = this.selectedRaces;
+        output.majorityThreshold = this.majorityThreshold;
+
+        return output;
+    }
+
+}
+
+export class Phase1Config {
+    numberOfDistricts: number;
+    minorityThreshold: number;
+    majorityThreshold: number;
+    selectedRaces: Array<string>;
 }
