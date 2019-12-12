@@ -6,6 +6,7 @@ export class District extends Control {
     geography: string;
     geoId: number;
     districtNumber: number;
+    votingSet: any;
     mapService: MapService;
 
     constructor(opts, district, mapService: MapService) {

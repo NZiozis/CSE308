@@ -88,6 +88,7 @@ export class MapService {
                 // console.log('State' + json);
                 this.getDistricts().subscribe((districts: District[]) => {
                     this.districtLayerGroup = new LayerGroup();
+                    console.log(districts);
                     for (const district of districts) {
                         // console.log(district);
                         const geoJson = geoJSON(JSON.parse(district.geography), {

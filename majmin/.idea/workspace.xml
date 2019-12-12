@@ -5,27 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1b917782-4cb8-457f-9f9b-dfb5f1451613" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../gui/src/app/basic/basic.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../gui/src/app/basic/basic.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../gui/src/app/basic/basic.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../gui/src/app/basic/basic.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/src/app/app.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/src/app/app.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/src/app/left-panel/left-panel.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/src/app/left-panel/left-panel.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../gui/src/app/model/district.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/src/app/model/district.model.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/src/app/phase1/phase1.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/src/app/phase1/phase1.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../gui/src/app/services/map.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/src/app/services/map.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/src/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/mm_districting/AlgorithmManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mm_districting/AlgorithmManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mm_districting/District.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mm_districting/District.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mm_districting/State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mm_districting/State.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mm_districting/AlgorithmManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mm_districting/AlgorithmManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mm_districting/District.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mm_districting/District.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mm_districting/State$StateID.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mm_districting/State$StateID.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mm_districting/State.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mm_districting/State.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -177,6 +160,7 @@
       <workItem from="1575581244099" duration="11722000" />
       <workItem from="1575935113653" duration="17000" />
       <workItem from="1575936541530" duration="23358000" />
+      <workItem from="1576181184766" duration="888000" />
     </task>
     <servers />
   </component>
@@ -268,7 +252,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/mm_districting/AlgorithmManager.java</url>
-          <line>172</line>
+          <line>155</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>

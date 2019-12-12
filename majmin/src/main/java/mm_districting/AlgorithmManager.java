@@ -93,7 +93,7 @@ public class AlgorithmManager {
      * @return The State object set.
      */
     @RequestMapping(value = "/setState", method = RequestMethod.POST)
-    public String updateStateInProperties(@RequestBody String stateName) {
+    public void updateStateInProperties(@RequestBody String stateName) {
         State.StateID selectedStateId = State.StateID.valueOf(stateName);
         State currentState = AlgorithmProperties.getProperties().getState();
         String guiString = "";
@@ -107,25 +107,8 @@ public class AlgorithmManager {
 
             AlgorithmProperties.getProperties().setState(state);
 
-            try {
-                guiString = mapper.writeValueAsString(state);
-            }
-            catch (JsonProcessingException e) {
-                e.printStackTrace();
-            }
-
-            return guiString;
         }
-        else {
-            try {
-                guiString = mapper.writeValueAsString(currentState);
-            }
-            catch (JsonProcessingException e) {
-                e.printStackTrace();
-            }
 
-            return guiString;
-        }
     }
 
     public void updateGUI() {
