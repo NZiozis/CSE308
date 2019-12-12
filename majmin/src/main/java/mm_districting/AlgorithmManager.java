@@ -93,9 +93,10 @@ public class AlgorithmManager {
      * @return The State object set.
      */
     @RequestMapping(value = "/setState", method = RequestMethod.POST)
-    public void updateStateInProperties(@RequestBody String stateName) {
+    public String updateStateInProperties(@RequestBody String stateName) {
         State.StateID selectedStateId = State.StateID.valueOf(stateName);
         State currentState = AlgorithmProperties.getProperties().getState();
+        String guiString = "";
         // Prevents unnecessary update of state and getting of information
         if (currentState == null || currentState.getStateId() != selectedStateId.ordinal()) {
             Optional<State> stateOptional = repository.findById((long) selectedStateId.ordinal());
@@ -105,6 +106,25 @@ public class AlgorithmManager {
             }
 
             AlgorithmProperties.getProperties().setState(state);
+
+            try {
+                guiString = mapper.writeValueAsString(state);
+            }
+            catch (JsonProcessingException e) {
+                e.printStackTrace();
+            }
+
+            return guiString;
+        }
+        else {
+            try {
+                guiString = mapper.writeValueAsString(currentState);
+            }
+            catch (JsonProcessingException e) {
+                e.printStackTrace();
+            }
+
+            return guiString;
         }
     }
 
@@ -125,7 +145,7 @@ public class AlgorithmManager {
     }
 
     @RequestMapping(value = "/florida", method = RequestMethod.GET)
-    public String getFloridaGeography() {
+    public String getFlorida() {
         Long floridaId = (long) State.StateID.FLORIDA.ordinal();
         Optional<State> floridaOptional = repository.findById(floridaId);
         State florida = null;
@@ -134,27 +154,6 @@ public class AlgorithmManager {
         }
 
         return florida.getGeography();
-    }
-
-
-    @RequestMapping(value = "/getState", method = RequestMethod.GET)
-    public String getStateTest() {
-        Long id = (long) 0;
-        Optional<State> stateOptional = repository.findById(id);
-        State state = null;
-        if (stateOptional.isPresent()) {
-            state = stateOptional.get();
-        }
-
-        String guiResult = "";
-        try {
-            guiResult = mapper.writeValueAsString(state);
-        }
-        catch (JsonProcessingException e) {
-            e.printStackTrace();
-        }
-
-        return guiResult;
     }
 
     @RequestMapping(value = "/setInsomnia", method = RequestMethod.POST)
@@ -177,6 +176,7 @@ public class AlgorithmManager {
             }
 
             AlgorithmProperties.getProperties().setState(state);
+
         }
     }
 

@@ -15,7 +15,9 @@ import { MiddlePanelComponent } from './middle-panel/middle-panel.component';
 import { RightPanelComponent } from './right-panel/right-panel.component';
 import { HeaderComponent } from './header/header.component';
 import { Phase0Component } from './phase0/phase0.component';
-import { Phase1Component } from './phase1/phase1.component'
+import { Phase1Component } from './phase1/phase1.component';
+import { BasicComponent } from './basic/basic.component'
+import {MatCheckboxModule} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -27,17 +29,19 @@ import { Phase1Component } from './phase1/phase1.component'
     RightPanelComponent,
     HeaderComponent,
     Phase0Component,
-    Phase1Component
+    Phase1Component,
+    BasicComponent
   ],
-  imports: [
-    HttpClientModule,
-    BrowserModule,
-    AppRoutingModule,
-    MaterialModule,
-    BrowserAnimationsModule,
-    LeafletModule.forRoot(),
-    FormsModule
-  ],
+    imports: [
+        HttpClientModule,
+        BrowserModule,
+        AppRoutingModule,
+        MaterialModule,
+        BrowserAnimationsModule,
+        LeafletModule.forRoot(),
+        FormsModule,
+        MatCheckboxModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

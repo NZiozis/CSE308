@@ -22,7 +22,7 @@ public class District {
     private Set<Precinct> precincts;
 
     private DemographicContext demographics;
-    private Voting             votingSet;
+    private Set<Voting>             votingSet;
 
     // String of the GeoJSON data
     private String geography;
@@ -91,14 +91,14 @@ public class District {
         this.demographics = demographics;
     }
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "DISTRICT_TO_VOTING")
     @JoinColumn(name = "VOTING_DATA_ID")
-    public Voting getVotingSet() {
+    public Set<Voting> getVotingSet() {
         return votingSet;
     }
 
-    public void setVotingSet(Voting votingData) {
+    public void setVotingSet(Set<Voting> votingData) {
         this.votingSet = votingData;
     }
 

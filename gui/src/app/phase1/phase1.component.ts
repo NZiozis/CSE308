@@ -12,6 +12,7 @@ export class Phase1Component implements OnInit {
     private minorityThreshold: number;
     private majorityThreshold: number;
     private selectedRaces;
+    private fullRun;
 
     constructor(private mapService: MapService) {
     }
@@ -21,10 +22,11 @@ export class Phase1Component implements OnInit {
     }
 
     ngOnInit() {
-        this.numberOfDistricts = 3;
+        this.numberOfDistricts = 0;
         this.minorityThreshold = 50;
         this.majorityThreshold = 50;
         this.selectedRaces = [];
+        this.fullRun = false;
     }
 
 }

@@ -1,5 +1,6 @@
 package mm_districting;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import util.Operation;
 
 import javax.persistence.*;
@@ -17,13 +18,14 @@ import java.util.Set;
  */
 @Entity
 @Table(name = "STATE")
+@JsonIgnoreProperties(value = { "initialDistricts", "generatedDistricts", "clusters", "bestPairings", "geography" })
 public class State {
 
     //---state data---//
     private String             name;
     private long               stateId;
     private String             legalGuidelines;
-    private Voting             votingSet;
+    private Set<Voting>        votingSet;
     private DemographicContext demographicContext;
     //---Encompassed geographical objects---//
     private Set<District>      initialDistricts;
@@ -134,14 +136,14 @@ public class State {
         this.legalGuidelines = legalGuidelines;
     }
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "STATE_TO_VOTING")
     @JoinColumn(name = "VOTING_DATA_ID")
-    public Voting getVotingSet() {
+    public Set<Voting> getVotingSet() {
         return votingSet;
     }
 
-    public void setVotingSet(Voting votingSet) {
+    public void setVotingSet(Set<Voting> votingSet) {
         this.votingSet = votingSet;
     }
 

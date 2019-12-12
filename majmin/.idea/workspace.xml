@@ -5,72 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1b917782-4cb8-457f-9f9b-dfb5f1451613" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../gui/src/app/model/precinct.model.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../gui/src/app/model/precinct.model.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../gui/src/app/phase0/phase0.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../gui/src/app/phase0/phase0.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../gui/src/app/phase0/phase0.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../gui/src/app/phase0/phase0.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../gui/src/app/services/phase0.service.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../gui/src/app/services/phase0.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/animations/esm2015/browser/testing/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/node_modules/@angular/animations/esm2015/browser/testing/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/animations/esm2015/src/players/animation_group_player 3.js" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/node_modules/@angular/animations/esm2015/src/players/animation_group_player 3.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/common/esm2015/upgrade/src/params.js" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/node_modules/@angular/common/esm2015/upgrade/src/params.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/common/esm5/http/src/client.js" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/node_modules/@angular/common/esm5/http/src/client.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/common/locales/ko-KP 3.js" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/node_modules/@angular/common/locales/ko-KP 3.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/common/locales/ksf 3.js" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/node_modules/@angular/common/locales/ksf 3.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/core/esm2015/src/di/interface/defs 3.js" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/node_modules/@angular/core/esm2015/src/di/interface/defs 3.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/core/esm2015/src/errors.js" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/node_modules/@angular/core/esm2015/src/errors.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/material/typings/radio/index.metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/node_modules/@angular/material/typings/radio/index.metadata.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/material/typings/schematics/ng-update/upgrade-rules/misc-checks/misc-class-names-rule.d 3.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/node_modules/@angular/material/typings/schematics/ng-update/upgrade-rules/misc-checks/misc-class-names-rule.d 3.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@babel/helper-wrap-function/node_modules/@babel/traverse/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/node_modules/@babel/helper-wrap-function/node_modules/@babel/traverse/LICENSE" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@babel/helper-wrap-function/node_modules/@babel/traverse/lib/path/modification.js" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/node_modules/@babel/helper-wrap-function/node_modules/@babel/traverse/lib/path/modification.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@types/webpack-sources/node_modules/source-map/dist/source-map.debug.js" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/node_modules/@types/webpack-sources/node_modules/source-map/dist/source-map.debug.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@types/webpack-sources/node_modules/source-map/dist/source-map.min.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/node_modules/@types/webpack-sources/node_modules/source-map/dist/source-map.min.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/babel-runtime/node_modules/core-js/library/fn/symbol/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/node_modules/babel-runtime/node_modules/core-js/library/fn/symbol/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/babel-runtime/node_modules/core-js/library/modules/_an-object 3.js" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/node_modules/babel-runtime/node_modules/core-js/library/modules/_an-object 3.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/caniuse-lite/data/features/dom-range 2.js" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/node_modules/caniuse-lite/data/features/dom-range 2.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/caniuse-lite/data/features/intersectionobserver 2.js" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/node_modules/caniuse-lite/data/features/intersectionobserver 2.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/core-js/es/string/virtual/big.js" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/node_modules/core-js/es/string/virtual/big.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/core-js/es/typed-array/float32-array 2.js" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/node_modules/core-js/es/typed-array/float32-array 2.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/engine.io-client/lib/transports/polling.js" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/node_modules/engine.io-client/lib/transports/polling.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/engine.io-client/node_modules/debug/src/browser 2.js" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/node_modules/engine.io-client/node_modules/debug/src/browser 2.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/istanbul-instrumenter-loader/node_modules/ajv/lib/dotjs/propertyNames.js" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/node_modules/istanbul-instrumenter-loader/node_modules/ajv/lib/dotjs/propertyNames.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/istanbul-instrumenter-loader/node_modules/ajv/lib/refs/json-schema-draft-04.json" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/node_modules/istanbul-instrumenter-loader/node_modules/ajv/lib/refs/json-schema-draft-04.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/karma/node_modules/core-js/library/modules/es6.string.sup 2.js" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/node_modules/karma/node_modules/core-js/library/modules/es6.string.sup 2.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/karma/node_modules/core-js/library/modules/es6.symbol 2.js" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/node_modules/karma/node_modules/core-js/library/modules/es6.symbol 2.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/lodash/_baseSortedIndex.js" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/node_modules/lodash/_baseSortedIndex.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/lodash/_isKeyable 2.js" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/node_modules/lodash/_isKeyable 2.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/node-releases/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/node_modules/node-releases/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/node-releases/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/node_modules/node-releases/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/resolve-from/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/node_modules/resolve-from/readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/resolve/test/mock 2.js" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/node_modules/resolve/test/mock 2.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/rxjs/operators/first 2.js" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/node_modules/rxjs/operators/first 2.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/rxjs/operators/sample 2.js" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/node_modules/rxjs/operators/sample 2.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/sax/test/parser-position.js" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/node_modules/sax/test/parser-position.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/sax/test/self-closing-child.js" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/node_modules/sax/test/self-closing-child.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/tar/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/node_modules/tar/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/iconv-lite/encodings/sbcs-data.js" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/iconv-lite/encodings/sbcs-data.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/iconv-lite/encodings/tables/gb18030-ranges.json" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/iconv-lite/encodings/tables/gb18030-ranges.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gui/src/app/basic/basic.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gui/src/app/basic/basic.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gui/src/app/basic/basic.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gui/src/app/basic/basic.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../gui/src/app/app.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/src/app/app.component.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../gui/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/src/app/classes/State" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/src/app/header/header.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/src/app/header/header.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/src/app/home-map/home-map.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/src/app/home-map/home-map.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../gui/src/app/left-panel/left-panel.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/src/app/left-panel/left-panel.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/src/app/left-panel/left-panel.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/src/app/left-panel/left-panel.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/src/app/map.service.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/src/app/services/map.service.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/src/app/map.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/src/app/services/map.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/src/app/middle-panel/middle-panel.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/src/app/middle-panel/middle-panel.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../gui/src/app/model/district.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/src/app/model/district.model.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/src/app/phase1/phase1.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/src/app/phase1/phase1.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/src/app/services/map.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/src/app/services/map.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/src/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/mm_districting/AlgorithmManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mm_districting/AlgorithmManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mm_districting/DemographicContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mm_districting/DemographicContext.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/mm_districting/District.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mm_districting/District.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/mm_districting/State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mm_districting/State.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/mm_districting/AlgorithmManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mm_districting/AlgorithmManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mm_districting/DemographicContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mm_districting/DemographicContext.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/mm_districting/District.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mm_districting/District.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/mm_districting/State$StateID.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mm_districting/State$StateID.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/mm_districting/State.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mm_districting/State.class" afterDir="false" />
@@ -316,7 +268,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/mm_districting/AlgorithmManager.java</url>
-          <line>173</line>
+          <line>172</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
