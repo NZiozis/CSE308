@@ -1,4 +1,5 @@
 package algorithm;
+import results.DummyResult;
 import results.Result;
 
 import java.util.ArrayList;
@@ -38,7 +39,10 @@ public class Algorithm implements AlgorithmStep {
 	@Override
 	public boolean run() {
 		if (currentStep != null && currentStep.run()) {
-			resultsToSend.add(currentStep.onCompletion());
+			Result lastStepResult = currentStep.onCompletion();
+			if (!(lastStepResult instanceof DummyResult)) {
+				resultsToSend.add(lastStepResult);
+			}
 			if (currentStepIndex - 1 == steps.size()) {
 				return true;
 			}

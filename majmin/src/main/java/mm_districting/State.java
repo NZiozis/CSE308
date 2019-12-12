@@ -3,10 +3,7 @@ package mm_districting;
 import util.Operation;
 
 import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Represents a State, including encompassed precincts, districts, demographics, voting data, and algorithm-oriented objects such as clusters and edges.
@@ -30,9 +27,14 @@ public class State {
     //---Algorithm oriented objects---//
     private Set<District>     generatedDistricts;
     private Set<Cluster>      clusters;
+    @Transient
+    private Set<Edge>         edges;
     private Map<Cluster,Edge> bestPairings;
     private Set<Cluster>      doNotPairClusters;
     private String            geography;
+
+    @Transient
+    private Map<Precinct, Cluster> initialClustersMap;
 
     public State() {}
 
@@ -46,6 +48,7 @@ public class State {
         this.legalGuidelines = legalGuidelines;
         this.geography = geography;
         this.initialDistricts = new HashSet<>();
+        this.initialClustersMap = new HashMap<>();
     }
 
     @Id
@@ -62,8 +65,10 @@ public class State {
      * @return The previously set highest joinability found for this cluster.
      */
     @Transient
-    public float getMaxJoinability(Cluster cluster) {
-        return bestPairings.get(cluster).getJoinability();
+    public double getMaxJoinability(Cluster cluster) {
+        //TODO: probably combine MajMin and normal joinability, simply making majmin weight much higher than anything else
+        Edge bestEdge = bestPairings.get(cluster);
+        return bestEdge == null ? -1 : Math.max(bestEdge.getMajMinJoinability(), bestEdge.getJoinability());
     }
 
     /**
@@ -85,6 +90,21 @@ public class State {
      * Updates the Set of Clusters in this state by replacing the two clusters given by the edge with their combined cluster.
      */
     public void combineClusters(Edge edge) {
+        clusters.remove(edge.getClusterOne());
+        clusters.remove(edge.getClusterTwo());
+        doNotPairClusters.add(edge.getClusterOne());
+        doNotPairClusters.add(edge.getClusterTwo());
+
+        Cluster combinedCluster = new Cluster();
+        combinedCluster.getPrecincts().addAll(edge.getClusterOne().getPrecincts());
+        combinedCluster.getPrecincts().addAll(edge.getClusterTwo().getPrecincts());
+        combinedCluster.setEdges(edge.getClusterOne().getEdges());
+        combinedCluster.getEdges().addAll(edge.getClusterTwo().getEdges());
+        combinedCluster.getEdges().remove(edge);
+
+        for (Edge e : combinedCluster.getEdges()) {
+            e.updateCluster(combinedCluster, edge.getClusterOne(), edge.getClusterTwo());
+        }
 
     }
 
@@ -186,6 +206,25 @@ public class State {
         this.doNotPairClusters = doNotPairClusters;
     }
 
+    @Transient
+    public Set<Edge> getEdges() {
+        return edges;
+    }
+
+    @Transient
+    public Map<Precinct, Cluster> getInitialClustersMap() {
+        return initialClustersMap;
+    }
+
+    public void addClusterPrecinctMapping(Precinct precinct, Cluster cluster) {
+        initialClustersMap.put(precinct, cluster);
+    }
+
+    @Transient
+    public HashMap<Cluster, Edge> getBestPairings() {
+        return (HashMap<Cluster, Edge>)bestPairings;
+    }
+
     /**
      * Used to identify which state the user has selected to be analyzed.
      *
@@ -194,6 +233,4 @@ public class State {
      * @see Operation
      */
     public enum StateID {WEST_VIRGINIA, UTAH, FLORIDA}
-
-
 }

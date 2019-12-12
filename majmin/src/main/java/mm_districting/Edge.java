@@ -17,12 +17,12 @@ public class Edge {
     /**
      * The overall joinability value of this edge based on all available information.
      */
-    private float joinability;
+    private double joinability;
 
     /**
      * The joinability value of this edge based only on it's majority/minority demographic data
      */
-    private float majorityMinorityJoinability;
+    private double majorityMinorityJoinability;
 
     public Edge(Cluster clusterOne, Cluster clusterTwo) {
         this.clusterOne = clusterOne;
@@ -44,15 +44,15 @@ public class Edge {
         }
     }
 
-    public float getJoinability() {
+    public double getJoinability() {
         return joinability;
     }
 
-    public void setJoinability(float joinability) {
+    public void setJoinability(double joinability) {
         this.joinability = joinability;
     }
 
-    public float getMajMinJoinability() {
+    public double getMajMinJoinability() {
         return majorityMinorityJoinability;
     }
 
@@ -64,9 +64,19 @@ public class Edge {
         return clusterTwo;
     }
 
-    public void setMajorityMinorityJoinability(float majorityMinorityJoinability) {
+    public void setMajorityMinorityJoinability(double majorityMinorityJoinability) {
         this.majorityMinorityJoinability = majorityMinorityJoinability;
     }
 
+    public boolean hasCluster(Cluster cluster) {
+        return clusterOne.equals(cluster) || clusterTwo.equals(cluster);
+    }
 
+    public void updateCluster(Cluster combinedCluster, Cluster c1, Cluster c2) {
+        if (clusterOne.equals(c1) || clusterOne.equals(c2)) {
+            clusterOne = combinedCluster;
+        } else if (clusterTwo.equals(c1) || clusterTwo.equals((c2))) {
+            clusterTwo = combinedCluster;
+        }
+    }
 }

@@ -38,6 +38,11 @@ public class Cluster {
 			return this.id == ((Cluster)obj).id;
 		}
 	}
+
+	@Override
+	public int hashCode() {
+		return id;
+	}
 	
 	public void addPrecinct(Precinct p) {
 		precincts.add(p);
@@ -54,5 +59,8 @@ public class Cluster {
 	public Set<Edge> getEdges() {
 		return edges;
 	}
-	
+
+	public void setEdges(Set<Edge> edges) {
+		this.edges = edges;
+	}
 }

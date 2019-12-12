@@ -28,6 +28,8 @@ public class AlgorithmProperties {
     private int       numDistricts;
     private int       numMajorityMinorityDistricts;
 
+    private int       requestedNumDistricts;
+
     private boolean showEachStep;
 
     //TODO: clean up and confiq arrays as needed
@@ -140,4 +142,11 @@ public class AlgorithmProperties {
         this.showEachStep = showEachStep;
     }
 
+    public int getRequestedNumDistricts() {
+        return requestedNumDistricts;
+    }
+
+    public void setRequestedNumDistricts(int requestedNumDistricts) {
+        this.requestedNumDistricts = requestedNumDistricts;
+    }
 }

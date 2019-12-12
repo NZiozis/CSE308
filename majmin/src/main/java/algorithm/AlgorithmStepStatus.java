@@ -47,7 +47,7 @@ public class AlgorithmStepStatus {
 	
 	@Override
 	public String toString() {
-		return algorithmStepName + ": progress = " + progress + ". Current status: " + message;
+		return algorithmStepName + ": progress = " + progress + message == null ? "." : ". Current status: " + message;
 	}
 
 	public String getAlgorithmStepName() {
