@@ -220,6 +220,7 @@ public class AlgorithmManager {
         for (String demographic : selectedDemographicsArr) {
             selectedDemographics.add(Race.valueOf(demographic));
         }
+        AlgorithmProperties.getProperties().setSelectedDemographics(selectedDemographics);
 
         currentAlgorithm =
                 new Algorithm(new GenerateInitialClusters(), new GenerateInitialEdges(), new Phase1Iteration(true));

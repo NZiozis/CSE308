@@ -18,7 +18,7 @@ public class Joinability {
         Set<Precinct> precinctsOne = clusterOne.getPrecincts();
         Set<Precinct> precinctsTwo = clusterTwo.getPrecincts();
 
-        int target = Math.round((algProps.getVotingMajorityThreshold() + algProps.getMinorityVotingThreshold()) / 2.0f);
+        double target = Math.round((algProps.getVotingMajorityThreshold() + algProps.getMinorityVotingThreshold()) / 100.0);
 
        DemographicContext combined = new DemographicContext();
        DemographicContext contextOne = clusterOne.getDemographicContext();
@@ -36,7 +36,7 @@ public class Joinability {
 
        for (Race dem : algProps.getSelectedDemographics()) {
            double combinedRatio = combined.getByRace(dem) * 1.0 / combined.getTotal();
-           score += Math.abs(target - combinedRatio);
+           score += (1 - Math.abs(target - combinedRatio));
        }
 
         //heavily mm joinability over non mm
