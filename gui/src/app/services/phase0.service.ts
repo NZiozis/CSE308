@@ -12,6 +12,8 @@ export class Phase0Service {
     public votingPercentage;
     public selectedRaces;
     public selectedElection;
+    public votingBlocs;
+    public demographicBlocs;
 
     constructor(private http: HttpClient, private mapService: MapService) {
     }
@@ -25,10 +27,13 @@ export class Phase0Service {
             // TODO highlight the returned precincts and put them into the chart.
             // this.selectedRacePrecincts = array[0].precincts;
             const demographicPrecincts = array[0].precincts;
+            const votingPrecincts = array[1].precincts;
             for (const precinct of demographicPrecincts) {
                 const layer: GeoJSON = this.mapService.precinctToLayerMapper.get(precinct.geoId);
                 layer.setStyle({fillColor: '#00f0e8', opacity: 0});
             }
+            this.demographicBlocs = demographicPrecincts;
+            this.votingBlocs = votingPrecincts;
             console.log(array);
             // console.log(array[0]);
             // console.log(this.selectedRacePrecincts);

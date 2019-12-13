@@ -1,6 +1,5 @@
 package algorithm_steps;
 
-import algorithm.Algorithm;
 import algorithm.AlgorithmStep;
 import algorithm.AlgorithmStepStatus;
 import mm_districting.AlgorithmProperties;
@@ -15,13 +14,13 @@ import java.util.Set;
 
 /**
  * Phase0, step 2: Determine Voting Blocs (Use case #24)
- *
+ * <p>
  * Identifies which precincts in the selected state contain a voting Bloc, as defined by
  * the demographics and thresholds selected by the user.
  *
+ * @author Patrick Wamsley
  * @see mm_districting/AlgorithmProperties
  * @see results/Phase0VotingResult
- * @author Patrick Wamsley
  */
 public class DetermineVotingBlocs implements AlgorithmStep {
 
@@ -30,6 +29,7 @@ public class DetermineVotingBlocs implements AlgorithmStep {
     /**
      * Iterates through the current state's precincts which have been previously id'd to contain a bloc,
      * and identifies the subset of precincts which contain a voting bloc.
+     *
      * @return true when completed
      */
     @Override
@@ -47,13 +47,15 @@ public class DetermineVotingBlocs implements AlgorithmStep {
             }
 
             for (Voting voting : electionResults) {
-                if (algorithmProperties.getVotingMajorityThreshold() <= (voting.getVotes() * 1.0 / totalVotes) * 100) {
+                if (algorithmProperties.getVotingMajorityThreshold() <=
+                    ( voting.getVotes() * 1.0 / totalVotes ) * 100) {
                     precinct.setVotingBloc(voting.getParty());
                     Precinct dummyCopy = new Precinct();
                     dummyCopy.setCounty(precinct.getCounty());
                     dummyCopy.setGeoId(precinct.getGeoId());
                     dummyCopy.setDemographicBloc(precinct.getDemographicBloc());
                     dummyCopy.setVotingBloc(voting.getParty());
+                    dummyCopy.setDemographics(precinct.getDemographics());
                     results.add(dummyCopy);
                 }
             }

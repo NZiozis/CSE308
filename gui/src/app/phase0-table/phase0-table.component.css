@@ -1,19 +1,19 @@
 table {
-  width: 100%;
+    width: 100%;
 }
 
 .example-container {
-  height: 350px;
-  overflow: auto;
+    height: 350px;
+    overflow: auto;
 }
 
 
 .number_digit {
-    width: 5%
+    width: 10%
 }
 
 .non_digit {
-    width: 16%
+    width: 15%
 }
 
 .demoBlockHolder {
@@ -21,5 +21,5 @@ table {
 }
 
 .votingBlockHolder {
-    height: 50%%
+    height: 50%
 }

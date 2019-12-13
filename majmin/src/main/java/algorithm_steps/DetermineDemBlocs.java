@@ -86,6 +86,7 @@ public class DetermineDemBlocs implements AlgorithmStep {
                 clone.setCounty(precinct.getCounty());
                 clone.setGeoId(precinct.getGeoId());
                 clone.setDemographicBloc(precinct.getDemographicBloc());
+                clone.setDemographics(precinct.getDemographics());
                 precinctsWithDemBloc.add(clone);
             }
         }
