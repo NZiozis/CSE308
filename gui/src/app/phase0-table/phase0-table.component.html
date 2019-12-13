@@ -23,19 +23,17 @@
                 <td mat-cell *matCellDef="let element"> {{element.votingBloc}} </td>
             </ng-container>
 
-
             <ng-container matColumnDef="percChosen">
-                <th class="non_digit" mat-header-cell *matHeaderCellDef> % of chosen Group</th>
-                <td mat-cell
-                    *matCellDef="let element">
-                    {{(element.demographics[converter(element.demographicBloc)] / element.demographics.total * 100).toFixed(2)}}
+                <th class="non_digit" mat-header-cell *matHeaderCellDef> % of voted for Party</th>
+                <td mat-cell *matCellDef="let element">
+                    {{(getPartyVotes(element.votingSet, element.votingBloc) / sumElectionVotes(element.votingSet) * 100).toFixed(2)}}
                 </td>
             </ng-container>
 
             <ng-container matColumnDef="totalPop">
-                <th class="non_digit" mat-header-cell *matHeaderCellDef> Total Population</th>
-                <td mat-cell
-                    *matCellDef="let element"> {{element.demographics.total}} </td>
+                <th class="non_digit" mat-header-cell *matHeaderCellDef> Total Votes</th>
+                <td mat-cell *matCellDef="let element">
+                    {{sumElectionVotes(element.votingSet)}} </td>
             </ng-container>
 
             <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
@@ -72,15 +70,16 @@
 
             <ng-container matColumnDef="percChosen">
                 <th class="non_digit" mat-header-cell *matHeaderCellDef> % of chosen Group</th>
-                <td mat-cell *matCellDef="let element">
-
+                <td mat-cell
+                    *matCellDef="let element">
                     {{(element.demographics[converter(element.demographicBloc)] / element.demographics.total * 100).toFixed(2)}}
                 </td>
             </ng-container>
 
             <ng-container matColumnDef="totalPop">
                 <th class="non_digit" mat-header-cell *matHeaderCellDef> Total Population</th>
-                <td mat-cell *matCellDef="let element"> {{element.demographics.total}} </td>
+                <td mat-cell
+                    *matCellDef="let element"> {{element.demographics.total}} </td>
             </ng-container>
 
             <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>

@@ -230,10 +230,33 @@ export class Phase0TableComponent implements OnInit {
             case 'BLACK':
                 out = 'africanAmerican';
                 break;
+            case 'WHITE':
+                out = 'white';
+                break;
+            case 'ASIAN':
+                out = 'asian';
+                break;
+            case 'PACIFIC_ISLANDER':
+                out = 'pacificIslander';
+                break;
+            default:
+                out = '';
         }
 
-
         return out;
+    }
+
+    getPartyVotes(votingSet, party) {
+        const election = votingSet.filter(data => data.party === party);
+        return election[0].votes;
+    }
+
+    sumElectionVotes(votingSet) {
+        let total = 0;
+        for (const election of votingSet) {
+            total += election.votes;
+        }
+        return total;
     }
 
     ngOnInit() {

@@ -56,6 +56,7 @@ public class DetermineVotingBlocs implements AlgorithmStep {
                     dummyCopy.setDemographicBloc(precinct.getDemographicBloc());
                     dummyCopy.setVotingBloc(voting.getParty());
                     dummyCopy.setDemographics(precinct.getDemographics());
+                    dummyCopy.setVotingSet(electionResults);
                     results.add(dummyCopy);
                 }
             }

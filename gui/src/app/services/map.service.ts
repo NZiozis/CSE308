@@ -112,10 +112,6 @@ export class MapService {
                                     });
                                     self.map.removeControl(self.currentInfo);
                                 });
-                                layer.on('click', () => {
-                                    // Let's say you've got a property called url in your geojsonfeature:
-                                    window.location = feature.properties.url;
-                                });
                             }
                         });
                         geoJson.setStyle({fillColor: '#ff0000'});
@@ -143,13 +139,9 @@ export class MapService {
                                     });
                                     self.map.removeControl(self.currentInfo);
                                 });
-                                layer.on('click', () => {
-                                    // Let's say you've got a property called url in your geojsonfeature:
-                                    window.location = feature.properties.url;
-                                });
                             }
                         });
-                        geoJson.setStyle({fillColor: '#ff15ed'});
+                        geoJson.setStyle({fillColor: '#ff15ed', weight: .5});
                         self.precinctLayerGroup.addLayer(geoJson);
                         self.precinctToLayerMapper.set(precinct.geoId, geoJson);
                     }

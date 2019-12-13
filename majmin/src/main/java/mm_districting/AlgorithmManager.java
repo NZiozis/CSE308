@@ -209,6 +209,10 @@ public class AlgorithmManager {
             e.printStackTrace();
         }
 
+        for (Precinct precinct : AlgorithmProperties.getProperties().getState().getPrecincts()) {
+            precinct.setDemographicBloc(null);
+        }
+
         return guiResult;
     }
 
