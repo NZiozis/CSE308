@@ -199,11 +199,21 @@ public class AlgorithmManager {
         return guiResult;
     }
 
-    private String initPhase1() {
+    @RequestMapping(value = "/phase1", method = RequestMethod.POST)
+    private String initPhase1(@RequestBody String postPayload) {
 
-        currentAlgorithm = new Algorithm(new GenerateInitialClusters(), new GenerateInitialEdges(), new Phase1Iteration(true));
+        Map<String,Object> map = null;
+        try {
+            map = mapper.readValue(postPayload, Map.class);
+        }
+        catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
 
-        while (!(currentAlgorithm.run())) {}
+        currentAlgorithm =
+                new Algorithm(new GenerateInitialClusters(), new GenerateInitialEdges(), new Phase1Iteration(true));
+
+        while (!( currentAlgorithm.run() )) {}
 
         return "";
     }

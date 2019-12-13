@@ -32,6 +32,7 @@ export class Phase1Component implements OnInit {
         output.minorityThreshold = this.minorityThreshold;
         output.selectedRaces = this.selectedRaces;
         output.majorityThreshold = this.majorityThreshold;
+        output.fullRun = this.fullRun;
 
         return output;
     }
@@ -43,4 +44,5 @@ export class Phase1Config {
     minorityThreshold: number;
     majorityThreshold: number;
     selectedRaces: Array<string>;
+    fullRun: boolean;
 }
