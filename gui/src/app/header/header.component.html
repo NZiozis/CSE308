@@ -2,7 +2,8 @@
     <h3 class="state">Selected State:</h3>
     <mat-form-field>
         <mat-select [(ngModel)]="mapService.selectedState">
-            <mat-option *ngFor="let state of this.mapService.states" [value]="state.backendName" (onSelectionChange)="onDropDownChange($event)">
+            <mat-option *ngFor="let state of this.mapService.states" [value]="state.backendName"
+                        (onSelectionChange)="onDropDownChange($event)">
                 {{state.name}}
             </mat-option>
         </mat-select>

@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import util.Operation;
 
 import javax.persistence.*;
-
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -20,29 +19,29 @@ import java.util.Set;
  */
 @Entity
 @Table(name = "STATE")
-@JsonIgnoreProperties(value = { "initialDistricts", "generatedDistricts", "clusters", "bestPairings", "geography" })
+@JsonIgnoreProperties(
+        value = { "initialDistricts", "generatedDistricts", "clusters", "bestPairings", "geography", "edges",
+                  "bestPairings", "doNotPairClusters", "precincts" })
 public class State {
 
     //---state data---//
-    private String             name;
-    private long               stateId;
-    private String             legalGuidelines;
-    private Set<Voting>        votingSet;
-    private DemographicContext demographicContext;
+    private            String             name;
+    private            long               stateId;
+    private            String             legalGuidelines;
+    private            Set<Voting>        votingSet;
+    private            DemographicContext demographicContext;
     //---Encompassed geographical objects---//
-    private Set<District>      initialDistricts;
+    private            Set<District>      initialDistricts;
     //---Algorithm oriented objects---//
-    private Set<District>     generatedDistricts;
-    private Set<Cluster>      clusters;
-    @Transient
-    private Set<Edge>         edges;
-    private Map<Cluster,Edge> bestPairings;
-    private Set<Cluster>      doNotPairClusters;
-    private String            geography;
+    private            Set<District>      generatedDistricts;
+    private            Set<Cluster>       clusters;
+    @Transient private Set<Edge>          edges;
+    private            Map<Cluster,Edge>  bestPairings;
+    private            Set<Cluster>       doNotPairClusters;
+    private            String             geography;
 
 
-    @Transient
-    private Map<Precinct, Cluster> initialClustersMap;
+    @Transient private Map<Precinct,Cluster> initialClustersMap;
 
     public State() {}
 
@@ -233,7 +232,7 @@ public class State {
     }
 
     @Transient
-    public Map<Precinct, Cluster> getInitialClustersMap() {
+    public Map<Precinct,Cluster> getInitialClustersMap() {
         return initialClustersMap;
     }
 
@@ -242,8 +241,8 @@ public class State {
     }
 
     @Transient
-    public HashMap<Cluster, Edge> getBestPairings() {
-        return (HashMap<Cluster, Edge>)bestPairings;
+    public HashMap<Cluster,Edge> getBestPairings() {
+        return (HashMap<Cluster,Edge>) bestPairings;
     }
 
     /**

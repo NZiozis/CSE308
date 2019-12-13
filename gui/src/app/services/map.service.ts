@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {geoJSON, ImageOverlay, LatLng, latLng, Layer, LayerGroup, TileLayer, tileLayer} from 'leaflet';
+import {GeoJSON, geoJSON, ImageOverlay, LatLng, latLng, Layer, LayerGroup, TileLayer, tileLayer} from 'leaflet';
 import {Observable} from 'rxjs';
 import {Backend} from '../model/backend.model';
 import {Config} from '../phase0/phase0.component';
@@ -37,10 +37,12 @@ export class MapService {
 
     public map;
     public stateIsSelected: boolean;
+    public state;
     public states: Backend[];
     public possibleRaces: Backend[];
     public elections: Backend[];
     public nameToLayerMapper = new Map<string, ImageOverlay>();
+    public precinctToLayerMapper = new Map<string, GeoJSON<any>>();
     public selectedState: string;
     public REST_API_SERVER_URL = 'http://localhost:8080';
 
@@ -49,7 +51,7 @@ export class MapService {
     private layerIdToNameMapper = new Map<string, string>();
     private currentInfo;
     private districtLayerGroup;
-    private precinctLayerGroup;
+    public precinctLayerGroup;
 
     toggleDistrictPrecinctLayers(isDisplayDistricts: boolean) {
         if (!isDisplayDistricts) {
@@ -72,13 +74,18 @@ export class MapService {
         return this.options;
     }
 
+    getStateInfo() {
+        console.log('test');
+        this.http.get(this.REST_API_SERVER_URL + '/getState').subscribe(json => {
+            console.log(json);
+        });
+    }
+
     setSelectedState(selectedState: string): void {
         if (this.selectedState !== selectedState) {
 
             this.selectedState = selectedState;
             this.stateIsSelected = true;
-
-            console.log(selectedState);
 
             this.map.fitBounds(this.nameToLayerMapper.get(selectedState).getBounds());
             const setState = this.http.post<Config>(this.REST_API_SERVER_URL + '/setState', selectedState);
@@ -121,24 +128,30 @@ export class MapService {
                     console.log(precincts);
                     this.precinctLayerGroup = new LayerGroup();
                     for (const precinct of precincts) {
-                        const geoJson = geoJSON(JSON.parse(precinct.geography));
-                        // const temp = precinct.votingSet.filter((voting: any) => {
-                        //     return voting.election === 'CONGRESSIONAL_2018';
-                        // });
-                        // const repub = temp.filter((voting) => {
-                        //     return voting.party === 'REPUBLICAN';
-                        // })[0].votes;
-                        // const dem = temp.filter((voting) => {
-                        //     return voting.party === 'DEMOCRAT';
-                        // })[0].votes;
-                        // if (repub > dem) {
-                        //     geoJson.setStyle({fillColor: '#0000ff', opacity: .01});
-                        // } else {
-                        //     geoJson.setStyle({fillColor: '#ff0000', opacity: .01, color: '#ff0000'});
-                        // }
-                        // geoJson.addTo(this.map);
-                        geoJson.setStyle({fillColor: '#0000ff', opacity: .05, color: '#0000ff'});
+                        const geoJson = geoJSON(JSON.parse(precinct.geography), {
+                            onEachFeature(feature, layer) {
+                                layer.on('mouseover', function() {
+                                    this.setStyle({
+                                        fillOpacity: 1
+                                    });
+                                    self.currentInfo = new District({position: 'bottomleft'}, precinct, this);
+                                    self.currentInfo.addTo(self.map);
+                                });
+                                layer.on('mouseout', function() {
+                                    this.setStyle({
+                                        fillOpacity: 0.2
+                                    });
+                                    self.map.removeControl(self.currentInfo);
+                                });
+                                layer.on('click', () => {
+                                    // Let's say you've got a property called url in your geojsonfeature:
+                                    window.location = feature.properties.url;
+                                });
+                            }
+                        });
+                        geoJson.setStyle({fillColor: '#ff15ed'});
                         self.precinctLayerGroup.addLayer(geoJson);
+                        self.precinctToLayerMapper.set(precinct.geoId, geoJson);
                     }
                     // this.precinctLayerGroup.addTo(this.map);
                     console.log('Precincts completed');

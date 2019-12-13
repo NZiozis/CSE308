@@ -7,26 +7,27 @@ import mm_districting.DemographicContext;
 import mm_districting.Precinct;
 import mm_districting.State;
 import results.Phase0DemographicResult;
-import util.Race;
 import results.Result;
+import util.Race;
 
 import java.util.HashSet;
 import java.util.Set;
 
 /**
  * Phase0, step 1: Determine Demographics Blocs (Use case #23)
- *
+ * <p>
  * Identifies which precincts in the selected state contain a Demographic Bloc, as defined by
  * the demographics and thresholds selected by the user.
  *
+ * @author Patrick Wamsley
  * @see mm_districting/AlgorithmProperties
  * @see results/Phase0DemographicResult
- * @author Patrick Wamsley
  */
 public class DetermineDemBlocs implements AlgorithmStep {
 
     /**
      * Iterates through the current state's precincts and identifies which contain demographic blocs
+     *
      * @return true when completed
      */
     @Override
@@ -40,7 +41,8 @@ public class DetermineDemBlocs implements AlgorithmStep {
         for (Precinct precinct : precincts) {
             DemographicContext demographicData = precinct.getDemographics();
             for (Race dem : selectedDems) {
-                int demographicPercent = (int)((demographicData.getByRace(dem) * 1.0 / demographicData.getTotal()) * 100);
+                int demographicPercent =
+                        (int) ( ( demographicData.getByRace(dem) * 1.0 / demographicData.getTotal() ) * 100 );
 
                 if (algProps.getBlocThreshold() <= demographicPercent) {
                     precinct.setDemographicBloc(dem);
@@ -57,9 +59,9 @@ public class DetermineDemBlocs implements AlgorithmStep {
      */
     @Override
     public AlgorithmStepStatus getStatus() {
-      AlgorithmStepStatus status = new AlgorithmStepStatus("Determine Demographic Blocs");
-      status.setProgress(1);
-      return status;
+        AlgorithmStepStatus status = new AlgorithmStepStatus("Determine Demographic Blocs");
+        status.setProgress(1);
+        return status;
     }
 
     /**
@@ -78,7 +80,8 @@ public class DetermineDemBlocs implements AlgorithmStep {
         Set<Precinct> precinctsWithDemBloc = new HashSet<>();
 
         for (Precinct precinct : algProps.getState().getPrecincts()) {
-            if (precinct.getDemographicBloc() != null) {
+            if (precinct.getDemographicBloc() != null &&
+                algProps.getSelectedDemographics().contains(precinct.getDemographicBloc())) {
                 Precinct clone = new Precinct();
                 clone.setCounty(precinct.getCounty());
                 clone.setGeoId(precinct.getGeoId());
