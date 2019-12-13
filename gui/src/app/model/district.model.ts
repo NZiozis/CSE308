@@ -7,15 +7,13 @@ export class District extends Control {
     geoId: number;
     districtNumber: number;
     votingSet: any;
-    mapService: MapService;
 
-    constructor(opts, district, mapService: MapService) {
+    constructor(opts, district, private mapService: MapService) {
         super(opts);
         this.demographics = district.demographics;
         this.geography = district.geography;
         this.geoId = district.geoId;
         this.districtNumber = district.districtNumber;
-        this.mapService = mapService;
     }
 
     onAdd(map) {

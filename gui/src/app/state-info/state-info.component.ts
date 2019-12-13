@@ -2,11 +2,13 @@ import {Component, OnInit} from '@angular/core';
 import {MapService} from '../services/map.service';
 
 @Component({
-    selector: 'app-middle-panel',
-    templateUrl: './middle-panel.component.html',
-    styleUrls: ['./middle-panel.component.css']
+    selector: 'app-state-info',
+    templateUrl: './state-info.component.html',
+    styleUrls: ['./state-info.component.css']
 })
-export class MiddlePanelComponent implements OnInit {
+export class StateInfoComponent implements OnInit {
+
+    private state;
 
     constructor(private mapService: MapService) {
     }

@@ -21,14 +21,14 @@ public class AlgorithmProperties {
 
     private State state;
 
-    private Set<Race> selectedDemographics;
+    private Set<Race>     selectedDemographics;
     private Set<Precinct> precinctsWithDemBlocs;
 
     private Election selectedElection;
-    private int       numDistricts;
-    private int       numMajorityMinorityDistricts;
+    private int      numDistricts;
+    private int      numMajorityMinorityDistricts;
 
-    private int       requestedNumDistricts;
+    private int requestedNumDistricts;
 
     private boolean showEachStep;
 
@@ -72,12 +72,12 @@ public class AlgorithmProperties {
         this.selectedElection = selectedElection;
     }
 
-    public void setPrecinctsWithDemBlocs(Set<Precinct> precincts) {
-        this.precinctsWithDemBlocs = precincts;
-    }
-
     public Set<Precinct> getPrecinctsWithDemBlocs() {
         return precinctsWithDemBlocs;
+    }
+
+    public void setPrecinctsWithDemBlocs(Set<Precinct> precincts) {
+        this.precinctsWithDemBlocs = precincts;
     }
 
     public int getVotingMajorityThreshold() {

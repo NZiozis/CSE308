@@ -96,10 +96,10 @@ public class AlgorithmManager {
         State.StateID selectedStateId = State.StateID.valueOf(stateName);
         State currentState = AlgorithmProperties.getProperties().getState();
         String guiString = "";
+        State state = null;
         // Prevents unnecessary update of state and getting of information
         if (currentState == null || currentState.getStateId() != selectedStateId.ordinal()) {
             Optional<State> stateOptional = repository.findById((long) selectedStateId.ordinal());
-            State state = null;
             if (stateOptional.isPresent()) {
                 state = stateOptional.get();
             }
@@ -110,8 +110,20 @@ public class AlgorithmManager {
 
     }
 
-    public void updateGUI() {
+    @RequestMapping(value = "/getState", method = RequestMethod.GET)
+    public String getStateToUI() {
+        State state = AlgorithmProperties.getProperties().getState();
 
+        String guiString = "";
+
+        try {
+            guiString = mapper.writeValueAsString(state);
+        }
+        catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
+
+        return guiString;
     }
 
     @RequestMapping(value = "/westVirginia", method = RequestMethod.GET)
@@ -182,6 +194,7 @@ public class AlgorithmManager {
         AlgorithmProperties.getProperties().setSelectedDemographics(selectedDemographics);
         AlgorithmProperties.getProperties().setSelectedElection(Election.valueOf((String) map.get("selectedElection")));
 
+        AlgorithmProperties.getProperties().getPrecinctsWithDemBlocs().clear();
         currentAlgorithm = new Algorithm(new DetermineDemBlocs(), new DetermineVotingBlocs());
 
         while (!( currentAlgorithm.run() )) {}

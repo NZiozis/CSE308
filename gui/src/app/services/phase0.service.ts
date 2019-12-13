@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {MapService} from './map.service';
 import {Config} from '../phase0/phase0.component';
+import {GeoJSON} from 'leaflet';
 
 @Injectable({
     providedIn: 'root'
@@ -17,9 +18,17 @@ export class Phase0Service {
 
     run(phase0JSON) {
         console.log(phase0JSON);
+        this.mapService.precinctToLayerMapper.forEach((value: GeoJSON, key: string) => {
+            value.setStyle({fillColor: '#ff15ed'});
+        });
         this.http.post<Config>(this.mapService.REST_API_SERVER_URL + '/phase0', JSON.stringify(phase0JSON)).subscribe((array: any) => {
             // TODO highlight the returned precincts and put them into the chart.
             // this.selectedRacePrecincts = array[0].precincts;
+            const demographicPrecincts = array[0].precincts;
+            for (const precinct of demographicPrecincts) {
+                const layer: GeoJSON = this.mapService.precinctToLayerMapper.get(precinct.geoId);
+                layer.setStyle({fillColor: '#00f0e8', opacity: 0});
+            }
             console.log(array);
             // console.log(array[0]);
             // console.log(this.selectedRacePrecincts);
