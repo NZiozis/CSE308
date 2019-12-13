@@ -5,7 +5,6 @@ import {Observable} from 'rxjs';
 import {Backend} from '../model/backend.model';
 import {Config} from '../phase0/phase0.component';
 import {District} from '../model/district.model';
-import {Precinct} from '../model/precinct.model';
 
 @Injectable({
     providedIn: 'root'
@@ -78,8 +77,6 @@ export class MapService {
             this.selectedState = selectedState;
             this.stateIsSelected = true;
 
-            console.log(selectedState);
-
             this.map.fitBounds(this.nameToLayerMapper.get(selectedState).getBounds());
             const setState = this.http.post<Config>(this.REST_API_SERVER_URL + '/setState', selectedState);
             const self = this;
@@ -117,32 +114,30 @@ export class MapService {
                     this.districtLayerGroup.addTo(this.map);
                     console.log('Districts completed');
                 });
-                this.getPrecincts().subscribe((precincts: Precinct[]) => {
-                    console.log(precincts);
-                    this.precinctLayerGroup = new LayerGroup();
-                    for (const precinct of precincts) {
-                        const geoJson = geoJSON(JSON.parse(precinct.geography));
-                        // const temp = precinct.votingSet.filter((voting: any) => {
-                        //     return voting.election === 'CONGRESSIONAL_2018';
-                        // });
-                        // const repub = temp.filter((voting) => {
-                        //     return voting.party === 'REPUBLICAN';
-                        // })[0].votes;
-                        // const dem = temp.filter((voting) => {
-                        //     return voting.party === 'DEMOCRAT';
-                        // })[0].votes;
-                        // if (repub > dem) {
-                        //     geoJson.setStyle({fillColor: '#0000ff', opacity: .01});
-                        // } else {
-                        //     geoJson.setStyle({fillColor: '#ff0000', opacity: .01, color: '#ff0000'});
-                        // }
-                        // geoJson.addTo(this.map);
-                        geoJson.setStyle({fillColor: '#0000ff', opacity: .05, color: '#0000ff'});
-                        self.precinctLayerGroup.addLayer(geoJson);
-                    }
-                    // this.precinctLayerGroup.addTo(this.map);
-                    console.log('Precincts completed');
-                });
+                // this.getPrecincts().subscribe((precincts: Precinct[]) => {
+                //     console.log(precincts);
+                //     this.precinctLayerGroup = new LayerGroup();
+                //     for (const precinct of precincts) {
+                //         const geoJson = geoJSON(JSON.parse(precinct.geography));
+                //         const temp = precinct.votingSet.filter((voting: any) => {
+                //             return voting.election === 'CONGRESSIONAL_2018';
+                //         });
+                //         const repub = temp.filter((voting) => {
+                //             return voting.party === 'REPUBLICAN';
+                //         })[0].votes;
+                //         const dem = temp.filter((voting) => {
+                //             return voting.party === 'DEMOCRAT';
+                //         })[0].votes;
+                //         if (repub > dem) {
+                //             geoJson.setStyle({fillColor: '#0000ff', opacity: .01});
+                //         } else {
+                //             geoJson.setStyle({fillColor: '#ff0000', opacity: .01, color: '#ff0000'});
+                //         }
+                //         self.precinctLayerGroup.addLayer(geoJson);
+                //     }
+                //     // this.precinctLayerGroup.addTo(this.map);
+                //     console.log('Precincts completed');
+                // });
             });
         }
     }
