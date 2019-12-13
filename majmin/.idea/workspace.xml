@@ -5,14 +5,573 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1b917782-4cb8-457f-9f9b-dfb5f1451613" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../gui/src/app/phase1/phase1.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/src/app/phase1/phase1.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular-devkit/schematics/node_modules/@angular-devkit/core/src/experimental/workspace/.workspace-schema 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular-devkit/schematics/node_modules/@angular-devkit/core/src/experimental/workspace/test/.test-workspace 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular-devkit/schematics/node_modules/@angular-devkit/core/src/workspace/json/test/.angular 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular-devkit/schematics/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.AddArrayEmpty 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular-devkit/schematics/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.AddArrayPush 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular-devkit/schematics/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.AddProject1 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular-devkit/schematics/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.AddProject2 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular-devkit/schematics/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.AddProjectWithTargets 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular-devkit/schematics/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ArrayDeleteInner 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular-devkit/schematics/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ArrayDeleteInnerAdd 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular-devkit/schematics/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ArrayDeleteLast 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular-devkit/schematics/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ArrayDeleteLastAdd 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular-devkit/schematics/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ArrayDeleteZero 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular-devkit/schematics/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ArrayIndexInner 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular-devkit/schematics/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ArrayIndexLast 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular-devkit/schematics/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ArrayIndexZero 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular-devkit/schematics/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ArrayPop 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular-devkit/schematics/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ArrayPush 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular-devkit/schematics/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ArrayReplace1 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular-devkit/schematics/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ArrayReplace2 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular-devkit/schematics/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ArrayShift 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular-devkit/schematics/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ArraySort 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular-devkit/schematics/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ArraySplice1 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular-devkit/schematics/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ArraySplice2 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular-devkit/schematics/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ArrayUnshift 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular-devkit/schematics/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ArrayValues 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular-devkit/schematics/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.Empty 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular-devkit/schematics/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.Extensions1 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular-devkit/schematics/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.Extensions2 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular-devkit/schematics/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ObjectReplace1 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular-devkit/schematics/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ObjectReplace2 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular-devkit/schematics/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ObjectReplace3 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular-devkit/schematics/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ProjectAddTarget 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular-devkit/schematics/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ProjectDeleteTarget 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular-devkit/schematics/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ProjectEmpty 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular-devkit/schematics/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ProjectFull 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular-devkit/schematics/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ProjectModifyProperties 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular-devkit/schematics/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ProjectSetProperties 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular-devkit/schematics/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.Retain 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/cdk/.testing.metadata 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/cdk/bundles/.cdk-testing.umd.js 2.map.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/cdk/bundles/.cdk-testing.umd.min.js 2.map.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/cdk/esm2015/.testing.js 2.map.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/cdk/esm5/.testing.es5.js 2.map.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/cdk/schematics/ng-update/test-cases/misc/.global-stylesheets-test 2.css.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/cdk/testing/.index.metadata 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/cdk/testing/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/cdk/testing/typings/.index.metadata 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/cdk/typings/esm5/testing/.index.metadata 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/cdk/typings/testing/.index.metadata 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/cli/node_modules/@angular-devkit/architect/builders/.builders 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/cli/node_modules/@angular-devkit/architect/builders/.noop-schema 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/cli/node_modules/@angular-devkit/architect/builders/.noop-schema.d 2.ts.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/cli/node_modules/@angular-devkit/architect/builders/.operator-schema 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/cli/node_modules/@angular-devkit/architect/src/.builders-schema 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/cli/node_modules/@angular-devkit/architect/src/.input-schema 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/cli/node_modules/@angular-devkit/architect/src/.output-schema 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/cli/node_modules/@angular-devkit/architect/src/.progress-schema 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/cli/node_modules/@angular-devkit/architect/src/.targets-schema 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/cli/node_modules/@angular-devkit/core/src/experimental/workspace/.workspace-schema 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/cli/node_modules/@angular-devkit/core/src/experimental/workspace/test/.test-workspace 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/cli/node_modules/@angular-devkit/core/src/workspace/json/test/.angular 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/cli/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.AddArrayEmpty 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/cli/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.AddArrayPush 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/cli/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.AddProject1 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/cli/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.AddProject2 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/cli/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.AddProjectWithTargets 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/cli/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ArrayDeleteInner 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/cli/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ArrayDeleteInnerAdd 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/cli/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ArrayDeleteLast 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/cli/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ArrayDeleteLastAdd 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/cli/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ArrayDeleteZero 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/cli/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ArrayIndexInner 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/cli/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ArrayIndexLast 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/cli/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ArrayIndexZero 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/cli/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ArrayPop 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/cli/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ArrayPush 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/cli/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ArrayReplace1 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/cli/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ArrayReplace2 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/cli/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ArrayShift 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/cli/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ArraySort 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/cli/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ArraySplice1 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/cli/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ArraySplice2 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/cli/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ArrayUnshift 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/cli/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ArrayValues 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/cli/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.Empty 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/cli/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.Extensions1 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/cli/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.Extensions2 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/cli/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ObjectReplace1 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/cli/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ObjectReplace2 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/cli/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ObjectReplace3 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/cli/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ProjectAddTarget 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/cli/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ProjectDeleteTarget 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/cli/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ProjectEmpty 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/cli/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ProjectFull 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/cli/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ProjectModifyProperties 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/cli/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ProjectSetProperties 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/cli/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.Retain 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/compiler-cli/node_modules/fsevents/..travis 3.yml.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/compiler-cli/node_modules/fsevents/.binding 2.gyp.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/compiler-cli/node_modules/fsevents/lib/binding/Release/node-v72-darwin-x64/.fse 2.node.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/compiler-cli/node_modules/fsevents/node_modules/concat-map/..travis 2.yml.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/compiler-cli/node_modules/fsevents/node_modules/iconv-lite/encodings/tables/.big5-added 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/compiler-cli/node_modules/fsevents/node_modules/iconv-lite/encodings/tables/.cp936 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/compiler-cli/node_modules/fsevents/node_modules/iconv-lite/encodings/tables/.cp949 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/compiler-cli/node_modules/fsevents/node_modules/iconv-lite/encodings/tables/.cp950 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/compiler-cli/node_modules/fsevents/node_modules/iconv-lite/encodings/tables/.eucjp 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/compiler-cli/node_modules/fsevents/node_modules/iconv-lite/encodings/tables/.gb18030-ranges 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/compiler-cli/node_modules/fsevents/node_modules/iconv-lite/encodings/tables/.gbk-added 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/compiler-cli/node_modules/fsevents/node_modules/iconv-lite/encodings/tables/.shiftjis 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/compiler-cli/node_modules/fsevents/node_modules/isarray/..travis 2.yml.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/compiler-cli/node_modules/fsevents/node_modules/isarray/.component 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/compiler-cli/node_modules/fsevents/node_modules/minimist/..travis 2.yml.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/compiler-cli/node_modules/fsevents/node_modules/mkdirp/..travis 2.yml.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/compiler-cli/node_modules/fsevents/node_modules/needle/.package-lock 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/compiler-cli/node_modules/fsevents/node_modules/needle/test/keys/.ssl 2.cert.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/compiler-cli/node_modules/fsevents/node_modules/needle/test/keys/.ssl 2.key.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/compiler-cli/node_modules/fsevents/node_modules/node-pre-gyp/.appveyor 2.yml.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/compiler-cli/node_modules/fsevents/node_modules/node-pre-gyp/bin/.node-pre-gyp 2.cmd.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/compiler-cli/node_modules/fsevents/node_modules/node-pre-gyp/lib/util/.abi_crosswalk 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/compiler-cli/node_modules/fsevents/node_modules/node-pre-gyp/lib/util/nw-pre-gyp/.index 2.html.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/compiler-cli/node_modules/fsevents/node_modules/node-pre-gyp/lib/util/nw-pre-gyp/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/compiler-cli/node_modules/fsevents/node_modules/nopt/..travis 2.yml.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/compiler-cli/node_modules/fsevents/node_modules/rc/.LICENSE 2.APACHE2.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/compiler-cli/node_modules/fsevents/node_modules/rc/.LICENSE 2.BSD.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/compiler-cli/node_modules/fsevents/node_modules/rc/.LICENSE 2.MIT.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/compiler-cli/node_modules/fsevents/node_modules/rc/node_modules/minimist/..travis 2.yml.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/compiler-cli/node_modules/fsevents/node_modules/readable-stream/..travis 2.yml.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/compiler-cli/node_modules/fsevents/node_modules/semver/.range 2.bnf.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular/compiler-cli/node_modules/fsevents/node_modules/string_decoder/..travis 2.yml.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@babel/helper-builder-binary-assignment-operator-visitor/node_modules/@babel/types/lib/.index.js 2.flow.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@babel/helper-call-delegate/node_modules/@babel/types/lib/.index.js 2.flow.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@babel/helper-call-delegate/node_modules/source-map/dist/.source-map.min.js 2.map.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@babel/helper-define-map/node_modules/@babel/types/lib/.index.js 2.flow.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@babel/helper-explode-assignable-expression/node_modules/@babel/types/lib/.index.js 2.flow.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@babel/helper-explode-assignable-expression/node_modules/source-map/dist/.source-map.min.js 2.map.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@babel/helper-hoist-variables/node_modules/@babel/types/lib/.index.js 2.flow.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@babel/helper-member-expression-to-functions/node_modules/@babel/types/lib/.index.js 2.flow.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@babel/helper-module-imports/node_modules/@babel/types/lib/.index.js 2.flow.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@babel/helper-module-transforms/node_modules/@babel/types/lib/.index.js 2.flow.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@babel/helper-optimise-call-expression/node_modules/@babel/types/lib/.index.js 2.flow.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@babel/helper-remap-async-to-generator/node_modules/@babel/types/lib/.index.js 2.flow.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@babel/helper-remap-async-to-generator/node_modules/source-map/dist/.source-map.min.js 2.map.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@babel/helper-replace-supers/node_modules/@babel/types/lib/.index.js 2.flow.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@babel/helper-replace-supers/node_modules/source-map/dist/.source-map.min.js 2.map.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@babel/helper-simple-access/node_modules/@babel/types/lib/.index.js 2.flow.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@babel/helper-wrap-function/node_modules/@babel/types/lib/.index.js 2.flow.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@babel/helper-wrap-function/node_modules/source-map/dist/.source-map.min.js 2.map.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@babel/helpers/node_modules/@babel/types/lib/.index.js 2.flow.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@babel/helpers/node_modules/source-map/dist/.source-map.min.js 2.map.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@babel/plugin-transform-classes/node_modules/@babel/types/lib/.index.js 2.flow.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@babel/plugin-transform-dotall-regex/test/fixtures/dotall-regex/with-unicode-property-escape/.options 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@babel/plugin-transform-function-name/node_modules/@babel/types/lib/.index.js 2.flow.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@babel/plugin-transform-parameters/node_modules/@babel/types/lib/.index.js 2.flow.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@babel/runtime/helpers/esm/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@emotion/hash/dist/.hash.cjs.js 2.flow.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@emotion/hash/types/.tsconfig 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@emotion/hash/types/.tslint 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/AppBar/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/Avatar/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/Backdrop/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/Badge/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/BottomNavigation/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/BottomNavigationAction/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/Box/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/Breadcrumbs/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/Button/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/ButtonBase/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/ButtonGroup/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/Card/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/CardActionArea/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/CardActions/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/CardContent/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/CardHeader/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/CardMedia/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/Checkbox/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/Chip/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/CircularProgress/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/ClickAwayListener/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/Collapse/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/Container/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/CssBaseline/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/Dialog/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/DialogActions/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/DialogContent/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/DialogContentText/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/DialogTitle/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/Divider/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/Drawer/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/ExpansionPanel/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/ExpansionPanelActions/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/ExpansionPanelDetails/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/ExpansionPanelSummary/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/Fab/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/Fade/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/FilledInput/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/FormControl/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/FormControlLabel/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/FormGroup/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/FormHelperText/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/FormLabel/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/Grid/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/GridList/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/GridListTile/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/GridListTileBar/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/Grow/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/Hidden/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/Icon/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/IconButton/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/Input/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/InputAdornment/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/InputBase/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/InputLabel/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/LinearProgress/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/Link/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/List/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/ListItem/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/ListItemAvatar/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/ListItemIcon/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/ListItemSecondaryAction/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/ListItemText/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/ListSubheader/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/Menu/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/MenuItem/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/MenuList/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/MobileStepper/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/Modal/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/NativeSelect/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/NoSsr/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/OutlinedInput/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/Paper/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/Popover/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/Popper/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/Portal/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/Radio/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/RadioGroup/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/RootRef/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/Select/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/Slide/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/Slider/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/Snackbar/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/SnackbarContent/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/Step/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/StepButton/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/StepConnector/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/StepContent/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/StepIcon/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/StepLabel/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/Stepper/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/SvgIcon/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/SwipeableDrawer/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/Switch/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/Tab/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/Table/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/TableBody/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/TableCell/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/TableFooter/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/TableHead/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/TablePagination/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/TableRow/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/TableSortLabel/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/Tabs/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/TextField/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/TextareaAutosize/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/Toolbar/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/Tooltip/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/Typography/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/Zoom/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/colors/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/locale/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/styles/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/test-utils/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/useMediaQuery/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/useScrollTrigger/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/utils/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/withMobileDialog/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/core/withWidth/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/styles/ServerStyleSheets/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/styles/StylesProvider/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/styles/ThemeProvider/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/styles/createGenerateClassName/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/styles/createStyles/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/styles/getStylesCreator/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/styles/getThemeProps/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/styles/jssPreset/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/styles/makeStyles/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/styles/mergeClasses/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/styles/styled/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/styles/useTheme/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/styles/withStyles/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@material-ui/styles/withTheme/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@schematics/angular/node_modules/@angular-devkit/core/src/experimental/workspace/.workspace-schema 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@schematics/angular/node_modules/@angular-devkit/core/src/experimental/workspace/test/.test-workspace 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@schematics/angular/node_modules/@angular-devkit/core/src/workspace/json/test/.angular 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@schematics/angular/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.AddArrayEmpty 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@schematics/angular/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.AddArrayPush 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@schematics/angular/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.AddProject1 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@schematics/angular/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.AddProject2 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@schematics/angular/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.AddProjectWithTargets 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@schematics/angular/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ArrayDeleteInner 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@schematics/angular/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ArrayDeleteInnerAdd 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@schematics/angular/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ArrayDeleteLast 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@schematics/angular/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ArrayDeleteLastAdd 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@schematics/angular/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ArrayDeleteZero 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@schematics/angular/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ArrayIndexInner 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@schematics/angular/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ArrayIndexLast 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@schematics/angular/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ArrayIndexZero 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@schematics/angular/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ArrayPop 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@schematics/angular/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ArrayPush 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@schematics/angular/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ArrayReplace1 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@schematics/angular/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ArrayReplace2 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@schematics/angular/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ArrayShift 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@schematics/angular/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ArraySort 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@schematics/angular/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ArraySplice1 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@schematics/angular/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ArraySplice2 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@schematics/angular/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ArrayUnshift 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@schematics/angular/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ArrayValues 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@schematics/angular/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.Empty 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@schematics/angular/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.Extensions1 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@schematics/angular/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.Extensions2 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@schematics/angular/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ObjectReplace1 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@schematics/angular/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ObjectReplace2 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@schematics/angular/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ObjectReplace3 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@schematics/angular/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ProjectAddTarget 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@schematics/angular/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ProjectDeleteTarget 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@schematics/angular/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ProjectEmpty 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@schematics/angular/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ProjectFull 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@schematics/angular/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ProjectModifyProperties 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@schematics/angular/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ProjectSetProperties 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@schematics/angular/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.Retain 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@schematics/update/node_modules/@angular-devkit/core/src/experimental/workspace/.workspace-schema 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@schematics/update/node_modules/@angular-devkit/core/src/experimental/workspace/test/.test-workspace 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@schematics/update/node_modules/@angular-devkit/core/src/workspace/json/test/.angular 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@schematics/update/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.AddArrayEmpty 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@schematics/update/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.AddArrayPush 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@schematics/update/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.AddProject1 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@schematics/update/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.AddProject2 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@schematics/update/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.AddProjectWithTargets 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@schematics/update/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ArrayDeleteInner 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@schematics/update/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ArrayDeleteInnerAdd 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@schematics/update/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ArrayDeleteLast 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@schematics/update/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ArrayDeleteLastAdd 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@schematics/update/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ArrayDeleteZero 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@schematics/update/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ArrayIndexInner 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@schematics/update/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ArrayIndexLast 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@schematics/update/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ArrayIndexZero 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@schematics/update/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ArrayPop 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@schematics/update/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ArrayPush 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@schematics/update/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ArrayReplace1 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@schematics/update/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ArrayReplace2 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@schematics/update/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ArrayShift 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@schematics/update/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ArraySort 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@schematics/update/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ArraySplice1 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@schematics/update/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ArraySplice2 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@schematics/update/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ArrayUnshift 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@schematics/update/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ArrayValues 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@schematics/update/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.Empty 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@schematics/update/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.Extensions1 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@schematics/update/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.Extensions2 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@schematics/update/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ObjectReplace1 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@schematics/update/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ObjectReplace2 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@schematics/update/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ObjectReplace3 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@schematics/update/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ProjectAddTarget 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@schematics/update/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ProjectDeleteTarget 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@schematics/update/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ProjectEmpty 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@schematics/update/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ProjectFull 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@schematics/update/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ProjectModifyProperties 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@schematics/update/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.ProjectSetProperties 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/@schematics/update/node_modules/@angular-devkit/core/src/workspace/json/test/cases/.Retain 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/convert-css-length/dist/.index.esm.js 2.map.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/convert-css-length/dist/.index.js 2.map.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/convert-css-length/dist/.index.umd.js 2.map.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/csstype/.index.d 2.ts.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/csstype/.index.js 2.flow.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/dom-helpers/activeElement/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/dom-helpers/addClass/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/dom-helpers/addEventListener/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/dom-helpers/animate/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/dom-helpers/animationFrame/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/dom-helpers/camelize/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/dom-helpers/camelizeStyle/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/dom-helpers/canUseDOM/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/dom-helpers/closest/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/dom-helpers/contains/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/dom-helpers/css/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/dom-helpers/filterEventHandler/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/dom-helpers/getComputedStyle/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/dom-helpers/getScrollAccessor/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/dom-helpers/hasClass/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/dom-helpers/height/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/dom-helpers/hyphenate/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/dom-helpers/hyphenateStyle/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/dom-helpers/isDocument/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/dom-helpers/isTransform/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/dom-helpers/isWindow/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/dom-helpers/listen/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/dom-helpers/matches/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/dom-helpers/offset/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/dom-helpers/offsetParent/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/dom-helpers/ownerDocument/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/dom-helpers/ownerWindow/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/dom-helpers/position/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/dom-helpers/querySelectorAll/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/dom-helpers/removeClass/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/dom-helpers/removeEventListener/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/dom-helpers/scrollLeft/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/dom-helpers/scrollParent/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/dom-helpers/scrollTo/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/dom-helpers/scrollTop/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/dom-helpers/scrollbarSize/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/dom-helpers/toggleClass/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/dom-helpers/transitionEnd/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/dom-helpers/width/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/fsevents/.fsevents 3.node.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/hyphenate-style-name/.nyc_output/.f0abf84f-70c3-425c-9716-c5605115059e 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/hyphenate-style-name/.yarn 2.lock.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/jest-worker/build/.Farm.d.ts 2.map.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/jest-worker/build/.WorkerPool.d.ts 2.map.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/jest-worker/build/.index.d.ts 2.map.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/jest-worker/build/.types.d.ts 2.map.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/jest-worker/build/base/.BaseWorkerPool.d.ts 2.map.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/jest-worker/build/workers/.ChildProcessWorker.d.ts 2.map.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/jest-worker/build/workers/.NodeThreadsWorker.d.ts 2.map.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/jest-worker/build/workers/.processChild.d.ts 2.map.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/jest-worker/build/workers/.threadChild.d.ts 2.map.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/jss-plugin-camel-case/dist/.jss-plugin-camel-case.cjs.js 2.flow.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/jss-plugin-camel-case/dist/.jss-plugin-camel-case.js 2.map.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/jss-plugin-default-unit/dist/.jss-plugin-default-unit.cjs.js 2.flow.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/jss-plugin-default-unit/dist/.jss-plugin-default-unit.js 2.map.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/jss-plugin-global/dist/.jss-plugin-global.cjs.js 2.flow.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/jss-plugin-global/dist/.jss-plugin-global.js 2.map.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/jss-plugin-nested/dist/.jss-plugin-nested.cjs.js 2.flow.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/jss-plugin-nested/dist/.jss-plugin-nested.js 2.map.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/jss-plugin-props-sort/dist/.jss-plugin-props-sort.cjs.js 2.flow.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/jss-plugin-props-sort/dist/.jss-plugin-props-sort.js 2.map.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/jss-plugin-rule-value-function/dist/.jss-plugin-rule-value-function.cjs.js 2.flow.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/jss-plugin-rule-value-function/dist/.jss-plugin-rule-value-function.js 2.map.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/jss-plugin-vendor-prefixer/dist/.jss-plugin-vendor-prefixer.cjs.js 2.flow.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/jss-plugin-vendor-prefixer/dist/.jss-plugin-vendor-prefixer.js 2.map.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/jss/dist/.jss.cjs.js 2.flow.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/jss/dist/.jss.js 2.map.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/karma/node_modules/fsevents/..travis 2.yml.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/karma/node_modules/fsevents/.binding 2.gyp.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/karma/node_modules/fsevents/lib/binding/Release/node-v72-darwin-x64/.fse 2.node.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/karma/node_modules/fsevents/node_modules/concat-map/..travis 2.yml.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/karma/node_modules/fsevents/node_modules/iconv-lite/encodings/tables/.big5-added 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/karma/node_modules/fsevents/node_modules/iconv-lite/encodings/tables/.cp936 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/karma/node_modules/fsevents/node_modules/iconv-lite/encodings/tables/.cp949 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/karma/node_modules/fsevents/node_modules/iconv-lite/encodings/tables/.cp950 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/karma/node_modules/fsevents/node_modules/iconv-lite/encodings/tables/.eucjp 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/karma/node_modules/fsevents/node_modules/iconv-lite/encodings/tables/.gb18030-ranges 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/karma/node_modules/fsevents/node_modules/iconv-lite/encodings/tables/.gbk-added 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/karma/node_modules/fsevents/node_modules/iconv-lite/encodings/tables/.shiftjis 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/karma/node_modules/fsevents/node_modules/isarray/..travis 2.yml.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/karma/node_modules/fsevents/node_modules/isarray/.component 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/karma/node_modules/fsevents/node_modules/minimist/..travis 2.yml.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/karma/node_modules/fsevents/node_modules/mkdirp/..travis 2.yml.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/karma/node_modules/fsevents/node_modules/needle/.package-lock 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/karma/node_modules/fsevents/node_modules/needle/test/keys/.ssl 2.cert.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/karma/node_modules/fsevents/node_modules/needle/test/keys/.ssl 2.key.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/karma/node_modules/fsevents/node_modules/node-pre-gyp/.appveyor 2.yml.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/karma/node_modules/fsevents/node_modules/node-pre-gyp/bin/.node-pre-gyp 2.cmd.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/karma/node_modules/fsevents/node_modules/node-pre-gyp/lib/util/.abi_crosswalk 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/karma/node_modules/fsevents/node_modules/node-pre-gyp/lib/util/nw-pre-gyp/.index 2.html.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/karma/node_modules/fsevents/node_modules/node-pre-gyp/lib/util/nw-pre-gyp/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/karma/node_modules/fsevents/node_modules/nopt/..travis 2.yml.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/karma/node_modules/fsevents/node_modules/rc/.LICENSE 2.APACHE2.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/karma/node_modules/fsevents/node_modules/rc/.LICENSE 2.BSD.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/karma/node_modules/fsevents/node_modules/rc/.LICENSE 2.MIT.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/karma/node_modules/fsevents/node_modules/rc/node_modules/minimist/..travis 2.yml.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/karma/node_modules/fsevents/node_modules/readable-stream/..travis 2.yml.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/karma/node_modules/fsevents/node_modules/semver/.range 2.bnf.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/karma/node_modules/fsevents/node_modules/string_decoder/..travis 2.yml.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/loglevel/.github/.FUNDING 2.yml.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/nan/tools/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/react-is/.build-info 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/react-transition-group/CSSTransition/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/react-transition-group/ReplaceTransition/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/react-transition-group/SwitchTransition/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/react-transition-group/Transition/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/react-transition-group/TransitionGroup/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/react-transition-group/TransitionGroupContext/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/react-transition-group/config/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/sockjs-client/.github/.FUNDING 2.yml.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/tiny-warning/dist/.tiny-warning.cjs.js 2.flow.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/vm-browserify/.github/.FUNDING 2.yml.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/watchpack/node_modules/fsevents/..travis 2.yml.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/watchpack/node_modules/fsevents/.binding 2.gyp.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/watchpack/node_modules/fsevents/lib/binding/Release/node-v72-darwin-x64/.fse 2.node.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/watchpack/node_modules/fsevents/node_modules/concat-map/..travis 2.yml.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/watchpack/node_modules/fsevents/node_modules/iconv-lite/encodings/tables/.big5-added 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/watchpack/node_modules/fsevents/node_modules/iconv-lite/encodings/tables/.cp936 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/watchpack/node_modules/fsevents/node_modules/iconv-lite/encodings/tables/.cp949 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/watchpack/node_modules/fsevents/node_modules/iconv-lite/encodings/tables/.cp950 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/watchpack/node_modules/fsevents/node_modules/iconv-lite/encodings/tables/.eucjp 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/watchpack/node_modules/fsevents/node_modules/iconv-lite/encodings/tables/.gb18030-ranges 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/watchpack/node_modules/fsevents/node_modules/iconv-lite/encodings/tables/.gbk-added 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/watchpack/node_modules/fsevents/node_modules/iconv-lite/encodings/tables/.shiftjis 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/watchpack/node_modules/fsevents/node_modules/isarray/..travis 2.yml.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/watchpack/node_modules/fsevents/node_modules/isarray/.component 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/watchpack/node_modules/fsevents/node_modules/minimist/..travis 2.yml.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/watchpack/node_modules/fsevents/node_modules/mkdirp/..travis 2.yml.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/watchpack/node_modules/fsevents/node_modules/needle/.package-lock 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/watchpack/node_modules/fsevents/node_modules/needle/test/keys/.ssl 2.cert.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/watchpack/node_modules/fsevents/node_modules/needle/test/keys/.ssl 2.key.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/watchpack/node_modules/fsevents/node_modules/node-pre-gyp/.appveyor 2.yml.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/watchpack/node_modules/fsevents/node_modules/node-pre-gyp/bin/.node-pre-gyp 2.cmd.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/watchpack/node_modules/fsevents/node_modules/node-pre-gyp/lib/util/.abi_crosswalk 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/watchpack/node_modules/fsevents/node_modules/node-pre-gyp/lib/util/nw-pre-gyp/.index 2.html.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/watchpack/node_modules/fsevents/node_modules/node-pre-gyp/lib/util/nw-pre-gyp/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/watchpack/node_modules/fsevents/node_modules/nopt/..travis 2.yml.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/watchpack/node_modules/fsevents/node_modules/rc/.LICENSE 2.APACHE2.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/watchpack/node_modules/fsevents/node_modules/rc/.LICENSE 2.BSD.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/watchpack/node_modules/fsevents/node_modules/rc/.LICENSE 2.MIT.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/watchpack/node_modules/fsevents/node_modules/rc/node_modules/minimist/..travis 2.yml.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/watchpack/node_modules/fsevents/node_modules/readable-stream/..travis 2.yml.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/watchpack/node_modules/fsevents/node_modules/semver/.range 2.bnf.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/watchpack/node_modules/fsevents/node_modules/string_decoder/..travis 2.yml.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/webpack-dev-server/node_modules/fsevents/..travis 2.yml.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/webpack-dev-server/node_modules/fsevents/.binding 2.gyp.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/webpack-dev-server/node_modules/fsevents/lib/binding/Release/node-v72-darwin-x64/.fse 2.node.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/concat-map/..travis 2.yml.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/iconv-lite/encodings/tables/.big5-added 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/iconv-lite/encodings/tables/.cp936 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/iconv-lite/encodings/tables/.cp949 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/iconv-lite/encodings/tables/.cp950 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/iconv-lite/encodings/tables/.eucjp 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/iconv-lite/encodings/tables/.gb18030-ranges 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/iconv-lite/encodings/tables/.gbk-added 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/iconv-lite/encodings/tables/.shiftjis 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/isarray/..travis 2.yml.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/isarray/.component 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/minimist/..travis 2.yml.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/mkdirp/..travis 2.yml.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/needle/.package-lock 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/needle/test/keys/.ssl 2.cert.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/needle/test/keys/.ssl 2.key.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/node-pre-gyp/.appveyor 2.yml.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/node-pre-gyp/bin/.node-pre-gyp 2.cmd.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/node-pre-gyp/lib/util/.abi_crosswalk 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/node-pre-gyp/lib/util/nw-pre-gyp/.index 2.html.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/node-pre-gyp/lib/util/nw-pre-gyp/.package 2.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/nopt/..travis 2.yml.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/rc/.LICENSE 2.APACHE2.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/rc/.LICENSE 2.BSD.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/rc/.LICENSE 2.MIT.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/rc/node_modules/minimist/..travis 2.yml.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/readable-stream/..travis 2.yml.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/semver/.range 2.bnf.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/string_decoder/..travis 2.yml.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mm_districting/AlgorithmManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mm_districting/AlgorithmManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/algorithm_steps/GenerateInitialClusters.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithm_steps/GenerateInitialClusters.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mm_districting/Joinability.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mm_districting/Joinability.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mm_districting/State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mm_districting/State.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/algorithm/Algorithm.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/algorithm/Algorithm.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/algorithm_steps/CombineClusters.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/algorithm_steps/CombineClusters.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/mm_districting/AlgorithmManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mm_districting/AlgorithmManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mm_districting/Cluster.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mm_districting/Cluster.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mm_districting/Edge.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mm_districting/Edge.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/mm_districting/Joinability.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mm_districting/Joinability.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mm_districting/Precinct.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mm_districting/Precinct.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mm_districting/State$StateID.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mm_districting/State$StateID.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mm_districting/State.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mm_districting/State.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/util/Party.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/util/Party.class" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -83,18 +642,6 @@
       <command value="ConvertersTests" />
     </option>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
   <component name="RunManager" selected="Spring Boot.MajminApplication">
     <configuration name="ConvertersTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="majmin" />
@@ -147,6 +694,18 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -175,11 +734,17 @@
       <workItem from="1575935113653" duration="17000" />
       <workItem from="1575936541530" duration="23358000" />
       <workItem from="1576181184766" duration="888000" />
+      <workItem from="1576204568758" duration="28069000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+    <option name="exactExcludedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/../gui/node_modules/karma/config.tpl 4.js" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -199,85 +764,103 @@
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="320" y="128" key="#Project_Structure/0.23.1440.877@0.23.1440.877" timestamp="1575336634884" />
-    <state x="2151" y="205" key="#com.intellij.ide.util.MemberChooser" timestamp="1576110977025">
-      <screen x="1440" y="23" width="1920" height="1057" />
+    <state x="2057" y="-875" key="#com.intellij.ide.util.MemberChooser" timestamp="1576233966553">
+      <screen x="1346" y="-1057" width="1920" height="1057" />
     </state>
+    <state x="2057" y="-875" key="#com.intellij.ide.util.MemberChooser/0.23.1440.877/1346.-1057.1920.1057@1346.-1057.1920.1057" timestamp="1576233966553" />
     <state x="533" y="174" key="#com.intellij.ide.util.MemberChooser/0.23.1440.877@0.23.1440.877" timestamp="1576035397776" />
     <state x="2151" y="205" key="#com.intellij.ide.util.MemberChooser/1440.23.1920.1057/0.23.1440.877@1440.23.1920.1057" timestamp="1576110977025" />
+    <state x="2140" y="-631" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1576196102323">
+      <screen x="1346" y="-1057" width="1920" height="1057" />
+    </state>
+    <state x="2140" y="-631" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.23.1440.877/1346.-1057.1920.1057@1346.-1057.1920.1057" timestamp="1576196102323" />
     <state x="492" y="327" width="455" height="273" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1575340955671">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="492" y="327" width="455" height="273" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.23.1440.877@0.23.1440.877" timestamp="1575340955671" />
-    <state width="1398" height="285" key="GridCell.Tab.0.bottom" timestamp="1575403312934">
-      <screen x="0" y="23" width="1440" height="877" />
+    <state width="1878" height="356" key="GridCell.Tab.0.bottom" timestamp="1576236683428">
+      <screen x="1346" y="-1057" width="1920" height="1057" />
     </state>
+    <state width="1878" height="356" key="GridCell.Tab.0.bottom/0.23.1440.877/1346.-1057.1920.1057@1346.-1057.1920.1057" timestamp="1576236683428" />
     <state width="1398" height="285" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1575403312934" />
-    <state width="1398" height="285" key="GridCell.Tab.0.center" timestamp="1575403312933">
-      <screen x="0" y="23" width="1440" height="877" />
+    <state width="1878" height="356" key="GridCell.Tab.0.center" timestamp="1576236683427">
+      <screen x="1346" y="-1057" width="1920" height="1057" />
     </state>
+    <state width="1878" height="356" key="GridCell.Tab.0.center/0.23.1440.877/1346.-1057.1920.1057@1346.-1057.1920.1057" timestamp="1576236683427" />
     <state width="1398" height="285" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1575403312933" />
-    <state width="1398" height="285" key="GridCell.Tab.0.left" timestamp="1575403312932">
-      <screen x="0" y="23" width="1440" height="877" />
+    <state width="1878" height="356" key="GridCell.Tab.0.left" timestamp="1576236683427">
+      <screen x="1346" y="-1057" width="1920" height="1057" />
     </state>
+    <state width="1878" height="356" key="GridCell.Tab.0.left/0.23.1440.877/1346.-1057.1920.1057@1346.-1057.1920.1057" timestamp="1576236683427" />
     <state width="1398" height="285" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1575403312932" />
-    <state width="1398" height="285" key="GridCell.Tab.0.right" timestamp="1575403312933">
-      <screen x="0" y="23" width="1440" height="877" />
+    <state width="1878" height="356" key="GridCell.Tab.0.right" timestamp="1576236683428">
+      <screen x="1346" y="-1057" width="1920" height="1057" />
     </state>
+    <state width="1878" height="356" key="GridCell.Tab.0.right/0.23.1440.877/1346.-1057.1920.1057@1346.-1057.1920.1057" timestamp="1576236683428" />
     <state width="1398" height="285" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1575403312933" />
-    <state width="1398" height="285" key="GridCell.Tab.1.bottom" timestamp="1575403356595">
-      <screen x="0" y="23" width="1440" height="877" />
+    <state width="1878" height="356" key="GridCell.Tab.1.bottom" timestamp="1576236853418">
+      <screen x="1346" y="-1057" width="1920" height="1057" />
     </state>
+    <state width="1878" height="356" key="GridCell.Tab.1.bottom/0.23.1440.877/1346.-1057.1920.1057@1346.-1057.1920.1057" timestamp="1576236853418" />
     <state width="1398" height="285" key="GridCell.Tab.1.bottom/0.23.1440.877@0.23.1440.877" timestamp="1575403356595" />
-    <state width="1398" height="285" key="GridCell.Tab.1.center" timestamp="1575403356595">
-      <screen x="0" y="23" width="1440" height="877" />
+    <state width="1878" height="356" key="GridCell.Tab.1.center" timestamp="1576236853417">
+      <screen x="1346" y="-1057" width="1920" height="1057" />
     </state>
+    <state width="1878" height="356" key="GridCell.Tab.1.center/0.23.1440.877/1346.-1057.1920.1057@1346.-1057.1920.1057" timestamp="1576236853417" />
     <state width="1398" height="285" key="GridCell.Tab.1.center/0.23.1440.877@0.23.1440.877" timestamp="1575403356595" />
-    <state width="1398" height="285" key="GridCell.Tab.1.left" timestamp="1575403356594">
-      <screen x="0" y="23" width="1440" height="877" />
+    <state width="1878" height="356" key="GridCell.Tab.1.left" timestamp="1576236853417">
+      <screen x="1346" y="-1057" width="1920" height="1057" />
     </state>
+    <state width="1878" height="356" key="GridCell.Tab.1.left/0.23.1440.877/1346.-1057.1920.1057@1346.-1057.1920.1057" timestamp="1576236853417" />
     <state width="1398" height="285" key="GridCell.Tab.1.left/0.23.1440.877@0.23.1440.877" timestamp="1575403356594" />
-    <state width="1398" height="285" key="GridCell.Tab.1.right" timestamp="1575403356595">
-      <screen x="0" y="23" width="1440" height="877" />
+    <state width="1878" height="356" key="GridCell.Tab.1.right" timestamp="1576236853418">
+      <screen x="1346" y="-1057" width="1920" height="1057" />
     </state>
+    <state width="1878" height="356" key="GridCell.Tab.1.right/0.23.1440.877/1346.-1057.1920.1057@1346.-1057.1920.1057" timestamp="1576236853418" />
     <state width="1398" height="285" key="GridCell.Tab.1.right/0.23.1440.877@0.23.1440.877" timestamp="1575403356595" />
-    <state width="1398" height="285" key="GridCell.Tab.2.bottom" timestamp="1575403312745">
-      <screen x="0" y="23" width="1440" height="877" />
+    <state width="1878" height="356" key="GridCell.Tab.2.bottom" timestamp="1576236683331">
+      <screen x="1346" y="-1057" width="1920" height="1057" />
     </state>
+    <state width="1878" height="356" key="GridCell.Tab.2.bottom/0.23.1440.877/1346.-1057.1920.1057@1346.-1057.1920.1057" timestamp="1576236683331" />
     <state width="1398" height="285" key="GridCell.Tab.2.bottom/0.23.1440.877@0.23.1440.877" timestamp="1575403312745" />
-    <state width="1398" height="285" key="GridCell.Tab.2.center" timestamp="1575403312744">
-      <screen x="0" y="23" width="1440" height="877" />
+    <state width="1878" height="356" key="GridCell.Tab.2.center" timestamp="1576236683330">
+      <screen x="1346" y="-1057" width="1920" height="1057" />
     </state>
+    <state width="1878" height="356" key="GridCell.Tab.2.center/0.23.1440.877/1346.-1057.1920.1057@1346.-1057.1920.1057" timestamp="1576236683330" />
     <state width="1398" height="285" key="GridCell.Tab.2.center/0.23.1440.877@0.23.1440.877" timestamp="1575403312744" />
-    <state width="1398" height="285" key="GridCell.Tab.2.left" timestamp="1575403312744">
-      <screen x="0" y="23" width="1440" height="877" />
+    <state width="1878" height="356" key="GridCell.Tab.2.left" timestamp="1576236683329">
+      <screen x="1346" y="-1057" width="1920" height="1057" />
     </state>
+    <state width="1878" height="356" key="GridCell.Tab.2.left/0.23.1440.877/1346.-1057.1920.1057@1346.-1057.1920.1057" timestamp="1576236683329" />
     <state width="1398" height="285" key="GridCell.Tab.2.left/0.23.1440.877@0.23.1440.877" timestamp="1575403312744" />
-    <state width="1398" height="285" key="GridCell.Tab.2.right" timestamp="1575403312745">
-      <screen x="0" y="23" width="1440" height="877" />
+    <state width="1878" height="356" key="GridCell.Tab.2.right" timestamp="1576236683330">
+      <screen x="1346" y="-1057" width="1920" height="1057" />
     </state>
+    <state width="1878" height="356" key="GridCell.Tab.2.right/0.23.1440.877/1346.-1057.1920.1057@1346.-1057.1920.1057" timestamp="1576236683330" />
     <state width="1398" height="285" key="GridCell.Tab.2.right/0.23.1440.877@0.23.1440.877" timestamp="1575403312745" />
-    <state x="385" y="213" width="670" height="676" key="search.everywhere.popup" timestamp="1576117703155">
-      <screen x="0" y="23" width="1440" height="877" />
+    <state x="1859" y="-828" width="894" height="815" key="search.everywhere.popup" timestamp="1576233000516">
+      <screen x="1346" y="-1057" width="1920" height="1057" />
     </state>
+    <state x="1859" y="-828" width="894" height="815" key="search.everywhere.popup/0.23.1440.877/1346.-1057.1920.1057@1346.-1057.1920.1057" timestamp="1576233000516" />
     <state x="385" y="213" width="670" height="676" key="search.everywhere.popup/0.23.1440.877@0.23.1440.877" timestamp="1576117703155" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/mm_districting/AlgorithmManager.java</url>
-          <line>154</line>
-          <option name="timeStamp" value="11" />
+          <url>file://$PROJECT_DIR$/src/main/java/algorithm_steps/Phase1Iteration.java</url>
+          <line>72</line>
+          <option name="timeStamp" value="48" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/mm_districting/AlgorithmManager.java</url>
-          <line>206</line>
-          <option name="timeStamp" value="12" />
+          <line>228</line>
+          <option name="timeStamp" value="62" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/mm_districting/AlgorithmManager.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/algorithm_steps/Phase1Iteration.java</url>
           <line>48</line>
-          <option name="timeStamp" value="13" />
+          <option name="timeStamp" value="102" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -287,5 +870,8 @@
         <watch expression="((District)stateOptional.value.initialDistricts.toArray()[1]).precincts" custom="mm_districting.District" />
       </configuration>
     </watches-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/majmin$MajminApplication.ic" NAME="MajminApplication Coverage Results" MODIFIED="1576203711935" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

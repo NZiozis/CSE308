@@ -39,6 +39,10 @@ public class Joinability {
            score += Math.abs(target - combinedRatio);
        }
 
+        //heavily mm joinability over non mm
+        if (score > .2) {
+            score += 1;
+        }
         return score;
     }
 

@@ -114,8 +114,14 @@ public class State {
         edge.getClusterTwo().setRemovedWithEdge(edge);
 
         Cluster combinedCluster = new Cluster(true);
-        combinedCluster.getPrecincts().addAll(edge.getClusterOne().getPrecincts());
-        combinedCluster.getPrecincts().addAll(edge.getClusterTwo().getPrecincts());
+        for (Precinct p : edge.getClusterOne().getPrecincts()) {
+            combinedCluster.addPrecinct(p);
+        }
+
+        for (Precinct p : edge.getClusterTwo().getPrecincts()) {
+            combinedCluster.addPrecinct(p);
+        }
+
         combinedCluster.setEdges(edge.getClusterOne().getEdges());
         combinedCluster.getEdges().addAll(edge.getClusterTwo().getEdges());
         combinedCluster.getEdges().remove(edge);
