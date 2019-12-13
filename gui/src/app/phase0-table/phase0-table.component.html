@@ -1,0 +1,94 @@
+<div class="votingBlockHolder">
+<mat-toolbar>Voting Blocks</mat-toolbar>
+<div class="example-container mat-elevation-z8">
+  <table mat-table [dataSource]="votingDataSource">
+
+    <ng-container matColumnDef="position">
+      <th class="number_digit" mat-header-cell *matHeaderCellDef> No. </th>
+      <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="demoGroup">
+      <th class="non_digit" mat-header-cell *matHeaderCellDef> Demographic Group </th>
+      <td mat-cell *matCellDef="let element"> {{element.demoGroup}} </td>
+    </ng-container>
+    
+    <ng-container matColumnDef="county">
+      <th class="non_digit" mat-header-cell *matHeaderCellDef> County  </th>
+      <td mat-cell *matCellDef="let element"> {{element.county}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="party">
+      <th class="non_digit" mat-header-cell *matHeaderCellDef> Party  </th>
+      <td mat-cell *matCellDef="let element"> {{element.party}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="pName">
+      <th class="non_digit" mat-header-cell *matHeaderCellDef> Precinct Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.pName}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="percChosen">
+      <th class="non_digit" mat-header-cell *matHeaderCellDef> % of chosen Group </th>
+      <td mat-cell *matCellDef="let element"> {{element.percChosen}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="totalPop">
+      <th class="non_digit" mat-header-cell *matHeaderCellDef> Total Population  </th>
+      <td mat-cell *matCellDef="let element"> {{element.totalPop}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>
+</div>
+
+
+
+
+<div class="demoBlockHolder">
+<mat-toolbar>Demographic Blocks</mat-toolbar>
+<div class="example-container mat-elevation-z8">
+  <table mat-table [dataSource]="demoDataSource">
+
+    <ng-container matColumnDef="position">
+      <th class="number_digit" mat-header-cell *matHeaderCellDef> No. </th>
+      <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="demoGroup">
+      <th class="non_digit" mat-header-cell *matHeaderCellDef> Demographic Group </th>
+      <td mat-cell *matCellDef="let element"> {{element.demoGroup}} </td>
+    </ng-container>
+    
+    <ng-container matColumnDef="county">
+      <th class="non_digit" mat-header-cell *matHeaderCellDef> County  </th>
+      <td mat-cell *matCellDef="let element"> {{element.county}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="party">
+      <th class="non_digit" mat-header-cell *matHeaderCellDef> Party  </th>
+      <td mat-cell *matCellDef="let element"> {{element.party}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="pName">
+      <th class="non_digit" mat-header-cell *matHeaderCellDef> Precinct Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.pName}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="percChosen">
+      <th class="non_digit" mat-header-cell *matHeaderCellDef> % of chosen Group </th>
+      <td mat-cell *matCellDef="let element"> {{element.percChosen}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="totalPop">
+      <th class="non_digit" mat-header-cell *matHeaderCellDef> Total Population  </th>
+      <td mat-cell *matCellDef="let element"> {{element.totalPop}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>
+</div>

@@ -18,6 +18,7 @@ import { Phase0Component } from './phase0/phase0.component';
 import { Phase1Component } from './phase1/phase1.component';
 import { BasicComponent } from './basic/basic.component'
 import {MatCheckboxModule} from '@angular/material';
+import { Phase0TableComponent } from './phase0-table/phase0-table.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import {MatCheckboxModule} from '@angular/material';
     HeaderComponent,
     Phase0Component,
     Phase1Component,
-    BasicComponent
+    BasicComponent,
+    Phase0TableComponent
   ],
     imports: [
         HttpClientModule,
