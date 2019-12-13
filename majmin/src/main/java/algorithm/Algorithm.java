@@ -43,7 +43,7 @@ public class Algorithm implements AlgorithmStep {
 			if (!(lastStepResult instanceof DummyResult)) {
 				resultsToSend.add(lastStepResult);
 			}
-			if (currentStepIndex - 1 == steps.size()) {
+			if (currentStepIndex + 1 == steps.size()) {
 				return true;
 			}
 			currentStep = steps.get(++currentStepIndex);

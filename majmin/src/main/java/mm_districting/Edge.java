@@ -79,4 +79,9 @@ public class Edge {
             clusterTwo = combinedCluster;
         }
     }
+
+    public boolean isSameEdge(Edge other) {
+        return (clusterOne.equals(other.clusterOne) || clusterOne.equals(other.clusterTwo)) && (clusterTwo.equals(other.clusterOne) || clusterTwo.equals(other.clusterTwo));
+    }
+
 }

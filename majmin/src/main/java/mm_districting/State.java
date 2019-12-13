@@ -42,7 +42,7 @@ public class State {
 
 
     @Transient
-    private Map<Precinct, Cluster> initialClustersMap;
+    private Map<String, Cluster> initialClustersMap;
 
     public State() {}
 
@@ -98,12 +98,22 @@ public class State {
      * Updates the Set of Clusters in this state by replacing the two clusters given by the edge with their combined cluster.
      */
     public void combineClusters(Edge edge) {
-        clusters.remove(edge.getClusterOne());
-        clusters.remove(edge.getClusterTwo());
-        doNotPairClusters.add(edge.getClusterOne());
-        doNotPairClusters.add(edge.getClusterTwo());
 
-        Cluster combinedCluster = new Cluster();
+        if (!clusters.contains(edge.getClusterOne()) || !clusters.contains(edge.getClusterTwo())) {
+            return;
+        }
+
+        boolean worked = clusters.remove(edge.getClusterOne());
+        edge.getClusterOne().setRemovedWithEdge(edge);
+        boolean worked2 = clusters.remove(edge.getClusterTwo());
+
+        if (!worked || !worked2) {
+            System.out.println("");
+        }
+
+        edge.getClusterTwo().setRemovedWithEdge(edge);
+
+        Cluster combinedCluster = new Cluster(true);
         combinedCluster.getPrecincts().addAll(edge.getClusterOne().getPrecincts());
         combinedCluster.getPrecincts().addAll(edge.getClusterTwo().getPrecincts());
         combinedCluster.setEdges(edge.getClusterOne().getEdges());
@@ -114,6 +124,7 @@ public class State {
             e.updateCluster(combinedCluster, edge.getClusterOne(), edge.getClusterTwo());
         }
 
+        clusters.add(combinedCluster);
     }
 
     @Column(name = "GEOGRAPHY", length = 16777215, columnDefinition = "mediumtext", nullable = false)
@@ -233,17 +244,28 @@ public class State {
     }
 
     @Transient
-    public Map<Precinct, Cluster> getInitialClustersMap() {
+    public void setEdges(Set<Edge> edges) {
+        this.edges = edges;
+    }
+
+    @Transient
+    public Map<String, Cluster> getInitialClustersMap() {
         return initialClustersMap;
     }
 
     public void addClusterPrecinctMapping(Precinct precinct, Cluster cluster) {
-        initialClustersMap.put(precinct, cluster);
+        initialClustersMap.put(precinct.getGeoId(), cluster);
     }
 
     @Transient
     public HashMap<Cluster, Edge> getBestPairings() {
         return (HashMap<Cluster, Edge>)bestPairings;
+    }
+
+    public void init() {
+        initialClustersMap = new HashMap<>();
+        bestPairings = new HashMap<>();
+        doNotPairClusters = new HashSet<>();
     }
 
     /**

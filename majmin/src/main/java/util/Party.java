@@ -7,5 +7,5 @@ package util;
  * @author Brett Weinger
  */
 public enum Party {
-	REPUBLICAN, DEMOCRAT, GREEN, LIBERTARIAN, INDEPENDENT
+	DEMOCRAT, REPUBLICAN, GREEN, LIBERTARIAN, INDEPENDENT
 }
