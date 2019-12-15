@@ -5,10 +5,7 @@ import util.Operation;
 
 import javax.persistence.*;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Represents a State, including encompassed precincts, districts, demographics, voting data, and algorithm-oriented objects such as clusters and edges.
@@ -103,17 +100,7 @@ public class State {
             return;
         }
 
-        boolean worked = clusters.remove(edge.getClusterOne());
-        edge.getClusterOne().setRemovedWithEdge(edge);
-        boolean worked2 = clusters.remove(edge.getClusterTwo());
-
-        if (!worked || !worked2) {
-            System.out.println("");
-        }
-
-        edge.getClusterTwo().setRemovedWithEdge(edge);
-
-        Cluster combinedCluster = new Cluster(true);
+        Cluster combinedCluster = new Cluster();
         for (Precinct p : edge.getClusterOne().getPrecincts()) {
             combinedCluster.addPrecinct(p);
         }
@@ -122,7 +109,7 @@ public class State {
             combinedCluster.addPrecinct(p);
         }
 
-        combinedCluster.setEdges(edge.getClusterOne().getEdges());
+        combinedCluster.getEdges().addAll(edge.getClusterOne().getEdges());
         combinedCluster.getEdges().addAll(edge.getClusterTwo().getEdges());
         combinedCluster.getEdges().remove(edge);
 

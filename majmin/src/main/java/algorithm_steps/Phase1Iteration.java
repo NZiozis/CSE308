@@ -37,6 +37,9 @@ public class Phase1Iteration implements AlgorithmStep {
 
     @Override
     public boolean run() {
+
+        System.out.println(AlgorithmProperties.getProperties().getState().getClusters().size());
+
         if (doingMajMin) {
             iteration = new Algorithm(new AssignMMJoinabilities(), new CombineClusters());
         } else {
@@ -44,12 +47,6 @@ public class Phase1Iteration implements AlgorithmStep {
         }
 
         while (!iteration.run()) {}
-
-        if (i++ % 100 == 0) {
-            Set<Cluster> clusterSet = AlgorithmProperties.getProperties().getState().getClusters();
-
-            System.out.println("");
-        }
 
         return AlgorithmProperties.getProperties().getRequestedNumDistricts() >= AlgorithmProperties.getProperties().getState().getClusters().size();
     }

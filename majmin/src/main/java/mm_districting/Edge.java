@@ -84,4 +84,12 @@ public class Edge {
         return (clusterOne.equals(other.clusterOne) || clusterOne.equals(other.clusterTwo)) && (clusterTwo.equals(other.clusterOne) || clusterTwo.equals(other.clusterTwo));
     }
 
+    @Override
+    public int hashCode() {
+        int hash = 17;
+        hash = hash * 23 + clusterOne.hashCode();
+        hash = hash * 23 + clusterTwo.hashCode();
+        return hash;
+    }
+
 }
