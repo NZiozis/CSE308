@@ -21,7 +21,7 @@ import java.util.Set;
 @Table(name = "STATE")
 @JsonIgnoreProperties(
         value = { "initialDistricts", "generatedDistricts", "clusters", "bestPairings", "geography", "edges",
-                  "bestPairings", "doNotPairClusters", "precincts" })
+                  "bestPairings", "doNotPairClusters", "precincts"})
 public class State {
 
     //---state data---//
@@ -183,7 +183,7 @@ public class State {
         this.demographicContext = demographicContext;
     }
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinTable(name = "STATE_TO_DISTRICT")
     @JoinColumn(name = "DISTRICT_ID")
     public Set<District> getInitialDistricts() {
