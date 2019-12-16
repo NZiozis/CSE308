@@ -126,6 +126,17 @@ public class AlgorithmManager {
         return guiString;
     }
 
+    @RequestMapping(value = "/utah", method = RequestMethod.GET)
+    public String getUtahGeography() {
+        Long utahId = (long) State.StateID.UTAH.ordinal();
+        Optional<State> utahOptional = repository.findById(utahId);
+        State utah = null;
+        if (utahOptional.isPresent()) {
+            utah = utahOptional.get();
+        }
+        return utah.getGeography();
+    }
+
     @RequestMapping(value = "/westVirginia", method = RequestMethod.GET)
     public String getWestVirginiaGeography() {
         Long westVirginiaId = (long) State.StateID.WEST_VIRGINIA.ordinal();

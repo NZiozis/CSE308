@@ -5,21 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1b917782-4cb8-457f-9f9b-dfb5f1451613" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../gui/src/app/phase0-table/phase0-table.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/src/app/phase0-table/phase0-table.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/src/app/phase0-table/phase0-table.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/src/app/phase0-table/phase0-table.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/src/app/phase0/phase0.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/src/app/phase0/phase0.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/src/app/phase1/phase1.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/src/app/phase1/phase1.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../gui/src/app/services/map.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/src/app/services/map.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/src/app/services/phase0.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/src/app/services/phase0.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/src/app/state-info/state-info.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/src/app/state-info/state-info.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/algorithm_steps/DetermineVotingBlocs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithm_steps/DetermineVotingBlocs.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/mm_districting/AlgorithmManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mm_districting/AlgorithmManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/algorithm/Algorithm.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/algorithm/Algorithm.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mm_districting/AlgorithmManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mm_districting/AlgorithmManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mm_districting/AlgorithmProperties.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mm_districting/AlgorithmProperties.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mm_districting/State$StateID.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mm_districting/State$StateID.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mm_districting/State.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mm_districting/State.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -185,6 +173,7 @@
       <workItem from="1575936541530" duration="23358000" />
       <workItem from="1576181184766" duration="888000" />
       <workItem from="1576232269611" duration="6805000" />
+      <workItem from="1576455402940" duration="874000" />
     </task>
     <servers />
   </component>
@@ -276,12 +265,12 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/mm_districting/AlgorithmManager.java</url>
-          <line>154</line>
+          <line>165</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/mm_districting/AlgorithmManager.java</url>
-          <line>206</line>
+          <line>217</line>
           <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -291,7 +280,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/mm_districting/AlgorithmManager.java</url>
-          <line>191</line>
+          <line>202</line>
           <option name="timeStamp" value="17" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">

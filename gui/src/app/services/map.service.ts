@@ -205,7 +205,7 @@ export class MapService {
     }
 
     getUtah(): Observable<any> {
-        return this.http.get('assets/utah.json');
+        return this.http.get(this.REST_API_SERVER_URL + '/utah');
     }
 
     getWestVirginiaGeoJson(): Observable<any> {
