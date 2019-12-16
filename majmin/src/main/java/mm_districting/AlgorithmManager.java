@@ -105,7 +105,7 @@ public class AlgorithmManager {
             }
 
             AlgorithmProperties.getProperties().setState(state);
-
+            state.init();
         }
 
     }
@@ -238,10 +238,24 @@ public class AlgorithmManager {
             e.printStackTrace();
         }
 
+        AlgorithmProperties.getProperties().setRequestedNumDistricts((Integer)map.get("numberOfDistricts"));
+        AlgorithmProperties.getProperties().setMinorityVotingThreshold((Integer)map.get("minorityThreshold"));
+        AlgorithmProperties.getProperties().setMajorityVotingThreshold((Integer)map.get("majorityThreshold"));
+
+
+        ArrayList<String> selectedDemographicsArr = (ArrayList<String>) map.get("selectedRaces");
+        Set<Race> selectedDemographics = new HashSet<>();
+        for (String demographic : selectedDemographicsArr) {
+            selectedDemographics.add(Race.valueOf(demographic));
+        }
+        AlgorithmProperties.getProperties().setSelectedDemographics(selectedDemographics);
+
         currentAlgorithm =
                 new Algorithm(new GenerateInitialClusters(), new GenerateInitialEdges(), new Phase1Iteration(true));
 
         while (!( currentAlgorithm.run() )) {}
+
+        State state = AlgorithmProperties.getProperties().getState();
 
         return "";
     }

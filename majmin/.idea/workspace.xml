@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1b917782-4cb8-457f-9f9b-dfb5f1451613" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular-devkit/schematics/node_modules/@angular-devkit/core/src/experimental/workspace/.workspace-schema 2.json.icloud" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular-devkit/schematics/node_modules/@angular-devkit/core/src/experimental/workspace/test/.test-workspace 2.json.icloud" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular-devkit/schematics/node_modules/@angular-devkit/core/src/workspace/json/test/.angular 2.json.icloud" beforeDir="false" />
@@ -420,9 +421,31 @@
       <change beforePath="$PROJECT_DIR$/../gui/node_modules/dom-helpers/width/.package 2.json.icloud" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../gui/node_modules/fsevents/.fsevents 3.node.icloud" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../gui/node_modules/hyphenate-style-name/.nyc_output/.f0abf84f-70c3-425c-9716-c5605115059e 2.json.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/algorithm/Algorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithm/Algorithm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/algorithm_steps/CombineClusters.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithm_steps/CombineClusters.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/algorithm_steps/GenerateInitialClusters.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithm_steps/GenerateInitialClusters.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/algorithm_steps/GenerateInitialEdges.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithm_steps/GenerateInitialEdges.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/algorithm_steps/Phase1Iteration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithm_steps/Phase1Iteration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mm_districting/AlgorithmManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mm_districting/AlgorithmManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mm_districting/Cluster.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mm_districting/Cluster.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mm_districting/Edge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mm_districting/Edge.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mm_districting/Joinability.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mm_districting/Joinability.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mm_districting/Precinct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mm_districting/Precinct.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mm_districting/State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mm_districting/State.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/util/Party.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/Party.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/algorithm/Algorithm.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/algorithm/Algorithm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/algorithm_steps/CombineClusters.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/algorithm_steps/CombineClusters.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mm_districting/AlgorithmManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mm_districting/AlgorithmManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mm_districting/Cluster.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mm_districting/Cluster.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mm_districting/Edge.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mm_districting/Edge.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mm_districting/Joinability.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mm_districting/Joinability.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mm_districting/Precinct.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mm_districting/Precinct.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mm_districting/State$StateID.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mm_districting/State$StateID.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mm_districting/State.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mm_districting/State.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/util/Party.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/util/Party.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -590,6 +613,8 @@
       <workItem from="1576455402940" duration="5931000" />
       <workItem from="1576475790948" duration="146000" />
       <workItem from="1576476875831" duration="56000" />
+      <workItem from="1576534419320" duration="95000" />
+      <workItem from="1576534622248" duration="417000" />
     </task>
     <servers />
   </component>
@@ -690,7 +715,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/mm_districting/AlgorithmManager.java</url>
-          <line>240</line>
+          <line>252</line>
           <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">

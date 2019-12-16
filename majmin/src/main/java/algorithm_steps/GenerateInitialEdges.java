@@ -26,15 +26,21 @@ public class GenerateInitialEdges implements AlgorithmStep {
     @Override
     public boolean run() {
         State state = AlgorithmProperties.getProperties().getState();
-        Map<Precinct, Cluster> clusterMap = state.getInitialClustersMap();
+        Map<String, Cluster> clusterMap = state.getInitialClustersMap();
 
+        int i = 0;
         for (Cluster cluster : state.getClusters()) {
             Precinct initialPrecinct = cluster.getPrecincts().iterator().next();
             for (Precinct neighbor : initialPrecinct.getNeighbor()) {
-                Edge edge = new Edge(cluster, clusterMap.get(neighbor));
+                Cluster neighborCluster = clusterMap.get(neighbor.getGeoId());
+                Edge edge = new Edge(cluster, clusterMap.get(neighbor.getGeoId()));
+                cluster.addEdge(edge);
+                neighborCluster.addEdge(edge);
                 edges.add(edge);
             }
+
         }
+        state.setEdges(edges);
         return true;
     }
 

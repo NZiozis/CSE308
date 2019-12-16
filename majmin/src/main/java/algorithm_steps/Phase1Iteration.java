@@ -8,6 +8,7 @@ import results.Phase1Result;
 import results.Result;
 
 import java.util.HashMap;
+import java.util.Set;
 
 /**
  * Handles the main execution of Phase 1. (Use Case #26, #27, #28, #29) <br>
@@ -25,21 +26,29 @@ public class Phase1Iteration implements AlgorithmStep {
     private Algorithm iteration;
     private boolean doingMajMin;
 
+    private AlgorithmStepStatus status;
+
+    int i = 0;
+
     public Phase1Iteration(boolean doingMajMin) {
         this.doingMajMin = doingMajMin;
+        this.status = new AlgorithmStepStatus("Phase1");
     }
 
     @Override
     public boolean run() {
+
+        System.out.println(AlgorithmProperties.getProperties().getState().getClusters().size());
+
         if (doingMajMin) {
-            iteration = new Algorithm(new AssignMMJoinabilities(), new CombineClusters());
+            iteration = new Algorithm(new AssignMMJoinabilities(), new CombineClusters(this));
         } else {
-            iteration = new Algorithm(new AssignJoinabilities(), new CombineClusters());
+            iteration = new Algorithm(new AssignJoinabilities(), new CombineClusters(this));
         }
 
         while (!iteration.run()) {}
 
-        return AlgorithmProperties.getProperties().getRequestedNumDistricts() == AlgorithmProperties.getProperties().getNumDistricts();
+        return AlgorithmProperties.getProperties().getRequestedNumDistricts() >= AlgorithmProperties.getProperties().getState().getClusters().size();
     }
 
     public void doneWithMM() {
@@ -48,7 +57,9 @@ public class Phase1Iteration implements AlgorithmStep {
 
     @Override
     public AlgorithmStepStatus getStatus() {
-        return null;
+        State state = AlgorithmProperties.getProperties().getState();
+        status.setProgress(AlgorithmProperties.getProperties().getRequestedNumDistricts() * 1.0f / state.getClusters().size()); //not linear but whatevs
+        return status;
     }
 
     @Override
