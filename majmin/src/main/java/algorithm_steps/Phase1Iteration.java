@@ -41,9 +41,9 @@ public class Phase1Iteration implements AlgorithmStep {
         System.out.println(AlgorithmProperties.getProperties().getState().getClusters().size());
 
         if (doingMajMin) {
-            iteration = new Algorithm(new AssignMMJoinabilities(), new CombineClusters());
+            iteration = new Algorithm(new AssignMMJoinabilities(), new CombineClusters(this));
         } else {
-            iteration = new Algorithm(new AssignJoinabilities(), new CombineClusters());
+            iteration = new Algorithm(new AssignJoinabilities(), new CombineClusters(this));
         }
 
         while (!iteration.run()) {}

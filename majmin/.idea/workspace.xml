@@ -420,148 +420,12 @@
       <change beforePath="$PROJECT_DIR$/../gui/node_modules/dom-helpers/width/.package 2.json.icloud" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../gui/node_modules/fsevents/.fsevents 3.node.icloud" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../gui/node_modules/hyphenate-style-name/.nyc_output/.f0abf84f-70c3-425c-9716-c5605115059e 2.json.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/hyphenate-style-name/.yarn 2.lock.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/jest-worker/build/.Farm.d.ts 2.map.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/jest-worker/build/.WorkerPool.d.ts 2.map.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/jest-worker/build/.index.d.ts 2.map.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/jest-worker/build/.types.d.ts 2.map.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/jest-worker/build/base/.BaseWorkerPool.d.ts 2.map.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/jest-worker/build/workers/.ChildProcessWorker.d.ts 2.map.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/jest-worker/build/workers/.NodeThreadsWorker.d.ts 2.map.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/jest-worker/build/workers/.processChild.d.ts 2.map.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/jest-worker/build/workers/.threadChild.d.ts 2.map.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/jss-plugin-camel-case/dist/.jss-plugin-camel-case.cjs.js 2.flow.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/jss-plugin-camel-case/dist/.jss-plugin-camel-case.js 2.map.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/jss-plugin-default-unit/dist/.jss-plugin-default-unit.cjs.js 2.flow.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/jss-plugin-default-unit/dist/.jss-plugin-default-unit.js 2.map.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/jss-plugin-global/dist/.jss-plugin-global.cjs.js 2.flow.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/jss-plugin-global/dist/.jss-plugin-global.js 2.map.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/jss-plugin-nested/dist/.jss-plugin-nested.cjs.js 2.flow.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/jss-plugin-nested/dist/.jss-plugin-nested.js 2.map.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/jss-plugin-props-sort/dist/.jss-plugin-props-sort.cjs.js 2.flow.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/jss-plugin-props-sort/dist/.jss-plugin-props-sort.js 2.map.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/jss-plugin-rule-value-function/dist/.jss-plugin-rule-value-function.cjs.js 2.flow.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/jss-plugin-rule-value-function/dist/.jss-plugin-rule-value-function.js 2.map.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/jss-plugin-vendor-prefixer/dist/.jss-plugin-vendor-prefixer.cjs.js 2.flow.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/jss-plugin-vendor-prefixer/dist/.jss-plugin-vendor-prefixer.js 2.map.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/jss/dist/.jss.cjs.js 2.flow.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/jss/dist/.jss.js 2.map.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/karma/node_modules/fsevents/..travis 2.yml.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/karma/node_modules/fsevents/.binding 2.gyp.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/karma/node_modules/fsevents/lib/binding/Release/node-v72-darwin-x64/.fse 2.node.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/karma/node_modules/fsevents/node_modules/concat-map/..travis 2.yml.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/karma/node_modules/fsevents/node_modules/iconv-lite/encodings/tables/.big5-added 2.json.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/karma/node_modules/fsevents/node_modules/iconv-lite/encodings/tables/.cp936 2.json.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/karma/node_modules/fsevents/node_modules/iconv-lite/encodings/tables/.cp949 2.json.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/karma/node_modules/fsevents/node_modules/iconv-lite/encodings/tables/.cp950 2.json.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/karma/node_modules/fsevents/node_modules/iconv-lite/encodings/tables/.eucjp 2.json.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/karma/node_modules/fsevents/node_modules/iconv-lite/encodings/tables/.gb18030-ranges 2.json.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/karma/node_modules/fsevents/node_modules/iconv-lite/encodings/tables/.gbk-added 2.json.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/karma/node_modules/fsevents/node_modules/iconv-lite/encodings/tables/.shiftjis 2.json.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/karma/node_modules/fsevents/node_modules/isarray/..travis 2.yml.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/karma/node_modules/fsevents/node_modules/isarray/.component 2.json.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/karma/node_modules/fsevents/node_modules/minimist/..travis 2.yml.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/karma/node_modules/fsevents/node_modules/mkdirp/..travis 2.yml.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/karma/node_modules/fsevents/node_modules/needle/.package-lock 2.json.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/karma/node_modules/fsevents/node_modules/needle/test/keys/.ssl 2.cert.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/karma/node_modules/fsevents/node_modules/needle/test/keys/.ssl 2.key.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/karma/node_modules/fsevents/node_modules/node-pre-gyp/.appveyor 2.yml.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/karma/node_modules/fsevents/node_modules/node-pre-gyp/bin/.node-pre-gyp 2.cmd.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/karma/node_modules/fsevents/node_modules/node-pre-gyp/lib/util/.abi_crosswalk 2.json.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/karma/node_modules/fsevents/node_modules/node-pre-gyp/lib/util/nw-pre-gyp/.index 2.html.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/karma/node_modules/fsevents/node_modules/node-pre-gyp/lib/util/nw-pre-gyp/.package 2.json.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/karma/node_modules/fsevents/node_modules/nopt/..travis 2.yml.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/karma/node_modules/fsevents/node_modules/rc/.LICENSE 2.APACHE2.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/karma/node_modules/fsevents/node_modules/rc/.LICENSE 2.BSD.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/karma/node_modules/fsevents/node_modules/rc/.LICENSE 2.MIT.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/karma/node_modules/fsevents/node_modules/rc/node_modules/minimist/..travis 2.yml.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/karma/node_modules/fsevents/node_modules/readable-stream/..travis 2.yml.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/karma/node_modules/fsevents/node_modules/semver/.range 2.bnf.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/karma/node_modules/fsevents/node_modules/string_decoder/..travis 2.yml.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/loglevel/.github/.FUNDING 2.yml.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/nan/tools/.package 2.json.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/react-is/.build-info 2.json.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/react-transition-group/CSSTransition/.package 2.json.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/react-transition-group/ReplaceTransition/.package 2.json.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/react-transition-group/SwitchTransition/.package 2.json.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/react-transition-group/Transition/.package 2.json.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/react-transition-group/TransitionGroup/.package 2.json.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/react-transition-group/TransitionGroupContext/.package 2.json.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/react-transition-group/config/.package 2.json.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/sockjs-client/.github/.FUNDING 2.yml.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/tiny-warning/dist/.tiny-warning.cjs.js 2.flow.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/vm-browserify/.github/.FUNDING 2.yml.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/watchpack/node_modules/fsevents/..travis 2.yml.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/watchpack/node_modules/fsevents/.binding 2.gyp.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/watchpack/node_modules/fsevents/lib/binding/Release/node-v72-darwin-x64/.fse 2.node.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/watchpack/node_modules/fsevents/node_modules/concat-map/..travis 2.yml.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/watchpack/node_modules/fsevents/node_modules/iconv-lite/encodings/tables/.big5-added 2.json.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/watchpack/node_modules/fsevents/node_modules/iconv-lite/encodings/tables/.cp936 2.json.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/watchpack/node_modules/fsevents/node_modules/iconv-lite/encodings/tables/.cp949 2.json.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/watchpack/node_modules/fsevents/node_modules/iconv-lite/encodings/tables/.cp950 2.json.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/watchpack/node_modules/fsevents/node_modules/iconv-lite/encodings/tables/.eucjp 2.json.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/watchpack/node_modules/fsevents/node_modules/iconv-lite/encodings/tables/.gb18030-ranges 2.json.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/watchpack/node_modules/fsevents/node_modules/iconv-lite/encodings/tables/.gbk-added 2.json.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/watchpack/node_modules/fsevents/node_modules/iconv-lite/encodings/tables/.shiftjis 2.json.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/watchpack/node_modules/fsevents/node_modules/isarray/..travis 2.yml.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/watchpack/node_modules/fsevents/node_modules/isarray/.component 2.json.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/watchpack/node_modules/fsevents/node_modules/minimist/..travis 2.yml.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/watchpack/node_modules/fsevents/node_modules/mkdirp/..travis 2.yml.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/watchpack/node_modules/fsevents/node_modules/needle/.package-lock 2.json.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/watchpack/node_modules/fsevents/node_modules/needle/test/keys/.ssl 2.cert.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/watchpack/node_modules/fsevents/node_modules/needle/test/keys/.ssl 2.key.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/watchpack/node_modules/fsevents/node_modules/node-pre-gyp/.appveyor 2.yml.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/watchpack/node_modules/fsevents/node_modules/node-pre-gyp/bin/.node-pre-gyp 2.cmd.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/watchpack/node_modules/fsevents/node_modules/node-pre-gyp/lib/util/.abi_crosswalk 2.json.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/watchpack/node_modules/fsevents/node_modules/node-pre-gyp/lib/util/nw-pre-gyp/.index 2.html.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/watchpack/node_modules/fsevents/node_modules/node-pre-gyp/lib/util/nw-pre-gyp/.package 2.json.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/watchpack/node_modules/fsevents/node_modules/nopt/..travis 2.yml.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/watchpack/node_modules/fsevents/node_modules/rc/.LICENSE 2.APACHE2.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/watchpack/node_modules/fsevents/node_modules/rc/.LICENSE 2.BSD.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/watchpack/node_modules/fsevents/node_modules/rc/.LICENSE 2.MIT.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/watchpack/node_modules/fsevents/node_modules/rc/node_modules/minimist/..travis 2.yml.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/watchpack/node_modules/fsevents/node_modules/readable-stream/..travis 2.yml.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/watchpack/node_modules/fsevents/node_modules/semver/.range 2.bnf.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/watchpack/node_modules/fsevents/node_modules/string_decoder/..travis 2.yml.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/webpack-dev-server/node_modules/fsevents/..travis 2.yml.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/webpack-dev-server/node_modules/fsevents/.binding 2.gyp.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/webpack-dev-server/node_modules/fsevents/lib/binding/Release/node-v72-darwin-x64/.fse 2.node.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/concat-map/..travis 2.yml.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/iconv-lite/encodings/tables/.big5-added 2.json.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/iconv-lite/encodings/tables/.cp936 2.json.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/iconv-lite/encodings/tables/.cp949 2.json.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/iconv-lite/encodings/tables/.cp950 2.json.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/iconv-lite/encodings/tables/.eucjp 2.json.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/iconv-lite/encodings/tables/.gb18030-ranges 2.json.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/iconv-lite/encodings/tables/.gbk-added 2.json.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/iconv-lite/encodings/tables/.shiftjis 2.json.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/isarray/..travis 2.yml.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/isarray/.component 2.json.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/minimist/..travis 2.yml.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/mkdirp/..travis 2.yml.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/needle/.package-lock 2.json.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/needle/test/keys/.ssl 2.cert.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/needle/test/keys/.ssl 2.key.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/node-pre-gyp/.appveyor 2.yml.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/node-pre-gyp/bin/.node-pre-gyp 2.cmd.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/node-pre-gyp/lib/util/.abi_crosswalk 2.json.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/node-pre-gyp/lib/util/nw-pre-gyp/.index 2.html.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/node-pre-gyp/lib/util/nw-pre-gyp/.package 2.json.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/nopt/..travis 2.yml.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/rc/.LICENSE 2.APACHE2.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/rc/.LICENSE 2.BSD.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/rc/.LICENSE 2.MIT.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/rc/node_modules/minimist/..travis 2.yml.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/readable-stream/..travis 2.yml.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/semver/.range 2.bnf.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/string_decoder/..travis 2.yml.icloud" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/algorithm_steps/CombineClusters.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithm_steps/CombineClusters.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/algorithm_steps/Phase1Iteration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithm_steps/Phase1Iteration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mm_districting/Edge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mm_districting/Edge.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mm_districting/State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mm_districting/State.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mm_districting/Edge.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mm_districting/Edge.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mm_districting/State$StateID.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mm_districting/State$StateID.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mm_districting/State.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mm_districting/State.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mm_districting/Joinability.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mm_districting/Joinability.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -772,66 +636,66 @@
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="492" y="327" width="455" height="273" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.23.1440.877@0.23.1440.877" timestamp="1575340955671" />
-    <state width="1398" height="294" key="GridCell.Tab.0.bottom" timestamp="1576435962860">
+    <state width="1398" height="285" key="GridCell.Tab.0.bottom" timestamp="1576475707817">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state width="1878" height="369" key="GridCell.Tab.0.bottom/0.23.1440.877/1346.-1057.1920.1057@1346.-1057.1920.1057" timestamp="1576243739323" />
-    <state width="1398" height="294" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1576435962860" />
-    <state width="1398" height="294" key="GridCell.Tab.0.center" timestamp="1576435962859">
+    <state width="1398" height="285" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1576475707817" />
+    <state width="1398" height="285" key="GridCell.Tab.0.center" timestamp="1576475707816">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state width="1878" height="369" key="GridCell.Tab.0.center/0.23.1440.877/1346.-1057.1920.1057@1346.-1057.1920.1057" timestamp="1576243739322" />
-    <state width="1398" height="294" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1576435962859" />
-    <state width="1398" height="294" key="GridCell.Tab.0.left" timestamp="1576435962859">
+    <state width="1398" height="285" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1576475707816" />
+    <state width="1398" height="285" key="GridCell.Tab.0.left" timestamp="1576475707815">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state width="1878" height="369" key="GridCell.Tab.0.left/0.23.1440.877/1346.-1057.1920.1057@1346.-1057.1920.1057" timestamp="1576243739321" />
-    <state width="1398" height="294" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1576435962859" />
-    <state width="1398" height="294" key="GridCell.Tab.0.right" timestamp="1576435962860">
+    <state width="1398" height="285" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1576475707815" />
+    <state width="1398" height="285" key="GridCell.Tab.0.right" timestamp="1576475707816">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state width="1878" height="369" key="GridCell.Tab.0.right/0.23.1440.877/1346.-1057.1920.1057@1346.-1057.1920.1057" timestamp="1576243739322" />
-    <state width="1398" height="294" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1576435962860" />
-    <state width="1398" height="294" key="GridCell.Tab.1.bottom" timestamp="1576435962861">
+    <state width="1398" height="285" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1576475707816" />
+    <state width="1398" height="285" key="GridCell.Tab.1.bottom" timestamp="1576475707818">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state width="1878" height="369" key="GridCell.Tab.1.bottom/0.23.1440.877/1346.-1057.1920.1057@1346.-1057.1920.1057" timestamp="1576243739324" />
-    <state width="1398" height="294" key="GridCell.Tab.1.bottom/0.23.1440.877@0.23.1440.877" timestamp="1576435962861" />
-    <state width="1398" height="294" key="GridCell.Tab.1.center" timestamp="1576435962861">
+    <state width="1398" height="285" key="GridCell.Tab.1.bottom/0.23.1440.877@0.23.1440.877" timestamp="1576475707818" />
+    <state width="1398" height="285" key="GridCell.Tab.1.center" timestamp="1576475707817">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state width="1878" height="369" key="GridCell.Tab.1.center/0.23.1440.877/1346.-1057.1920.1057@1346.-1057.1920.1057" timestamp="1576243739323" />
-    <state width="1398" height="294" key="GridCell.Tab.1.center/0.23.1440.877@0.23.1440.877" timestamp="1576435962861" />
-    <state width="1398" height="294" key="GridCell.Tab.1.left" timestamp="1576435962860">
+    <state width="1398" height="285" key="GridCell.Tab.1.center/0.23.1440.877@0.23.1440.877" timestamp="1576475707817" />
+    <state width="1398" height="285" key="GridCell.Tab.1.left" timestamp="1576475707817">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state width="1878" height="369" key="GridCell.Tab.1.left/0.23.1440.877/1346.-1057.1920.1057@1346.-1057.1920.1057" timestamp="1576243739323" />
-    <state width="1398" height="294" key="GridCell.Tab.1.left/0.23.1440.877@0.23.1440.877" timestamp="1576435962860" />
-    <state width="1398" height="294" key="GridCell.Tab.1.right" timestamp="1576435962861">
+    <state width="1398" height="285" key="GridCell.Tab.1.left/0.23.1440.877@0.23.1440.877" timestamp="1576475707817" />
+    <state width="1398" height="285" key="GridCell.Tab.1.right" timestamp="1576475707818">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state width="1878" height="369" key="GridCell.Tab.1.right/0.23.1440.877/1346.-1057.1920.1057@1346.-1057.1920.1057" timestamp="1576243739323" />
-    <state width="1398" height="294" key="GridCell.Tab.1.right/0.23.1440.877@0.23.1440.877" timestamp="1576435962861" />
-    <state width="1398" height="285" key="GridCell.Tab.2.bottom" timestamp="1576435962855">
+    <state width="1398" height="285" key="GridCell.Tab.1.right/0.23.1440.877@0.23.1440.877" timestamp="1576475707818" />
+    <state width="1398" height="285" key="GridCell.Tab.2.bottom" timestamp="1576475707820">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state width="1878" height="357" key="GridCell.Tab.2.bottom/0.23.1440.877/1346.-1057.1920.1057@1346.-1057.1920.1057" timestamp="1576243739317" />
-    <state width="1398" height="285" key="GridCell.Tab.2.bottom/0.23.1440.877@0.23.1440.877" timestamp="1576435962855" />
-    <state width="1398" height="285" key="GridCell.Tab.2.center" timestamp="1576435962855">
+    <state width="1398" height="285" key="GridCell.Tab.2.bottom/0.23.1440.877@0.23.1440.877" timestamp="1576475707820" />
+    <state width="1398" height="285" key="GridCell.Tab.2.center" timestamp="1576475707819">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state width="1878" height="357" key="GridCell.Tab.2.center/0.23.1440.877/1346.-1057.1920.1057@1346.-1057.1920.1057" timestamp="1576243739316" />
-    <state width="1398" height="285" key="GridCell.Tab.2.center/0.23.1440.877@0.23.1440.877" timestamp="1576435962855" />
-    <state width="1398" height="285" key="GridCell.Tab.2.left" timestamp="1576435962855">
+    <state width="1398" height="285" key="GridCell.Tab.2.center/0.23.1440.877@0.23.1440.877" timestamp="1576475707819" />
+    <state width="1398" height="285" key="GridCell.Tab.2.left" timestamp="1576475707818">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state width="1878" height="357" key="GridCell.Tab.2.left/0.23.1440.877/1346.-1057.1920.1057@1346.-1057.1920.1057" timestamp="1576243739316" />
-    <state width="1398" height="285" key="GridCell.Tab.2.left/0.23.1440.877@0.23.1440.877" timestamp="1576435962855" />
-    <state width="1398" height="285" key="GridCell.Tab.2.right" timestamp="1576435962855">
+    <state width="1398" height="285" key="GridCell.Tab.2.left/0.23.1440.877@0.23.1440.877" timestamp="1576475707818" />
+    <state width="1398" height="285" key="GridCell.Tab.2.right" timestamp="1576475707819">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state width="1878" height="357" key="GridCell.Tab.2.right/0.23.1440.877/1346.-1057.1920.1057@1346.-1057.1920.1057" timestamp="1576243739317" />
-    <state width="1398" height="285" key="GridCell.Tab.2.right/0.23.1440.877@0.23.1440.877" timestamp="1576435962855" />
+    <state width="1398" height="285" key="GridCell.Tab.2.right/0.23.1440.877@0.23.1440.877" timestamp="1576475707819" />
     <state x="1859" y="-828" width="894" height="815" key="search.everywhere.popup" timestamp="1576233000516">
       <screen x="1346" y="-1057" width="1920" height="1057" />
     </state>
@@ -841,11 +705,6 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/algorithm_steps/Phase1Iteration.java</url>
-          <line>69</line>
-          <option name="timeStamp" value="48" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/mm_districting/AlgorithmManager.java</url>
           <line>229</line>
@@ -864,8 +723,5 @@
         <watch expression="((District)stateOptional.value.initialDistricts.toArray()[1]).precincts" custom="mm_districting.District" />
       </configuration>
     </watches-manager>
-  </component>
-  <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/majmin$MajminApplication.ic" NAME="MajminApplication Coverage Results" MODIFIED="1576203711935" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

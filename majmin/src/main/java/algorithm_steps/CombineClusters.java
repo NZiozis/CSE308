@@ -3,10 +3,7 @@ package algorithm_steps;
 import algorithm.Algorithm;
 import algorithm.AlgorithmStep;
 import algorithm.AlgorithmStepStatus;
-import mm_districting.AlgorithmProperties;
-import mm_districting.Cluster;
-import mm_districting.Edge;
-import mm_districting.State;
+import mm_districting.*;
 import results.DummyResult;
 import results.Result;
 
@@ -29,9 +26,14 @@ public class CombineClusters implements AlgorithmStep {
     private ArrayList<Edge> queuedCombinations;
 
     private boolean firstRun;
+    private double highestSeenJoinability = -1;
 
-    public CombineClusters() {
+    private Phase1Iteration caller;
+
+
+    public CombineClusters(Phase1Iteration caller) {
         this(AlgorithmProperties.getProperties().getState().getClusters().size());
+        this.caller = caller;
     }
 
     public CombineClusters(int maxRunIterations) {
@@ -64,6 +66,9 @@ public class CombineClusters implements AlgorithmStep {
         if (doNotPairClusters.contains(edge.getClusterOne()) || doNotPairClusters.contains(edge.getClusterTwo())) {
             return false;
         } else {
+            if (edge.getJoinability() > highestSeenJoinability) {
+                highestSeenJoinability = edge.getJoinability();
+            }
             queuedCombinations.add(edge);
             state.getDoNotPairClusters().add(edge.getClusterOne());
             state.getDoNotPairClusters().add(edge.getClusterTwo());
@@ -104,6 +109,10 @@ public class CombineClusters implements AlgorithmStep {
             state.combineClusters(e);
         }
         state.getDoNotPairClusters().clear();
+
+        if (highestSeenJoinability < Joinability.DONE_WITH_MM_THRESHOLD) {
+            caller.doneWithMM();
+        }
 
         return new DummyResult(); //TODO: probably return an actual result
     }

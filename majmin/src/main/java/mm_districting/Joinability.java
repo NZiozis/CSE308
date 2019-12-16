@@ -8,6 +8,8 @@ import java.util.Set;
 
 public class Joinability {
 
+    public static final double DONE_WITH_MM_THRESHOLD = .3;
+
     public static double calculateMajMinJoinability(Edge edge) {
 
         AlgorithmProperties algProps = AlgorithmProperties.getProperties();
@@ -44,6 +46,10 @@ public class Joinability {
             score += 1;
         }
         return score;
+    }
+
+    public static double calculateJoinability(Edge edge) {
+        return Math.random();
     }
 
 }
