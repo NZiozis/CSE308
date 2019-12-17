@@ -2,10 +2,7 @@ package algorithm_steps;
 
 import algorithm.AlgorithmStep;
 import algorithm.AlgorithmStepStatus;
-import mm_districting.AlgorithmProperties;
-import mm_districting.Edge;
-import mm_districting.Joinability;
-import mm_districting.State;
+import mm_districting.*;
 import results.DummyResult;
 import results.Result;
 
@@ -30,6 +27,13 @@ public class AssignJoinabilities implements AlgorithmStep {
     public boolean run() {
         status.setMessage("Currently running.");
         Edge edge = edgesLeftToAssign.get(0);
+
+        Cluster c1 = edge.getClusterOne();
+        Cluster c2 = edge.getClusterTwo();
+
+        boolean c1In = state.getClusters().contains(c1);
+        boolean c2In = state.getClusters().contains(c2);
+
 
         //skip edges with clusters not in play
         boolean validEdge = state.getClusters().contains(edge.getClusterOne()) && state.getClusters().contains(edge.getClusterTwo());
