@@ -5,6 +5,12 @@
     </mat-checkbox>
     <br>
     <br>
+    <mat-checkbox labelPosition="before" [(ngModel)]="this.toggleElection"
+                  (click)="mapService.toggleElectionView(this.toggleElection)">Toggle
+        Election View
+    </mat-checkbox>
+    <br>
+    <br>
     Specify Election:
     <mat-form-field>
         <mat-select [(ngModel)]="selectedElection">

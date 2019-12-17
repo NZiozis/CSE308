@@ -9,6 +9,7 @@ import {MapService} from '../services/map.service';
 export class BasicComponent implements OnInit {
 
     private toggleLayer: boolean;
+    private toggleElection: boolean;
     private selectedElection;
 
     constructor(private mapService: MapService) {
@@ -16,6 +17,7 @@ export class BasicComponent implements OnInit {
 
     ngOnInit() {
         this.toggleLayer = false;
+        this.mapService.showElection = this.toggleElection = false;
         this.mapService.selectedElection = this.selectedElection = 'CONGRESSIONAL_2016';
     }
 

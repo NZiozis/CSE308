@@ -39,6 +39,7 @@ export class MapService {
     public stateIsSelected: boolean;
     public state;
     public selectedElection;
+    public showElection = false;
     public states: Backend[];
     public possibleRaces: Backend[];
     public elections: Backend[];
@@ -62,6 +63,16 @@ export class MapService {
             this.map.removeLayer(this.precinctLayerGroup);
             this.map.addLayer(this.districtLayerGroup);
         }
+    }
+
+    toggleElectionView(isDisplayElection: boolean) {
+        console.log('?Election' + isDisplayElection);
+        this.showElection = !isDisplayElection;
+        console.log('Show Election' + this.showElection);
+    }
+
+    getShowElection() {
+        return this.showElection;
     }
 
     getOptions() {
@@ -101,7 +112,7 @@ export class MapService {
                                     this.setStyle({
                                         fillColor: '#0000ff'
                                     });
-                                    self.currentInfo = new District({position: 'bottomleft'}, district, this);
+                                    self.currentInfo = new District({position: 'bottomleft'}, district, self);
                                     self.currentInfo.addTo(self.map);
                                 });
                                 layer.on('mouseout', function() {
