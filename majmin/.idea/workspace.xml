@@ -5,11 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1b917782-4cb8-457f-9f9b-dfb5f1451613" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mm_districting/State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mm_districting/State.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mm_districting/State.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mm_districting/State.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gui/src/app/services/phase2.service.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gui/src/app/services/phase2.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/src/app/left-panel/left-panel.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/src/app/left-panel/left-panel.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mm_districting/AlgorithmManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mm_districting/AlgorithmManager.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -289,6 +289,11 @@
           <url>file://$PROJECT_DIR$/src/main/java/algorithm_steps/DetermineDemBlocs.java</url>
           <line>47</line>
           <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/mm_districting/AlgorithmManager.java</url>
+          <line>250</line>
+          <option name="timeStamp" value="20" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -1,0 +1,40 @@
+<mat-card>
+    Partisan Fairness:
+    <br>
+    <mat-slider max="1" step=".1" [(ngModel)]="this.config.partisanFairness"></mat-slider>
+    {{this.config.partisanFairness}}
+    <br>
+    Reock Compactness:
+    <br>
+    <mat-slider max="1" step=".1" [(ngModel)]="this.config.reockCompactness"></mat-slider>
+    {{this.config.reockCompactness}}
+    <br>Convex Hull Compactness:
+    <br>
+    <mat-slider max="1" step=".1" [(ngModel)]="this.config.convexHullCompactness"></mat-slider>
+    {{this.config.convexHullCompactness}}
+    <br>Edge Compactness:
+    <br>
+    <mat-slider max="1" step=".1" [(ngModel)]="this.config.edgeCompactness"></mat-slider>
+    {{this.config.edgeCompactness}}
+    <br>Efficiency gap:
+    <br>
+    <mat-slider max="1" step=".1" [(ngModel)]="this.config.efficiencyGap"></mat-slider>
+    {{this.config.efficiencyGap}}
+    <br>
+    Population Equality:
+    <br>
+    <mat-slider max="1" step=".1" [(ngModel)]="this.config.populationEquality"></mat-slider>
+    {{this.config.populationEquality}}
+    <br>
+    Competitiveness:
+    <br>
+    <mat-slider max="1" step=".1" [(ngModel)]="this.config.competitiveness"></mat-slider>
+    {{this.config.competitiveness}}
+    <br>
+    Population Homogeneity:
+    <br>
+    <mat-slider max="1" step=".1" [(ngModel)]="this.config.populationHomogeneity"></mat-slider>
+    {{this.config.populationHomogeneity}}
+    <br>
+    <button mat-raised-button color="primary" (click)="this.phase2Service.run(createPhase2Json())">Phase 2</button>
+</mat-card>
