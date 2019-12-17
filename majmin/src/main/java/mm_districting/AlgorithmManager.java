@@ -245,8 +245,23 @@ public class AlgorithmManager {
 
         return "";
     }
+    @RequestMapping(value = "/phase2", method = RequestMethod.POST)
+    private String initPhase2() {
 
-    private Algorithm initPhase2() {
-        return new Algorithm();
+        currentAlgorithm = new Algorithm(new SimulatedAnnealing());
+
+        while (!( currentAlgorithm.run() )) {}
+
+        ArrayList<Result> results = currentAlgorithm.getResultsToSend();
+
+        String guiResult = "";
+        try {
+            guiResult = mapper.writeValueAsString(results);
+        }
+        catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
+
+        return guiResult;
     }
 }
