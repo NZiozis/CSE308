@@ -116,11 +116,15 @@ public class State {
         combinedCluster.getEdges().addAll(edge.getClusterTwo().getEdges());
         combinedCluster.getEdges().remove(edge);
 
-        for (Edge e : combinedCluster.getEdges()) {
+        for (Edge e : edges) {
             e.updateCluster(combinedCluster, edge.getClusterOne(), edge.getClusterTwo());
         }
 
         clusters.add(combinedCluster);
+        clusters.remove(edge.getClusterOne());
+        clusters.remove(edge.getClusterTwo());
+        bestPairings.remove(edge.getClusterOne());
+        bestPairings.remove(edge.getClusterTwo());
     }
 
     @Column(name = "GEOGRAPHY", length = 16777215, columnDefinition = "mediumtext", nullable = false)

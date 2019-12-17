@@ -4,6 +4,7 @@ import algorithm.Algorithm;
 import algorithm.AlgorithmStep;
 import algorithm.AlgorithmStepStatus;
 import mm_districting.*;
+import results.DummyResult;
 import results.Result;
 
 import java.util.ArrayList;
@@ -36,6 +37,7 @@ public class AssignMMJoinabilities implements AlgorithmStep {
     public boolean run() {
         status.setMessage("Currently running.");
         Edge edge = edgesLeftToAssign.get(0);
+        
         edge.setMajorityMinorityJoinability(Joinability.calculateMajMinJoinability(edge));
         edgesLeftToAssign.remove(edge);
 
@@ -68,6 +70,6 @@ public class AssignMMJoinabilities implements AlgorithmStep {
 
     @Override
     public Result onCompletion() {
-        return null;
+        return new DummyResult();
     }
 }

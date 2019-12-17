@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1b917782-4cb8-457f-9f9b-dfb5f1451613" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular-devkit/schematics/node_modules/@angular-devkit/core/src/experimental/workspace/.workspace-schema 2.json.icloud" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular-devkit/schematics/node_modules/@angular-devkit/core/src/experimental/workspace/test/.test-workspace 2.json.icloud" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../gui/node_modules/@angular-devkit/schematics/node_modules/@angular-devkit/core/src/workspace/json/test/.angular 2.json.icloud" beforeDir="false" />
@@ -422,30 +421,21 @@
       <change beforePath="$PROJECT_DIR$/../gui/node_modules/fsevents/.fsevents 3.node.icloud" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../gui/node_modules/hyphenate-style-name/.nyc_output/.f0abf84f-70c3-425c-9716-c5605115059e 2.json.icloud" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/algorithm/Algorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithm/Algorithm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/algorithm_steps/AssignJoinabilities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithm_steps/AssignJoinabilities.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/algorithm_steps/AssignMMJoinabilities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithm_steps/AssignMMJoinabilities.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/algorithm_steps/CombineClusters.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithm_steps/CombineClusters.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/algorithm_steps/GenerateInitialClusters.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithm_steps/GenerateInitialClusters.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/algorithm_steps/GenerateInitialEdges.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithm_steps/GenerateInitialEdges.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/algorithm_steps/Phase1Iteration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithm_steps/Phase1Iteration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mm_districting/AlgorithmManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mm_districting/AlgorithmManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mm_districting/Cluster.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mm_districting/Cluster.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mm_districting/DemographicContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mm_districting/DemographicContext.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/mm_districting/Edge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mm_districting/Edge.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mm_districting/Joinability.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mm_districting/Joinability.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mm_districting/Precinct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mm_districting/Precinct.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/mm_districting/State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mm_districting/State.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/util/Party.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/Party.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/util/Race.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/Race.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/algorithm/Algorithm.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/algorithm/Algorithm.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/algorithm_steps/CombineClusters.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/algorithm_steps/CombineClusters.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/mm_districting/AlgorithmManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mm_districting/AlgorithmManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mm_districting/Cluster.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mm_districting/Cluster.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/mm_districting/Edge.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mm_districting/Edge.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/mm_districting/Joinability.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mm_districting/Joinability.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mm_districting/Precinct.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mm_districting/Precinct.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/mm_districting/State$StateID.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mm_districting/State$StateID.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/mm_districting/State.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mm_districting/State.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/util/Party.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/util/Party.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -615,6 +605,9 @@
       <workItem from="1576476875831" duration="56000" />
       <workItem from="1576534419320" duration="95000" />
       <workItem from="1576534622248" duration="417000" />
+      <workItem from="1576535392925" duration="11332000" />
+      <workItem from="1576566789153" duration="229000" />
+      <workItem from="1576599877751" duration="286000" />
     </task>
     <servers />
   </component>
@@ -652,54 +645,66 @@
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="492" y="327" width="455" height="273" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.23.1440.877@0.23.1440.877" timestamp="1575340955671" />
-    <state width="1398" height="294" key="GridCell.Tab.0.bottom" timestamp="1576476931258">
-      <screen x="0" y="23" width="1440" height="877" />
+    <state width="1878" height="220" key="GridCell.Tab.0.bottom" timestamp="1576556486143">
+      <screen x="1440" y="23" width="1920" height="1057" />
     </state>
-    <state width="1398" height="294" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1576476931258" />
-    <state width="1398" height="294" key="GridCell.Tab.0.center" timestamp="1576476931257">
-      <screen x="0" y="23" width="1440" height="877" />
+    <state width="1398" height="220" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1576549253076" />
+    <state width="1878" height="220" key="GridCell.Tab.0.bottom/1440.23.1920.1057/0.23.1440.877@1440.23.1920.1057" timestamp="1576556486143" />
+    <state width="1878" height="220" key="GridCell.Tab.0.center" timestamp="1576556486142">
+      <screen x="1440" y="23" width="1920" height="1057" />
     </state>
-    <state width="1398" height="294" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1576476931257" />
-    <state width="1398" height="294" key="GridCell.Tab.0.left" timestamp="1576476931257">
-      <screen x="0" y="23" width="1440" height="877" />
+    <state width="1398" height="220" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1576549253075" />
+    <state width="1878" height="220" key="GridCell.Tab.0.center/1440.23.1920.1057/0.23.1440.877@1440.23.1920.1057" timestamp="1576556486142" />
+    <state width="1878" height="220" key="GridCell.Tab.0.left" timestamp="1576556486142">
+      <screen x="1440" y="23" width="1920" height="1057" />
     </state>
-    <state width="1398" height="294" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1576476931257" />
-    <state width="1398" height="294" key="GridCell.Tab.0.right" timestamp="1576476931257">
-      <screen x="0" y="23" width="1440" height="877" />
+    <state width="1398" height="220" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1576549253075" />
+    <state width="1878" height="220" key="GridCell.Tab.0.left/1440.23.1920.1057/0.23.1440.877@1440.23.1920.1057" timestamp="1576556486142" />
+    <state width="1878" height="220" key="GridCell.Tab.0.right" timestamp="1576556486143">
+      <screen x="1440" y="23" width="1920" height="1057" />
     </state>
-    <state width="1398" height="294" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1576476931257" />
-    <state width="1398" height="294" key="GridCell.Tab.1.bottom" timestamp="1576476931259">
-      <screen x="0" y="23" width="1440" height="877" />
+    <state width="1398" height="220" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1576549253076" />
+    <state width="1878" height="220" key="GridCell.Tab.0.right/1440.23.1920.1057/0.23.1440.877@1440.23.1920.1057" timestamp="1576556486143" />
+    <state width="1878" height="220" key="GridCell.Tab.1.bottom" timestamp="1576556486145">
+      <screen x="1440" y="23" width="1920" height="1057" />
     </state>
-    <state width="1398" height="294" key="GridCell.Tab.1.bottom/0.23.1440.877@0.23.1440.877" timestamp="1576476931259" />
-    <state width="1398" height="294" key="GridCell.Tab.1.center" timestamp="1576476931258">
-      <screen x="0" y="23" width="1440" height="877" />
+    <state width="1398" height="220" key="GridCell.Tab.1.bottom/0.23.1440.877@0.23.1440.877" timestamp="1576549121749" />
+    <state width="1878" height="220" key="GridCell.Tab.1.bottom/1440.23.1920.1057/0.23.1440.877@1440.23.1920.1057" timestamp="1576556486145" />
+    <state width="1878" height="220" key="GridCell.Tab.1.center" timestamp="1576556486144">
+      <screen x="1440" y="23" width="1920" height="1057" />
     </state>
-    <state width="1398" height="294" key="GridCell.Tab.1.center/0.23.1440.877@0.23.1440.877" timestamp="1576476931258" />
-    <state width="1398" height="294" key="GridCell.Tab.1.left" timestamp="1576476931258">
-      <screen x="0" y="23" width="1440" height="877" />
+    <state width="1398" height="220" key="GridCell.Tab.1.center/0.23.1440.877@0.23.1440.877" timestamp="1576549121748" />
+    <state width="1878" height="220" key="GridCell.Tab.1.center/1440.23.1920.1057/0.23.1440.877@1440.23.1920.1057" timestamp="1576556486144" />
+    <state width="1878" height="220" key="GridCell.Tab.1.left" timestamp="1576556486144">
+      <screen x="1440" y="23" width="1920" height="1057" />
     </state>
-    <state width="1398" height="294" key="GridCell.Tab.1.left/0.23.1440.877@0.23.1440.877" timestamp="1576476931258" />
-    <state width="1398" height="294" key="GridCell.Tab.1.right" timestamp="1576476931259">
-      <screen x="0" y="23" width="1440" height="877" />
+    <state width="1398" height="220" key="GridCell.Tab.1.left/0.23.1440.877@0.23.1440.877" timestamp="1576549121748" />
+    <state width="1878" height="220" key="GridCell.Tab.1.left/1440.23.1920.1057/0.23.1440.877@1440.23.1920.1057" timestamp="1576556486144" />
+    <state width="1878" height="220" key="GridCell.Tab.1.right" timestamp="1576556486145">
+      <screen x="1440" y="23" width="1920" height="1057" />
     </state>
-    <state width="1398" height="294" key="GridCell.Tab.1.right/0.23.1440.877@0.23.1440.877" timestamp="1576476931259" />
-    <state width="1398" height="285" key="GridCell.Tab.2.bottom" timestamp="1575403312745">
-      <screen x="0" y="23" width="1440" height="877" />
+    <state width="1398" height="220" key="GridCell.Tab.1.right/0.23.1440.877@0.23.1440.877" timestamp="1576549121749" />
+    <state width="1878" height="220" key="GridCell.Tab.1.right/1440.23.1920.1057/0.23.1440.877@1440.23.1920.1057" timestamp="1576556486145" />
+    <state width="1878" height="220" key="GridCell.Tab.2.bottom" timestamp="1576556486147">
+      <screen x="1440" y="23" width="1920" height="1057" />
     </state>
-    <state width="1398" height="285" key="GridCell.Tab.2.bottom/0.23.1440.877@0.23.1440.877" timestamp="1575403312745" />
-    <state width="1398" height="285" key="GridCell.Tab.2.center" timestamp="1575403312744">
-      <screen x="0" y="23" width="1440" height="877" />
+    <state width="1398" height="220" key="GridCell.Tab.2.bottom/0.23.1440.877@0.23.1440.877" timestamp="1576548216136" />
+    <state width="1878" height="220" key="GridCell.Tab.2.bottom/1440.23.1920.1057/0.23.1440.877@1440.23.1920.1057" timestamp="1576556486147" />
+    <state width="1878" height="220" key="GridCell.Tab.2.center" timestamp="1576556486146">
+      <screen x="1440" y="23" width="1920" height="1057" />
     </state>
-    <state width="1398" height="285" key="GridCell.Tab.2.center/0.23.1440.877@0.23.1440.877" timestamp="1575403312744" />
-    <state width="1398" height="285" key="GridCell.Tab.2.left" timestamp="1575403312744">
-      <screen x="0" y="23" width="1440" height="877" />
+    <state width="1398" height="220" key="GridCell.Tab.2.center/0.23.1440.877@0.23.1440.877" timestamp="1576548216136" />
+    <state width="1878" height="220" key="GridCell.Tab.2.center/1440.23.1920.1057/0.23.1440.877@1440.23.1920.1057" timestamp="1576556486146" />
+    <state width="1878" height="220" key="GridCell.Tab.2.left" timestamp="1576556486146">
+      <screen x="1440" y="23" width="1920" height="1057" />
     </state>
-    <state width="1398" height="285" key="GridCell.Tab.2.left/0.23.1440.877@0.23.1440.877" timestamp="1575403312744" />
-    <state width="1398" height="285" key="GridCell.Tab.2.right" timestamp="1575403312745">
-      <screen x="0" y="23" width="1440" height="877" />
+    <state width="1398" height="220" key="GridCell.Tab.2.left/0.23.1440.877@0.23.1440.877" timestamp="1576548216135" />
+    <state width="1878" height="220" key="GridCell.Tab.2.left/1440.23.1920.1057/0.23.1440.877@1440.23.1920.1057" timestamp="1576556486146" />
+    <state width="1878" height="220" key="GridCell.Tab.2.right" timestamp="1576556486147">
+      <screen x="1440" y="23" width="1920" height="1057" />
     </state>
-    <state width="1398" height="285" key="GridCell.Tab.2.right/0.23.1440.877@0.23.1440.877" timestamp="1575403312745" />
+    <state width="1398" height="220" key="GridCell.Tab.2.right/0.23.1440.877@0.23.1440.877" timestamp="1576548216136" />
+    <state width="1878" height="220" key="GridCell.Tab.2.right/1440.23.1920.1057/0.23.1440.877@1440.23.1920.1057" timestamp="1576556486147" />
     <state x="385" y="213" width="670" height="676" key="search.everywhere.popup" timestamp="1576117703155">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
@@ -715,16 +720,6 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/mm_districting/AlgorithmManager.java</url>
-          <line>252</line>
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/mm_districting/AlgorithmManager.java</url>
-          <line>48</line>
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/mm_districting/AlgorithmManager.java</url>
           <line>230</line>
           <option name="timeStamp" value="17" />
         </line-breakpoint>
@@ -732,6 +727,21 @@
           <url>file://$PROJECT_DIR$/src/main/java/algorithm_steps/DetermineDemBlocs.java</url>
           <line>49</line>
           <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/algorithm_steps/Phase1Iteration.java</url>
+          <line>40</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/algorithm_steps/CombineClusters.java</url>
+          <line>107</line>
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/algorithm_steps/CombineClusters.java</url>
+          <line>72</line>
+          <option name="timeStamp" value="32" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -68,8 +68,17 @@ public class Edge {
         this.majorityMinorityJoinability = majorityMinorityJoinability;
     }
 
-    public boolean hasCluster(Cluster cluster) {
-        return clusterOne.equals(cluster) || clusterTwo.equals(cluster);
+    /**
+     * @return True iff this edge contains any cluster in the provided cluster array
+     */
+    public boolean hasClusters(Cluster... clusters) {
+        boolean hasOne = false;
+        for (Cluster c : clusters) {
+            if (clusterOne.equals(c) || clusterTwo.equals(c)) {
+                hasOne = true;
+            }
+        }
+        return hasOne;
     }
 
     public void updateCluster(Cluster combinedCluster, Cluster c1, Cluster c2) {

@@ -30,7 +30,6 @@ public class CombineClusters implements AlgorithmStep {
 
     private Phase1Iteration caller;
 
-
     public CombineClusters(Phase1Iteration caller) {
         this(AlgorithmProperties.getProperties().getState().getClusters().size());
         this.caller = caller;
@@ -66,12 +65,25 @@ public class CombineClusters implements AlgorithmStep {
         if (doNotPairClusters.contains(edge.getClusterOne()) || doNotPairClusters.contains(edge.getClusterTwo())) {
             return false;
         } else {
-            if (edge.getJoinability() > highestSeenJoinability) {
-                highestSeenJoinability = edge.getJoinability();
+            if (edge.getMajMinJoinability() > highestSeenJoinability) {
+                highestSeenJoinability = edge.getMajMinJoinability();
             }
+
+            if (!state.getClusters().contains(edge.getClusterOne()) || !state.getClusters().contains(edge.getClusterTwo())) {
+                System.out.println("broken");
+            }
+
             queuedCombinations.add(edge);
-            state.getDoNotPairClusters().add(edge.getClusterOne());
-            state.getDoNotPairClusters().add(edge.getClusterTwo());
+            doNotPairClusters.add(edge.getClusterOne());
+            doNotPairClusters.add(edge.getClusterTwo());
+
+            for (Edge e : state.getEdges()) {
+                if (e.hasClusters(edge.getClusterOne(), edge.getClusterTwo())) {
+                    doNotPairClusters.add(e.getClusterOne());
+                    doNotPairClusters.add(e.getClusterTwo());
+                }
+            }
+
             return (!iterator.hasNext()) || iterations >= maxRunIterations;
         }
     }
@@ -94,18 +106,7 @@ public class CombineClusters implements AlgorithmStep {
     @Override
     public Result onCompletion() {
         State state = AlgorithmProperties.getProperties().getState();
-
-        ArrayList<Cluster> buggedClusters = new ArrayList<>();
-
         for (Edge e : queuedCombinations) {
-            boolean x = state.getClusters().contains(e.getClusterOne());
-            boolean y = state.getClusters().contains(e.getClusterTwo());
-            if (!x) {
-                buggedClusters.add(e.getClusterOne());
-                System.out.println();
-            } if (!y) {
-                buggedClusters.add(e.getClusterTwo());
-            }
             state.combineClusters(e);
         }
         state.getDoNotPairClusters().clear();
