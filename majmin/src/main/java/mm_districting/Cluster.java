@@ -111,4 +111,8 @@ public class Cluster {
 		return demographicContext;
 	}
 
+	public void setDemographicContext(DemographicContext context) {
+		this.demographicContext = context;
+	}
+
 }

@@ -117,11 +117,12 @@ public class State {
         combinedCluster.getEdges().addAll(edge.getClusterOne().getEdges());
         combinedCluster.getEdges().addAll(edge.getClusterTwo().getEdges());
         combinedCluster.getEdges().remove(edge);
+        combinedCluster.setDemographicContext(DemographicContext.combine(edge.getClusterOne().getDemographicContext(), edge.getClusterTwo().getDemographicContext()));
 
-        //TODO combine voting data for new combined cluster
-
-        for (Edge e : edges) {
-            e.updateCluster(combinedCluster, edge.getClusterOne(), edge.getClusterTwo());
+        //prevent this cluster from having valid joinabilities this iteration
+        for (Edge e : combinedCluster.getEdges()) {
+            e.setMajorityMinorityJoinability(-1);
+            e.setJoinability(-1);
         }
 
         clusters.add(combinedCluster);
@@ -129,6 +130,10 @@ public class State {
         clusters.remove(edge.getClusterTwo());
         bestPairings.remove(edge.getClusterOne());
         bestPairings.remove(edge.getClusterTwo());
+
+        for (Edge e : edges) {
+            e.updateCluster(combinedCluster, edge.getClusterOne(), edge.getClusterTwo());
+        }
     }
 
     @Column(name = "GEOGRAPHY", length = 16777215, columnDefinition = "mediumtext", nullable = false)

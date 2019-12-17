@@ -38,6 +38,15 @@ public class AssignMMJoinabilities implements AlgorithmStep {
         status.setMessage("Currently running.");
         Edge edge = edgesLeftToAssign.get(0);
 
+        Cluster c1 = edge.getClusterOne();
+        Cluster c2 = edge.getClusterTwo();
+
+        if (c1.isCombinedCluster() || c2.isCombinedCluster()) {
+            boolean c1In = state.getClusters().contains(c1);
+            boolean c2In = state.getClusters().contains(c2);
+            System.out.print("");
+        }
+
         //skip edges with clusters not in play
         boolean validEdge = state.getClusters().contains(edge.getClusterOne()) && state.getClusters().contains(edge.getClusterTwo());
         if (!validEdge) {
