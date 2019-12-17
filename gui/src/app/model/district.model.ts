@@ -19,7 +19,6 @@ export class District extends Control {
     }
 
     onAdd(map) {
-        console.log(this.context.showElection);
         const table = DomUtil.create('table') as HTMLTableElement;
         table.bgColor = '#303030';
         table.style.fontSize = 'large';
@@ -39,7 +38,7 @@ export class District extends Control {
             cell01.innerText = '  ';
             cell02.innerText = 'Votes';
             cell03.innerText = '  ';
-            cell04.innerText = 'Percent';
+            cell04.innerText = 'Vote %';
 
             const row1 = table.insertRow(1);
             const cell10 = row1.insertCell(0);
