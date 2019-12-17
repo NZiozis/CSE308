@@ -38,6 +38,7 @@ export class MapService {
     public map;
     public stateIsSelected: boolean;
     public state;
+    public selectedElection;
     public states: Backend[];
     public possibleRaces: Backend[];
     public elections: Backend[];
@@ -75,10 +76,7 @@ export class MapService {
     }
 
     getStateInfo() {
-        console.log('test');
-        this.http.get(this.REST_API_SERVER_URL + '/getState').subscribe(json => {
-            console.log(json);
-        });
+        return this.http.get(this.REST_API_SERVER_URL + '/getState');
     }
 
     setSelectedState(selectedState: string): void {

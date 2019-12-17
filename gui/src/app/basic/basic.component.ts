@@ -16,13 +16,16 @@ export class BasicComponent implements OnInit {
 
     ngOnInit() {
         this.toggleLayer = false;
-        this.selectedElection = 'CONGRESSIONAL_2016';
+        this.mapService.selectedElection = this.selectedElection = 'CONGRESSIONAL_2016';
     }
 
-    updateMapService(){
-
+    electionChange(event) {
+        if (event.isUserInput) {
+            const selectedElection = event.source.value;
+            console.log(selectedElection);
+            this.mapService.selectedElection = selectedElection;
+        }
     }
-
 
 }
 
