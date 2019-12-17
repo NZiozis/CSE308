@@ -61,16 +61,16 @@ public class CombineClusters implements AlgorithmStep {
 
         iterations++;
 
+        if (edge instanceof DummyEdge) {
+            return (!iterator.hasNext()) || iterations >= maxRunIterations;
+        }
+
         //skip edges with a cluster in the do-not-pair set
         if (doNotPairClusters.contains(edge.getClusterOne()) || doNotPairClusters.contains(edge.getClusterTwo())) {
             return false;
         } else {
             if (edge.getMajMinJoinability() > highestSeenJoinability) {
                 highestSeenJoinability = edge.getMajMinJoinability();
-            }
-
-            if (!state.getClusters().contains(edge.getClusterOne()) || !state.getClusters().contains(edge.getClusterTwo())) {
-                System.out.println("broken");
             }
 
             queuedCombinations.add(edge);

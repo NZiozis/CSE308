@@ -30,6 +30,15 @@ public class AssignJoinabilities implements AlgorithmStep {
     public boolean run() {
         status.setMessage("Currently running.");
         Edge edge = edgesLeftToAssign.get(0);
+
+        //skip edges with clusters not in play
+        boolean validEdge = state.getClusters().contains(edge.getClusterOne()) && state.getClusters().contains(edge.getClusterTwo());
+        if (!validEdge) {
+            edge.setJoinability(-1);
+            edgesLeftToAssign.remove(edge);
+            return edgesLeftToAssign.isEmpty();
+        }
+
         edge.setJoinability(Joinability.calculateJoinability(edge));
         edgesLeftToAssign.remove(edge);
 

@@ -100,10 +100,12 @@ public class State {
     public void combineClusters(Edge edge) {
 
         if (!clusters.contains(edge.getClusterOne()) || !clusters.contains(edge.getClusterTwo())) {
+            boolean c1notInList = !clusters.contains(edge.getClusterOne());
+            boolean c2notInList = !clusters.contains(edge.getClusterTwo());
             return;
         }
 
-        Cluster combinedCluster = new Cluster();
+        Cluster combinedCluster = new Cluster(true);
         for (Precinct p : edge.getClusterOne().getPrecincts()) {
             combinedCluster.addPrecinct(p);
         }
@@ -115,6 +117,8 @@ public class State {
         combinedCluster.getEdges().addAll(edge.getClusterOne().getEdges());
         combinedCluster.getEdges().addAll(edge.getClusterTwo().getEdges());
         combinedCluster.getEdges().remove(edge);
+
+        //TODO combine voting data for new combined cluster
 
         for (Edge e : edges) {
             e.updateCluster(combinedCluster, edge.getClusterOne(), edge.getClusterTwo());

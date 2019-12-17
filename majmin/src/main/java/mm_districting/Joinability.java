@@ -1,5 +1,6 @@
 package mm_districting;
 
+import algorithm_steps.DummyEdge;
 import util.Party;
 import util.Race;
 
@@ -11,6 +12,10 @@ public class Joinability {
     public static final double DONE_WITH_MM_THRESHOLD = .3;
 
     public static double calculateMajMinJoinability(Edge edge) {
+
+        if (edge instanceof DummyEdge) {
+            return -1;
+        }
 
         AlgorithmProperties algProps = AlgorithmProperties.getProperties();
 

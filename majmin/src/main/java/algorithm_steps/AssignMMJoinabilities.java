@@ -37,12 +37,22 @@ public class AssignMMJoinabilities implements AlgorithmStep {
     public boolean run() {
         status.setMessage("Currently running.");
         Edge edge = edgesLeftToAssign.get(0);
-        
+
+        //skip edges with clusters not in play
+        boolean validEdge = state.getClusters().contains(edge.getClusterOne()) && state.getClusters().contains(edge.getClusterTwo());
+        if (!validEdge) {
+            edge.setMajorityMinorityJoinability(-1);
+            edgesLeftToAssign.remove(edge);
+            return edgesLeftToAssign.isEmpty();
+        }
+
         edge.setMajorityMinorityJoinability(Joinability.calculateMajMinJoinability(edge));
         edgesLeftToAssign.remove(edge);
 
         double clusterOneMaxJoinability = state.getMaxJoinability(edge.getClusterOne());
         double clusterTwoMaxJoinability = state.getMaxJoinability(edge.getClusterTwo());
+
+
 
         if (edge.getMajMinJoinability() > clusterOneMaxJoinability) {
             state.updateMostJoinable(edge.getClusterOne(), edge);
