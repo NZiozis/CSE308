@@ -71,10 +71,6 @@ export class MapService {
         console.log('Show Election' + this.showElection);
     }
 
-    getShowElection() {
-        return this.showElection;
-    }
-
     getOptions() {
         this.options = {
             layers: [
@@ -100,7 +96,6 @@ export class MapService {
             const setState = this.http.post<Config>(this.REST_API_SERVER_URL + '/setState', selectedState);
             const self = this;
             setState.subscribe((json) => {
-                // console.log('State' + json);
                 this.getDistricts().subscribe((districts: District[]) => {
                     this.districtLayerGroup = new LayerGroup();
                     console.log(districts);

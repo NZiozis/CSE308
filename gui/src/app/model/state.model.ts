@@ -8,4 +8,5 @@ export class State {
     stateId: number;
     votingSet: any[];
     arrayDemographicContext: any;
+    arrayVotingSet: any;
 }
