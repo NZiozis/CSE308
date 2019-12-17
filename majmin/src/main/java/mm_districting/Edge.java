@@ -1,5 +1,7 @@
 package mm_districting;
 
+import algorithm_steps.DummyEdge;
+
 /**
  * Represents an edge between two clusters, used to store how joinable these two clusters are.
  *
@@ -95,6 +97,11 @@ public class Edge {
 
     @Override
     public int hashCode() {
+
+        if (this instanceof DummyEdge) {
+            return -1;
+        }
+
         int hash = 17;
         hash = hash * 23 + clusterOne.hashCode();
         hash = hash * 23 + clusterTwo.hashCode();

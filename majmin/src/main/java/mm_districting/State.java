@@ -99,9 +99,15 @@ public class State {
      */
     public void combineClusters(Edge edge) {
 
+        if (edge.getClusterOne().isCombinedCluster()) {
+            System.out.print("");
+        }
+
+        if (edge.getClusterTwo().isCombinedCluster()) {
+            System.out.print("");
+        }
+
         if (!clusters.contains(edge.getClusterOne()) || !clusters.contains(edge.getClusterTwo())) {
-            boolean c1notInList = !clusters.contains(edge.getClusterOne());
-            boolean c2notInList = !clusters.contains(edge.getClusterTwo());
             return;
         }
 

@@ -50,6 +50,25 @@ public class AssignMMJoinabilities implements AlgorithmStep {
         //skip edges with clusters not in play
         boolean validEdge = state.getClusters().contains(edge.getClusterOne()) && state.getClusters().contains(edge.getClusterTwo());
         if (!validEdge) {
+            boolean c1In = state.getClusters().contains(c1);
+            boolean c2In = state.getClusters().contains(c2);
+
+            if (!c1In) {
+                for (Edge e : state.getEdges()) {
+                    if (!e.equals(edge) && e.hasClusters(c1)) {
+                        System.out.print("");
+                    }
+                }
+            }
+
+            if (!c2In) {
+                for (Edge e : state.getEdges()) {
+                    if (!e.equals(edge) && e.hasClusters(c2)) {
+                        System.out.print("");
+                    }
+                }
+            }
+
             edge.setMajorityMinorityJoinability(-1);
             edgesLeftToAssign.remove(edge);
             return edgesLeftToAssign.isEmpty();
