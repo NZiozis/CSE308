@@ -13,6 +13,7 @@ import results.Result;
 import util.Election;
 import util.Operation;
 import util.Race;
+import edu.stonybrook.politech.annealing.algorithm.Measure;
 
 import java.util.*;
 
@@ -256,8 +257,34 @@ public class AlgorithmManager {
             e.printStackTrace();
         }
 
+        double partisanFairness = getWeight("partisanFairness", map);
+        double reockCompactness = getWeight("reockCompactness", map);
+        double convexHullCompactness = getWeight("convexHullCompactness", map);
+        double edgeCompactness = getWeight("edgeCompactness", map);
+        double efficiencyGap = getWeight("efficiencyGap", map);
+        double populationEquality = getWeight("populationEquality", map);
+        double competitiveness = getWeight("competitiveness", map);
+        double populationHomogeneity = getWeight("populationHomogeneity", map);
+
+        HashMap<Measure, Double> measures = new HashMap<Measure, Double>();
+        measures.put(Measure.PARTISAN_FAIRNESS, partisanFairness);
+        measures.put(Measure.REOCK_COMPACTNESS, reockCompactness);
+        measures.put(Measure.CONVEX_HULL_COMPACTNESS, convexHullCompactness);
+        measures.put(Measure.EDGE_COMPACTNESS, edgeCompactness);
+        measures.put(Measure.EFFICIENCY_GAP, efficiencyGap);
+        measures.put(Measure.POPULATION_EQUALITY, populationEquality);
+        measures.put(Measure.COMPETITIVENESS, competitiveness);
+        measures.put(Measure.POPULATION_HOMOGENEITY, populationHomogeneity);
+
+        Iterator<Double> iterator = measures.values().iterator();
+        while (iterator.hasNext()) {
+            if (iterator.next() == 0) {
+                iterator.remove();
+            }
+        }
+
         currentAlgorithm =
-                new Algorithm(new SimulatedAnnealing());
+                new Algorithm(new SimulatedAnnealing(measures));
 
         while (!( currentAlgorithm.run() )) {}
 
@@ -272,5 +299,20 @@ public class AlgorithmManager {
         }
 
         return guiResult;
+    }
+
+    public double getWeight(String name, Map<String, Object> map) {
+        double weight;
+        if(map.get(name) instanceof Integer) {
+            int temp = (int) map.get(name);
+            if(temp == 0) {
+                weight = 0;
+            } else {
+                weight = 1;
+            }
+        } else {
+            weight = (double) map.get(name);
+        }
+        return weight;
     }
 }

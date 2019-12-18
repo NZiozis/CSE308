@@ -103,7 +103,9 @@ public class District
     }
 
     public String[] getPrecinctIDs() {
-        return (String[])precincts.keySet().toArray();
+        Object[] precinctsarr = precincts.keySet().toArray();
+        String[] stringArray = Arrays.copyOf(precinctsarr, precinctsarr.length, String[].class);
+        return stringArray;
     }
 
     public Set<Precinct> getBorderPrecincts() {
