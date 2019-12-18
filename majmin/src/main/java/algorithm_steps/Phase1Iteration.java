@@ -36,6 +36,8 @@ public class Phase1Iteration implements AlgorithmStep {
     public boolean run() {
 
         State state = AlgorithmProperties.getProperties().getState();
+        System.out.println("Num Clusters: " + state.getClusters().size());
+
 
         if (doingMajMin) {
             iteration = new Algorithm(new AssignMMJoinabilities(), new CombineClusters(this));
