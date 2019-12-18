@@ -22,7 +22,7 @@ export class MapService {
         this.possibleRaces = [
             {name: 'White', backendName: 'WHITE'},
             {name: 'African American', backendName: 'BLACK'},
-            {name: 'Latino', backendName: 'LATINO'},
+            {name: 'Hispanic', backendName: 'OTHER'},
             {name: 'Asian', backendName: 'ASIAN'},
             {name: 'Pacific Islander', backendName: 'PACIFIC_ISLANDER'},
             {name: 'Native American', backendName: 'NATIVE_AMERICAN'},
@@ -151,7 +151,7 @@ export class MapService {
                                 });
                             }
                         });
-                        geoJson.setStyle({fillColor: '#ff15ed', weight: .5, color: '#000000'});
+                        geoJson.setStyle({fillColor: '#ff15ed', weight: .5, color: '#000000', fillOpacity: 0.5});
                         self.precinctLayerGroup.addLayer(geoJson);
                         self.precinctToLayerMapper.set(precinct.geoId, geoJson);
                     }

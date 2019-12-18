@@ -30,7 +30,7 @@ export class Phase0Service {
             const votingPrecincts = array[1].precincts;
             for (const precinct of votingPrecincts) {
                 const layer: GeoJSON = this.mapService.precinctToLayerMapper.get(precinct.geoId);
-                layer.setStyle({fillColor: '#07f000'});
+                layer.setStyle({fillColor: '#eff000'});
             }
             this.demographicBlocs = demographicPrecincts;
             this.votingBlocs = votingPrecincts;

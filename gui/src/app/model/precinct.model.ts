@@ -150,7 +150,7 @@ export class Precinct extends Control {
             const cell61 = row6.insertCell(1);
             const cell62 = row6.insertCell(2);
             const cell63 = row6.insertCell(3);
-            cell60.innerText = 'Other';
+            cell60.innerText = 'Hispanic';
             cell61.innerText = this.demographics.other;
             cell62.innerText = '  ';
             cell63.innerText = (this.demographics.other / this.demographics.total * 100).toFixed(2);

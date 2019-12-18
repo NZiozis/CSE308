@@ -59,7 +59,7 @@ export class StateInfoComponent implements OnInit {
                 percent: this.generatePercent(this.state.demographicContext.pacificIslander, total)
             },
             {
-                name: 'Other',
+                name: 'Hispanic',
                 population: this.state.demographicContext.other,
                 percent: this.generatePercent(this.state.demographicContext.other, total)
             },
