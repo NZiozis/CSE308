@@ -92,8 +92,6 @@ public class Cluster {
 
 		precincts.add(p);
 	}
-	
-
 
 	public Set<Precinct> getPrecincts() {
 		return precincts;
@@ -126,6 +124,11 @@ public class Cluster {
 
 	public int getID() {
 		return id;
+	}
+
+
+	public void setID(int id) {
+		this.id = id;
 	}
 
 }
