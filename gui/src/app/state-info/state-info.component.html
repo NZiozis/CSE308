@@ -51,8 +51,9 @@
             </ng-container>
 
             <ng-container matColumnDef="percentRepresentatives">
-                <th style="padding-left: 15px" mat-header-cell *matHeaderCellDef>Representatives %</th>
-                <td style="padding-left: 15px" mat-cell *matCellDef="let element"> {{element.percentRepresentatives}} </td>
+                <th style="padding-left: 15px" mat-header-cell *matHeaderCellDef>Representative %</th>
+                <td style="padding-left: 15px" mat-cell
+                    *matCellDef="let element"> {{element.percentRepresentatives}} </td>
             </ng-container>
 
             <tr mat-header-row *matHeaderRowDef="votingColumns; sticky: true"></tr>

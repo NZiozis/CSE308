@@ -9,6 +9,8 @@ import {GeoJSON} from 'leaflet';
 })
 export class Phase1Service {
 
+    public calculatedClusters = [];
+
     constructor(private http: HttpClient, private mapService: MapService) {
     }
 
@@ -19,6 +21,7 @@ export class Phase1Service {
             let colorIndex = 0;
             const clusters = json.array;
             for (const cluster of clusters) {
+                this.calculatedClusters.push(cluster.value0);
                 for (const precinct of cluster.value1) {
                     const currentLayer: GeoJSON<any> = this.mapService.precinctToLayerMapper.get(precinct);
                     currentLayer.setStyle({fillColor: this.mapService.colorSchemes[0][colorIndex % 6], fillOpacity: .5});
