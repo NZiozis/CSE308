@@ -96,6 +96,7 @@ public class State {
         }
 
         combinedCluster.setDemographicContext(DemographicContext.combine(edge.getClusterOne().getDemographicContext(), edge.getClusterTwo().getDemographicContext()));
+        combinedCluster.setVotingData(Voting.combineVotingSets(edge.getClusterOne().getVotingData(), edge.getClusterTwo().getVotingData()));
 
        //set neighbors
         Set<Cluster> clusterOneNeighbors = edge.getClusterOne().getNeighbors();

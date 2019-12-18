@@ -80,7 +80,7 @@ public class Phase1Iteration implements AlgorithmStep {
             for (Precinct p : c.getPrecincts()) {
                 geoIds.add(p.getGeoId());
             }
-            map.put(c, geoIds);
+            map.put(clone, geoIds);
         }
 
         result.setMap(map);
