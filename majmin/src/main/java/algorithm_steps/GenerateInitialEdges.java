@@ -34,13 +34,13 @@ public class GenerateInitialEdges implements AlgorithmStep {
             for (Precinct neighbor : initialPrecinct.getNeighbor()) {
                 Cluster neighborCluster = clusterMap.get(neighbor.getGeoId());
                 Edge edge = new Edge(cluster, clusterMap.get(neighbor.getGeoId()));
-                cluster.addEdge(edge);
-                neighborCluster.addEdge(edge);
+                cluster.addNeighbor(neighborCluster);
+                neighborCluster.addNeighbor(cluster);
                 edges.add(edge);
             }
 
         }
-        state.setEdges(edges);
+//        state.setEdges(edges);
         return true;
     }
 

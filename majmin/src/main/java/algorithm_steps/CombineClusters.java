@@ -45,47 +45,10 @@ public class CombineClusters implements AlgorithmStep {
     @Override
     public boolean run() {
 
-        if (firstRun) {
-            iterator = AlgorithmProperties.getProperties().getState()
-                    .getBestPairings().keySet().iterator();
-            firstRun = false;
-        }
+       State state = AlgorithmProperties.getProperties().getState();
+       state.combineClusters(state.getNextEdgeToCombine());
 
-        if (!iterator.hasNext()) {
-            return true;
-        }
-
-        State state = AlgorithmProperties.getProperties().getState();
-        Edge edge = state.getMostJoinableEdge(iterator.next());
-        Set<Cluster> doNotPairClusters = state.getDoNotPairClusters();
-
-        iterations++;
-
-        if (edge instanceof DummyEdge) {
-            return (!iterator.hasNext()) || iterations >= maxRunIterations;
-        }
-
-        //skip edges with a cluster in the do-not-pair set
-        if (doNotPairClusters.contains(edge.getClusterOne()) || doNotPairClusters.contains(edge.getClusterTwo())) {
-            return false;
-        } else {
-            if (edge.getMajMinJoinability() > highestSeenJoinability) {
-                highestSeenJoinability = edge.getMajMinJoinability();
-            }
-
-            queuedCombinations.add(edge);
-            doNotPairClusters.add(edge.getClusterOne());
-            doNotPairClusters.add(edge.getClusterTwo());
-
-            for (Edge e : state.getEdges()) {
-                if (e.hasClusters(edge.getClusterOne(), edge.getClusterTwo())) {
-                    doNotPairClusters.add(e.getClusterOne());
-                    doNotPairClusters.add(e.getClusterTwo());
-                }
-            }
-
-            return (!iterator.hasNext()) || iterations >= maxRunIterations;
-        }
+       return true;
     }
 
     private static Cluster getOtherCluster(Edge edge, Cluster cluster) {
@@ -109,7 +72,6 @@ public class CombineClusters implements AlgorithmStep {
         for (Edge e : queuedCombinations) {
             state.combineClusters(e);
         }
-        state.getDoNotPairClusters().clear();
 
         if (highestSeenJoinability < Joinability.DONE_WITH_MM_THRESHOLD) {
             caller.doneWithMM();

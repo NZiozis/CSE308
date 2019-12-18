@@ -22,7 +22,8 @@ public class Cluster {
 	private int id;
 	
 	private Set<Precinct> precincts;
-	private Set<Edge> edges;
+
+	private Set<Cluster> neighbors;
 
 	private Set<Voting> votingData;
 	private DemographicContext demographicContext;
@@ -35,7 +36,7 @@ public class Cluster {
 		id = clusterCount++;
 		
 		precincts = new HashSet<>();
-		edges = new HashSet<>();
+		neighbors = new HashSet<>();
 	}
 
 	public Cluster(boolean isCombindedCluster) {
@@ -92,21 +93,25 @@ public class Cluster {
 		precincts.add(p);
 	}
 	
-	public void addEdge(Edge e) {
-		edges.add(e);
-	}
+
 
 	public Set<Precinct> getPrecincts() {
 		return precincts;
 	}
 
-	public Set<Edge> getEdges() {
-		return edges;
+
+	public Set<Cluster> getNeighbors() {
+		return neighbors;
 	}
 
-	public void setEdges(Set<Edge> edges) {
-		this.edges = edges;
+	public void addNeighbor(Cluster neighbor) {
+		neighbors.add(neighbor);
 	}
+
+	public boolean removeNeighbor(Cluster cluster) {
+		return neighbors.remove(cluster);
+	}
+
 	public DemographicContext getDemographicContext() {
 		return demographicContext;
 	}
