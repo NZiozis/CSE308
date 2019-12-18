@@ -19,15 +19,20 @@ export class Phase1Service {
         this.http.post<Phase1Config>(
             this.mapService.REST_API_SERVER_URL + '/phase1', JSON.stringify(phase1JSON)).subscribe((json: any) => {
             let colorIndex = 0;
+            console.log(json);
+            console.log('Phase 1 complete');
             const clusters = json.array;
+            const tempClusters = [];
             for (const cluster of clusters) {
-                this.calculatedClusters.push(cluster.value0);
+                tempClusters.push(cluster.value0);
+                const color = this.mapService.colorSchemes[0][colorIndex % 6];
                 for (const precinct of cluster.value1) {
                     const currentLayer: GeoJSON<any> = this.mapService.precinctToLayerMapper.get(precinct);
-                    currentLayer.setStyle({fillColor: this.mapService.colorSchemes[0][colorIndex % 6], fillOpacity: .5});
+                    currentLayer.setStyle({fillColor: color, fillOpacity: .5});
                 }
                 colorIndex += 1;
             }
+            this.calculatedClusters = tempClusters;
         });
     }
 }

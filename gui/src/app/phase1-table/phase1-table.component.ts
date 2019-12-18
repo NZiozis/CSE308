@@ -8,7 +8,7 @@ import {Phase1Service} from '../services/phase1.service';
 })
 export class Phase1TableComponent implements OnInit {
 
-    private displayedColumns = ['number'];
+    private displayedColumns = ['number', 'white', 'africanAmerican', 'americanIndian', 'asian', 'other', 'pacificIslander', 'total'];
 
     constructor(private phase1Service: Phase1Service) {
     }
