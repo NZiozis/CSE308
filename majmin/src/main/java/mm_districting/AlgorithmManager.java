@@ -245,10 +245,19 @@ public class AlgorithmManager {
 
         return "";
     }
-    @RequestMapping(value = "/phase2", method = RequestMethod.POST)
-    private String initPhase2() {
 
-        currentAlgorithm = new Algorithm(new SimulatedAnnealing());
+    @RequestMapping(value = "/phase2", method = RequestMethod.POST)
+    private String initPhase2(@RequestBody String postPayload) {
+        Map<String,Object> map = null;
+        try {
+            map = mapper.readValue(postPayload, Map.class);
+        }
+        catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
+
+        currentAlgorithm =
+                new Algorithm(new SimulatedAnnealing());
 
         while (!( currentAlgorithm.run() )) {}
 

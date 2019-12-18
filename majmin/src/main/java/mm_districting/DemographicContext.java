@@ -49,6 +49,8 @@ public class DemographicContext {
                 return getPacificIslander();
             case NATIVE_AMERICAN:
                 return getAmericanIndian();
+            case OTHER:
+                return getOther();
         }
         return -1;
     }
