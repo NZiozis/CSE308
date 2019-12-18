@@ -145,13 +145,13 @@ export class MapService {
                                 });
                                 layer.on('mouseout', function() {
                                     this.setStyle({
-                                        fillOpacity: 0.2
+                                        fillOpacity: 0.5
                                     });
                                     self.map.removeControl(self.currentInfo);
                                 });
                             }
                         });
-                        geoJson.setStyle({fillColor: '#ff15ed', weight: .5});
+                        geoJson.setStyle({fillColor: '#ff15ed', weight: .5, color: '#000000'});
                         self.precinctLayerGroup.addLayer(geoJson);
                         self.precinctToLayerMapper.set(precinct.geoId, geoJson);
                     }
