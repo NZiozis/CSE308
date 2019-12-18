@@ -9,6 +9,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.web.bind.annotation.*;
+import results.Phase1Result;
 import results.Result;
 import util.Election;
 import util.Operation;
@@ -257,7 +258,17 @@ public class AlgorithmManager {
 
         State state = AlgorithmProperties.getProperties().getState();
 
-        return "";
+        Result results = currentAlgorithm.getResultsToSend().get(0);
+
+        String guiResult = "";
+        try {
+            guiResult = mapper.writeValueAsString(results);
+        }
+        catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
+
+        return guiResult;
     }
 
     private Algorithm initPhase2() {

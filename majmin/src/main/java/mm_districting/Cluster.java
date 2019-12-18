@@ -120,4 +120,8 @@ public class Cluster {
 		this.demographicContext = context;
 	}
 
+	public void setVotingData(Set<Voting> votingData) {
+		this.votingData = votingData;
+	}
+
 }

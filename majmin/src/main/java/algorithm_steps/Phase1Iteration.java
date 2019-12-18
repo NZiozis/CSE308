@@ -7,6 +7,7 @@ import mm_districting.*;
 import results.Phase1Result;
 import results.Result;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Set;
 
@@ -69,15 +70,17 @@ public class Phase1Iteration implements AlgorithmStep {
     public Result onCompletion() {
         State state = AlgorithmProperties.getProperties().getState();
         Phase1Result result = new Phase1Result();
+        HashMap<Cluster, ArrayList<String>> map = new HashMap<>();
 
-        HashMap<Cluster, String[]> map = new HashMap<>();
-        for (Cluster cluster : state.getClusters()) {
-            String[] geoIds = new String[cluster.getPrecincts().size()];
-            int i = 0;
-            for (Precinct precinct : cluster.getPrecincts()) {
-                geoIds[i++] = precinct.getGeoId();
+        for (Cluster c : state.getClusters()) {
+            Cluster clone = new Cluster();
+            clone.setDemographicContext(c.getDemographicContext());
+            clone.setVotingData(c.getVotingData());
+            ArrayList<String> geoIds = new ArrayList<>();
+            for (Precinct p : c.getPrecincts()) {
+                geoIds.add(p.getGeoId());
             }
-            map.put(cluster, geoIds);
+            map.put(c, geoIds);
         }
 
         result.setMap(map);

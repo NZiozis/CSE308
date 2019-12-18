@@ -3,6 +3,7 @@ package results;
 import mm_districting.Cluster;
 import results.Result;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -13,13 +14,14 @@ import java.util.List;
  */
 public class Phase1Result extends Result {
 
-    private HashMap<Cluster, String[]> map;
+    private HashMap<Cluster, ArrayList<String>> map;
 
-    public HashMap<Cluster, String[]> getMap() {
+    public HashMap<Cluster, ArrayList<String>> getMap() {
         return map;
     }
 
-    public void setMap(HashMap<Cluster, String[]> map) {
+    public void setMap(HashMap<Cluster, ArrayList<String>> map) {
         this.map = map;
     }
+
 }
