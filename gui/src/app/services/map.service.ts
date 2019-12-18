@@ -38,6 +38,8 @@ export class MapService {
     public map;
     public stateIsSelected: boolean;
     public state;
+    public selectedElection;
+    public showElection = false;
     public states: Backend[];
     public possibleRaces: Backend[];
     public elections: Backend[];
@@ -45,6 +47,11 @@ export class MapService {
     public precinctToLayerMapper = new Map<string, GeoJSON<any>>();
     public selectedState: string;
     public REST_API_SERVER_URL = 'http://localhost:8080';
+    public selectedColorScheme: number;
+    public colorSchemes = [
+        ['#ff3cdb', '#3cff60', '#3cdbff', '#ff603c', '#646363', '#ffae90'],
+        ['#ff002b', '#00ffd5', '#002bff', '#ffd500', '#20ff03', '#646363']
+    ];
 
     private mapUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
     private options: { center: LatLng; layers: TileLayer[]; zoom: number };
@@ -63,6 +70,12 @@ export class MapService {
         }
     }
 
+    toggleElectionView(isDisplayElection: boolean) {
+        console.log('?Election' + isDisplayElection);
+        this.showElection = !isDisplayElection;
+        console.log('Show Election' + this.showElection);
+    }
+
     getOptions() {
         this.options = {
             layers: [
@@ -75,10 +88,7 @@ export class MapService {
     }
 
     getStateInfo() {
-        console.log('test');
-        this.http.get(this.REST_API_SERVER_URL + '/getState').subscribe(json => {
-            console.log(json);
-        });
+        return this.http.get(this.REST_API_SERVER_URL + '/getState');
     }
 
     setSelectedState(selectedState: string): void {
@@ -91,7 +101,6 @@ export class MapService {
             const setState = this.http.post<Config>(this.REST_API_SERVER_URL + '/setState', selectedState);
             const self = this;
             setState.subscribe((json) => {
-                // console.log('State' + json);
                 this.getDistricts().subscribe((districts: District[]) => {
                     this.districtLayerGroup = new LayerGroup();
                     console.log(districts);
@@ -103,7 +112,7 @@ export class MapService {
                                     this.setStyle({
                                         fillColor: '#0000ff'
                                     });
-                                    self.currentInfo = new District({position: 'bottomleft'}, district, this);
+                                    self.currentInfo = new District({position: 'bottomleft'}, district, self);
                                     self.currentInfo.addTo(self.map);
                                 });
                                 layer.on('mouseout', function() {
@@ -120,6 +129,7 @@ export class MapService {
                     this.districtLayerGroup.addTo(this.map);
                     console.log('Districts completed');
                 });
+                const now = Date.now();
                 this.getPrecincts().subscribe((precincts: Precinct[]) => {
                     console.log(precincts);
                     this.precinctLayerGroup = new LayerGroup();
@@ -130,7 +140,7 @@ export class MapService {
                                     this.setStyle({
                                         fillOpacity: 1
                                     });
-                                    self.currentInfo = new District({position: 'bottomleft'}, precinct, this);
+                                    self.currentInfo = new District({position: 'bottomleft'}, precinct, self);
                                     self.currentInfo.addTo(self.map);
                                 });
                                 layer.on('mouseout', function() {
@@ -146,6 +156,7 @@ export class MapService {
                         self.precinctToLayerMapper.set(precinct.geoId, geoJson);
                     }
                     // this.precinctLayerGroup.addTo(this.map);
+                    console.log(Date.now() - now);
                     console.log('Precincts completed');
                 });
             });

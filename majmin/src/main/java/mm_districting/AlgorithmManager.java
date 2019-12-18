@@ -271,7 +271,15 @@ public class AlgorithmManager {
         return guiResult;
     }
 
-    private Algorithm initPhase2() {
-        return new Algorithm();
+    @RequestMapping(value = "/phase2", method = RequestMethod.POST)
+    private String initPhase2(@RequestBody String postPayload) {
+        Map<String,Object> map = null;
+        try {
+            map = mapper.readValue(postPayload, Map.class);
+        }
+        catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
+        return "";
     }
 }

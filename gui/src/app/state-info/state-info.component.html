@@ -1,3 +1,57 @@
-<p>state-info works!</p>
-<button mat-raised-button color="primary" (click)="this.mapService.getStateInfo()">Confirm for State Info</button>
+<mat-card>
+    <div *ngIf="state != undefined">
+        <h1>{{this.state.name}}</h1>
+        <a [href]="state.legalGuidelines" style="color:white">Legal Guidelines</a>
+        <br>
+
+        <h3>State Demographics</h3>
+        <table mat-table [dataSource]="state.arrayDemographicContext">
+
+            <ng-container matColumnDef="race">
+                <th mat-header-cell *matHeaderCellDef>Race</th>
+                <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="population">
+                <th style="padding-left: 15px" mat-header-cell *matHeaderCellDef>Population</th>
+                <td style="padding-left: 15px" mat-cell
+                    *matCellDef="let element"> {{element.population}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="percent">
+                <th style="padding-left: 15px" mat-header-cell *matHeaderCellDef>Population %</th>
+                <td style="padding-left: 15px" mat-cell *matCellDef="let element"> {{element.percent}} </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+
+        <h3>State Voting</h3>
+        <table mat-table [dataSource]="state.arrayVotingSet">
+
+            <ng-container matColumnDef="race">
+                <th mat-header-cell *matHeaderCellDef>Party</th>
+                <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="population">
+                <th style="padding-left: 15px" mat-header-cell *matHeaderCellDef>Votes</th>
+                <td style="padding-left: 15px" mat-cell *matCellDef="let element"> {{element.votes}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="percent">
+                <th style="padding-left: 15px" mat-header-cell *matHeaderCellDef>Vote %</th>
+                <td style="padding-left: 15px" mat-cell *matCellDef="let element"> {{element.percent}} </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+        <br>
+
+    </div>
+    <button mat-raised-button color="primary" (click)="getRequiredInformation()">Get/Update Info for State</button>
+
+</mat-card>
 

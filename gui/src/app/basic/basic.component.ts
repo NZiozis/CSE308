@@ -9,6 +9,7 @@ import {MapService} from '../services/map.service';
 export class BasicComponent implements OnInit {
 
     private toggleLayer: boolean;
+    private toggleElection: boolean;
     private selectedElection;
 
     constructor(private mapService: MapService) {
@@ -16,13 +17,17 @@ export class BasicComponent implements OnInit {
 
     ngOnInit() {
         this.toggleLayer = false;
-        this.selectedElection = 'CONGRESSIONAL_2016';
+        this.mapService.showElection = this.toggleElection = false;
+        this.mapService.selectedElection = this.selectedElection = 'CONGRESSIONAL_2016';
     }
 
-    updateMapService(){
-
+    electionChange(event) {
+        if (event.isUserInput) {
+            const selectedElection = event.source.value;
+            console.log(selectedElection);
+            this.mapService.selectedElection = selectedElection;
+        }
     }
-
 
 }
 

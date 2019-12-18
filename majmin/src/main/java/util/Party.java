@@ -2,7 +2,7 @@ package util;
 
 /**
  * Identifies a political party.
- * 
+ *
  * @author Patrick Wamsley
  * @author Brett Weinger
  */

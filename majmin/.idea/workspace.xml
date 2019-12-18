@@ -471,9 +471,9 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="aDefault" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
@@ -617,7 +617,7 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="320" y="128" key="#Project_Structure" timestamp="1575336634884">
+    <state x="320" y="128" key="#Project_Structure" timestamp="1576600396797">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="320" y="128" key="#Project_Structure/0.23.1440.877@0.23.1440.877" timestamp="1575336634884" />
@@ -627,7 +627,11 @@
     <state x="533" y="174" key="#com.intellij.ide.util.MemberChooser/0.23.1440.877@0.23.1440.877" timestamp="1576035397776" />
     <state x="2151" y="-820" key="#com.intellij.ide.util.MemberChooser/1440.-1002.1920.1057/0.23.1440.877@1440.-1002.1920.1057" timestamp="1576644717714" />
     <state x="2151" y="205" key="#com.intellij.ide.util.MemberChooser/1440.23.1920.1057/0.23.1440.877@1440.23.1920.1057" timestamp="1576110977025" />
-    <state x="554" y="359" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1576475793559">
+    <state x="554" y="359" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1576600401347">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="554" y="359" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.23.1440.877@0.23.1440.877" timestamp="1576600401347" />
+    <state x="492" y="327" width="455" height="273" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1575340955671">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="554" y="359" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.23.1440.877@0.23.1440.877" timestamp="1576475793559" />
