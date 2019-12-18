@@ -140,7 +140,7 @@ export class MapService {
                                     this.setStyle({
                                         fillOpacity: 1
                                     });
-                                    self.currentInfo = new District({position: 'bottomleft'}, precinct, self);
+                                    self.currentInfo = new Precinct({position: 'bottomleft'}, precinct, self);
                                     self.currentInfo.addTo(self.map);
                                 });
                                 layer.on('mouseout', function() {

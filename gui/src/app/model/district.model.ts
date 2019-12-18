@@ -7,8 +7,9 @@ export class District extends Control {
     districtNumber: number;
     votingSet: any;
     context: any;
+    incumbent: any;
 
-    constructor(opts, district, context) {
+    constructor(opts, district: District, context) {
         super(opts);
         this.demographics = district.demographics;
         this.votingSet = district.votingSet;
@@ -16,6 +17,7 @@ export class District extends Control {
         this.geoId = district.geoId;
         this.districtNumber = district.districtNumber;
         this.context = context;
+        this.incumbent = district.incumbent;
     }
 
     onAdd(map) {
@@ -75,6 +77,16 @@ export class District extends Control {
             cell32.innerText = (totalVotes);
             cell33.innerText = '  ';
             cell34.innerText = '100';
+
+            const row4 = table.insertRow(4);
+            const cell40 = row4.insertCell(0);
+            const cell41 = row4.insertCell(1);
+            const cell42 = row4.insertCell(2);
+            // const cell43 = row3.insertCell(3);
+            // const cell44 = row3.insertCell(4);
+            cell40.innerText = 'Incumbent';
+            cell41.innerText = '  ';
+            cell42.innerText = this.incumbent;
 
         } else {
             const row0 = table.insertRow(0);

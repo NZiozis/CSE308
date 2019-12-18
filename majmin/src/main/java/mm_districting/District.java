@@ -19,10 +19,10 @@ import java.util.Set;
 @JsonIgnoreProperties(value = { "precincts" })
 public class District {
 
-    private Set<Precinct> precincts;
-
+    private Set<Precinct>      precincts;
+    private String             incumbent;
     private DemographicContext demographics;
-    private Set<Voting>             votingSet;
+    private Set<Voting>        votingSet;
 
     // String of the GeoJSON data
     private String geography;
@@ -67,6 +67,15 @@ public class District {
 
     public boolean removePrecinct(Precinct p) {
         return precincts.remove(p);
+    }
+
+    @Column(name = "INCUMBENT")
+    public String getIncumbent() {
+        return incumbent;
+    }
+
+    public void setIncumbent(String incumbent) {
+        this.incumbent = incumbent;
     }
 
     @OneToMany(cascade = CascadeType.ALL)
