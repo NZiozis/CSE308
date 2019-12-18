@@ -13,10 +13,49 @@ public class Joinability {
 
     public static double calculateMajMinJoinability(Edge edge) {
 
-        if (edge instanceof DummyEdge) {
-            return -1;
-        }
+        return Math.random();
 
+//        if (edge instanceof DummyEdge) {
+//            return -1;
+//        }
+//
+//        AlgorithmProperties algProps = AlgorithmProperties.getProperties();
+//
+//        Cluster clusterOne = edge.getClusterOne();
+//        Cluster clusterTwo = edge.getClusterOne();
+//
+//        Set<Precinct> precinctsOne = clusterOne.getPrecincts();
+//        Set<Precinct> precinctsTwo = clusterTwo.getPrecincts();
+//
+//        double target = Math.round((algProps.getVotingMajorityThreshold() + algProps.getMinorityVotingThreshold()) / 100.0);
+//
+//       DemographicContext combined = new DemographicContext();
+//       DemographicContext contextOne = clusterOne.getDemographicContext();
+//       DemographicContext contextTwo = clusterTwo.getDemographicContext();
+//
+//       combined.setAfricanAmerican(contextOne.getAfricanAmerican() + contextTwo.getAfricanAmerican());
+//       combined.setAmericanIndian(contextOne.getAmericanIndian() + contextTwo.getAmericanIndian());
+//       combined.setAsian(contextOne.getAsian() + contextTwo.getAsian());
+//       combined.setPacificIslander(contextOne.getPacificIslander() + contextTwo.getPacificIslander());
+//       combined.setWhite(contextOne.getWhite() + contextTwo.getWhite());
+//       combined.setOther(contextOne.getOther() + contextTwo.getOther());
+//       combined.setTotal(contextOne.getTotal() + contextTwo.getTotal());
+//
+//       double score = 0;
+//
+//       for (Race dem : algProps.getSelectedDemographics()) {
+//           double combinedRatio = combined.getByRace(dem) * 1.0 / combined.getTotal();
+//           score += (1 - Math.abs(target - combinedRatio));
+//       }
+//
+//        //heavily mm joinability over non mm
+//        if (score > .2) {
+//            score += 1;
+//        }
+//        return score;
+    }
+
+    public static double calculateJoinability(Edge edge) {
         AlgorithmProperties algProps = AlgorithmProperties.getProperties();
 
         Cluster clusterOne = edge.getClusterOne();
@@ -25,36 +64,27 @@ public class Joinability {
         Set<Precinct> precinctsOne = clusterOne.getPrecincts();
         Set<Precinct> precinctsTwo = clusterTwo.getPrecincts();
 
-        double target = Math.round((algProps.getVotingMajorityThreshold() + algProps.getMinorityVotingThreshold()) / 100.0);
+        double target = Math.round(((double)algProps.getMajorityVotingThreshold() + (double)algProps.getMinorityVotingThreshold()) / 200.0);
 
-       DemographicContext combined = new DemographicContext();
-       DemographicContext contextOne = clusterOne.getDemographicContext();
-       DemographicContext contextTwo = clusterTwo.getDemographicContext();
+        double score = 0;
 
-       combined.setAfricanAmerican(contextOne.getAfricanAmerican() + contextTwo.getAfricanAmerican());
-       combined.setAmericanIndian(contextOne.getAmericanIndian() + contextTwo.getAmericanIndian());
-       combined.setAsian(contextOne.getAsian() + contextTwo.getAsian());
-       combined.setPacificIslander(contextOne.getPacificIslander() + contextTwo.getPacificIslander());
-       combined.setWhite(contextOne.getWhite() + contextTwo.getWhite());
-       combined.setOther(contextOne.getOther() + contextTwo.getOther());
-       combined.setTotal(contextOne.getTotal() + contextTwo.getTotal());
+        double numPrecincts = AlgorithmProperties.getProperties().getState().getPrecincts().size();
+        double numClusters = AlgorithmProperties.getProperties().getState().getClusters().size();
 
-       double score = 0;
+        double avgPrecinctRatio = ((numPrecincts * 1.0) / (numClusters * 1.0));
 
-       for (Race dem : algProps.getSelectedDemographics()) {
-           double combinedRatio = combined.getByRace(dem) * 1.0 / combined.getTotal();
-           score += (1 - Math.abs(target - combinedRatio));
-       }
+        double numberOfPrecincts = clusterOne.getPrecincts().size() + clusterTwo.getPrecincts().size();
 
-        //heavily mm joinability over non mm
-        if (score > .2) {
-            score += 1;
-        }
+        //now we get score
+        //we want to minimize size if possible
+        double sizeScore = 1 - Math.abs(numberOfPrecincts / numPrecincts);
+
+        //System.out.println("Size score: "+sizeScore);
+
+        double demographicScore =  Math.random();
+
+        score = sizeScore;
         return score;
-    }
-
-    public static double calculateJoinability(Edge edge) {
-        return Math.random();
     }
 
 }

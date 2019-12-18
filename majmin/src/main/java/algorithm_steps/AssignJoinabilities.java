@@ -32,6 +32,8 @@ public class AssignJoinabilities implements AlgorithmStep {
 
         state.setNextEdgeToCombine(null);
 
+        Edge lastEdge = null;
+
         for(Cluster c : state.getClusters()){
             for(Cluster n : c.getNeighbors()){
 
@@ -39,13 +41,34 @@ public class AssignJoinabilities implements AlgorithmStep {
                     System.out.print("");
                 }
 
-                Edge edge = new Edge(c, n);
-                edge.setJoinability(Joinability.calculateJoinability(edge));
-                if(edge.getJoinability() > state.getMaxJoinability(false)){
+
+                Edge edge;
+
+                //test if in the hash map, if not then calculate and add
+
+                edge = state.getEdgeListing(c, n);
+                if(edge == null){
+                    edge = new Edge(c, n);
+                    edge.setJoinability(Joinability.calculateJoinability(edge));
+                    state.setEdgeListing(c, n, edge);
+                }
+
+                if (edge.getJoinability() > state.getMaxJoinability(false)) {
                     state.setNextEdgeToCombine(edge);
                 }
+                lastEdge = edge;
             }
         }
+
+        if(state.getNextEdgeToCombine() == null){
+            state.setNextEdgeToCombine(lastEdge);
+            if(lastEdge == null){
+                System.out.println("ISSUE");
+            }
+            System.out.println("Used last edge");
+            //System.out.println("What again");
+        }
+
         return true;
     }
 

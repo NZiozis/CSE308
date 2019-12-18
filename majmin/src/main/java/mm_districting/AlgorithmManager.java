@@ -268,9 +268,11 @@ public class AlgorithmManager {
 
             if (fullRun) {
                 while (!(currentAlgorithm.run())) {}
+                phase1FirstRun = true;
             } else {
                 for (int i = 0; i < 200; i++) {
                     if (currentAlgorithm.run()) {
+                        phase1FirstRun = true;
                         break;
                     }
                     currentAlgorithm.getResultsToSend().add(generatePhase1Result());
@@ -281,6 +283,7 @@ public class AlgorithmManager {
         } else {
             for (int i = 0; i < 200; i++) {
                 if (currentAlgorithm.run()) {
+                    phase1FirstRun = true;
                     break;
                 }
                 currentAlgorithm.getResultsToSend().add(generatePhase1Result());

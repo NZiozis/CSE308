@@ -5,13 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1b917782-4cb8-457f-9f9b-dfb5f1451613" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../gui/src/app/model/state.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/src/app/model/state.model.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/src/app/state-info/state-info.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/src/app/state-info/state-info.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/src/app/state-info/state-info.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/src/app/state-info/state-info.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/src/app/services/phase1.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/src/app/services/phase1.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/algorithm_steps/Phase1Iteration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithm_steps/Phase1Iteration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/algorithm_steps/AssignJoinabilities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithm_steps/AssignJoinabilities.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/algorithm_steps/GenerateInitialClusters.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithm_steps/GenerateInitialClusters.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/mm_districting/AlgorithmManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mm_districting/AlgorithmManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mm_districting/Cluster.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mm_districting/Cluster.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mm_districting/Joinability.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mm_districting/Joinability.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mm_districting/State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mm_districting/State.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/mm_districting/AlgorithmManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mm_districting/AlgorithmManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mm_districting/Joinability.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mm_districting/Joinability.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -231,77 +236,77 @@
       <screen x="1440" y="-1002" width="1920" height="1057" />
     </state>
     <state x="2219" y="-847" width="762" height="684" key="#xdebugger.XInspectDialog/1440.-1002.1920.1057/0.23.1440.877@1440.-1002.1920.1057" timestamp="1576641660914" />
-    <state width="1878" height="290" key="GridCell.Tab.0.bottom" timestamp="1576653857240">
+    <state width="1878" height="357" key="GridCell.Tab.0.bottom" timestamp="1576704024748">
       <screen x="1440" y="-1002" width="1920" height="1057" />
     </state>
     <state width="1398" height="220" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1576549253076" />
-    <state width="1878" height="290" key="GridCell.Tab.0.bottom/1440.-1002.1920.1057/0.23.1440.877@1440.-1002.1920.1057" timestamp="1576653857240" />
+    <state width="1878" height="357" key="GridCell.Tab.0.bottom/1440.-1002.1920.1057/0.23.1440.877@1440.-1002.1920.1057" timestamp="1576704024748" />
     <state width="1878" height="220" key="GridCell.Tab.0.bottom/1440.23.1920.1057/0.23.1440.877@1440.23.1920.1057" timestamp="1576556486143" />
-    <state width="1878" height="290" key="GridCell.Tab.0.center" timestamp="1576653857239">
+    <state width="1878" height="357" key="GridCell.Tab.0.center" timestamp="1576704024747">
       <screen x="1440" y="-1002" width="1920" height="1057" />
     </state>
     <state width="1398" height="220" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1576549253075" />
-    <state width="1878" height="290" key="GridCell.Tab.0.center/1440.-1002.1920.1057/0.23.1440.877@1440.-1002.1920.1057" timestamp="1576653857239" />
+    <state width="1878" height="357" key="GridCell.Tab.0.center/1440.-1002.1920.1057/0.23.1440.877@1440.-1002.1920.1057" timestamp="1576704024747" />
     <state width="1878" height="220" key="GridCell.Tab.0.center/1440.23.1920.1057/0.23.1440.877@1440.23.1920.1057" timestamp="1576556486142" />
-    <state width="1878" height="290" key="GridCell.Tab.0.left" timestamp="1576653857239">
+    <state width="1878" height="357" key="GridCell.Tab.0.left" timestamp="1576704024746">
       <screen x="1440" y="-1002" width="1920" height="1057" />
     </state>
     <state width="1398" height="220" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1576549253075" />
-    <state width="1878" height="290" key="GridCell.Tab.0.left/1440.-1002.1920.1057/0.23.1440.877@1440.-1002.1920.1057" timestamp="1576653857239" />
+    <state width="1878" height="357" key="GridCell.Tab.0.left/1440.-1002.1920.1057/0.23.1440.877@1440.-1002.1920.1057" timestamp="1576704024746" />
     <state width="1878" height="220" key="GridCell.Tab.0.left/1440.23.1920.1057/0.23.1440.877@1440.23.1920.1057" timestamp="1576556486142" />
-    <state width="1878" height="290" key="GridCell.Tab.0.right" timestamp="1576653857240">
+    <state width="1878" height="357" key="GridCell.Tab.0.right" timestamp="1576704024748">
       <screen x="1440" y="-1002" width="1920" height="1057" />
     </state>
     <state width="1398" height="220" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1576549253076" />
-    <state width="1878" height="290" key="GridCell.Tab.0.right/1440.-1002.1920.1057/0.23.1440.877@1440.-1002.1920.1057" timestamp="1576653857240" />
+    <state width="1878" height="357" key="GridCell.Tab.0.right/1440.-1002.1920.1057/0.23.1440.877@1440.-1002.1920.1057" timestamp="1576704024748" />
     <state width="1878" height="220" key="GridCell.Tab.0.right/1440.23.1920.1057/0.23.1440.877@1440.23.1920.1057" timestamp="1576556486143" />
-    <state width="1878" height="290" key="GridCell.Tab.1.bottom" timestamp="1576653857241">
+    <state width="1878" height="357" key="GridCell.Tab.1.bottom" timestamp="1576704024506">
       <screen x="1440" y="-1002" width="1920" height="1057" />
     </state>
     <state width="1398" height="220" key="GridCell.Tab.1.bottom/0.23.1440.877@0.23.1440.877" timestamp="1576549121749" />
-    <state width="1878" height="290" key="GridCell.Tab.1.bottom/1440.-1002.1920.1057/0.23.1440.877@1440.-1002.1920.1057" timestamp="1576653857241" />
+    <state width="1878" height="357" key="GridCell.Tab.1.bottom/1440.-1002.1920.1057/0.23.1440.877@1440.-1002.1920.1057" timestamp="1576704024506" />
     <state width="1878" height="220" key="GridCell.Tab.1.bottom/1440.23.1920.1057/0.23.1440.877@1440.23.1920.1057" timestamp="1576556486145" />
-    <state width="1878" height="290" key="GridCell.Tab.1.center" timestamp="1576653857240">
+    <state width="1878" height="357" key="GridCell.Tab.1.center" timestamp="1576704024505">
       <screen x="1440" y="-1002" width="1920" height="1057" />
     </state>
     <state width="1398" height="220" key="GridCell.Tab.1.center/0.23.1440.877@0.23.1440.877" timestamp="1576549121748" />
-    <state width="1878" height="290" key="GridCell.Tab.1.center/1440.-1002.1920.1057/0.23.1440.877@1440.-1002.1920.1057" timestamp="1576653857240" />
+    <state width="1878" height="357" key="GridCell.Tab.1.center/1440.-1002.1920.1057/0.23.1440.877@1440.-1002.1920.1057" timestamp="1576704024505" />
     <state width="1878" height="220" key="GridCell.Tab.1.center/1440.23.1920.1057/0.23.1440.877@1440.23.1920.1057" timestamp="1576556486144" />
-    <state width="1878" height="290" key="GridCell.Tab.1.left" timestamp="1576653857240">
+    <state width="1878" height="357" key="GridCell.Tab.1.left" timestamp="1576704024505">
       <screen x="1440" y="-1002" width="1920" height="1057" />
     </state>
     <state width="1398" height="220" key="GridCell.Tab.1.left/0.23.1440.877@0.23.1440.877" timestamp="1576549121748" />
-    <state width="1878" height="290" key="GridCell.Tab.1.left/1440.-1002.1920.1057/0.23.1440.877@1440.-1002.1920.1057" timestamp="1576653857240" />
+    <state width="1878" height="357" key="GridCell.Tab.1.left/1440.-1002.1920.1057/0.23.1440.877@1440.-1002.1920.1057" timestamp="1576704024505" />
     <state width="1878" height="220" key="GridCell.Tab.1.left/1440.23.1920.1057/0.23.1440.877@1440.23.1920.1057" timestamp="1576556486144" />
-    <state width="1878" height="290" key="GridCell.Tab.1.right" timestamp="1576653857241">
+    <state width="1878" height="357" key="GridCell.Tab.1.right" timestamp="1576704024506">
       <screen x="1440" y="-1002" width="1920" height="1057" />
     </state>
     <state width="1398" height="220" key="GridCell.Tab.1.right/0.23.1440.877@0.23.1440.877" timestamp="1576549121749" />
-    <state width="1878" height="290" key="GridCell.Tab.1.right/1440.-1002.1920.1057/0.23.1440.877@1440.-1002.1920.1057" timestamp="1576653857241" />
+    <state width="1878" height="357" key="GridCell.Tab.1.right/1440.-1002.1920.1057/0.23.1440.877@1440.-1002.1920.1057" timestamp="1576704024506" />
     <state width="1878" height="220" key="GridCell.Tab.1.right/1440.23.1920.1057/0.23.1440.877@1440.23.1920.1057" timestamp="1576556486145" />
-    <state width="1878" height="357" key="GridCell.Tab.2.bottom" timestamp="1576653857235">
+    <state width="1878" height="357" key="GridCell.Tab.2.bottom" timestamp="1576704024509">
       <screen x="1440" y="-1002" width="1920" height="1057" />
     </state>
     <state width="1398" height="220" key="GridCell.Tab.2.bottom/0.23.1440.877@0.23.1440.877" timestamp="1576548216136" />
-    <state width="1878" height="357" key="GridCell.Tab.2.bottom/1440.-1002.1920.1057/0.23.1440.877@1440.-1002.1920.1057" timestamp="1576653857235" />
+    <state width="1878" height="357" key="GridCell.Tab.2.bottom/1440.-1002.1920.1057/0.23.1440.877@1440.-1002.1920.1057" timestamp="1576704024509" />
     <state width="1878" height="220" key="GridCell.Tab.2.bottom/1440.23.1920.1057/0.23.1440.877@1440.23.1920.1057" timestamp="1576556486147" />
-    <state width="1878" height="357" key="GridCell.Tab.2.center" timestamp="1576653857235">
+    <state width="1878" height="357" key="GridCell.Tab.2.center" timestamp="1576704024508">
       <screen x="1440" y="-1002" width="1920" height="1057" />
     </state>
     <state width="1398" height="220" key="GridCell.Tab.2.center/0.23.1440.877@0.23.1440.877" timestamp="1576548216136" />
-    <state width="1878" height="357" key="GridCell.Tab.2.center/1440.-1002.1920.1057/0.23.1440.877@1440.-1002.1920.1057" timestamp="1576653857235" />
+    <state width="1878" height="357" key="GridCell.Tab.2.center/1440.-1002.1920.1057/0.23.1440.877@1440.-1002.1920.1057" timestamp="1576704024508" />
     <state width="1878" height="220" key="GridCell.Tab.2.center/1440.23.1920.1057/0.23.1440.877@1440.23.1920.1057" timestamp="1576556486146" />
-    <state width="1878" height="357" key="GridCell.Tab.2.left" timestamp="1576653857235">
+    <state width="1878" height="357" key="GridCell.Tab.2.left" timestamp="1576704024507">
       <screen x="1440" y="-1002" width="1920" height="1057" />
     </state>
     <state width="1398" height="220" key="GridCell.Tab.2.left/0.23.1440.877@0.23.1440.877" timestamp="1576548216135" />
-    <state width="1878" height="357" key="GridCell.Tab.2.left/1440.-1002.1920.1057/0.23.1440.877@1440.-1002.1920.1057" timestamp="1576653857235" />
+    <state width="1878" height="357" key="GridCell.Tab.2.left/1440.-1002.1920.1057/0.23.1440.877@1440.-1002.1920.1057" timestamp="1576704024507" />
     <state width="1878" height="220" key="GridCell.Tab.2.left/1440.23.1920.1057/0.23.1440.877@1440.23.1920.1057" timestamp="1576556486146" />
-    <state width="1878" height="357" key="GridCell.Tab.2.right" timestamp="1576653857235">
+    <state width="1878" height="357" key="GridCell.Tab.2.right" timestamp="1576704024508">
       <screen x="1440" y="-1002" width="1920" height="1057" />
     </state>
     <state width="1398" height="220" key="GridCell.Tab.2.right/0.23.1440.877@0.23.1440.877" timestamp="1576548216136" />
-    <state width="1878" height="357" key="GridCell.Tab.2.right/1440.-1002.1920.1057/0.23.1440.877@1440.-1002.1920.1057" timestamp="1576653857235" />
+    <state width="1878" height="357" key="GridCell.Tab.2.right/1440.-1002.1920.1057/0.23.1440.877@1440.-1002.1920.1057" timestamp="1576704024508" />
     <state width="1878" height="220" key="GridCell.Tab.2.right/1440.23.1920.1057/0.23.1440.877@1440.23.1920.1057" timestamp="1576556486147" />
     <state x="2068" y="-786" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1576623430072">
       <screen x="1440" y="-1002" width="1920" height="1057" />
@@ -326,29 +331,19 @@
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/mm_districting/AlgorithmManager.java</url>
-          <line>236</line>
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/algorithm_steps/DetermineDemBlocs.java</url>
           <line>49</line>
           <option name="timeStamp" value="19" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/mm_districting/State.java</url>
-          <line>105</line>
+          <line>107</line>
           <option name="timeStamp" value="75" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/algorithm_steps/AssignMMJoinabilities.java</url>
           <line>45</line>
           <option name="timeStamp" value="77" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/mm_districting/AlgorithmManager.java</url>
-          <line>297</line>
-          <option name="timeStamp" value="84" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
