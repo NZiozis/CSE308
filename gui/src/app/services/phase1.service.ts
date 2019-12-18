@@ -16,10 +16,10 @@ export class Phase1Service {
         console.log(phase1JSON);
         this.http.post<Phase1Config>(
             this.mapService.REST_API_SERVER_URL + '/phase1', JSON.stringify(phase1JSON)).subscribe((json: any) => {
-            const clusters = Object.keys(json.map);
             let colorIndex = 0;
+            const clusters = json.array;
             for (const cluster of clusters) {
-                for (const precinct of json.map[cluster]) {
+                for (const precinct of cluster.value1) {
                     const currentLayer: GeoJSON<any> = this.mapService.precinctToLayerMapper.get(precinct);
                     currentLayer.setStyle({fillColor: this.mapService.colorSchemes[0][colorIndex % 6], fillOpacity: .5});
                 }
