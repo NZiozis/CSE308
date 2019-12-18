@@ -68,22 +68,6 @@ public class Phase1Iteration implements AlgorithmStep {
 
     @Override
     public Result onCompletion() {
-        State state = AlgorithmProperties.getProperties().getState();
-        Phase1Result result = new Phase1Result();
-        HashMap<Cluster, ArrayList<String>> map = new HashMap<>();
-
-        for (Cluster c : state.getClusters()) {
-            Cluster clone = new Cluster();
-            clone.setDemographicContext(c.getDemographicContext());
-            clone.setVotingData(c.getVotingData());
-            ArrayList<String> geoIds = new ArrayList<>();
-            for (Precinct p : c.getPrecincts()) {
-                geoIds.add(p.getGeoId());
-            }
-            map.put(clone, geoIds);
-        }
-
-        result.setMap(map);
-        return result;
+        return AlgorithmManager.generatePhase1Result();
     }
 }

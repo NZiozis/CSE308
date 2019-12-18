@@ -36,6 +36,8 @@ public class AlgorithmManager {
     private            Algorithm       currentAlgorithm;
     @Autowired private StateRepository repository;
 
+    private boolean phase1FirstRun = true;
+
     public static void main(String[] args) {
         SpringApplication.run(AlgorithmManager.class, args);
     }
@@ -242,24 +244,47 @@ public class AlgorithmManager {
             e.printStackTrace();
         }
 
-        AlgorithmProperties.getProperties().setRequestedNumDistricts((Integer)map.get("numberOfDistricts"));
-        AlgorithmProperties.getProperties().setMinorityVotingThreshold((Integer)map.get("minorityThreshold"));
-        AlgorithmProperties.getProperties().setMajorityVotingThreshold((Integer)map.get("majorityThreshold"));
+        if (phase1FirstRun) {
 
+            phase1FirstRun = false;
 
-        ArrayList<String> selectedDemographicsArr = (ArrayList<String>) map.get("selectedRaces");
-        Set<Race> selectedDemographics = new HashSet<>();
-        for (String demographic : selectedDemographicsArr) {
-            selectedDemographics.add(Race.valueOf(demographic));
+            AlgorithmProperties.getProperties().setRequestedNumDistricts((Integer) map.get("numberOfDistricts"));
+            AlgorithmProperties.getProperties().setMinorityVotingThreshold((Integer) map.get("minorityThreshold"));
+            AlgorithmProperties.getProperties().setMajorityVotingThreshold((Integer) map.get("majorityThreshold"));
+
+            ArrayList<String> selectedDemographicsArr = (ArrayList<String>) map.get("selectedRaces");
+            boolean fullRun = (Boolean)map.get("fullRun");
+
+            Set<Race> selectedDemographics = new HashSet<>();
+            for (String demographic : selectedDemographicsArr) {
+                selectedDemographics.add(Race.valueOf(demographic));
+            }
+            AlgorithmProperties.getProperties().setSelectedDemographics(selectedDemographics);
+
+            currentAlgorithm =
+                    new Algorithm(new GenerateInitialClusters(), new GenerateInitialEdges(), new Phase1Iteration(true));
+
+            if (fullRun) {
+                while (!(currentAlgorithm.run())) {}
+            } else {
+                for (int i = 0; i < 200; i++) {
+                    if (currentAlgorithm.run()) {
+                        break;
+                    }
+                    currentAlgorithm.getResultsToSend().add(generatePhase1Result());
+                }
+                //get results
+            }
+
+        } else {
+            for (int i = 0; i < 200; i++) {
+                if (currentAlgorithm.run()) {
+                    break;
+                }
+                currentAlgorithm.getResultsToSend().add(generatePhase1Result());
+            }
+            //get results
         }
-        AlgorithmProperties.getProperties().setSelectedDemographics(selectedDemographics);
-
-        currentAlgorithm =
-                new Algorithm(new GenerateInitialClusters(), new GenerateInitialEdges(), new Phase1Iteration(true));
-
-        while (!( currentAlgorithm.run() )) {}
-
-        State state = AlgorithmProperties.getProperties().getState();
 
         Result results = currentAlgorithm.getResultsToSend().get(0);
 
@@ -283,5 +308,25 @@ public class AlgorithmManager {
             e.printStackTrace();
         }
         return "";
+    }
+
+    public static Result generatePhase1Result() {
+        State state = AlgorithmProperties.getProperties().getState();
+        Phase1Result result = new Phase1Result();
+        HashMap<Cluster, ArrayList<String>> map = new HashMap<>();
+
+        for (Cluster c : state.getClusters()) {
+            Cluster clone = new Cluster();
+            clone.setDemographicContext(c.getDemographicContext());
+            clone.setVotingData(c.getVotingData());
+            ArrayList<String> geoIds = new ArrayList<>();
+            for (Precinct p : c.getPrecincts()) {
+                geoIds.add(p.getGeoId());
+            }
+            map.put(clone, geoIds);
+        }
+
+        result.setMap(map);
+        return result;
     }
 }
