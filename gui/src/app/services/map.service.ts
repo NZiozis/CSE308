@@ -47,6 +47,11 @@ export class MapService {
     public precinctToLayerMapper = new Map<string, GeoJSON<any>>();
     public selectedState: string;
     public REST_API_SERVER_URL = 'http://localhost:8080';
+    public selectedColorScheme: number;
+    public colorSchemes = [
+        ['#ff3cdb', '#3cff60', '#3cdbff', '#ff603c', '#646363', '#ffae90'],
+        ['#ff002b', '#00ffd5', '#002bff', '#ffd500', '#20ff03', '#646363']
+    ];
 
     private mapUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
     private options: { center: LatLng; layers: TileLayer[]; zoom: number };
@@ -124,6 +129,7 @@ export class MapService {
                     this.districtLayerGroup.addTo(this.map);
                     console.log('Districts completed');
                 });
+                const now = Date.now();
                 this.getPrecincts().subscribe((precincts: Precinct[]) => {
                     console.log(precincts);
                     this.precinctLayerGroup = new LayerGroup();
@@ -139,17 +145,18 @@ export class MapService {
                                 });
                                 layer.on('mouseout', function() {
                                     this.setStyle({
-                                        fillOpacity: 0.2
+                                        fillOpacity: 0.5
                                     });
                                     self.map.removeControl(self.currentInfo);
                                 });
                             }
                         });
-                        geoJson.setStyle({fillColor: '#ff15ed', weight: .5});
+                        geoJson.setStyle({fillColor: '#ff15ed', weight: .5, color: '#000000'});
                         self.precinctLayerGroup.addLayer(geoJson);
                         self.precinctToLayerMapper.set(precinct.geoId, geoJson);
                     }
                     // this.precinctLayerGroup.addTo(this.map);
+                    console.log(Date.now() - now);
                     console.log('Precincts completed');
                 });
             });
