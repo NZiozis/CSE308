@@ -111,25 +111,6 @@
             <version>1.2</version>
         </dependency>
     </dependencies>
-    <repositories>
-        <repository>
-            <id>locationtech-releases</id>
-            <url>https://repo.locationtech.org/content/groups/releases</url>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </repository>
-        <repository>
-            <id>jts-snapshots</id>
-            <url>https://repo.locationtech.org/content/repositories/jts-snapshots</url>
-            <releases>
-                <enabled>false</enabled>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </repository>
-    </repositories>
 
     <build>
         <plugins>
