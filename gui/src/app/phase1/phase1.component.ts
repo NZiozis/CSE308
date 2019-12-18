@@ -14,6 +14,8 @@ export class Phase1Component implements OnInit {
     private majorityThreshold: number;
     private selectedRaces;
     private fullRun;
+    private selectedColorScheme: number;
+    private potentialColorSchemes = [{name: 'Scheme 1', value: 1}, {name: 'Scheme 2', value: 2}];
 
     constructor(private mapService: MapService, private phase1Service: Phase1Service) {
     }
@@ -35,6 +37,12 @@ export class Phase1Component implements OnInit {
         output.fullRun = this.fullRun;
 
         return output;
+    }
+
+    schemeChange(event) {
+        if (event.isUserInput) {
+            this.mapService.selectedColorScheme = event.source.value;
+        }
     }
 
 }

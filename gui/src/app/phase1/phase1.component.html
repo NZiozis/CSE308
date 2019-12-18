@@ -31,5 +31,14 @@
     <br>
     <br>
 
+    Color Scheme:
+    <mat-form-field>
+        <mat-select [(ngModel)]="selectedColorScheme">
+            <mat-option *ngFor="let scheme of this.potentialColorSchemes"
+                        [value]="scheme.value" (onSelectionChange)="schemeChange($event)">{{scheme.name}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+
     <button mat-raised-button color="primary" (click)="this.phase1Service.run(createPhase1JSON())">Phase 1</button>
 </mat-card>
