@@ -8,6 +8,7 @@ import mm_districting.*;
 import results.DummyResult;
 import results.Result;
 
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -38,6 +39,14 @@ public class GenerateInitialClusters implements AlgorithmStep {
             cluster.setDemographicContext(precinct.getDemographics());
         }
         state.setClusters(clusters);
+
+        HashMap<Cluster, HashMap<Cluster, Edge>> edgeHash = state.getEdgeHash();
+        //now we have the clusters and we make the edge set
+        for (Cluster c : clusters){
+            HashMap<Cluster, Edge> tempHash = new HashMap<Cluster, Edge>();
+            edgeHash.put(c, tempHash);
+        }
+
         return true;
     }
 

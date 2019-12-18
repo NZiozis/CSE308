@@ -36,6 +36,8 @@ public class State {
     //---Algorithm oriented objects---//
     private            Set<District>       generatedDistricts;
     private            Set<Cluster>        clusters;
+    @Transient private  HashMap<Cluster, HashMap<Cluster, Edge>> edgeHash = new HashMap<>();
+
     //    @Transient private Set<Edge>          edges;
     private            String              geography;
     @Transient private Edge                nextEdgeToCombine;
@@ -146,6 +148,8 @@ public class State {
                 c.addNeighbor(combinedCluster);
             }
         }
+        HashMap<Cluster, Edge> tempHash = new HashMap<Cluster, Edge>();
+        edgeHash.put(combinedCluster, tempHash);
 
         discardedClusters.add(edge.getClusterOne());
         discardedClusters.add(edge.getClusterTwo());
@@ -291,6 +295,29 @@ public class State {
         }
         return doingMM ? nextEdgeToCombine.getMajMinJoinability() : nextEdgeToCombine.getJoinability();
     }
+
+
+    @Transient
+    public void setEdgeHash(HashMap<Cluster, HashMap<Cluster, Edge>> hashMap){
+        edgeHash = hashMap;
+    }
+
+    @Transient
+    public HashMap<Cluster, HashMap<Cluster, Edge>> getEdgeHash(){
+        return edgeHash;
+    }
+
+    @Transient
+    public void setEdgeListing(Cluster c1, Cluster c2, Edge e){
+        edgeHash.get(c1).put(c2, e);
+        edgeHash.get(c2).put(c1, e);
+    }
+
+    @Transient
+    public Edge getEdgeListing(Cluster c1, Cluster c2){
+        return edgeHash.get(c1).get(c2);
+    }
+
 
     /**
      * Used to identify which state the user has selected to be analyzed.
