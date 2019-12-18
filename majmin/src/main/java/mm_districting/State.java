@@ -1,6 +1,5 @@
 package mm_districting;
 
-import algorithm_steps.DummyEdge;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import util.Operation;
 
@@ -36,14 +35,13 @@ public class State {
     //---Algorithm oriented objects---//
     private            Set<District>      generatedDistricts;
     private            Set<Cluster>       clusters;
-//    @Transient private Set<Edge>          edges;
+    @Transient private Set<Edge>          edges;
+    private            Map<Cluster,Edge>  bestPairings;
+    private            Set<Cluster>       doNotPairClusters;
     private            String             geography;
-    @Transient private Edge    nextEdgeToCombine;
 
 
-    @Transient public Set<Cluster> discardedClusters = new HashSet<>();
-    //maps precinct GeoID to Cluster
-    @Transient private Map<String,Cluster> initialClustersMap;
+    @Transient private Map<Precinct,Cluster> initialClustersMap;
 
     public State() {}
 
@@ -71,65 +69,50 @@ public class State {
     }
 
     /**
+     * @return The previously set highest joinability found for this cluster.
+     */
+    @Transient
+    public double getMaxJoinability(Cluster cluster) {
+        //TODO: probably combine MajMin and normal joinability, simply making majmin weight much higher than anything else
+        Edge bestEdge = bestPairings.get(cluster);
+        return bestEdge == null ? -1 : Math.max(bestEdge.getMajMinJoinability(), bestEdge.getJoinability());
+    }
+
+    /**
+     * @return The Cluster's most joinable edge, or null if it currently has no pairing.
+     */
+    @Transient
+    public Edge getMostJoinableEdge(Cluster cluster) {
+        return bestPairings.get(cluster);
+    }
+
+    /**
+     * Sets the given cluster's most joinabile edge.
+     */
+    public void updateMostJoinable(Cluster cluster, Edge newEdge) {
+        bestPairings.put(cluster, newEdge);
+    }
+
+    /**
      * Updates the Set of Clusters in this state by replacing the two clusters given by the edge with their combined cluster.
      */
     public void combineClusters(Edge edge) {
+        clusters.remove(edge.getClusterOne());
+        clusters.remove(edge.getClusterTwo());
+        doNotPairClusters.add(edge.getClusterOne());
+        doNotPairClusters.add(edge.getClusterTwo());
 
-        if (clusters.size() == 1853) {
-            System.out.print("");
+        Cluster combinedCluster = new Cluster();
+        combinedCluster.getPrecincts().addAll(edge.getClusterOne().getPrecincts());
+        combinedCluster.getPrecincts().addAll(edge.getClusterTwo().getPrecincts());
+        combinedCluster.setEdges(edge.getClusterOne().getEdges());
+        combinedCluster.getEdges().addAll(edge.getClusterTwo().getEdges());
+        combinedCluster.getEdges().remove(edge);
+
+        for (Edge e : combinedCluster.getEdges()) {
+            e.updateCluster(combinedCluster, edge.getClusterOne(), edge.getClusterTwo());
         }
 
-        boolean c1In = !clusters.contains(edge.getClusterOne());
-        boolean c2In = !clusters.contains(edge.getClusterTwo());
-
-        if (!clusters.contains(edge.getClusterOne()) || !clusters.contains(edge.getClusterTwo())) {
-            return;
-        }
-
-        Cluster combinedCluster = new Cluster(true);
-        for (Precinct p : edge.getClusterOne().getPrecincts()) {
-            combinedCluster.addPrecinct(p);
-        }
-
-        for (Precinct p : edge.getClusterTwo().getPrecincts()) {
-            combinedCluster.addPrecinct(p);
-        }
-
-        combinedCluster.setDemographicContext(DemographicContext.combine(edge.getClusterOne().getDemographicContext(), edge.getClusterTwo().getDemographicContext()));
-
-       //set neighbors
-        Set<Cluster> clusterOneNeighbors = edge.getClusterOne().getNeighbors();
-        Set<Cluster> clusterTwoNeighbors = edge.getClusterTwo().getNeighbors();
-
-        for (Cluster c : clusterOneNeighbors) {
-            combinedCluster.addNeighbor(c);
-        }
-
-        for (Cluster c : clusterTwoNeighbors) {
-            combinedCluster.addNeighbor(c);
-        }
-
-        combinedCluster.removeNeighbor(edge.getClusterOne());
-        combinedCluster.removeNeighbor(edge.getClusterTwo());
-
-        boolean x = clusters.add(combinedCluster);
-        boolean y = clusters.remove(edge.getClusterOne());
-        boolean z = clusters.remove(edge.getClusterTwo());
-
-        for (Cluster c : combinedCluster.getNeighbors()) {
-            boolean a = c.removeNeighbor(edge.getClusterOne());
-            boolean b = c.removeNeighbor(edge.getClusterTwo());
-            if (a || b) {
-                c.addNeighbor(combinedCluster);
-            }
-        }
-
-        discardedClusters.add(edge.getClusterOne());
-        discardedClusters.add(edge.getClusterTwo());
-
-//        for (Edge e : edges) {
-//            e.updateCluster(combinedCluster, edge.getClusterOne(), edge.getClusterTwo());
-//        }
     }
 
     @Column(name = "GEOGRAPHY", length = 16777215, columnDefinition = "mediumtext", nullable = false)
@@ -139,6 +122,10 @@ public class State {
 
     public void setGeography(String geography) {
         this.geography = geography;
+    }
+
+    public boolean isClusterAlreadyPaired(Cluster cluster) {
+        return doNotPairClusters.contains(cluster);
     }
 
     @Transient
@@ -230,43 +217,32 @@ public class State {
         this.clusters = clusters;
     }
 
-//    @Transient
-//    public Set<Edge> getEdges() {
-//        return edges;
-//    }
-//
-//    public void setEdges(Set<Edge> edges) {
-//        this.edges = edges;
-//    }
+    @Transient
+    public Set<Cluster> getDoNotPairClusters() {
+        return doNotPairClusters;
+    }
+
+    public void setDoNotPairClusters(Set<Cluster> doNotPairClusters) {
+        this.doNotPairClusters = doNotPairClusters;
+    }
 
     @Transient
-    public Map<String, Cluster> getInitialClustersMap() {
+    public Set<Edge> getEdges() {
+        return edges;
+    }
+
+    @Transient
+    public Map<Precinct,Cluster> getInitialClustersMap() {
         return initialClustersMap;
     }
 
     public void addClusterPrecinctMapping(Precinct precinct, Cluster cluster) {
-        initialClustersMap.put(precinct.getGeoId(), cluster);
-    }
-
-    public void init() {
-        initialClustersMap = new HashMap<>();
+        initialClustersMap.put(precinct, cluster);
     }
 
     @Transient
-    public void setNextEdgeToCombine(Edge edge) {
-        nextEdgeToCombine = edge;
-    }
-
-    @Transient
-    public Edge getNextEdgeToCombine() {
-        return nextEdgeToCombine;
-    }
-
-    public double getMaxJoinability(boolean doingMM) {
-        if (nextEdgeToCombine == null) {
-            return -1;
-        }
-        return doingMM ? nextEdgeToCombine.getMajMinJoinability() : nextEdgeToCombine.getJoinability();
+    public HashMap<Cluster,Edge> getBestPairings() {
+        return (HashMap<Cluster,Edge>) bestPairings;
     }
 
     /**

@@ -1,7 +1,5 @@
 package mm_districting;
 
-import algorithm_steps.DummyEdge;
-
 /**
  * Represents an edge between two clusters, used to store how joinable these two clusters are.
  *
@@ -70,17 +68,8 @@ public class Edge {
         this.majorityMinorityJoinability = majorityMinorityJoinability;
     }
 
-    /**
-     * @return True iff this edge contains any cluster in the provided cluster array
-     */
-    public boolean hasClusters(Cluster... clusters) {
-        boolean hasOne = false;
-        for (Cluster c : clusters) {
-            if (clusterOne.equals(c) || clusterTwo.equals(c)) {
-                hasOne = true;
-            }
-        }
-        return hasOne;
+    public boolean hasCluster(Cluster cluster) {
+        return clusterOne.equals(cluster) || clusterTwo.equals(cluster);
     }
 
     public void updateCluster(Cluster combinedCluster, Cluster c1, Cluster c2) {
@@ -90,22 +79,4 @@ public class Edge {
             clusterTwo = combinedCluster;
         }
     }
-
-    public boolean isSameEdge(Edge other) {
-        return (clusterOne.equals(other.clusterOne) || clusterOne.equals(other.clusterTwo)) && (clusterTwo.equals(other.clusterOne) || clusterTwo.equals(other.clusterTwo));
-    }
-
-    @Override
-    public int hashCode() {
-
-        if (this instanceof DummyEdge) {
-            return -1;
-        }
-
-        int hash = 17;
-        hash = hash * 23 + clusterOne.hashCode();
-        hash = hash * 23 + clusterTwo.hashCode();
-        return hash;
-    }
-
 }

@@ -4,11 +4,9 @@ import algorithm.Algorithm;
 import algorithm.AlgorithmStep;
 import algorithm.AlgorithmStepStatus;
 import mm_districting.*;
-import results.DummyResult;
 import results.Result;
 
 import java.util.ArrayList;
-import java.util.Set;
 
 /**
  * Assigns a joinability value for each edge based on Majority-Minority considerations (use case #26).
@@ -18,15 +16,15 @@ import java.util.Set;
 public class AssignMMJoinabilities implements AlgorithmStep {
 
     private State state;
-//    private ArrayList<Edge> edgesLeftToAssign;
+    private ArrayList<Edge> edgesLeftToAssign;
 
     private AlgorithmStepStatus status;
 
     public AssignMMJoinabilities() {
         this.state = AlgorithmProperties.getProperties().getState();
         this.status = new AlgorithmStepStatus(getClass().getName());
-//        this.edgesLeftToAssign = new ArrayList<>();
-//        this.edgesLeftToAssign.addAll(state.getEdges());
+        this.edgesLeftToAssign = new ArrayList<>();
+        this.edgesLeftToAssign.addAll(state.getEdges());
     }
 
     /**
@@ -36,30 +34,30 @@ public class AssignMMJoinabilities implements AlgorithmStep {
      */
     @Override
     public boolean run() {
+        status.setMessage("Currently running.");
+        Edge edge = edgesLeftToAssign.get(0);
+        edge.setMajorityMinorityJoinability(Joinability.calculateMajMinJoinability(edge));
+        edgesLeftToAssign.remove(edge);
 
-        state.setNextEdgeToCombine(null);
+        double clusterOneMaxJoinability = state.getMaxJoinability(edge.getClusterOne());
+        double clusterTwoMaxJoinability = state.getMaxJoinability(edge.getClusterTwo());
 
-        for(Cluster c : state.getClusters()){
-            for(Cluster n : c.getNeighbors()){
-
-                if (!state.getClusters().contains(n)) {
-                    System.out.print("");
-                }
-
-                Edge edge = new Edge(c, n);
-                edge.setMajorityMinorityJoinability(Joinability.calculateMajMinJoinability(edge));
-                if(edge.getMajMinJoinability() > state.getMaxJoinability(true)){
-                    state.setNextEdgeToCombine(edge);
-                }
-            }
+        if (edge.getMajMinJoinability() > clusterOneMaxJoinability) {
+            state.updateMostJoinable(edge.getClusterOne(), edge);
         }
 
-        return true;
+        if (edge.getMajMinJoinability() > clusterTwoMaxJoinability) {
+            state.updateMostJoinable(edge.getClusterTwo(), edge);
+        }
+        return edgesLeftToAssign.isEmpty();
     }
 
     @Override
     public AlgorithmStepStatus getStatus() {
-
+        status.setProgress(edgesLeftToAssign.size() * 1.0f / state.getEdges().size());
+        if (Double.compare(status.getProgress(), 1.0) == 0) {
+            status.setMessage("Completed.");
+        }
         return status;
     }
 
@@ -70,6 +68,6 @@ public class AssignMMJoinabilities implements AlgorithmStep {
 
     @Override
     public Result onCompletion() {
-        return new DummyResult();
+        return null;
     }
 }

@@ -157,16 +157,4 @@ public class DemographicContext {
         this.other += value;
     }
 
-    public static DemographicContext combine(DemographicContext one, DemographicContext two) {
-        DemographicContext context = new DemographicContext();
-        context.total = one.total + two.total;
-        context.white = one.white + two.white;
-        context.africanAmerican = one.africanAmerican + two.africanAmerican;
-        context.asian = one.asian + two.asian;
-        context.americanIndian = one.americanIndian + two.americanIndian;
-        context.pacificIslander = one.pacificIslander + two.pacificIslander;
-        context.other = one.other + two.other;
-        return context;
-    }
-
 }

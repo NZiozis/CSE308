@@ -172,9 +172,4 @@ public class Precinct {
     public void setVotingBloc(Party votingBloc) {
         this.votingBloc = votingBloc;
     }
-
-    @Override
-    public int hashCode() {
-        return geoId.hashCode();
-    }
 }

@@ -31,7 +31,7 @@ public class GenerateInitialClusters implements AlgorithmStep {
         State state = AlgorithmProperties.getProperties().getState();
         for (Precinct precinct : state.getPrecincts()) {
             Cluster cluster = new Cluster();
-            cluster.addPrecinct(precinct);
+            cluster.getPrecincts().add(precinct);
             clusters.add(cluster);
             state.addClusterPrecinctMapping(precinct, cluster);
         }
