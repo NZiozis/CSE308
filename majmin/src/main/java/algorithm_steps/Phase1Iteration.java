@@ -3,10 +3,7 @@ package algorithm_steps;
 import algorithm.Algorithm;
 import algorithm.AlgorithmStep;
 import algorithm.AlgorithmStepStatus;
-import mm_districting.AlgorithmProperties;
-import mm_districting.Cluster;
-import mm_districting.Precinct;
-import mm_districting.State;
+import mm_districting.*;
 import org.javatuples.Pair;
 import results.Phase1Result;
 import results.Result;
@@ -70,22 +67,6 @@ public class Phase1Iteration implements AlgorithmStep {
 
     @Override
     public Result onCompletion() {
-        State state = AlgorithmProperties.getProperties().getState();
-        Phase1Result result = new Phase1Result();
-        ArrayList<Pair<Cluster,ArrayList<String>>> map = new ArrayList<>();
-
-        for (Cluster c : state.getClusters()) {
-            Cluster clone = new Cluster();
-            clone.setDemographicContext(c.getDemographicContext());
-            clone.setVotingData(c.getVotingData());
-            ArrayList<String> geoIds = new ArrayList<>();
-            for (Precinct p : c.getPrecincts()) {
-                geoIds.add(p.getGeoId());
-            }
-            map.add(new Pair<>(clone, geoIds));
-        }
-
-        result.setMap(map);
-        return result;
+        return AlgorithmManager.generatePhase1Result();
     }
 }

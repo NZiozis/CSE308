@@ -124,4 +124,8 @@ public class Cluster {
 		this.votingData = votingData;
 	}
 
+	public int getID() {
+		return id;
+	}
+
 }
