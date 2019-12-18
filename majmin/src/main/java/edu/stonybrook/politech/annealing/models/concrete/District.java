@@ -102,6 +102,10 @@ public class District
         return to_return;
     }
 
+    public String[] getPrecinctIDs() {
+        return (String[])precincts.keySet().toArray();
+    }
+
     public Set<Precinct> getBorderPrecincts() {
         return new HashSet<>(borderPrecincts);
     }

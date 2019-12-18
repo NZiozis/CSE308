@@ -20,22 +20,13 @@ import java.util.Set;
 
 public class SimulatedAnnealing implements AlgorithmStep {
 
-    public SimulatedAnnealing() {
-    }
+    Set<edu.stonybrook.politech.annealing.models.concrete.Precinct> precincts;
+    edu.stonybrook.politech.annealing.models.concrete.State state;
 
-    @Override
-    public boolean run() {
-        //Initialize precincts and state.
-        Set<edu.stonybrook.politech.annealing.models.concrete.Precinct> precincts = initializePrecincts();
-        edu.stonybrook.politech.annealing.models.concrete.State state = new edu.stonybrook.politech.annealing.models.concrete.State(
+    public SimulatedAnnealing() {
+        precincts = initializePrecincts();
+        state = new edu.stonybrook.politech.annealing.models.concrete.State(
                 AlgorithmProperties.getProperties().getState().getName(), precincts);
-        Map<Measure, Double> hm = new HashMap<Measure, Double>();
-        hm.put(Measure.PARTISAN_FAIRNESS, .5);
-        hm.put(Measure.COMPETITIVENESS, .3);
-        hm.put(Measure.POPULATION_EQUALITY, .6);
-        MyAlgorithm algorithm = new MyAlgorithm(state, DefaultMeasures.defaultMeasuresWithWeights(hm));
-        //The constructor should handle the algorithm being called, so return true.
-        return true;
     }
 
     public Set<edu.stonybrook.politech.annealing.models.concrete.Precinct> initializePrecincts() {
@@ -43,7 +34,7 @@ public class SimulatedAnnealing implements AlgorithmStep {
         State state = AlgorithmProperties.getProperties().getState(); //get the state
         Set<District> districts = state.getInitialDistricts(); //get the new districts
         Set<edu.stonybrook.politech.annealing.models.concrete.Precinct> precincts = new HashSet(); //
-        for(District d : districts) {
+        for(District d : districts) { //temporarily using initial districts
             String districtid = Long.toString(d.getGeoId());
             for(Precinct p : d.getPrecincts()) {
                 String precinctid = p.getGeoId();
@@ -74,6 +65,21 @@ public class SimulatedAnnealing implements AlgorithmStep {
     }
 
     @Override
+    public boolean run() {
+        Map<Measure, Double> hm = new HashMap<Measure, Double>();
+        hm.put(Measure.PARTISAN_FAIRNESS, .5);
+        hm.put(Measure.COMPETITIVENESS, .3);
+        hm.put(Measure.POPULATION_EQUALITY, .6);
+        MyAlgorithm algorithm = new MyAlgorithm(state, DefaultMeasures.defaultMeasuresWithWeights(hm));
+        //Set<Move> moves = new HashSet<>();
+        for(int i = 0; i < 50; i++) {
+            Move m = algorithm.getMoveFromDistrict(algorithm.getWorstDistrict());
+            //moves.add(m);
+        }
+        return true;
+    }
+
+    @Override
     public AlgorithmStepStatus getStatus() {
         return null;
     }
@@ -83,7 +89,19 @@ public class SimulatedAnnealing implements AlgorithmStep {
 
     @Override
     public Result onCompletion() {
-        return new DummyResult();
+        Phase2Result result = new Phase2Result();
+        HashMap<edu.stonybrook.politech.annealing.models.concrete.District, String[]> map = new HashMap();
+
+        int count = 0;
+        for(edu.stonybrook.politech.annealing.models.concrete.District d : state.getDistricts()) {
+            String[] ids = d.getPrecinctIDs();
+            edu.stonybrook.politech.annealing.models.concrete.District newDistrict = new edu.stonybrook.politech.annealing.models.concrete.District(Integer.toString(count), state);
+            map.put(newDistrict, ids);
+            count++;
+        }
+        result.setMap(map);
+        System.out.println(result.toString());
+        return result;
     }
 
 }
