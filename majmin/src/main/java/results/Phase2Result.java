@@ -15,13 +15,13 @@ import java.util.List;
  */
 public class Phase2Result extends Result {
 
-    private HashMap<District, String[]> map;
+    private HashMap<Cluster, String[]> map;
 
-    public HashMap<District, String[]> getMap() {
+    public HashMap<Cluster, String[]> getMap() {
         return map;
     }
 
-    public void setMap(HashMap<District, String[]> map) {
+    public void setMap(HashMap<Cluster, String[]> map) {
         this.map = map;
     }
 

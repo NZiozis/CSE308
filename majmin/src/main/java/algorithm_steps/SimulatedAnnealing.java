@@ -12,11 +12,9 @@ import results.*;
 import results.Result;
 import edu.stonybrook.politech.annealing.*;
 import util.Party;
+import org.javatuples.Pair;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class SimulatedAnnealing implements AlgorithmStep {
 
@@ -34,11 +32,13 @@ public class SimulatedAnnealing implements AlgorithmStep {
     public Set<edu.stonybrook.politech.annealing.models.concrete.Precinct> initializePrecincts() {
         //First, the precincts must be stored as the Algorithm's precinct objects.
         State state = AlgorithmProperties.getProperties().getState(); //get the state
-        Set<District> districts = state.getInitialDistricts(); //get the new districts
+        //Set<District> districts = state.getInitialDistricts(); //get the new districts
+        Set<Cluster> clusters = state.getClusters();
         Set<edu.stonybrook.politech.annealing.models.concrete.Precinct> precincts = new HashSet(); //
-        for(District d : districts) { //temporarily using initial districts
-            String districtid = Long.toString(d.getGeoId());
-            for(Precinct p : d.getPrecincts()) {
+        for(Cluster c : clusters) { //temporarily using initial districts
+            //String districtid = Long.toString(d.getGeoId());
+            String clusterid = Integer.toString(c.getID());
+            for(Precinct p : c.getPrecincts()) {
                 String precinctid = p.getGeoId();
                 String geometryJSON = p.getGeography();
                 GeoJSONReader reader = new GeoJSONReader();
@@ -58,7 +58,7 @@ public class SimulatedAnnealing implements AlgorithmStep {
                     neighborIDs.add(neigh.getGeoId());
                 }
                 edu.stonybrook.politech.annealing.models.concrete.Precinct precinct = new edu.stonybrook.politech.annealing.models.concrete.Precinct(
-                        precinctid, geometry, geometryJSON, districtid, population, gop_vote, dem_vote, neighborIDs);
+                        precinctid, geometry, geometryJSON, clusterid, population, gop_vote, dem_vote, neighborIDs);
 
                 precincts.add(precinct);
             }
@@ -74,7 +74,7 @@ public class SimulatedAnnealing implements AlgorithmStep {
         //hm.put(Measure.POPULATION_EQUALITY, .6);
         MyAlgorithm algorithm = new MyAlgorithm(state, DefaultMeasures.defaultMeasuresWithWeights(measures));
         //Set<Move> moves = new HashSet<>();
-        for(int i = 0; i < 200; i++) {
+        for(int i = 0; i < 50; i++) {
             Move m = algorithm.getMoveFromDistrict(algorithm.getWorstDistrict());
             System.out.println("Iteration " + (i + 1) + " finished!\n");
             //moves.add(m);
@@ -92,15 +92,20 @@ public class SimulatedAnnealing implements AlgorithmStep {
 
     @Override
     public Result onCompletion() {
-        Phase2Result result = new Phase2Result();
-        HashMap<edu.stonybrook.politech.annealing.models.concrete.District, String[]> map = new HashMap();
-
-        int count = 0;
+        Phase1Result result = new Phase1Result();
+        //HashMap<edu.stonybrook.politech.annealing.models.concrete.District, String[]> map = new HashMap();
+        ArrayList<Pair<Cluster, ArrayList<String>>> map = new ArrayList();
+        //Currently, the Result consists of randomly-numbered districts and an array of their precinct ids.
+        //This needs to be changed to clusters and an array of their precinct ids.
+        //int count = 0;
         for(edu.stonybrook.politech.annealing.models.concrete.District d : state.getDistricts()) {
             String[] ids = d.getPrecinctIDs();
-            edu.stonybrook.politech.annealing.models.concrete.District newDistrict = new edu.stonybrook.politech.annealing.models.concrete.District(Integer.toString(count), state);
-            map.put(newDistrict, ids);
-            count++;
+            ArrayList<String> idList = new ArrayList<String>(Arrays.asList(ids));
+            //edu.stonybrook.politech.annealing.models.concrete.District newDistrict = new edu.stonybrook.politech.annealing.models.concrete.District(Integer.toString(count), state);
+            Cluster clust = new Cluster();
+            clust.setID(Integer.parseInt(d.getID())); //district id came from clusters, so must also be an int
+            map.add(new Pair<>(clust, idList));
+            //count++;
         }
         result.setMap(map);
         System.out.println(result.toString());
