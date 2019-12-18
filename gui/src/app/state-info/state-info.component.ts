@@ -11,6 +11,7 @@ export class StateInfoComponent implements OnInit {
 
     private state: State;
     private displayedColumns = ['race', 'population', 'percent'];
+    private votingColumns = ['party', 'votes', 'percent', 'numRepresentatives', 'percentRepresentatives'];
 
     constructor(private mapService: MapService) {
     }
@@ -59,7 +60,7 @@ export class StateInfoComponent implements OnInit {
                 percent: this.generatePercent(this.state.demographicContext.pacificIslander, total)
             },
             {
-                name: 'Other',
+                name: 'Hispanic',
                 population: this.state.demographicContext.other,
                 percent: this.generatePercent(this.state.demographicContext.other, total)
             },
@@ -74,10 +75,29 @@ export class StateInfoComponent implements OnInit {
         const republican = data.filter(x => x.party === 'REPUBLICAN')[0];
         const democrat = data.filter(x => x.party === 'DEMOCRAT')[0];
         const total = republican.votes + democrat.votes;
+        const totalReps = this.state.incumbentData.republican + this.state.incumbentData.democrat;
         output.push(
-            {name: 'Republican', votes: republican.votes, percent: this.generatePercent(republican.votes, total)},
-            {name: 'Democrat', votes: democrat.votes, percent: this.generatePercent(democrat.votes, total)},
-            {name: 'Total', votes: total, percent: '100.00'}
+            {
+                name: 'Republican',
+                votes: republican.votes,
+                percent: this.generatePercent(republican.votes, total),
+                numRepresentatives: this.state.incumbentData.republican,
+                percentRepresentatives: this.generatePercent(this.state.incumbentData.republican, totalReps)
+            },
+            {
+                name: 'Democrat',
+                votes: democrat.votes,
+                percent: this.generatePercent(democrat.votes, total),
+                numRepresentatives: this.state.incumbentData.democrat,
+                percentRepresentatives: this.generatePercent(this.state.incumbentData.democrat, totalReps)
+            },
+            {
+                name: 'Total',
+                votes: total,
+                percent: '100.00',
+                numRepresentatives: totalReps,
+                percentRepresentatives: '100.00'
+            }
         );
         this.state.arrayVotingSet = output;
     }

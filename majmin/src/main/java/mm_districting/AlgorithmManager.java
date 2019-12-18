@@ -9,7 +9,6 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.web.bind.annotation.*;
-import results.Phase1Result;
 import results.Result;
 import util.Election;
 import util.Operation;
@@ -118,6 +117,7 @@ public class AlgorithmManager {
         System.gc();
 
         State state = AlgorithmProperties.getProperties().getState();
+        state.getIncumbentData();
 
         String guiString = "";
 
@@ -243,10 +243,9 @@ public class AlgorithmManager {
             e.printStackTrace();
         }
 
-        AlgorithmProperties.getProperties().setRequestedNumDistricts((Integer)map.get("numberOfDistricts"));
-        AlgorithmProperties.getProperties().setMinorityVotingThreshold((Integer)map.get("minorityThreshold"));
-        AlgorithmProperties.getProperties().setMajorityVotingThreshold((Integer)map.get("majorityThreshold"));
-
+        AlgorithmProperties.getProperties().setRequestedNumDistricts((Integer) map.get("numberOfDistricts"));
+        AlgorithmProperties.getProperties().setMinorityVotingThreshold((Integer) map.get("minorityThreshold"));
+        AlgorithmProperties.getProperties().setMajorityVotingThreshold((Integer) map.get("majorityThreshold"));
 
         ArrayList<String> selectedDemographicsArr = (ArrayList<String>) map.get("selectedRaces");
         Set<Race> selectedDemographics = new HashSet<>();

@@ -22,7 +22,7 @@ export class MapService {
         this.possibleRaces = [
             {name: 'White', backendName: 'WHITE'},
             {name: 'African American', backendName: 'BLACK'},
-            {name: 'Latino', backendName: 'LATINO'},
+            {name: 'Hispanic', backendName: 'OTHER'},
             {name: 'Asian', backendName: 'ASIAN'},
             {name: 'Pacific Islander', backendName: 'PACIFIC_ISLANDER'},
             {name: 'Native American', backendName: 'NATIVE_AMERICAN'},
@@ -140,7 +140,7 @@ export class MapService {
                                     this.setStyle({
                                         fillOpacity: 1
                                     });
-                                    self.currentInfo = new District({position: 'bottomleft'}, precinct, self);
+                                    self.currentInfo = new Precinct({position: 'bottomleft'}, precinct, self);
                                     self.currentInfo.addTo(self.map);
                                 });
                                 layer.on('mouseout', function() {
@@ -151,7 +151,7 @@ export class MapService {
                                 });
                             }
                         });
-                        geoJson.setStyle({fillColor: '#ff15ed', weight: .5, color: '#000000'});
+                        geoJson.setStyle({fillColor: '#ff15ed', weight: .5, color: '#000000', fillOpacity: 0.5});
                         self.precinctLayerGroup.addLayer(geoJson);
                         self.precinctToLayerMapper.set(precinct.geoId, geoJson);
                     }
