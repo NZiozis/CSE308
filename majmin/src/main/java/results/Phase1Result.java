@@ -1,10 +1,9 @@
 package results;
 
 import mm_districting.Cluster;
-import results.Result;
+import org.javatuples.Pair;
 
-import java.util.HashMap;
-import java.util.List;
+import java.util.ArrayList;
 
 /**
  * Contains a map between {@code Cluster} objects and a String array containing the GeoID of each precinct in the cluster.
@@ -13,13 +12,14 @@ import java.util.List;
  */
 public class Phase1Result extends Result {
 
-    private HashMap<Cluster, String[]> map;
+    private ArrayList<Pair<Cluster,ArrayList<String>>> clusterList;
 
-    public HashMap<Cluster, String[]> getMap() {
-        return map;
+    public ArrayList<Pair<Cluster,ArrayList<String>>> getArray() {
+        return clusterList;
     }
 
-    public void setMap(HashMap<Cluster, String[]> map) {
-        this.map = map;
+    public void setMap(ArrayList<Pair<Cluster,ArrayList<String>>> clusterList) {
+        this.clusterList = clusterList;
     }
+
 }

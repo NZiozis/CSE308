@@ -9,6 +9,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.web.bind.annotation.*;
+import results.Phase1Result;
 import results.Result;
 import util.Election;
 import util.Operation;
@@ -106,13 +107,16 @@ public class AlgorithmManager {
             }
 
             AlgorithmProperties.getProperties().setState(state);
-
+            state.init();
         }
 
     }
 
     @RequestMapping(value = "/getState", method = RequestMethod.GET)
     public String getStateToUI() {
+
+        System.gc();
+
         State state = AlgorithmProperties.getProperties().getState();
 
         String guiString = "";
@@ -239,12 +243,35 @@ public class AlgorithmManager {
             e.printStackTrace();
         }
 
+        AlgorithmProperties.getProperties().setRequestedNumDistricts((Integer)map.get("numberOfDistricts"));
+        AlgorithmProperties.getProperties().setMinorityVotingThreshold((Integer)map.get("minorityThreshold"));
+        AlgorithmProperties.getProperties().setMajorityVotingThreshold((Integer)map.get("majorityThreshold"));
+
+
+        ArrayList<String> selectedDemographicsArr = (ArrayList<String>) map.get("selectedRaces");
+        Set<Race> selectedDemographics = new HashSet<>();
+        for (String demographic : selectedDemographicsArr) {
+            selectedDemographics.add(Race.valueOf(demographic));
+        }
+        AlgorithmProperties.getProperties().setSelectedDemographics(selectedDemographics);
+
         currentAlgorithm =
                 new Algorithm(new GenerateInitialClusters(), new GenerateInitialEdges(), new Phase1Iteration(true));
 
         while (!( currentAlgorithm.run() )) {}
 
-        return "";
+        State state = AlgorithmProperties.getProperties().getState();
+
+        Result results = currentAlgorithm.getResultsToSend().get(0);
+
+        String guiResult = "";
+        try {
+            guiResult = mapper.writeValueAsString(results);
+        }
+        catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
+        return guiResult;
     }
 
     @RequestMapping(value = "/phase2", method = RequestMethod.POST)

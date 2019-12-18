@@ -105,6 +105,11 @@
             <artifactId>jts2geojson</artifactId>
             <version>0.14.3</version>
         </dependency>
+        <dependency>
+            <groupId>org.javatuples</groupId>
+            <artifactId>javatuples</artifactId>
+            <version>1.2</version>
+        </dependency>
     </dependencies>
     <repositories>
         <repository>
