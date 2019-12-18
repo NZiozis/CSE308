@@ -105,10 +105,9 @@ public class SimulatedAnnealing implements AlgorithmStep {
             Cluster clust = new Cluster();
             clust.setID(Integer.parseInt(d.getID())); //district id came from clusters, so must also be an int
             map.add(new Pair<>(clust, idList));
-            //count++;
         }
+        System.out.println(map.toString());
         result.setMap(map);
-        System.out.println(result.toString());
         return result;
     }
 

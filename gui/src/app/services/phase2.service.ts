@@ -16,7 +16,10 @@ export class Phase2Service {
         this.http.post<Phase2Config>(
             this.mapService.REST_API_SERVER_URL + '/phase2', JSON.stringify(phase2Json)).subscribe((json: any) => {
                 let colorIndex = 0;
-                const clusters = json.array;
+                console.log(json);
+                console.log('Phase 2 step');
+                const clusters = json[0].array;
+                console.log(clusters);
                 for (const cluster of clusters) {
                     for (const precinct of cluster.value1) {
                         const currentLayer: GeoJSON<any> = this.mapService.precinctToLayerMapper.get(precinct);
