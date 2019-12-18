@@ -113,6 +113,9 @@ public class AlgorithmManager {
 
     @RequestMapping(value = "/getState", method = RequestMethod.GET)
     public String getStateToUI() {
+
+        System.gc();
+
         State state = AlgorithmProperties.getProperties().getState();
 
         String guiString = "";
@@ -267,7 +270,6 @@ public class AlgorithmManager {
         catch (JsonProcessingException e) {
             e.printStackTrace();
         }
-
         return guiResult;
     }
 

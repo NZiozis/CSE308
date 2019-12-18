@@ -34,6 +34,8 @@ public class GenerateInitialClusters implements AlgorithmStep {
             cluster.addPrecinct(precinct);
             clusters.add(cluster);
             state.addClusterPrecinctMapping(precinct, cluster);
+            cluster.setVotingData(precinct.getVotingSet());
+            cluster.setDemographicContext(precinct.getDemographics());
         }
         state.setClusters(clusters);
         return true;
