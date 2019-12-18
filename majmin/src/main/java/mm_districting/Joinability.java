@@ -56,6 +56,11 @@ public class Joinability {
 
         double numberOfPrecincts = clusterOne.getPrecincts().size() + clusterTwo.getPrecincts().size();
 
+        double numNeighbors = clusterOne.getNeighbors().size() + clusterTwo.getNeighbors().size();
+        double compactness = .01 * (1 - (numNeighbors/numPrecincts));
+
+        score += compactness;
+
         if (numberOfPrecincts > (numPrecincts * 1.0 / AlgorithmProperties.getProperties().getRequestedNumDistricts() * 1.2)) {
             score = -1;
         }
