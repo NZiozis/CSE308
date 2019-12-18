@@ -1,6 +1,5 @@
 package mm_districting;
 
-import algorithm_steps.DummyEdge;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import util.Operation;
 
@@ -22,26 +21,25 @@ import java.util.Set;
 @Table(name = "STATE")
 @JsonIgnoreProperties(
         value = { "initialDistricts", "generatedDistricts", "clusters", "bestPairings", "geography", "edges",
-                  "bestPairings", "doNotPairClusters", "precincts"})
+                  "bestPairings", "doNotPairClusters", "precincts" })
 public class State {
 
+    @Transient public  Set<Cluster>        discardedClusters = new HashSet<>();
     //---state data---//
-    private            String             name;
-    private            long               stateId;
-    private            String             legalGuidelines;
-    private            Set<Voting>        votingSet;
-    private            DemographicContext demographicContext;
+    private            String              name;
+    private            long                stateId;
+    private            String              legalGuidelines;
+    private            Set<Voting>         votingSet;
+    private            DemographicContext  demographicContext;
     //---Encompassed geographical objects---//
-    private            Set<District>      initialDistricts;
+    private            Set<District>       initialDistricts;
     //---Algorithm oriented objects---//
-    private            Set<District>      generatedDistricts;
-    private            Set<Cluster>       clusters;
-//    @Transient private Set<Edge>          edges;
-    private            String             geography;
-    @Transient private Edge    nextEdgeToCombine;
-
-
-    @Transient public Set<Cluster> discardedClusters = new HashSet<>();
+    private            Set<District>       generatedDistricts;
+    private            Set<Cluster>        clusters;
+    //    @Transient private Set<Edge>          edges;
+    private            String              geography;
+    @Transient private Edge                nextEdgeToCombine;
+    private            Map<String,Integer> incumbentData;
     //maps precinct GeoID to Cluster
     @Transient private Map<String,Cluster> initialClustersMap;
 
@@ -67,7 +65,29 @@ public class State {
     }
 
     public void setStateId(long stateId) {
-        this.stateId = stateId;
+    }
+
+    @Transient
+    public Map<String,Integer> getIncumbentData() {
+        if (this.incumbentData == null) {
+            this.incumbentData = new HashMap<>();
+        }
+        this.incumbentData.put("republican", 0);
+        this.incumbentData.put("democrat", 0);
+        for (District d : initialDistricts) {
+            String incumbent = d.getIncumbent();
+            if (incumbent.contains("(R)")) {
+                this.incumbentData.put("republican", ( this.incumbentData.get("republican") + 1 ));
+            }
+            else {
+                this.incumbentData.put("democrat", ( this.incumbentData.get("democrat") + 1 ));
+            }
+        }
+        return incumbentData;
+    }
+
+    public void setIncumbentData(Map<String,Integer> incumbentData) {
+        this.incumbentData = incumbentData;
     }
 
     /**
@@ -95,10 +115,12 @@ public class State {
             combinedCluster.addPrecinct(p);
         }
 
-        combinedCluster.setDemographicContext(DemographicContext.combine(edge.getClusterOne().getDemographicContext(), edge.getClusterTwo().getDemographicContext()));
-        combinedCluster.setVotingData(Voting.combineVotingSets(edge.getClusterOne().getVotingData(), edge.getClusterTwo().getVotingData()));
+        combinedCluster.setDemographicContext(DemographicContext.combine(edge.getClusterOne().getDemographicContext(),
+                                                                         edge.getClusterTwo().getDemographicContext()));
+        combinedCluster.setVotingData(
+                Voting.combineVotingSets(edge.getClusterOne().getVotingData(), edge.getClusterTwo().getVotingData()));
 
-       //set neighbors
+        //set neighbors
         Set<Cluster> clusterOneNeighbors = edge.getClusterOne().getNeighbors();
         Set<Cluster> clusterTwoNeighbors = edge.getClusterTwo().getNeighbors();
 
@@ -241,7 +263,7 @@ public class State {
 //    }
 
     @Transient
-    public Map<String, Cluster> getInitialClustersMap() {
+    public Map<String,Cluster> getInitialClustersMap() {
         return initialClustersMap;
     }
 
@@ -254,13 +276,13 @@ public class State {
     }
 
     @Transient
-    public void setNextEdgeToCombine(Edge edge) {
-        nextEdgeToCombine = edge;
+    public Edge getNextEdgeToCombine() {
+        return nextEdgeToCombine;
     }
 
     @Transient
-    public Edge getNextEdgeToCombine() {
-        return nextEdgeToCombine;
+    public void setNextEdgeToCombine(Edge edge) {
+        nextEdgeToCombine = edge;
     }
 
     public double getMaxJoinability(boolean doingMM) {

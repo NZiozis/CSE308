@@ -9,4 +9,5 @@ export class State {
     votingSet: any[];
     arrayDemographicContext: any;
     arrayVotingSet: any;
+    incumbentData: any;
 }

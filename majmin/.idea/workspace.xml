@@ -5,14 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1b917782-4cb8-457f-9f9b-dfb5f1451613" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../gui/src/app/model/district.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/src/app/model/district.model.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/src/app/model/precinct.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/src/app/model/precinct.model.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/src/app/services/map.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/src/app/services/map.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gui/src/app/services/phase0.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/src/app/services/phase0.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/src/app/model/state.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/src/app/model/state.model.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/src/app/state-info/state-info.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/src/app/state-info/state-info.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../gui/src/app/state-info/state-info.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/src/app/state-info/state-info.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mm_districting/AlgorithmManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mm_districting/AlgorithmManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mm_districting/State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mm_districting/State.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mm_districting/AlgorithmManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mm_districting/AlgorithmManager.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -338,13 +337,23 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/mm_districting/State.java</url>
-          <line>85</line>
+          <line>105</line>
           <option name="timeStamp" value="75" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/algorithm_steps/AssignMMJoinabilities.java</url>
           <line>45</line>
           <option name="timeStamp" value="77" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/mm_districting/State.java</url>
+          <line>76</line>
+          <option name="timeStamp" value="84" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/mm_districting/AlgorithmManager.java</url>
+          <line>262</line>
+          <option name="timeStamp" value="85" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
